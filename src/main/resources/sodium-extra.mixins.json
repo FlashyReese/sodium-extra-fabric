@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.flashyreese.mods.sodiumextra.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "features.animation.MixinSpriteAtlasTexture",
+    "features.animation.MixinSodiumOptionsGUI"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

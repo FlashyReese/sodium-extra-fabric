@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "sodium-extra",
+  "version": "${version}",
+  "name": "Sodium Extra",
+  "description": "Extra options for Sodium",
+  "authors": [
+    "FlashyReese"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/sodium/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod"
+    ]
+  },
+  "mixins": [
+    "sodium-extra.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.10.3+build.211",
+    "minecraft": "1.16.3",
+    "sodium": ["0.1.0", "0.1.0-SNAPSHOT"]
+  }
+}
