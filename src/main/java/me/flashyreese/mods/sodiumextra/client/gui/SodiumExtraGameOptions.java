@@ -64,16 +64,12 @@ public class SodiumExtraGameOptions {
         public boolean animateFire;
         public boolean animatePortal;
 
-        public boolean animateCommandBlock;
-
         public AnimationSettings() {
             this.animation = true;
             this.animateWater = true;
             this.animateLava = true;
             this.animateFire = true;
             this.animatePortal = true;
-
-            this.animateCommandBlock = true;
         }
     }
 
