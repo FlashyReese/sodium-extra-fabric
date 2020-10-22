@@ -7,7 +7,8 @@
   ],
   "client": [
     "features.animation.MixinSpriteAtlasTexture",
-    "features.animation.MixinSodiumOptionsGUI"
+    "features.particle.MixinWorldRenderer",
+    "sodium.MixinSodiumOptionsGUI"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -11,7 +11,8 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 
 public class SodiumExtraGameOptions {
-    public final AnimationSettings animation = new AnimationSettings();
+    public final AnimationSettings animationSettings = new AnimationSettings();
+    public final ParticleSettings particleSettings = new ParticleSettings();
     private File file;
 
     private static final Gson gson = new GsonBuilder()
@@ -70,6 +71,34 @@ public class SodiumExtraGameOptions {
             this.animateLava = true;
             this.animateFire = true;
             this.animatePortal = true;
+        }
+    }
+
+    public static class ParticleSettings {
+        public boolean particles;
+        public boolean weather;
+        public boolean rainSplash;
+        public boolean explosion;
+        public boolean water;
+        public boolean smoke;
+        public boolean potion;
+        public boolean portal;
+        public boolean redstone;
+        public boolean fluidDrip;
+        public boolean firework;
+
+        public ParticleSettings() {
+            this.particles = true;
+            this.weather = true;
+            this.rainSplash = true;
+            this.explosion = true;
+            this.water = true;
+            this.smoke = true;
+            this.potion = true;
+            this.portal = true;
+            this.redstone = true;
+            this.fluidDrip = true;
+            this.firework = true;
         }
     }
 

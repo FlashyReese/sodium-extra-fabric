@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.features.animation;
+package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
 import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
@@ -22,5 +22,6 @@ public class MixinSodiumOptionsGUI {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
         this.pages.add(SodiumExtraGameOptionPages.animation());
+        this.pages.add(SodiumExtraGameOptionPages.particle());
     }
 }
