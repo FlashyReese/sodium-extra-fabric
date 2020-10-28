@@ -13,6 +13,8 @@ import java.lang.reflect.Modifier;
 public class SodiumExtraGameOptions {
     public final AnimationSettings animationSettings = new AnimationSettings();
     public final ParticleSettings particleSettings = new ParticleSettings();
+    public final DetailSettings detailSettings = new DetailSettings();
+    public final ExtraSettings extraSettings = new ExtraSettings();
     private File file;
 
     private static final Gson gson = new GsonBuilder()
@@ -76,7 +78,6 @@ public class SodiumExtraGameOptions {
 
     public static class ParticleSettings {
         public boolean particles;
-        public boolean weather;
         public boolean rainSplash;
         public boolean explosion;
         public boolean water;
@@ -89,7 +90,6 @@ public class SodiumExtraGameOptions {
 
         public ParticleSettings() {
             this.particles = true;
-            this.weather = true;
             this.rainSplash = true;
             this.explosion = true;
             this.water = true;
@@ -99,6 +99,22 @@ public class SodiumExtraGameOptions {
             this.redstone = true;
             this.fluidDrip = true;
             this.firework = true;
+        }
+    }
+
+    public static class DetailSettings {
+        public boolean rainSnow;
+
+        public DetailSettings() {
+            this.rainSnow = true;
+        }
+    }
+
+    public static class ExtraSettings {
+        public boolean showFps;
+
+        public ExtraSettings() {
+            this.showFps = true;
         }
     }
 

@@ -31,7 +31,7 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
         }
     }
 
-    private boolean shouldAnimate(Sprite sprite){
+    private boolean shouldAnimate(Sprite sprite) {
         if (!SodiumExtraClientMod.options().animationSettings.animation) {
             return false;
         } else {

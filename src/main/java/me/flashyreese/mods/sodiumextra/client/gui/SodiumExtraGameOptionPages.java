@@ -72,13 +72,6 @@ public class SodiumExtraGameOptionPages {
 
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Weather")
-                        .setTooltip("")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.weather = value, opts -> opts.particleSettings.weather)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Rain Splash")
                         .setTooltip("")
                         .setControl(TickBoxControl::new)
@@ -143,5 +136,33 @@ public class SodiumExtraGameOptionPages {
                 )
                 .build());
         return new OptionPage("Particles", ImmutableList.copyOf(groups));
+    }
+
+    public static OptionPage detail() {
+        List<OptionGroup> groups = new ArrayList<>();
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Rain & Snow")
+                        .setTooltip("")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.detailSettings.rainSnow = value, opts -> opts.detailSettings.rainSnow)
+                        .build()
+                )
+                .build());
+        return new OptionPage("Details", ImmutableList.copyOf(groups));
+    }
+
+    public static OptionPage extra() {
+        List<OptionGroup> groups = new ArrayList<>();
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("showFps")
+                        .setTooltip("")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.extraSettings.showFps = value, opts -> opts.extraSettings.showFps)
+                        .build()
+                )
+                .build());
+        return new OptionPage("Extras", ImmutableList.copyOf(groups));
     }
 }

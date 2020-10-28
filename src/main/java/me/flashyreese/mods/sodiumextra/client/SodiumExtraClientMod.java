@@ -12,9 +12,11 @@ public class SodiumExtraClientMod implements ClientModInitializer {
 
     private static SodiumExtraGameOptions CONFIG;
 
+    private static ClientTickHandler clientTickHandler = new ClientTickHandler();
+
     @Override
     public void onInitializeClient() {
-
+        getClientTickHandler().onClientInitialize();
     }
 
     public static SodiumExtraGameOptions options() {
@@ -23,6 +25,10 @@ public class SodiumExtraClientMod implements ClientModInitializer {
         }
 
         return CONFIG;
+    }
+
+    public static ClientTickHandler getClientTickHandler() {
+        return clientTickHandler;
     }
 
     private static SodiumExtraGameOptions loadConfig() {

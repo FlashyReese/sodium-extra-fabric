@@ -23,5 +23,7 @@ public class MixinSodiumOptionsGUI {
     private void init(CallbackInfo info) {
         this.pages.add(SodiumExtraGameOptionPages.animation());
         this.pages.add(SodiumExtraGameOptionPages.particle());
+        this.pages.add(SodiumExtraGameOptionPages.detail());
+        this.pages.add(SodiumExtraGameOptionPages.extra());
     }
 }

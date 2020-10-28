@@ -8,6 +8,8 @@
   "client": [
     "features.animation.MixinSpriteAtlasTexture",
     "features.particle.MixinWorldRenderer",
+    "features.gui.MinecraftClientAccessor",
+    "features.gui.MixinInGameHud",
     "sodium.MixinSodiumOptionsGUI"
   ],
   "injectors": {

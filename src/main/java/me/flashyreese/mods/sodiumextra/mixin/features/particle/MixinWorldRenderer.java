@@ -1,6 +1,7 @@
 package me.flashyreese.mods.sodiumextra.mixin.features.particle;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
+import net.minecraft.client.particle.Particle;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.WorldRenderer;
@@ -24,13 +25,13 @@ public class MixinWorldRenderer {
 
     @Inject(method = "renderWeather", at = @At(value = "INVOKE"), cancellable = true)
     private void renderWeather(LightmapTextureManager manager, float f, double d, double e, double g, CallbackInfo callbackInfo) {
-        if (!(SodiumExtraClientMod.options().particleSettings.particles && SodiumExtraClientMod.options().particleSettings.weather)) {
+        if (!(SodiumExtraClientMod.options().detailSettings.rainSnow)) {
             callbackInfo.cancel();
         }
     }
 
     @Inject(method = "spawnParticle(Lnet/minecraft/particle/ParticleEffect;ZZDDDDDD)Lnet/minecraft/client/particle/Particle;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;getRandomParticleSpawnChance(Z)Lnet/minecraft/client/options/ParticlesMode;"), cancellable = true)
-    private void spawnParticle(ParticleEffect parameters, boolean alwaysSpawn, boolean canSpawnOnMinimal, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable callbackInfo) {
+    private void spawnParticle(ParticleEffect parameters, boolean alwaysSpawn, boolean canSpawnOnMinimal, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<Particle> callbackInfo) {
         if (SodiumExtraClientMod.options().particleSettings.particles) {
             if (!SodiumExtraClientMod.options().particleSettings.explosion) {
                 if (parameters == ParticleTypes.EXPLOSION_EMITTER || parameters == ParticleTypes.EXPLOSION || parameters == ParticleTypes.POOF) {
@@ -60,9 +61,33 @@ public class MixinWorldRenderer {
                 if (parameters == ParticleTypes.FIREWORK) {
                     callbackInfo.setReturnValue(null);
                 }
+                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP) {
+                    callbackInfo.setReturnValue(null);
+                }
             }
         } else {
             callbackInfo.setReturnValue(null);
         }
     }
+
+    /*@Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Direction;byId(I)Lnet/minecraft/util/math/Direction;", shift = At.Shift.BEFORE), cancellable = true)
+    public void processWorldEvent2000(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
+        if (!SodiumExtraClientMod.options().particleSettings.particles){
+            callbackInfo.cancel();
+        }
+    }
+
+    @Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;ofBottomCenter(Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.BEFORE), cancellable = true)
+    public void processWorldEvent2003(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
+        if (!SodiumExtraClientMod.options().particleSettings.particles){
+            callbackInfo.cancel();
+        }
+    }
+
+    @Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;ofBottomCenter(Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.BEFORE), cancellable = true)
+    public void processWorldEvent2007(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
+        if (!SodiumExtraClientMod.options().particleSettings.particles){
+            callbackInfo.cancel();
+        }
+    }*/
 }
