@@ -156,10 +156,17 @@ public class SodiumExtraGameOptionPages {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("showFps")
+                        .setName("Show FPS")
                         .setTooltip("")
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.extraSettings.showFps = value, opts -> opts.extraSettings.showFps)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Fog")
+                        .setTooltip("")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.extraSettings.enableFog = value, opts -> opts.extraSettings.enableFog)
                         .build()
                 )
                 .build());

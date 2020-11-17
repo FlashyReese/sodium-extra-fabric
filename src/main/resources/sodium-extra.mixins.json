@@ -7,6 +7,7 @@
   ],
   "client": [
     "features.animation.MixinSpriteAtlasTexture",
+    "features.fog.MixinSodiumWorldRenderer",
     "features.particle.MixinWorldRenderer",
     "features.gui.MinecraftClientAccessor",
     "features.gui.MixinInGameHud",

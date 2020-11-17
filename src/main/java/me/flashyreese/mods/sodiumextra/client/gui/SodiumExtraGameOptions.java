@@ -112,9 +112,11 @@ public class SodiumExtraGameOptions {
 
     public static class ExtraSettings {
         public boolean showFps;
+        public boolean enableFog;
 
         public ExtraSettings() {
             this.showFps = true;
+            this.enableFog = true;
         }
     }
 
