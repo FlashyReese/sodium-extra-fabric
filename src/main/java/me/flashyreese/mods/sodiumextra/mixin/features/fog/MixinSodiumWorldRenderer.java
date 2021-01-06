@@ -14,6 +14,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(SodiumWorldRenderer.class)
 public class MixinSodiumWorldRenderer {
 
+    /**
+    * Sodium's 1.16.x/dev fog, added because removed from 1.16.x/next.
+    * @author jellysquid3
+    */
     @Inject(method = "drawChunkLayer", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/render/chunk/passes/BlockRenderPass;startDrawing()V", shift = At.Shift.AFTER), remap = false)
     private void drawChunkLayer(RenderLayer renderLayer, MatrixStack matrixStack, double x, double y, double z, CallbackInfo info) {
         // We don't have a great way to check if underwater fog is being used, so assume that terrain will only ever
