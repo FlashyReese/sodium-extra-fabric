@@ -34,7 +34,7 @@ if (project.use_third_party_mods) {
             exclude module: "fabric-loader"
             transitive = false
         }
-        modRuntime ("com.github.jellysquid3:lithium-fabric:${project.lithium_version}")
+        //modRuntime ("com.github.jellysquid3:lithium-fabric:${project.lithium_version}")
         modRuntime ("com.github.jellysquid3:phosphor-fabric:${project.phosphor_version}")
         modRuntime ("io.github.prospector:modmenu:${project.modmenu_version}")
         modRuntime ("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
