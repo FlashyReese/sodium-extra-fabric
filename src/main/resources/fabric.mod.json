@@ -23,6 +23,6 @@
     "fabricloader": ">=0.9.0",
     "fabric": "*",
     "minecraft": "~1.16.2",
-    "sodium": ["0.1.0", "0.1.0-SNAPSHOT", "0.1.1-SNAPSHOT", "IRIS-SNAPSHOT"]
+    "sodium": ["0.1.0", "0.1.0-SNAPSHOT", "0.1.1-SNAPSHOT", "IRIS-SNAPSHOT", "0.1.2"]
   }
 }
