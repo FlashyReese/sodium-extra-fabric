@@ -12,7 +12,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
 
     private static SodiumExtraGameOptions CONFIG;
 
-    private static ClientTickHandler clientTickHandler = new ClientTickHandler();
+    private static final ClientTickHandler clientTickHandler = new ClientTickHandler();
 
     @Override
     public void onInitializeClient() {
@@ -32,7 +32,6 @@ public class SodiumExtraClientMod implements ClientModInitializer {
     }
 
     private static SodiumExtraGameOptions loadConfig() {
-        SodiumExtraGameOptions config = SodiumExtraGameOptions.load(new File("config/sodium-extra-options.json"));
-        return config;
+        return SodiumExtraGameOptions.load(new File("config/sodium-extra-options.json"));
     }
 }

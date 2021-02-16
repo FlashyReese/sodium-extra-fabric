@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'fabric-loom' version '0.6-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -12,6 +12,7 @@ group = project.maven_group
 
 repositories {
     maven { url = "https://jitpack.io" }
+    maven { url = "https://maven.terraformersmc.com"}
 }
 
 dependencies {
@@ -36,7 +37,7 @@ if (project.use_third_party_mods) {
         }
         //modRuntime ("com.github.jellysquid3:lithium-fabric:${project.lithium_version}")
         modRuntime ("com.github.jellysquid3:phosphor-fabric:${project.phosphor_version}")
-        modRuntime ("io.github.prospector:modmenu:${project.modmenu_version}")
+        modRuntime ("com.terraformersmc:modmenu:${project.modmenu_version}")
         modRuntime ("net.fabricmc.fabric-api:fabric-api:${project.fabric_version}")
     }
 }

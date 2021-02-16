@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import java.util.Queue;
 
 public class ClientTickHandler {
-    private final Queue<Integer> averageFps = new EvictingQueue<>(200);
+    private final Queue<Integer> averageFps = new EvictingQueue<>(1000);
 
     public void onClientInitialize() {
         ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
