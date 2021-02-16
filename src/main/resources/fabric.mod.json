@@ -7,8 +7,14 @@
   "authors": [
     "FlashyReese"
   ],
-  "contact": {},
-  "license": "LGPL-v3",
+  "contributors": [
+    "AMereBagatelle"
+  ],
+  "contact": {
+    "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
+    "issues": "https://github.com/FlashyReese/sodium-extra-fabric/issues"
+  },
+  "license": "LGPLv3",
   "icon": "assets/sodium-extra/icon.png",
   "environment": "client",
   "entrypoints": {
