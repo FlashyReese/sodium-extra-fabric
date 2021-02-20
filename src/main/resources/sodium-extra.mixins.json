@@ -7,11 +7,12 @@
   ],
   "client": [
     "features.animation.MixinSpriteAtlasTexture",
+    "features.cloud.MixinWorldRenderer",
     "features.entity.guardian.MixinGuardianEntityRenderer",
     "features.fog.MixinSodiumWorldRenderer",
-    "features.particle.MixinWorldRenderer",
     "features.gui.MinecraftClientAccessor",
     "features.gui.MixinInGameHud",
+    "features.particle.MixinWorldRenderer",
     "sodium.MixinSodiumOptionsGUI"
   ],
   "injectors": {
