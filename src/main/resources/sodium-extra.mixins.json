@@ -13,7 +13,8 @@
     "features.gui.MinecraftClientAccessor",
     "features.gui.MixinInGameHud",
     "features.particle.MixinWorldRenderer",
-    "sodium.MixinSodiumOptionsGUI"
+    "sodium.MixinSodiumOptionsGUI",
+    "sodium.MixinSodiumGameOptionPages"
   ],
   "injectors": {
     "defaultRequire": 1
