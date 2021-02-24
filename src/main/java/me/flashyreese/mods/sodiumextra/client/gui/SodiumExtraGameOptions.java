@@ -66,6 +66,7 @@ public class SodiumExtraGameOptions {
         public boolean animateLava;
         public boolean animateFire;
         public boolean animatePortal;
+        public boolean pistonAnimations;
 
         public AnimationSettings() {
             this.animation = true;
@@ -73,6 +74,7 @@ public class SodiumExtraGameOptions {
             this.animateLava = true;
             this.animateFire = true;
             this.animatePortal = true;
+            this.pistonAnimations = true;
         }
     }
 
@@ -104,19 +106,43 @@ public class SodiumExtraGameOptions {
 
     public static class DetailSettings {
         public boolean rainSnow;
+        public boolean biomeColors;
+        public boolean skyColors;
+        public boolean renderPaintings;
 
         public DetailSettings() {
             this.rainSnow = true;
+            this.biomeColors = true;
+            this.skyColors = true;
+            this.renderPaintings = true;
         }
     }
 
     public static class ExtraSettings {
         public boolean showFps;
         public boolean enableFog;
+        public boolean hurtCam;
+        public boolean toasts;
+        public boolean staticFov;
+        public boolean instantSneak;
+        public boolean noOverlay;
+        public boolean preventShaders;
+        public boolean fullBright;
+        public boolean dayTime;
+        public boolean lightUpdates;
 
         public ExtraSettings() {
             this.showFps = true;
             this.enableFog = true;
+            this.hurtCam = true;
+            this.toasts = true;
+            this.staticFov = false;
+            this.instantSneak = false;
+            this.noOverlay = false;
+            this.preventShaders = false;
+            this.fullBright = false;
+            this.dayTime = true;
+            this.lightUpdates = true;
         }
     }
 
