@@ -127,7 +127,6 @@ public class SodiumExtraGameOptions {
         public boolean instantSneak;
         public boolean noOverlay;
         public boolean preventShaders;
-        public boolean fullBright;
         public boolean dayTime;
         public boolean lightUpdates;
 
@@ -140,7 +139,6 @@ public class SodiumExtraGameOptions {
             this.instantSneak = false;
             this.noOverlay = false;
             this.preventShaders = false;
-            this.fullBright = false;
             this.dayTime = true;
             this.lightUpdates = true;
         }
