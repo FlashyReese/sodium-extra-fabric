@@ -141,7 +141,7 @@ public class SodiumExtraGameOptions {
             this.instantSneak = false;
             this.lightUpdates = true;
             this.preventShaders = false;
-            this.hideCheats = false;
+            this.hideCheats = true;
             this.highMaxBrightness = false;
             this.dayTime = true;
             this.noOverlay = false;
