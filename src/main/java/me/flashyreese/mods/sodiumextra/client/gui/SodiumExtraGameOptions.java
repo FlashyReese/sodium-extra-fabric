@@ -125,12 +125,12 @@ public class SodiumExtraGameOptions {
         public boolean toasts;
         public boolean staticFov;
         public boolean instantSneak;
-        public boolean noOverlay;
         public boolean preventShaders;
-        public boolean dayTime;
         public boolean lightUpdates;
-        public boolean highMaxBrightness;
         public boolean hideCheats;
+        public boolean highMaxBrightness;
+        public boolean dayTime;
+        public boolean noOverlay;
 
         public ExtraSettings() {
             this.showFps = true;
