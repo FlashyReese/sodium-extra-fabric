@@ -1,6 +1,7 @@
 package me.flashyreese.mods.sodiumextra.client.gui;
 
 import com.google.common.collect.ImmutableList;
+import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.jellysquid.mods.sodium.client.gui.options.OptionFlag;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
@@ -189,24 +190,16 @@ public class SodiumExtraGameOptionPages {
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Show FPS")
-                        .setTooltip("")
+                        .setTooltip("Show current, max, average and min FPS on top left corner")
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.extraSettings.showFps = value, opts -> opts.extraSettings.showFps)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Fog")
-                        .setTooltip("")
+                        .setTooltip("Toggle all types of fog")
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.extraSettings.enableFog = value, opts -> opts.extraSettings.enableFog)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Show time")
-                        .setTooltip("Show the current daytime by the sun")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.dayTime = value, options -> options.extraSettings.dayTime)
-                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -245,22 +238,42 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("No Overlays")
-                        .setTooltip("Disable camera overlays")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.noOverlay = value, options -> options.extraSettings.noOverlay)
-                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Prevent Shaders")
                         .setTooltip("Prevents any types of shaders from loading")
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.extraSettings.preventShaders = value, options -> options.extraSettings.preventShaders)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
-                )
-                .build());
+                ).build());
+
+        if(!SodiumExtraClientMod.options().extraSettings.hideCheats){
+            groups.add(OptionGroup.createBuilder()
+                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                            .setName("High Max Brightness")
+                            .setTooltip("Allow max brightness to go up to 1000 (reopen video settings to take effect)")
+                            .setControl(TickBoxControl::new)
+                            .setBinding((options, value) -> options.extraSettings.highMaxBrightness = value, options -> options.extraSettings.highMaxBrightness)
+                            .build()
+                    )
+                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                            .setName("Daylight Cycle")
+                            .setTooltip("Shows the sun/moon and light according to the game time")
+                            .setControl(TickBoxControl::new)
+                            .setBinding((options, value) -> options.extraSettings.dayLightCycle = value, options -> options.extraSettings.dayLightCycle)
+                            .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                            .build()
+                    )
+                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                            .setName("No Overlays")
+                            .setTooltip("Disable camera overlays")
+                            .setControl(TickBoxControl::new)
+                            .setBinding((options, value) -> options.extraSettings.noOverlay = value, options -> options.extraSettings.noOverlay)
+                            .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                            .build()
+                    )
+                    .build());
+        }
+
         return new OptionPage("Extras", ImmutableList.copyOf(groups));
     }
 }

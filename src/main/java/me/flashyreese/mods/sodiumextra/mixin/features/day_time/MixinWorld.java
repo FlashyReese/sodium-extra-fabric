@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 public abstract class MixinWorld implements WorldAccess {
     @Override
     public float getSkyAngle(float tickDelta) {
-        if (SodiumExtraClientMod.options().extraSettings.dayTime) {
+        if (SodiumExtraClientMod.options().extraSettings.dayLightCycle) {
             return this.getDimension().getSkyAngle(this.getLevelProperties().getTimeOfDay());
         }
         return this.getDimension().getSkyAngle(5000L);

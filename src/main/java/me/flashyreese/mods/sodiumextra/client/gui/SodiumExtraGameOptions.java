@@ -125,10 +125,12 @@ public class SodiumExtraGameOptions {
         public boolean toasts;
         public boolean staticFov;
         public boolean instantSneak;
-        public boolean noOverlay;
         public boolean preventShaders;
-        public boolean dayTime;
         public boolean lightUpdates;
+        public boolean hideCheats;
+        public boolean highMaxBrightness;
+        public boolean dayLightCycle;
+        public boolean noOverlay;
 
         public ExtraSettings() {
             this.showFps = true;
@@ -137,10 +139,12 @@ public class SodiumExtraGameOptions {
             this.toasts = true;
             this.staticFov = false;
             this.instantSneak = false;
-            this.noOverlay = false;
-            this.preventShaders = false;
-            this.dayTime = true;
             this.lightUpdates = true;
+            this.preventShaders = false;
+            this.hideCheats = true;
+            this.highMaxBrightness = false;
+            this.dayLightCycle = true;
+            this.noOverlay = false;
         }
     }
 
