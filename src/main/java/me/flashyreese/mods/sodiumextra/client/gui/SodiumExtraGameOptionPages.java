@@ -259,7 +259,7 @@ public class SodiumExtraGameOptionPages {
                             .setName("Daylight Cycle")
                             .setTooltip("Shows the sun/moon and light according to the game time")
                             .setControl(TickBoxControl::new)
-                            .setBinding((options, value) -> options.extraSettings.dayTime = value, options -> options.extraSettings.dayTime)
+                            .setBinding((options, value) -> options.extraSettings.dayLightCycle = value, options -> options.extraSettings.dayLightCycle)
                             .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                             .build()
                     )

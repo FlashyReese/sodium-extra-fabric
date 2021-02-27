@@ -129,7 +129,7 @@ public class SodiumExtraGameOptions {
         public boolean lightUpdates;
         public boolean hideCheats;
         public boolean highMaxBrightness;
-        public boolean dayTime;
+        public boolean dayLightCycle;
         public boolean noOverlay;
 
         public ExtraSettings() {
@@ -143,7 +143,7 @@ public class SodiumExtraGameOptions {
             this.preventShaders = false;
             this.hideCheats = true;
             this.highMaxBrightness = false;
-            this.dayTime = true;
+            this.dayLightCycle = true;
             this.noOverlay = false;
         }
     }
