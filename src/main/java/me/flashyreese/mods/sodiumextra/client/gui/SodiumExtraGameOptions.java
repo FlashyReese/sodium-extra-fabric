@@ -120,6 +120,7 @@ public class SodiumExtraGameOptions {
 
     public static class ExtraSettings {
         public boolean showFps;
+        public boolean showCoords;
         public boolean enableFog;
         public boolean hurtCam;
         public boolean toasts;
@@ -134,6 +135,7 @@ public class SodiumExtraGameOptions {
 
         public ExtraSettings() {
             this.showFps = true;
+            this.showCoords = true;
             this.enableFog = true;
             this.hurtCam = true;
             this.toasts = true;
