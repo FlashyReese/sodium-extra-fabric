@@ -20,7 +20,7 @@ public class MixinCamera {
 
     @Inject(at = @At("HEAD"), method = "updateEyeHeight")
     public void noLerp(CallbackInfo ci) {
-        if (SodiumExtraClientMod.options().extraSettings.instantSneak) {
+        if (SodiumExtraClientMod.options().extraSettings.instantSneak && this.focusedEntity != null) {
             this.cameraY = this.focusedEntity.getStandingEyeHeight();
         }
     }
