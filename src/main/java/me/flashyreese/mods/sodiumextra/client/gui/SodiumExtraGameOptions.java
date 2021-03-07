@@ -66,6 +66,7 @@ public class SodiumExtraGameOptions {
         public boolean animateLava;
         public boolean animateFire;
         public boolean animatePortal;
+        public boolean blockAnimations;
         public boolean pistonAnimations;
 
         public AnimationSettings() {
@@ -74,6 +75,7 @@ public class SodiumExtraGameOptions {
             this.animateLava = true;
             this.animateFire = true;
             this.animatePortal = true;
+            this.blockAnimations = true;
             this.pistonAnimations = true;
         }
     }

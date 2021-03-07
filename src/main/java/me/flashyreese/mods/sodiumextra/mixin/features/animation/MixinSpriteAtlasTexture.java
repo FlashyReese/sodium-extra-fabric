@@ -40,8 +40,16 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
             return SodiumExtraClientMod.options().animationSettings.animateLava;
         } else if (sprite.getId().getPath().endsWith("nether_portal")) {
             return SodiumExtraClientMod.options().animationSettings.animatePortal;
-        } else if (sprite.getId().getPath().endsWith("fire_0") || sprite.getId().getPath().endsWith("fire_1") || sprite.getId().getPath().endsWith("soul_fire_0") || sprite.getId().getPath().endsWith("soul_fire_1")) {
+        } else if (sprite.getId().getPath().endsWith("fire_0") || sprite.getId().getPath().endsWith("fire_1") || sprite.getId().getPath().endsWith("soul_fire_0") ||
+                sprite.getId().getPath().endsWith("soul_fire_1") || sprite.getId().getPath().endsWith("campfire_fire") || sprite.getId().getPath().endsWith("campfire_log_lit") ||
+                sprite.getId().getPath().endsWith("soul_campfire_fire") || sprite.getId().getPath().endsWith("soul_campfire_log_lit")) {
             return SodiumExtraClientMod.options().animationSettings.animateFire;
+        } else if (sprite.getId().getPath().endsWith("magma") || sprite.getId().getPath().endsWith("lantern") || sprite.getId().getPath().endsWith("sea_lantern") ||
+                sprite.getId().getPath().endsWith("soul_lantern") || sprite.getId().getPath().endsWith("kelp") || sprite.getId().getPath().endsWith("kelp_plant") ||
+                sprite.getId().getPath().endsWith("seagrass") || sprite.getId().getPath().endsWith("warped_stem") || sprite.getId().getPath().endsWith("crimson_stem") ||
+                sprite.getId().getPath().endsWith("blast_furnace_front_on") || sprite.getId().getPath().endsWith("smoker_front_on") ||
+                sprite.getId().getPath().endsWith("stonecutter_saw")) {
+            return SodiumExtraClientMod.options().animationSettings.blockAnimations;
         }
         return true;
     }
