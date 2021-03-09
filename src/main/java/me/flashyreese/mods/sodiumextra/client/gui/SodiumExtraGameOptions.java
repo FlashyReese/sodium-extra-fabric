@@ -89,7 +89,7 @@ public class SodiumExtraGameOptions {
         public boolean potion;
         public boolean portal;
         public boolean redstone;
-        public boolean fluidDrip;
+        public boolean drip;
         public boolean firework;
 
         public ParticleSettings() {
@@ -101,7 +101,7 @@ public class SodiumExtraGameOptions {
             this.potion = true;
             this.portal = true;
             this.redstone = true;
-            this.fluidDrip = true;
+            this.drip = true;
             this.firework = true;
         }
     }

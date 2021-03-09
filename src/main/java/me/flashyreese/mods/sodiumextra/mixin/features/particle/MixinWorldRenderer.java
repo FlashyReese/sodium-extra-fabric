@@ -53,15 +53,19 @@ public class MixinWorldRenderer {
                 if (parameters == ParticleTypes.PORTAL || parameters == ParticleTypes.REVERSE_PORTAL) {
                     callbackInfo.setReturnValue(null);
                 }
-            } else if (!SodiumExtraClientMod.options().particleSettings.fluidDrip) {
-                if (parameters == ParticleTypes.DRIPPING_WATER || parameters == ParticleTypes.DRIPPING_LAVA || parameters == ParticleTypes.DRIPPING_HONEY || parameters == ParticleTypes.DRIPPING_OBSIDIAN_TEAR) {
+            } else if (!SodiumExtraClientMod.options().particleSettings.drip) {
+                if (parameters == ParticleTypes.DRIPPING_WATER || parameters == ParticleTypes.FALLING_WATER || parameters == ParticleTypes.DRIPPING_LAVA ||
+                        parameters == ParticleTypes.FALLING_LAVA || parameters == ParticleTypes.LANDING_LAVA || parameters == ParticleTypes.DRIPPING_HONEY ||
+                        parameters == ParticleTypes.FALLING_HONEY || parameters == ParticleTypes.LANDING_HONEY || parameters == ParticleTypes.FALLING_NECTAR ||
+                        parameters == ParticleTypes.DRIPPING_OBSIDIAN_TEAR || parameters == ParticleTypes.FALLING_OBSIDIAN_TEAR || parameters == ParticleTypes.LANDING_OBSIDIAN_TEAR) {
                     callbackInfo.setReturnValue(null);
                 }
             } else if (!SodiumExtraClientMod.options().particleSettings.firework) {
                 if (parameters == ParticleTypes.FIREWORK) {
                     callbackInfo.setReturnValue(null);
                 }
-                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP) {
+                //Fix Bubble columns
+                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP || parameters == ParticleTypes.) {
                     callbackInfo.setReturnValue(null);
                 }
             }
