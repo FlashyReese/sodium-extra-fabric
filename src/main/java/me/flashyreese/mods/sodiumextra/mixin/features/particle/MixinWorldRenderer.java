@@ -65,7 +65,7 @@ public class MixinWorldRenderer {
                     callbackInfo.setReturnValue(null);
                 }
                 //Fix Bubble columns
-                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP || parameters == ParticleTypes.) {
+                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP) {
                     callbackInfo.setReturnValue(null);
                 }
             }
