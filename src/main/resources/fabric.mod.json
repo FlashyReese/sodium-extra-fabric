@@ -24,6 +24,13 @@
       "me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod"
     ]
   },
+  "custom": {
+    "modmenu": {
+      "parent": {
+        "id": "sodium"
+      }
+    }
+  },
   "mixins": [
     "sodium-extra.mixins.json"
   ],
