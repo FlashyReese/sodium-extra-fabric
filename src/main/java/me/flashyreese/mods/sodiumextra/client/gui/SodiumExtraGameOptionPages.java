@@ -258,7 +258,16 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((options, value) -> options.extraSettings.preventShaders = value, options -> options.extraSettings.preventShaders)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
-                ).build());
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Use Fast Random")
+                        .setTooltip("If enabled, a fast random function will be used for block rendering. This can affect the rotation of randomly rotated textures when compared to vanilla.")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
+                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                        .build()
+                )
+                .build());
 
         if(!SodiumExtraClientMod.options().extraSettings.hideCheats){
             groups.add(OptionGroup.createBuilder()

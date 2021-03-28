@@ -134,6 +134,7 @@ public class SodiumExtraGameOptions {
         public boolean highMaxBrightness;
         public boolean dayLightCycle;
         public boolean noOverlay;
+        public boolean useFastRandom;
 
         public ExtraSettings() {
             this.showFps = true;
@@ -149,6 +150,7 @@ public class SodiumExtraGameOptions {
             this.highMaxBrightness = false;
             this.dayLightCycle = true;
             this.noOverlay = false;
+            this.useFastRandom = true;
         }
     }
 

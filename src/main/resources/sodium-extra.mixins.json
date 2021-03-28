@@ -23,6 +23,7 @@
     "features.static_fov.MixinGameRenderer",
     "features.toasts.MixinToastManager",
     "features.particle.MixinWorldRenderer",
+    "sodium.MixinBlockRenderer",
     "sodium.MixinSliderControl",
     "sodium.MixinSodiumOptionsGUI",
     "sodium.MixinSodiumGameOptionPages"
