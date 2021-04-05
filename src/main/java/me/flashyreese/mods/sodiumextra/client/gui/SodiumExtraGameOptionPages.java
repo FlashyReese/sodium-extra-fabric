@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SodiumExtraGameOptionPages {
-    private static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
+    public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
 
     public static OptionPage animation() {
         List<OptionGroup> groups = new ArrayList<>();
@@ -256,14 +256,6 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip("Prevents any types of shaders from loading")
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.extraSettings.preventShaders = value, options -> options.extraSettings.preventShaders)
-                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Use Fast Random")
-                        .setTooltip("If enabled, a fast random function will be used for block rendering. This can affect the rotation of randomly rotated textures when compared to vanilla.")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
                 )

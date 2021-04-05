@@ -1,9 +1,11 @@
 package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
+import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptionPages;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
+import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
@@ -52,5 +54,20 @@ public class MixinSodiumGameOptionPages {
                         .setImpact(OptionImpact.HIGH)
                         .build())
                 .build());
+    }
+
+    @Inject(method = "advanced", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 2), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
+    private static void advanced(CallbackInfoReturnable<OptionPage> cir, boolean disableBlacklist, List<OptionGroup> groups){
+        OptionGroup original = groups.get(1);
+        OptionGroup.Builder modifiedBuilder = OptionGroup.createBuilder();
+        original.getOptions().forEach(modifiedBuilder::add);
+        modifiedBuilder.add(OptionImpl.createBuilder(boolean.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
+                .setName("Use Fast Random")
+                .setTooltip("If enabled, a fast random function will be used for block rendering. This can affect the rotation of randomly rotated textures when compared to vanilla.")
+                .setControl(TickBoxControl::new)
+                .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
+                .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                .build());
+        groups.set(1, modifiedBuilder.build());
     }
 }
