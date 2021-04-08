@@ -64,8 +64,9 @@ public class MixinWorldRenderer {
                 if (parameters == ParticleTypes.FIREWORK) {
                     callbackInfo.setReturnValue(null);
                 }
-                //Fix Bubble columns
-                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP) {
+            } else if (!SodiumExtraClientMod.options().particleSettings.bubble) {
+                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP ||
+                        parameters == ParticleTypes.CURRENT_DOWN) {
                     callbackInfo.setReturnValue(null);
                 }
             }

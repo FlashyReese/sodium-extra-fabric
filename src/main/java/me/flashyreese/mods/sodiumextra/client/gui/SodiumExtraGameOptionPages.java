@@ -150,6 +150,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.particleSettings.firework = value, opts -> opts.particleSettings.firework)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Bubbles")
+                        .setTooltip("Toggle for bubble particles")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.particleSettings.bubble = value, opts -> opts.particleSettings.bubble)
+                        .build()
+                )
                 .build());
         return new OptionPage("Particles", ImmutableList.copyOf(groups));
     }
