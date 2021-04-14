@@ -71,7 +71,7 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 }
 
 jar {
-    from "LICENSE"
+    from "LICENSE.txt"
 }
 
 // configure the maven publication
