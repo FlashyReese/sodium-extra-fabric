@@ -126,6 +126,7 @@ public class SodiumExtraGameOptions {
         public boolean showFps;
         public boolean showCoords;
         public boolean enableFog;
+        public int cloudHeight;
         public boolean hurtCam;
         public boolean toasts;
         public boolean staticFov;
@@ -142,6 +143,7 @@ public class SodiumExtraGameOptions {
             this.showFps = true;
             this.showCoords = true;
             this.enableFog = true;
+            this.cloudHeight = 128;
             this.hurtCam = true;
             this.toasts = true;
             this.staticFov = false;

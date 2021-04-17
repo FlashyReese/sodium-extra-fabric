@@ -9,6 +9,7 @@
     "features.animation.MixinSpriteAtlasTexture",
     "features.biome_colors.MixinBiomeColors",
     "features.block.entity.piston.MixinPistonBlockEntityRenderer",
+    "features.cloud.MixinWorldRenderer",
     "features.day_time.MixinWorld",
     "features.entity.guardian.MixinGuardianEntityRenderer",
     "features.entity.painting.MixinPaintingEntityRenderer",

@@ -1,14 +1,17 @@
 package me.flashyreese.mods.sodiumextra.mixin.features.cloud;
 
+import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.options.CloudRenderMode;
 import net.minecraft.client.render.BufferBuilder;
+import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(WorldRenderer.class)
 public class MixinWorldRenderer {
@@ -16,10 +19,7 @@ public class MixinWorldRenderer {
     @Shadow
     private CloudRenderMode lastCloudsRenderMode;
 
-    /**
-     * @author
-     */
-    @Overwrite
+    // Disabled - Not working as intended
     private void renderClouds(BufferBuilder builder, double x, double y, double z, Vec3d color) {
         float k = (float) MathHelper.floor(x) * 0.00390625F;
         float l = (float) MathHelper.floor(z) * 0.00390625F;
@@ -106,5 +106,13 @@ public class MixinWorldRenderer {
             }
         }
 
+    }
+
+    @Redirect(
+            method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;FDDD)V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/SkyProperties;getCloudsHeight()F")
+    )
+    private float getCloudHeight(SkyProperties skyProperties) {
+        return SodiumExtraClientMod.options().extraSettings.cloudHeight;
     }
 }

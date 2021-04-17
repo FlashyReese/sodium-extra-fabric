@@ -7,6 +7,8 @@ import me.jellysquid.mods.sodium.client.gui.options.OptionFlag;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpl;
 import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
+import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
+import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 
 import java.util.ArrayList;
@@ -223,6 +225,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.extraSettings.enableFog = value, opts -> opts.extraSettings.enableFog)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                        .setName("Cloud Height")
+                        .setTooltip("Adjust height of clouds")
+                        .setControl(option -> new SliderControl(option, 0, 255, 1, ControlValueFormatter.number()))
+                        .setBinding((options, value) -> options.extraSettings.cloudHeight = value, options -> options.extraSettings.cloudHeight)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Hurtcam")
                         .setTooltip("Shake the camera when the player is damaged")
@@ -268,7 +277,7 @@ public class SodiumExtraGameOptionPages {
                 )
                 .build());
 
-        if(!SodiumExtraClientMod.options().extraSettings.hideCheats){
+        if (!SodiumExtraClientMod.options().extraSettings.hideCheats) {
             groups.add(OptionGroup.createBuilder()
                     .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                             .setName("High Max Brightness")
