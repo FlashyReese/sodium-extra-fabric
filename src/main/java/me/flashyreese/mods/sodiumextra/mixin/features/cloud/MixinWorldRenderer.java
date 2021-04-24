@@ -1,20 +1,22 @@
 package me.flashyreese.mods.sodiumextra.mixin.features.cloud;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.options.CloudRenderMode;
-import net.minecraft.client.render.BufferBuilder;
-import net.minecraft.client.render.SkyProperties;
-import net.minecraft.client.render.VertexFormats;
-import net.minecraft.client.render.WorldRenderer;
+import net.minecraft.client.render.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(WorldRenderer.class)
 public class MixinWorldRenderer {
+    @Final
+    @Shadow
+    private MinecraftClient client;
 
     @Shadow
     private CloudRenderMode lastCloudsRenderMode;
@@ -108,11 +110,12 @@ public class MixinWorldRenderer {
 
     }
 
-    @Redirect(
-            method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;FDDD)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/SkyProperties;getCloudsHeight()F")
-    )
-    private float getCloudHeight(SkyProperties skyProperties) {
-        return SodiumExtraClientMod.options().extraSettings.cloudHeight;
+    @ModifyVariable(method = "renderClouds", index = 18, at = @At(value = "STORE"))
+    private double getCloudY(double cloudY) {
+        float baseY = SodiumExtraClientMod.options().extraSettings.cloudHeight;
+        Camera camera = this.client.gameRenderer.getCamera();
+        float cameraY = (float) camera.getPos().getY();
+
+        return baseY - cameraY + 0.33f;
     }
 }
