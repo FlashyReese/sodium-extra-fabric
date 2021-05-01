@@ -3,7 +3,7 @@ package me.flashyreese.mods.sodiumextra.common.util;
 import java.util.LinkedList;
 
 public class EvictingQueue<E> extends LinkedList<E> {
-    private int limit;
+    private final int limit;
 
     public EvictingQueue(int limit) {
         this.limit = limit;

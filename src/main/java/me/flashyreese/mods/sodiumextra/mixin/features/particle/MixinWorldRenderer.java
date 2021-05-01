@@ -69,6 +69,10 @@ public class MixinWorldRenderer {
                         parameters == ParticleTypes.CURRENT_DOWN) {
                     callbackInfo.setReturnValue(null);
                 }
+            } else if (!SodiumExtraClientMod.options().particleSettings.redstone) {
+                if (parameters == ParticleTypes.DUST) {
+                    callbackInfo.setReturnValue(null);
+                }
             }
         } else {
             callbackInfo.setReturnValue(null);
