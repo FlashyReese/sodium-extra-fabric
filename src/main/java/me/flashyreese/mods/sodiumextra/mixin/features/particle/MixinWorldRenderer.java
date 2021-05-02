@@ -78,25 +78,4 @@ public class MixinWorldRenderer {
             callbackInfo.setReturnValue(null);
         }
     }
-
-    /*@Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Direction;byId(I)Lnet/minecraft/util/math/Direction;", shift = At.Shift.BEFORE), cancellable = true)
-    public void processWorldEvent2000(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
-        if (!SodiumExtraClientMod.options().particleSettings.particles){
-            callbackInfo.cancel();
-        }
-    }
-
-    @Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;ofBottomCenter(Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.BEFORE), cancellable = true)
-    public void processWorldEvent2003(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
-        if (!SodiumExtraClientMod.options().particleSettings.particles){
-            callbackInfo.cancel();
-        }
-    }
-
-    @Inject(method = "processWorldEvent", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;ofBottomCenter(Lnet/minecraft/util/math/Vec3i;)Lnet/minecraft/util/math/Vec3d;", shift = At.Shift.BEFORE), cancellable = true)
-    public void processWorldEvent2007(PlayerEntity source, int eventId, BlockPos pos, int data, CallbackInfo callbackInfo) {
-        if (!SodiumExtraClientMod.options().particleSettings.particles){
-            callbackInfo.cancel();
-        }
-    }*/
 }
