@@ -92,6 +92,7 @@ public class SodiumExtraGameOptions {
         public boolean drip;
         public boolean firework;
         public boolean bubble;
+        public boolean environment;
 
         public ParticleSettings() {
             this.particles = true;
@@ -105,6 +106,7 @@ public class SodiumExtraGameOptions {
             this.drip = true;
             this.firework = true;
             this.bubble = true;
+            this.environment = true;
         }
     }
 
