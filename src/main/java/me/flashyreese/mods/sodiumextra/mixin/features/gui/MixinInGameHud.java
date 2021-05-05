@@ -45,6 +45,6 @@ public class MixinInGameHud {
     private void renderCoords(MatrixStack matrices, int x, int y) {
         if (this.client.player == null) return;
         Vec3d pos = this.client.player.getPos();
-        this.client.textRenderer.draw(matrices, new LiteralText(String.format("X: %s, Y: %s, Z: %s", (int)pos.x, (int)pos.y, (int)pos.z)), x, y, 0xffffffff);
+        this.client.textRenderer.draw(matrices, new LiteralText(String.format("X: %.2f, Y: %.2f, Z: %.2f", pos.x, pos.y, pos.z)), x, y, 0xffffffff);
     }
 }

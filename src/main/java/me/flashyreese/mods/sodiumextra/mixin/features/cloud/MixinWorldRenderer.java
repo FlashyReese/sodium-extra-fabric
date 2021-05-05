@@ -113,6 +113,9 @@ public class MixinWorldRenderer {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/SkyProperties;getCloudsHeight()F")
     )
     private float getCloudHeight(SkyProperties skyProperties) {
-        return SodiumExtraClientMod.options().extraSettings.cloudHeight;
+        if (skyProperties.getSkyType() == SkyProperties.SkyType.NORMAL) {
+            return SodiumExtraClientMod.options().extraSettings.cloudHeight;
+        }
+        return skyProperties.getCloudsHeight();
     }
 }
