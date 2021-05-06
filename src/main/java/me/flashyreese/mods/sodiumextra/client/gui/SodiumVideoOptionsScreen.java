@@ -35,13 +35,17 @@ public class SodiumVideoOptionsScreen extends Screen {
     private boolean hasPendingChanges;
 
     public SodiumVideoOptionsScreen(Screen prev) {
-        super(new LiteralText("le"));
+        super(new LiteralText("Reese's Sodium Menu"));
 
         this.prevScreen = prev;
 
         this.pages.add(SodiumGameOptionPages.general());
         this.pages.add(SodiumGameOptionPages.quality());
         this.pages.add(SodiumGameOptionPages.advanced());
+        this.pages.add(SodiumExtraGameOptionPages.animation());
+        this.pages.add(SodiumExtraGameOptionPages.particle());
+        this.pages.add(SodiumExtraGameOptionPages.detail());
+        this.pages.add(SodiumExtraGameOptionPages.extra());
     }
 
     @Override
