@@ -227,7 +227,7 @@ public class SodiumExtraGameOptionPages {
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Fog")
-                        .setTooltip("Toggle all types of fog")
+                        .setTooltip("If enabled, a fog effect will be used for terrain in the distance. Disabling this option will not change fog effects used underwater or in the Nether.")
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.extraSettings.enableFog = value, opts -> opts.extraSettings.enableFog)
                         .build()
