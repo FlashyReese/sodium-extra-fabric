@@ -25,6 +25,8 @@
     "features.toasts.MixinToastManager",
     "features.particle.MixinWorldRenderer",
     "sodium.MixinBlockRenderer",
+    "sodium.MixinControlElement",
+    "sodium.MixinOptionsScreen",
     "sodium.MixinSliderControl",
     "sodium.MixinSodiumOptionsGUI",
     "sodium.MixinSodiumGameOptionPages"
