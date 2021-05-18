@@ -166,6 +166,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.particleSettings.environment = value, opts -> opts.particleSettings.environment)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Villagers")
+                        .setTooltip("Toggle for villagers particles")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.particleSettings.villagers = value, opts -> opts.particleSettings.villagers)
+                        .build()
+                )
                 .build());
         return new OptionPage("Particles", ImmutableList.copyOf(groups));
     }

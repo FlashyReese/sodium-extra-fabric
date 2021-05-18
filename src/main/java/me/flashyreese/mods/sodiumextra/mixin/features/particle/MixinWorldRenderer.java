@@ -77,6 +77,14 @@ public class MixinWorldRenderer {
                 if (parameters == ParticleTypes.ASH || parameters == ParticleTypes.CRIMSON_SPORE || parameters == ParticleTypes.WARPED_SPORE || parameters == ParticleTypes.WHITE_ASH) {
                   callbackInfo.setReturnValue(null);
                 }
+            } else if (!SodiumExtraClientMod.options().particleSettings.villagers) {
+                if (parameters == ParticleTypes.ANGRY_VILLAGER || parameters == ParticleTypes.HAPPY_VILLAGER) {
+                    callbackInfo.setReturnValue(null);
+                }
+            } else if (!SodiumExtraClientMod.options().particleSettings.villagers) {
+                if (parameters == ParticleTypes.ANGRY_VILLAGER || parameters == ParticleTypes.HAPPY_VILLAGER) {
+                    callbackInfo.setReturnValue(null);
+                }
             }
         } else {
             callbackInfo.setReturnValue(null);

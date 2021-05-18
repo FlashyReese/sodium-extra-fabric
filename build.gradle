@@ -27,7 +27,7 @@ dependencies {
     // You may need to force-disable transitiveness on them.
 
 
-    modCompile "com.github.FlashyReese:reeses-sodium-options:${project.reeses_sodium_options}"
+    modImplementation "com.github.FlashyReese:reeses-sodium-options:${project.reeses_sodium_options}"
     include "com.github.FlashyReese:reeses-sodium-options:${project.reeses_sodium_options}"
 }
 
