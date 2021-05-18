@@ -30,6 +30,7 @@ public class MixinSodiumOptionsGUI {
         this.pages.add(SodiumExtraGameOptionPages.animation());
         this.pages.add(SodiumExtraGameOptionPages.particle());
         this.pages.add(SodiumExtraGameOptionPages.detail());
+        this.pages.add(SodiumExtraGameOptionPages.entity());
         this.pages.add(SodiumExtraGameOptionPages.extra());
     }
 

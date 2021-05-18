@@ -14,6 +14,7 @@ public class SodiumExtraGameOptions {
     public final AnimationSettings animationSettings = new AnimationSettings();
     public final ParticleSettings particleSettings = new ParticleSettings();
     public final DetailSettings detailSettings = new DetailSettings();
+    public final EntitySettings entitySettings = new EntitySettings();
     public final ExtraSettings extraSettings = new ExtraSettings();
     private File file;
 
@@ -125,6 +126,16 @@ public class SodiumExtraGameOptions {
             this.biomeColors = true;
             this.skyColors = true;
             this.renderPaintings = true;
+        }
+    }
+
+    public static class EntitySettings {
+        public boolean itemFrame;
+        public boolean armorStand;
+
+        public EntitySettings() {
+            this.itemFrame = true;
+            this.armorStand = true;
         }
     }
 

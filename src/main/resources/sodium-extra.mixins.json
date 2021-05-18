@@ -20,6 +20,8 @@
     "features.instant_sneak.MixinCamera",
     "features.no_overlay.MixinCamera",
     "features.prevent_shaders.MixinGameRenderer",
+    "features.render.entity.MixinArmorStandEntityRenderer",
+    "features.render.entity.MixinItemFrameEntityRenderer",
     "features.sky_colors.MixinBiome",
     "features.static_fov.MixinGameRenderer",
     "features.toasts.MixinToastManager",

@@ -222,6 +222,27 @@ public class SodiumExtraGameOptionPages {
         return new OptionPage("Details", ImmutableList.copyOf(groups));
     }
 
+    public static OptionPage entity() {
+        List<OptionGroup> groups = new ArrayList<>();
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Item Frame")
+                        .setTooltip("Toggle to render item frames.")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.entitySettings.itemFrame = value, opts -> opts.entitySettings.itemFrame)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Armor Stand")
+                        .setTooltip("Toggle to render armor stands.")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.entitySettings.armorStand = value, options -> options.entitySettings.armorStand)
+                        .build()
+                )
+                .build());
+        return new OptionPage("Entities", ImmutableList.copyOf(groups));
+    }
+
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
