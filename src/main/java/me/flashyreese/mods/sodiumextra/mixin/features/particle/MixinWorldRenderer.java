@@ -85,6 +85,10 @@ public class MixinWorldRenderer {
                 if (parameters == ParticleTypes.ANGRY_VILLAGER || parameters == ParticleTypes.HAPPY_VILLAGER) {
                     callbackInfo.setReturnValue(null);
                 }
+            } else if (!SodiumExtraClientMod.options().particleSettings.composter) {
+                if (parameters == ParticleTypes.COMPOSTER) {
+                    callbackInfo.setReturnValue(null);
+                }
             }
         } else {
             callbackInfo.setReturnValue(null);

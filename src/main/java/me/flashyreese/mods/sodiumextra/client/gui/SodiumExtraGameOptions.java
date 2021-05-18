@@ -94,6 +94,7 @@ public class SodiumExtraGameOptions {
         public boolean bubble;
         public boolean environment;
         public boolean villagers;
+        public boolean composter;
 
         public ParticleSettings() {
             this.particles = true;
@@ -109,6 +110,7 @@ public class SodiumExtraGameOptions {
             this.bubble = true;
             this.environment = true;
             this.villagers = true;
+            this.composter = true;
         }
     }
 

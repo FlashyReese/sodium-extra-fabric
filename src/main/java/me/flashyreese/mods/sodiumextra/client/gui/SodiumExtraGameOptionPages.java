@@ -173,6 +173,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.particleSettings.villagers = value, opts -> opts.particleSettings.villagers)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Composter")
+                        .setTooltip("Toggle for composter particles")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.particleSettings.composter = value, opts -> opts.particleSettings.composter)
+                        .build()
+                )
                 .build());
         return new OptionPage("Particles", ImmutableList.copyOf(groups));
     }
