@@ -21,7 +21,7 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "com.github.jellysquid3:sodium-fabric:${project.sodium_version}"
+    modImplementation "com.github.FlashyReese:sodium-fabric:${project.sodium_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
