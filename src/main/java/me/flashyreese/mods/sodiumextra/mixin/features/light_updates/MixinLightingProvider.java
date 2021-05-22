@@ -13,13 +13,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinLightingProvider {
     @Inject(at = @At("HEAD"), method = "checkBlock", cancellable = true)
     public void checkBlock(BlockPos pos, CallbackInfo ci) {
-        if (!SodiumExtraClientMod.options().extraSettings.lightUpdates)
+        if (!SodiumExtraClientMod.options().renderSettings.lightUpdates)
             ci.cancel();
     }
 
     @Inject(at = @At("HEAD"), method = "doLightUpdates", cancellable = true)
     public void doLightUpdates(int maxUpdateCount, boolean doSkylight, boolean skipEdgeLightPropagation, CallbackInfoReturnable<Integer> cir) {
-        if (!SodiumExtraClientMod.options().extraSettings.lightUpdates)
+        if (!SodiumExtraClientMod.options().renderSettings.lightUpdates)
             cir.setReturnValue(0);
     }
 }

@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.features.entity.painting;
+package me.flashyreese.mods.sodiumextra.mixin.features.render.entity;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinPaintingEntityRenderer {
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
     public void render(PaintingEntity paintingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo ci) {
-        if (!SodiumExtraClientMod.options().detailSettings.renderPaintings)
+        if (!SodiumExtraClientMod.options().renderSettings.lightUpdates)
             ci.cancel();
     }
 }
