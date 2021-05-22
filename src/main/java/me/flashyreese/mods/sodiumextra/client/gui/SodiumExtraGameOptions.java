@@ -14,7 +14,7 @@ public class SodiumExtraGameOptions {
     public final AnimationSettings animationSettings = new AnimationSettings();
     public final ParticleSettings particleSettings = new ParticleSettings();
     public final DetailSettings detailSettings = new DetailSettings();
-    public final EntitySettings entitySettings = new EntitySettings();
+    public final RenderSettings renderSettings = new RenderSettings();
     public final ExtraSettings extraSettings = new ExtraSettings();
     private File file;
 
@@ -119,37 +119,39 @@ public class SodiumExtraGameOptions {
         public boolean rainSnow;
         public boolean biomeColors;
         public boolean skyColors;
-        public boolean renderPaintings;
 
         public DetailSettings() {
             this.rainSnow = true;
             this.biomeColors = true;
             this.skyColors = true;
-            this.renderPaintings = true;
         }
     }
 
-    public static class EntitySettings {
+    public static class RenderSettings {
+        public boolean fog;
+        public boolean lightUpdates;
         public boolean itemFrame;
         public boolean armorStand;
+        public boolean painting;
 
-        public EntitySettings() {
+        public RenderSettings() {
+            this.fog = true;
+            this.lightUpdates = true;
             this.itemFrame = true;
             this.armorStand = true;
+            this.painting = true;
         }
     }
 
     public static class ExtraSettings {
         public boolean showFps;
         public boolean showCoords;
-        public boolean enableFog;
         public int cloudHeight;
         public boolean hurtCam;
         public boolean toasts;
         public boolean staticFov;
         public boolean instantSneak;
         public boolean preventShaders;
-        public boolean lightUpdates;
         public boolean hideCheats;
         public boolean highMaxBrightness;
         public boolean dayLightCycle;
@@ -159,13 +161,11 @@ public class SodiumExtraGameOptions {
         public ExtraSettings() {
             this.showFps = true;
             this.showCoords = true;
-            this.enableFog = true;
             this.cloudHeight = 128;
             this.hurtCam = true;
             this.toasts = true;
             this.staticFov = false;
             this.instantSneak = false;
-            this.lightUpdates = true;
             this.preventShaders = false;
             this.hideCheats = true;
             this.highMaxBrightness = false;

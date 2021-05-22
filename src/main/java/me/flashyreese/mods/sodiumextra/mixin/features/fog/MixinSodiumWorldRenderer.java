@@ -22,7 +22,7 @@ public class MixinSodiumWorldRenderer {
     private void drawChunkLayer(RenderLayer renderLayer, MatrixStack matrixStack, double x, double y, double z, CallbackInfo info) {
         // We don't have a great way to check if underwater fog is being used, so assume that terrain will only ever
         // use linear fog. This will not disable fog in the Nether.
-        if (!SodiumExtraClientMod.options().extraSettings.enableFog && isFogLinear()) {
+        if (!SodiumExtraClientMod.options().renderSettings.fog && this.isFogLinear()) {
             RenderSystem.disableFog();
         }
     }

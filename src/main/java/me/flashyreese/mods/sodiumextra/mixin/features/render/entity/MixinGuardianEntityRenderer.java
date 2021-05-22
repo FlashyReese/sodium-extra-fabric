@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.features.entity.guardian;
+package me.flashyreese.mods.sodiumextra.mixin.features.render.entity;
 
 import net.minecraft.client.render.entity.GuardianEntityRenderer;
 import net.minecraft.world.World;

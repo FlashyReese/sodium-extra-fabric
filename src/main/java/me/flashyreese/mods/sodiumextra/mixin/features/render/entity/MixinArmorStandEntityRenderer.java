@@ -18,7 +18,7 @@ public abstract class MixinArmorStandEntityRenderer extends LivingEntityRenderer
 
     @Override
     public void render(ArmorStandEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        if (SodiumExtraClientMod.options().entitySettings.armorStand) {
+        if (SodiumExtraClientMod.options().renderSettings.armorStand) {
             super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
         }
     }
