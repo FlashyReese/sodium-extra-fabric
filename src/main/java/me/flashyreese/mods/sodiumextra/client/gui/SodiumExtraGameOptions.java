@@ -147,30 +147,20 @@ public class SodiumExtraGameOptions {
         public boolean showFps;
         public boolean showCoords;
         public int cloudHeight;
-        public boolean hurtCam;
         public boolean toasts;
         public boolean staticFov;
         public boolean instantSneak;
         public boolean preventShaders;
-        public boolean hideCheats;
-        public boolean highMaxBrightness;
-        public boolean dayLightCycle;
-        public boolean noOverlay;
         public boolean useFastRandom;
 
         public ExtraSettings() {
             this.showFps = true;
             this.showCoords = true;
             this.cloudHeight = 128;
-            this.hurtCam = true;
             this.toasts = true;
             this.staticFov = false;
             this.instantSneak = false;
             this.preventShaders = false;
-            this.hideCheats = true;
-            this.highMaxBrightness = false;
-            this.dayLightCycle = true;
-            this.noOverlay = false;
             this.useFastRandom = true;
         }
     }

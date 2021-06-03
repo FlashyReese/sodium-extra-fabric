@@ -284,13 +284,6 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Hurtcam")
-                        .setTooltip("Shake the camera when the player is damaged")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.hurtCam = value, options -> options.extraSettings.hurtCam)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Toasts")
                         .setTooltip("Advancement and crafting recipe popups")
                         .setControl(TickBoxControl::new)
@@ -320,34 +313,6 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
-
-        if (!SodiumExtraClientMod.options().extraSettings.hideCheats) {
-            groups.add(OptionGroup.createBuilder()
-                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                            .setName("High Max Brightness")
-                            .setTooltip("Allow max brightness to go up to 1000 (reopen video settings to take effect)")
-                            .setControl(TickBoxControl::new)
-                            .setBinding((options, value) -> options.extraSettings.highMaxBrightness = value, options -> options.extraSettings.highMaxBrightness)
-                            .build()
-                    )
-                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                            .setName("Daylight Cycle")
-                            .setTooltip("Shows the sun/moon and light according to the game time")
-                            .setControl(TickBoxControl::new)
-                            .setBinding((options, value) -> options.extraSettings.dayLightCycle = value, options -> options.extraSettings.dayLightCycle)
-                            .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                            .build()
-                    )
-                    .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                            .setName("No Overlays")
-                            .setTooltip("Disable camera overlays")
-                            .setControl(TickBoxControl::new)
-                            .setBinding((options, value) -> options.extraSettings.noOverlay = value, options -> options.extraSettings.noOverlay)
-                            .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                            .build()
-                    )
-                    .build());
-        }
 
         return new OptionPage("Extras", ImmutableList.copyOf(groups));
     }
