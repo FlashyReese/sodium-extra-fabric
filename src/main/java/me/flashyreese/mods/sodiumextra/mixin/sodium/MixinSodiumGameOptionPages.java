@@ -57,7 +57,7 @@ public class MixinSodiumGameOptionPages {
     }
 
     @Inject(method = "advanced", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 2), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void advanced(CallbackInfoReturnable<OptionPage> cir, boolean disableBlacklist, List<OptionGroup> groups){
+    private static void advanced(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups){
         OptionGroup original = groups.get(1);
         OptionGroup.Builder modifiedBuilder = OptionGroup.createBuilder();
         original.getOptions().forEach(modifiedBuilder::add);
