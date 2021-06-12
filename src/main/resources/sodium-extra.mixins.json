@@ -8,7 +8,7 @@
   "client": [
     "features.animation.MixinSpriteAtlasTexture",
     "features.biome_colors.MixinBiomeColors",
-    "features.block.entity.piston.MixinPistonBlockEntityRenderer",
+    "features.render.entity.MixinPistonBlockEntityRenderer",
     "features.cloud.MixinWorldRenderer",
     "features.render.entity.MixinGuardianEntityRenderer",
     "features.render.entity.MixinPaintingEntityRenderer",

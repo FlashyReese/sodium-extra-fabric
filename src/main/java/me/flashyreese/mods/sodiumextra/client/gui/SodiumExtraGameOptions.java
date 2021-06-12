@@ -68,7 +68,6 @@ public class SodiumExtraGameOptions {
         public boolean animateFire;
         public boolean animatePortal;
         public boolean blockAnimations;
-        public boolean pistonAnimations;
 
         public AnimationSettings() {
             this.animation = true;
@@ -77,7 +76,6 @@ public class SodiumExtraGameOptions {
             this.animateFire = true;
             this.animatePortal = true;
             this.blockAnimations = true;
-            this.pistonAnimations = true;
         }
     }
 
@@ -133,6 +131,7 @@ public class SodiumExtraGameOptions {
         public boolean itemFrame;
         public boolean armorStand;
         public boolean painting;
+        public boolean piston;
 
         public RenderSettings() {
             this.fog = true;
@@ -140,6 +139,7 @@ public class SodiumExtraGameOptions {
             this.itemFrame = true;
             this.armorStand = true;
             this.painting = true;
+            this.piston = true;
         }
     }
 

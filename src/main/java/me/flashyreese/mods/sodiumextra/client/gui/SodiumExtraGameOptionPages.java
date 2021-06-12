@@ -1,7 +1,6 @@
 package me.flashyreese.mods.sodiumextra.client.gui;
 
 import com.google.common.collect.ImmutableList;
-import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.jellysquid.mods.sodium.client.gui.options.OptionFlag;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
@@ -63,13 +62,6 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip("Process block animations")
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.animationSettings.blockAnimations = value, options -> options.animationSettings.blockAnimations)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Piston Animations")
-                        .setTooltip("Process piston animations")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.animationSettings.pistonAnimations = value, options -> options.animationSettings.pistonAnimations)
                         .build()
                 )
                 .build());
@@ -253,6 +245,13 @@ public class SodiumExtraGameOptionPages {
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.renderSettings.painting = value, options -> options.renderSettings.painting)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName("Piston")
+                        .setTooltip("Process piston animations")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.renderSettings.piston = value, options -> options.renderSettings.piston)
                         .build()
                 )
                 .build());

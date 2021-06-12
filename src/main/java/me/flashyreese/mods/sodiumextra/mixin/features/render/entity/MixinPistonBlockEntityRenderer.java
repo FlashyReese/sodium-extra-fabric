@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.features.block.entity.piston;
+package me.flashyreese.mods.sodiumextra.mixin.features.render.entity;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.block.entity.PistonBlockEntity;
@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinPistonBlockEntityRenderer {
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
     public void render(PistonBlockEntity pistonBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
-        if (!SodiumExtraClientMod.options().animationSettings.pistonAnimations)
+        if (!SodiumExtraClientMod.options().renderSettings.piston)
             ci.cancel();
     }
 }
