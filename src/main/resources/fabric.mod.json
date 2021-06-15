@@ -41,6 +41,6 @@
     "sodium": "*"
   },
   "breaks" : {
-    "sodium": ["0.1.x", "0.2.0+IRIS_rev.400af47"]
+    "sodium": ["0.1.x", "0.2.0+IRIS_rev.400af47", ">=0.3.x"]
   }
 }
