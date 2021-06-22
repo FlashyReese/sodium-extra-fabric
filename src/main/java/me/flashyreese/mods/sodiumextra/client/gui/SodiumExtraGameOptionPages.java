@@ -261,6 +261,15 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
+                        .setName("Use Fast Random")
+                        .setTooltip("If enabled, a fast random function will be used for block rendering. This can affect the rotation of randomly rotated textures when compared to vanilla.")
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
+                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
+                        .build()
+                ).build());
+        groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName("Show FPS")
                         .setTooltip("Show current, max, average and min FPS on top left corner")
