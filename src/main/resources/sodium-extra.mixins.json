@@ -14,7 +14,7 @@
     "features.cloud.MixinWorldRenderer",
     "features.render.entity.MixinGuardianEntityRenderer",
     "features.render.entity.MixinPaintingEntityRenderer",
-    "features.fog.MixinSodiumWorldRenderer",
+    "features.fog.MixinBackgroundRenderer",
     "features.gui.MinecraftClientAccessor",
     "features.gui.MixinInGameHud",
     "features.instant_sneak.MixinCamera",
