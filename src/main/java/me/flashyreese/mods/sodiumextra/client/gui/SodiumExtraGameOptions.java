@@ -126,7 +126,7 @@ public class SodiumExtraGameOptions {
     }
 
     public static class RenderSettings {
-        public boolean fog;
+        public int fogDistance;
         public boolean lightUpdates;
         public boolean itemFrame;
         public boolean armorStand;
@@ -134,7 +134,7 @@ public class SodiumExtraGameOptions {
         public boolean piston;
 
         public RenderSettings() {
-            this.fog = true;
+            this.fogDistance = 0;
             this.lightUpdates = true;
             this.itemFrame = true;
             this.armorStand = true;

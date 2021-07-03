@@ -209,11 +209,11 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage render() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName("Fog")
-                        .setTooltip("If enabled, a fog effect will be used for terrain in the distance. Disabling this option will not change fog effects used underwater or in the Nether.")
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.renderSettings.fog = value, opts -> opts.renderSettings.fog)
+                        .setTooltip("Adjusts the fog effect distance on the terrain. \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)\nWill not change the fog underwater or in the Nether.")
+                        .setControl(option -> new SliderControl(option, 0, 33, 1, ControlValueFormatter.number()))
+                        .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
