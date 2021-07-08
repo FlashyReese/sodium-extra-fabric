@@ -212,7 +212,7 @@ public class SodiumExtraGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName("Fog")
                         .setTooltip("Adjusts the fog effect distance on the terrain. \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)\nWill not change the fog underwater or in the Nether.")
-                        .setControl(option -> new SliderControl(option, 0, 33, 1, ControlValueFormatter.number()))
+                        .setControl(option -> new SliderControl(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance()))
                         .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
                         .build()
                 )
