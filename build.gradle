@@ -16,7 +16,6 @@ minecraft {
 
 repositories {
     maven { url = "https://jitpack.io" }
-    maven { url = "https://maven.terraformersmc.com"}
 }
 
 dependencies {
