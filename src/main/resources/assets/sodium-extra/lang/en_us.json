@@ -75,6 +75,8 @@
   "sodium-extra.option.show_fps.tooltip": "Show current, max, average and min FPS on top left corner",
   "sodium-extra.option.show_coordinates": "Show Coordinates",
   "sodium-extra.option.show_coordinates.tooltip": "Show coordinates on top left corner",
+  "sodium-extra.option.reduce_resolution_on_mac": "Reduce Resolution on macOS",
+  "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Use half the resolution on retina displays, vastly improving performance on macOS.\nModifying this option will require a game restart.",
   "sodium-extra.option.cloud_height": "Cloud Height",
   "sodium-extra.option.cloud_height.tooltip": "Adjust height of clouds",
   "sodium-extra.option.toasts": "Toasts",

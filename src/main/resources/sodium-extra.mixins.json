@@ -19,6 +19,7 @@
     "features.gui.MixinInGameHud",
     "features.instant_sneak.MixinCamera",
     "features.prevent_shaders.MixinGameRenderer",
+    "features.reduce_resolution_on_mac.MixinWindow",
     "features.render.entity.MixinArmorStandEntityRenderer",
     "features.render.entity.MixinItemFrameEntityRenderer",
     "features.sky_colors.MixinBiome",

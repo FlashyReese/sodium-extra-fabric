@@ -146,6 +146,7 @@ public class SodiumExtraGameOptions {
     public static class ExtraSettings {
         public boolean showFps;
         public boolean showCoords;
+        public boolean reduceResolutionOnMac;
         public int cloudHeight;
         public boolean toasts;
         public boolean staticFov;
@@ -156,6 +157,7 @@ public class SodiumExtraGameOptions {
         public ExtraSettings() {
             this.showFps = true;
             this.showCoords = true;
+            this.reduceResolutionOnMac = true;
             this.cloudHeight = 128;
             this.toasts = true;
             this.staticFov = false;
