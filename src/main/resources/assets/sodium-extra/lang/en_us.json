@@ -55,7 +55,7 @@
   "sodium-extra.option.details": "Details",
 
   "sodium-extra.option.fog": "Fog",
-  "sodium-extra.option.fog.tooltip": "Adjusts the fog effect distance on the terrain. \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)\nWill not change the fog underwater or in the Nether.",
+  "sodium-extra.option.fog.tooltip": "Adjusts the fog effect distance on the terrain. \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)",
   "sodium-extra.option.light_updates": "Light Updates",
   "sodium-extra.option.light_updates.tooltip": "Process lighting updates",
   "sodium-extra.option.item_frames": "Item Frames",
@@ -65,7 +65,7 @@
   "sodium-extra.option.paintings": "Paintings",
   "sodium-extra.option.paintings.tooltip": "Toggle to render paintings.",
   "sodium-extra.option.piston": "Piston",
-  "sodium-extra.option.pcomposter.tooltip": "Process piston animations",
+  "sodium-extra.option.piston.tooltip": "Process piston animations",
 
   "sodium-extra.option.render": "Render",
 
