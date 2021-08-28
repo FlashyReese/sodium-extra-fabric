@@ -42,5 +42,8 @@
   },
   "breaks" : {
     "sodium": ["0.1.x", "0.2.0+IRIS_rev.400af47", ">=0.3.0"]
+  },
+  "recommends": {
+    "reeses-sodium-options": "*"
   }
 }
