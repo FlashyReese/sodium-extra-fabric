@@ -40,5 +40,8 @@
     "fabric": "*",
     "minecraft": "~1.17",
     "sodium": "0.3.x"
+  },
+  "recommends": {
+    "reeses-sodium-options": "*"
   }
 }
