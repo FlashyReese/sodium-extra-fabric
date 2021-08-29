@@ -41,7 +41,6 @@
   "sodium-extra.option.reduce_resolution_on_mac": "Réduire la résolution sur macOS",
   "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Utiliser la moitié de la résolution sur les écrans Retina, cela améliore grandement les performances sur macOS.\nModifier cette option nécessitera de redémarrer le jeu",
   "sodium-extra.option.render": "Rendu",
-  "sodium-extra.option.resolution": "Résolution",
   "sodium-extra.option.resolution.tooltip": "Défini la résolution du jeu",
   "sodium-extra.option.show_coordinates": "Afficher les coordonnées",
   "sodium-extra.option.show_coordinates.tooltip": "Afficher les coordonnées actuelles dans le coin supérieur gauche",
