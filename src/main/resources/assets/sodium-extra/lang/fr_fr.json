@@ -72,7 +72,7 @@
   "sodium-extra.option.sky_colors.tooltip": "Change la couleur du ciel selon le type de biome",
   "sodium-extra.option.smoke": "Fumée",
   "sodium-extra.option.smoke.tooltip": "Activer les particules de fumée",
-  "sodium-extra.option.static_fov": "Fov statique",
+  "sodium-extra.option.static_fov": "Champ de vision statique",
   "sodium-extra.option.static_fov.tooltip": "Cette option ne fait plus rien étant donné que Minecraft 1.16.2 fourni une option similaire. Cette dernière peut-être trouvée sous Paramètres d'accessibilité > Effets de ch. de vision",
   "sodium-extra.option.toasts": "Notifications",
   "sodium-extra.option.toasts.tooltip": "Affiche les notifications de succés et de craft",
