@@ -1,12 +1,12 @@
 package me.flashyreese.mods.sodiumextra.client.gui;
 
 import com.google.common.collect.ImmutableList;
+import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
@@ -211,7 +211,7 @@ public class SodiumExtraGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.fog"))
                         .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip"))
-                        .setControl(option -> new SliderControl(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance()))
+                        .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
                         .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
                         .build()
                 )
