@@ -24,7 +24,7 @@
   "sodium-extra.option.composter.tooltip": "Lülita komposteri osakesed sisse/välja",
   "sodium-extra.option.details": "Detailid",
   "sodium-extra.option.dripping_particles": "Tilgaosakesed",
-  "sodium-extra.option.dripping_particles.tooltip": "Lülita tilkuva vee/laava osakesed sisse/välja",
+  "sodium-extra.option.dripping_particles.tooltip": "Lülita tilgaosakesed sisse/välja",
   "sodium-extra.option.environment": "Keskkond",
   "sodium-extra.option.environment.tooltip": "Lülita keskkonnaosakesed sisse/välja",
   "sodium-extra.option.explosions": "Plahvatused",
