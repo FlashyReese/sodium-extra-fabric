@@ -1,11 +1,9 @@
 package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
-import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptionPages;
+import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.*;
-import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
-import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
@@ -33,7 +31,7 @@ public class MixinSodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName("Resolution")
                         .setTooltip("Sets resolution of the game.")
-                        .setControl(option -> new SliderControl(option, 0, MinecraftClient.getInstance().getWindow().getMonitor() != null ? MinecraftClient.getInstance().getWindow().getMonitor().getVideoModeCount() : 0, 1, ControlValueFormatterExtended.resolution()))
+                        .setControl(option -> new SliderControlExtended(option, 0, MinecraftClient.getInstance().getWindow().getMonitor() != null ? MinecraftClient.getInstance().getWindow().getMonitor().getVideoModeCount() : 0, 1, ControlValueFormatterExtended.resolution(), false))
                         .setBinding((options, value) -> {
                             if (MinecraftClient.getInstance().getWindow().getMonitor() != null) {
                                 if (value == 0) {
