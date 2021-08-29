@@ -34,7 +34,7 @@
   "sodium-extra.option.fireworks.tooltip": "Activer les particules des feux d'artifice",
   "sodium-extra.option.fog": "Brouillard",
   "sodium-extra.option.fog.tooltip": "Ajuste la distance de l'effet de brouillard sur le terrain. \n0 - Paramètre par défaut du jeu\n1-32 - Défini la distance du brouillard en chunks\n33 - Distance maximum (Désactiver le brouillard entre autres)",
-  "sodium-extra.option.instant_sneak": "Accroupissement instané",
+  "sodium-extra.option.instant_sneak": "Accroupissement instantané",
   "sodium-extra.option.instant_sneak.tooltip": "Désactiver l'animation de la caméra lors de l'accroupissement",
   "sodium-extra.option.item_frames": "Cadres",
   "sodium-extra.option.item_frames.tooltip": "Activer le rendu des cadres",
