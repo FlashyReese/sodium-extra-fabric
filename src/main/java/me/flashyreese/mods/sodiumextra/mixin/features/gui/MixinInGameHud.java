@@ -4,7 +4,7 @@ import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -37,14 +37,14 @@ public class MixinInGameHud {
     //Should I make this OOP or just leave as it :> I don't think I will be adding any more than these 2.
     private void renderFPS(MatrixStack matrices, int x, int y) {
         int currentFPS = ((MinecraftClientAccessor) this.client).getCurrentFPS();
-        this.client.textRenderer.draw(matrices, new LiteralText(String.format("%s fps (max. %s / avg. %s / min. %s)", currentFPS,
+        this.client.textRenderer.draw(matrices, new TranslatableText("sodium-extra.overlay.fps", currentFPS,
                 SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
-                SodiumExtraClientMod.getClientTickHandler().getLowestFps())), x, y, 0xffffffff);
+                SodiumExtraClientMod.getClientTickHandler().getLowestFps()), x, y, 0xffffffff);
     }
 
     private void renderCoords(MatrixStack matrices, int x, int y) {
         if (this.client.player == null) return;
         Vec3d pos = this.client.player.getPos();
-        this.client.textRenderer.draw(matrices, new LiteralText(String.format("X: %.2f, Y: %.2f, Z: %.2f", pos.x, pos.y, pos.z)), x, y, 0xffffffff);
+        this.client.textRenderer.draw(matrices, new TranslatableText("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z)), x, y, 0xffffffff);
     }
 }
