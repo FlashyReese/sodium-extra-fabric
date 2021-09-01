@@ -7,6 +7,7 @@ import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.TranslatableText;
 
 import java.util.ArrayList;
@@ -267,6 +268,15 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac.tooltip"))
+                        .setEnabled(MinecraftClient.IS_SYSTEM_MAC)
+                        .setImpact(OptionImpact.HIGH)
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.extraSettings.reduceResolutionOnMac = value, opts -> opts.extraSettings.reduceResolutionOnMac)
+                        .build()
                 ).build());
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -283,14 +293,6 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.extraSettings.showCoords = value, opts -> opts.extraSettings.showCoords)
                         .build()
                 )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac"))
-                        .setTooltip(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac.tooltip"))
-                        .setImpact(OptionImpact.HIGH)
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.extraSettings.reduceResolutionOnMac = value, opts -> opts.extraSettings.reduceResolutionOnMac)
-                        .build()
-                )
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.cloud_height"))
                         .setTooltip(new TranslatableText("sodium-extra.option.cloud_height.tooltip"))
@@ -304,14 +306,6 @@ public class SodiumExtraGameOptionPages {
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.extraSettings.toasts = value, options -> options.extraSettings.toasts)
                         .build())
-
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.static_fov"))
-                        .setTooltip(new TranslatableText("sodium-extra.option.static_fov.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.staticFov = value, options -> options.extraSettings.staticFov)
-                        .build()
-                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.instant_sneak"))
                         .setTooltip(new TranslatableText("sodium-extra.option.instant_sneak.tooltip"))

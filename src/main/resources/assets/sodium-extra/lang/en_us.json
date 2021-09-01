@@ -53,8 +53,6 @@
   "sodium-extra.option.sky_colors.tooltip": "Have sky colors change based on biome",
   "sodium-extra.option.smoke": "Smoke",
   "sodium-extra.option.smoke.tooltip": "Toggle for smoke particles",
-  "sodium-extra.option.static_fov": "Static FOV",
-  "sodium-extra.option.static_fov.tooltip": "This toggle no longer does anything, since 1.16.2 Vanilla provides a feature with similar effect. It can be found under Accessibility Options > FOV Effects.",
   "sodium-extra.option.toasts": "Toasts",
   "sodium-extra.option.toasts.tooltip": "Advancement and crafting recipe popups",
   "sodium-extra.option.use_fast_random": "Use Fast Random",

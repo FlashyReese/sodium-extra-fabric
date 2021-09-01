@@ -53,8 +53,6 @@
   "sodium-extra.option.sky_colors.tooltip": "Taevavärvid muutuvad bioomile vastavalt",
   "sodium-extra.option.smoke": "Suits",
   "sodium-extra.option.smoke.tooltip": "Lülitab suitsuosakesed sisse/välja",
-  "sodium-extra.option.static_fov": "Staatiline vaateväli",
-  "sodium-extra.option.static_fov.tooltip": "See valik ei tee enam midagi, kuna vanill pakub 1.16.2st alates sarnast valikut. Selle valiku leiab menüüs Hõlbustuse seaded > Vaatevälja efektid.",
   "sodium-extra.option.toasts": "Hüpikud",
   "sodium-extra.option.toasts.tooltip": "Edasijõudmiste ja meisterdusretseptide hüpikud",
   "sodium-extra.option.use_fast_random": "Kasuta kiiret juhuslikkust",
