@@ -154,8 +154,8 @@ public class SodiumExtraGameOptions {
         public boolean useFastRandom;
 
         public ExtraSettings() {
-            this.showFps = true;
-            this.showCoords = true;
+            this.showFps = false;
+            this.showCoords = false;
             this.reduceResolutionOnMac = true;
             this.cloudHeight = 128;
             this.toasts = true;
