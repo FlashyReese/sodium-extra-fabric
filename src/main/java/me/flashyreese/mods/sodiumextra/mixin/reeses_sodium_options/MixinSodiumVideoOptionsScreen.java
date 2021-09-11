@@ -12,6 +12,7 @@ import me.jellysquid.mods.sodium.client.gui.widgets.FlatButtonWidget;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -25,7 +26,7 @@ import java.util.List;
 
 @Pseudo
 @Mixin(SodiumVideoOptionsScreen.class)
-public class MixinSodiumVideoOptionsScreen {
+public abstract class MixinSodiumVideoOptionsScreen {
 
     @Shadow
     private FlatButtonWidget applyButton, closeButton, undoButton;
@@ -36,6 +37,15 @@ public class MixinSodiumVideoOptionsScreen {
     @Shadow
     @Final
     private List<OptionPage> pages;
+
+    @Inject(method = "<init>", at = @At(value = "TAIL"))
+    private void init(CallbackInfo ci) {
+        this.pages.add(SodiumExtraGameOptionPages.animation());
+        this.pages.add(SodiumExtraGameOptionPages.particle());
+        this.pages.add(SodiumExtraGameOptionPages.detail());
+        this.pages.add(SodiumExtraGameOptionPages.render());
+        this.pages.add(SodiumExtraGameOptionPages.extra());
+    }
 
     @Unique
     @Inject(method = "parentFrameBuilder",
@@ -51,16 +61,24 @@ public class MixinSodiumVideoOptionsScreen {
                 .setDimension(basicFrameDim)
                 .addChild(parentDim -> TabFrame.createBuilder()
                         .setDimension(tabFrameDim)
-                        .addTabs(tabs -> this.pages.forEach(page -> tabs.add(dim -> new Tab.Builder<>().from(page, dim))))
+                        .addTabs(tabs -> this.pages.forEach(page -> {
+                            if (page.getName() instanceof TranslatableText translatableText) {
+                                if (!(translatableText.getKey().startsWith("sodium-extra") || translatableText.getKey().startsWith("options.particles"))) {
+                                    tabs.add(dim -> new Tab.Builder<>().from(page, dim));
+                                }
+                            }
+                        }))
                         .addTab(subDim -> new Tab.Builder<>()
                                 .setText(new LiteralText("Sodium Extra"))
                                 .setFrame(TabFrame.createBuilder()
                                         .setDimension(subDim)
-                                        .addTab(subSubDim -> new Tab.Builder<>().from(SodiumExtraGameOptionPages.animation(), subSubDim))
-                                        .addTab(subSubDim -> new Tab.Builder<>().from(SodiumExtraGameOptionPages.particle(), subSubDim))
-                                        .addTab(subSubDim -> new Tab.Builder<>().from(SodiumExtraGameOptionPages.detail(), subSubDim))
-                                        .addTab(subSubDim -> new Tab.Builder<>().from(SodiumExtraGameOptionPages.render(), subSubDim))
-                                        .addTab(subSubDim -> new Tab.Builder<>().from(SodiumExtraGameOptionPages.extra(), subSubDim))
+                                        .addTabs(subTabs -> this.pages.forEach(page -> {
+                                            if (page.getName() instanceof TranslatableText translatableText) {
+                                                if (translatableText.getKey().startsWith("sodium-extra") || translatableText.getKey().startsWith("options.particles")) {
+                                                    subTabs.add(subSubDim -> new Tab.Builder<>().from(page, subSubDim));
+                                                }
+                                            }
+                                        }))
                                         .build())
                                 .build()
                         )
