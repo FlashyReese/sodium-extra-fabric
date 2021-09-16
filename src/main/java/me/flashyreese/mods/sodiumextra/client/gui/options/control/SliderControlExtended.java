@@ -1,10 +1,10 @@
 package me.flashyreese.mods.sodiumextra.client.gui.options.control;
 
-import me.jellysquid.mods.sodium.client.gui.options.Option;
-import me.jellysquid.mods.sodium.client.gui.options.control.Control;
-import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
-import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
-import me.jellysquid.mods.sodium.client.util.Dim2i;
+import me.jellysquid.mods.sodium.config.render.Option;
+import me.jellysquid.mods.sodium.gui.options.Control;
+import me.jellysquid.mods.sodium.gui.options.ControlElement;
+import me.jellysquid.mods.sodium.gui.options.ControlValueFormatter;
+import me.jellysquid.mods.sodium.gui.values.Dim2i;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Rect2i;
 import net.minecraft.util.math.MathHelper;

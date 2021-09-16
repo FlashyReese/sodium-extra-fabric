@@ -25,10 +25,8 @@
     "features.sky_colors.MixinBiome",
     "features.toasts.MixinToastManager",
     "features.particle.MixinWorldRenderer",
-    "reeses_sodium_options.MixinSodiumVideoOptionsScreen",
-    "sodium.MixinBlockRenderer",
-    "sodium.MixinSodiumOptionsGUI",
-    "sodium.MixinSodiumGameOptionPages"
+    "sodium.MixinSodiumConfigScreen",
+    "sodium.MixinSodiumConfigScreenPages"
   ],
   "injectors": {
     "defaultRequire": 1

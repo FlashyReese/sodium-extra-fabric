@@ -1,6 +1,6 @@
 package me.flashyreese.mods.sodiumextra.common.util;
 
-import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
+import me.jellysquid.mods.sodium.gui.options.ControlValueFormatter;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
@@ -12,6 +12,18 @@ public interface ControlValueFormatterExtended extends ControlValueFormatter {
                 return new TranslatableText("options.fullscreen.unavailable").getString();
             } else {
                 return v == 0 ? new TranslatableText("options.fullscreen.current").getString() : new LiteralText(MinecraftClient.getInstance().getWindow().getMonitor().getVideoMode(v - 1).toString()).getString();
+            }
+        };
+    }
+
+    static ControlValueFormatter fogDistance() {
+        return (v) -> {
+            if (v == 0) {
+                return new TranslatableText("generator.default").getString();
+            } else if (v == 33) {
+                return new TranslatableText("options.off").getString();
+            } else {
+                return new TranslatableText("options.chunks", v).getString();
             }
         };
     }

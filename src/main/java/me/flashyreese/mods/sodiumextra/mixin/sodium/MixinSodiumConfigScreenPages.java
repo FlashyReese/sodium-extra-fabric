@@ -2,9 +2,9 @@ package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
-import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
-import me.jellysquid.mods.sodium.client.gui.options.*;
-import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
+import me.jellysquid.mods.sodium.config.render.*;
+import me.jellysquid.mods.sodium.config.render.storage.MinecraftOptionsStorage;
+import me.jellysquid.mods.sodium.gui.SodiumConfigScreenPages;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
 import net.minecraft.text.TranslatableText;
@@ -19,15 +19,15 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.util.List;
 import java.util.Optional;
 
-@Mixin(SodiumGameOptionPages.class)
-public class MixinSodiumGameOptionPages {
+@Mixin(SodiumConfigScreenPages.class)
+public class MixinSodiumConfigScreenPages {
 
     @Shadow
     @Final
     private static MinecraftOptionsStorage vanillaOpts;
 
-    @Inject(method = "general", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 0, shift = At.Shift.BEFORE), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void general(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups){
+    @Inject(method = "general", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/config/render/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/config/render/OptionGroup$Builder;", ordinal = 0, shift = At.Shift.BEFORE), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
+    private static void general(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups) {
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName(new TranslatableText("sodium-extra.option.resolution"))

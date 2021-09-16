@@ -1,10 +1,10 @@
 package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
 import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptionPages;
-import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
-import me.jellysquid.mods.sodium.client.gui.options.OptionFlag;
-import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
-import me.jellysquid.mods.sodium.client.gui.options.storage.OptionStorage;
+import me.jellysquid.mods.sodium.config.render.OptionFlag;
+import me.jellysquid.mods.sodium.config.render.OptionPage;
+import me.jellysquid.mods.sodium.config.render.storage.OptionStorage;
+import me.jellysquid.mods.sodium.gui.SodiumConfigScreen;
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,8 +18,8 @@ import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.List;
 
-@Mixin(SodiumOptionsGUI.class)
-public class MixinSodiumOptionsGUI {
+@Mixin(SodiumConfigScreen.class)
+public class MixinSodiumConfigScreen {
 
     @Shadow
     @Final

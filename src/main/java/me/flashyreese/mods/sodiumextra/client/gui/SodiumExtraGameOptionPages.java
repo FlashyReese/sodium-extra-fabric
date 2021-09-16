@@ -3,10 +3,11 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.common.collect.ImmutableList;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
-import me.jellysquid.mods.sodium.client.gui.options.*;
-import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
-import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
-import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
+import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
+import me.jellysquid.mods.sodium.config.render.*;
+import me.jellysquid.mods.sodium.gui.options.ControlValueFormatter;
+import me.jellysquid.mods.sodium.gui.options.SliderControl;
+import me.jellysquid.mods.sodium.gui.options.TickBoxControl;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.TranslatableText;
 
@@ -261,14 +262,6 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(boolean.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.use_fast_random"))
-                        .setTooltip(new TranslatableText("sodium-extra.option.use_fast_random.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
-                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                        .build()
-                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac"))
                         .setTooltip(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac.tooltip"))
