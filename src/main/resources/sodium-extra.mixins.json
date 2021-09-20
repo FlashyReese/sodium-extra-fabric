@@ -25,6 +25,7 @@
     "features.sky_colors.MixinBiome",
     "features.toasts.MixinToastManager",
     "features.particle.MixinWorldRenderer",
+    "reeses_sodium_options.MixinSodiumVideoOptionsScreen",
     "sodium.MixinSodiumConfigScreen",
     "sodium.MixinSodiumConfigScreenPages"
   ],
