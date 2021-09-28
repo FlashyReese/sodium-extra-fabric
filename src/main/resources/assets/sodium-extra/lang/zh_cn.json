@@ -50,8 +50,6 @@
   "sodium-extra.option.sky_colors.tooltip": "根据生物群系改变天空颜色",
   "sodium-extra.option.smoke": "烟雾粒子",
   "sodium-extra.option.smoke.tooltip": "开启或关闭烟雾粒子效果效果",
-  "sodium-extra.option.static_fov": "固定视场",
-  "sodium-extra.option.static_fov.tooltip": "移动速度或效果不会改变视场(FOV)",
   "sodium-extra.option.toasts": "弹窗提示",
   "sodium-extra.option.toasts.tooltip": "显示成就和合成配方的弹窗提示",
   "sodium-extra.option.use_fast_random": "快速随机材质",

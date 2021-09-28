@@ -21,13 +21,14 @@ import java.util.List;
 
 @Pseudo
 @Mixin(SodiumVideoOptionsScreen.class)
-public class MixinSodiumVideoOptionsScreen {
+public abstract class MixinSodiumVideoOptionsScreen {
+
     @Shadow
     @Final
     private List<OptionPage> pages;
 
-    @Inject(method = "<init>", at = @At("TAIL"))
-    private void init(CallbackInfo info) {
+    @Inject(method = "<init>", at = @At(value = "TAIL"))
+    private void init(CallbackInfo ci) {
         this.pages.add(SodiumExtraGameOptionPages.animation());
         this.pages.add(SodiumExtraGameOptionPages.particle());
         this.pages.add(SodiumExtraGameOptionPages.detail());
@@ -45,9 +46,9 @@ public class MixinSodiumVideoOptionsScreen {
                     shift = At.Shift.AFTER
             ),
             locals = LocalCapture.CAPTURE_FAILSOFT)
-    public void applyChanges(CallbackInfo ci, HashSet<OptionStorage<?>> dirtyStorages, EnumSet<OptionFlag> flags){
+    public void applyChanges(CallbackInfo ci, HashSet<OptionStorage<?>> dirtyStorages, EnumSet<OptionFlag> flags) {
         MinecraftClient client = MinecraftClient.getInstance();
-        if (flags.contains(OptionFlag.REQUIRES_GAME_RESTART)){
+        if (flags.contains(OptionFlag.REQUIRES_GAME_RESTART)) {
             client.getWindow().applyVideoMode();
         }
     }

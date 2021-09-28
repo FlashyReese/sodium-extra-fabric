@@ -149,18 +149,16 @@ public class SodiumExtraGameOptions {
         public boolean reduceResolutionOnMac;
         public int cloudHeight;
         public boolean toasts;
-        public boolean staticFov;
         public boolean instantSneak;
         public boolean preventShaders;
         public boolean useFastRandom;
 
         public ExtraSettings() {
-            this.showFps = true;
-            this.showCoords = true;
+            this.showFps = false;
+            this.showCoords = false;
             this.reduceResolutionOnMac = true;
             this.cloudHeight = 128;
             this.toasts = true;
-            this.staticFov = false;
             this.instantSneak = false;
             this.preventShaders = false;
             this.useFastRandom = true;
