@@ -41,7 +41,6 @@
   "sodium-extra.option.reduce_resolution_on_mac": "Reduce Resolution on macOS",
   "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Use half the resolution on retina displays, vastly improving performance on macOS.\nModifying this option will require a game restart.",
   "sodium-extra.option.render": "显示",
-  "sodium-extra.option.resolution": "分辨率",
   "sodium-extra.option.resolution.tooltip": "设置游戏的分辨率",
   "sodium-extra.option.show_coordinates": "显示坐标",
   "sodium-extra.option.show_coordinates.tooltip": "在左上角显示坐标",

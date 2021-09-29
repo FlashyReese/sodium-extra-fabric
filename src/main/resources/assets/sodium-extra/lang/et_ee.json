@@ -41,7 +41,6 @@
   "sodium-extra.option.reduce_resolution_on_mac": "Vähenda macOSil resolutsiooni",
   "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Kasuta retina-ekraanidel poole väiksemat resolutsiooni, suurendab macOSil jõudlust märgatavalt.\nSelle valiku muutmine nõuab mängu taaskäivitust.",
   "sodium-extra.option.render": "Renderdamine",
-  "sodium-extra.option.resolution": "Resolutsioon",
   "sodium-extra.option.resolution.tooltip": "Määrab mängu resolutsiooni",
   "sodium-extra.option.show_coordinates": "Kuva koordinaadid",
   "sodium-extra.option.show_coordinates.tooltip": "Kuva koordinaadid üleval vasakus nurgas",
