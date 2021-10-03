@@ -3,6 +3,7 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.common.collect.ImmutableList;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
+import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
