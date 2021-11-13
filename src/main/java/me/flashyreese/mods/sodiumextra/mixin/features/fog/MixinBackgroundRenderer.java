@@ -32,8 +32,7 @@ public class MixinBackgroundRenderer {
         float y;
         if (cameraSubmersionType == CameraSubmersionType.WATER) {
             y = 192.0F;
-            if (entity instanceof ClientPlayerEntity) {
-                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity)entity;
+            if (entity instanceof ClientPlayerEntity clientPlayerEntity) {
                 y *= Math.max(0.25F, clientPlayerEntity.getUnderwaterVisibility());
                 Biome biome = clientPlayerEntity.world.getBiome(clientPlayerEntity.getBlockPos());
                 if (biome.getCategory() == Biome.Category.SWAMP) {
