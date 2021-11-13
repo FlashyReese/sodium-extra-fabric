@@ -29,4 +29,8 @@ public interface ControlValueFormatterExtended extends ControlValueFormatter {
             }
         };
     }
+
+    static ControlValueFormatter percentageOff(){ // Already exists in Sodium's dev branch, but that version is not released yet
+        return (v) -> (v > 0) ? v + "%" : new TranslatableText("options.off").getString();
+    }
 }
