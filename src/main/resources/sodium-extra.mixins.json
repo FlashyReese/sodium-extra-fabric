@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.flashyreese.mods.sodiumextra.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
@@ -26,7 +26,6 @@
     "features.render.entity.MixinPistonBlockEntityRenderer",
     "features.sky_colors.MixinBiome",
     "features.toasts.MixinToastManager",
-    "reeses_sodium_options.MixinSodiumVideoOptionsScreen",
     "sodium.MixinBlockRenderer",
     "sodium.MixinSodiumOptionsGUI",
     "sodium.MixinSodiumGameOptionPages"
