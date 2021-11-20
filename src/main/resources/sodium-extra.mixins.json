@@ -26,6 +26,7 @@
     "features.render.entity.MixinPistonBlockEntityRenderer",
     "features.sky_colors.MixinBiome",
     "features.toasts.MixinToastManager",
+    "reeses_sodium_options.MixinSodiumVideoOptionsScreen",
     "sodium.MixinBlockRenderer",
     "sodium.MixinSodiumOptionsGUI",
     "sodium.MixinSodiumGameOptionPages"
