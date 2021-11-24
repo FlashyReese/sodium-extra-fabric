@@ -38,7 +38,7 @@
   "depends": {
     "fabricloader": ">=0.12.5",
     "fabric": "*",
-    "sodium": ">=0.3.3"
+    "sodium": ">=0.4.0"
   },
   "recommends": {
     "reeses-sodium-options": ">=1.2.2"
