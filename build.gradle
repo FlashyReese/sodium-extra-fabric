@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-sourceCompatibility = "17"
+sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = "${project.archives_base_name}-mc${project.minecraft_version}"
