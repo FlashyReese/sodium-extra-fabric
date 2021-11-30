@@ -12,36 +12,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
-      - name: Create correct directories
-        run: mkdir -p .gradle/loom-cache/mc1.18-pre8-0.4.0
-      - name: Clone Sodium repo
-        uses: actions/checkout@v2
-        with:
-          repository: 'CaffeineMC/sodium-fabric'
-          ref: '1.18.x/dev'
-          path: 'sodium-fabric'
-      - name: Build Sodium repo
-        run: cd ./sodium-fabric && ./gradlew build && cd ..
-      - name: Delete useless files
-        run: ls ./sodium-fabric/build/libs && rm ./sodium-fabric/build/libs/*-dev.jar ./sodium-fabric/build/libs/*-sources.jar
-      - name: Copy correct files
-        run: ls ./sodium-fabric/build/libs && cp ./sodium-fabric/build/libs/*.jar ./.gradle/loom-cache/mc1.18-pre8-0.4.0/sodium-fabric.jar
-      - name: Create correct directories
-        run: mkdir -p .gradle/loom-cache/mc1.18-rc4-1.2.3
-      - name: Clone reeses sodium options repo
-        uses: actions/checkout@v2
-        with:
-          repository: 'DragonEggBedrockBreaking/reeses-sodium-options'
-          ref: '1.18.x/dev'
-          path: 'reeses-sodium-options'
-      - name: Move files in reeses sodium options
-        run: cd ./reeses-sodium-options && mkdir -p .gradle/loom-cache/mc1.18-pre8-0.4.0 && cp ../sodium-fabric/build/libs/*.jar ./.gradle/loom-cache/mc1.18-pre8-0.4.0/sodium-fabric.jar
-      - name: Build reeses-sodium-options repo
-        run: cd ./reeses-sodium-options && chmod +x gradlew && ./gradlew build && cd ..
-      - name: Delete useless files
-        run: ls ./reeses-sodium-options/build/libs && rm ./reeses-sodium-options/build/libs/*-dev.jar ./reeses-sodium-options/build/libs/*-sources.jar
-      - name: Copy correct files
-        run: ls ./reeses-sodium-options/build/libs && cp ./reeses-sodium-options/build/libs/*.jar ./.gradle/loom-cache/mc1.18-rc4-1.2.3/reeses_sodium_options.jar
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
