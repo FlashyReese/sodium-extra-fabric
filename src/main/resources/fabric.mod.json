@@ -10,7 +10,8 @@
   "contributors": [
     "AMereBagatelle",
     "EatMyVenom",
-    "Madis0"
+    "Madis0",
+    "DragonEggBedrockBreaking"
   ],
   "contact": {
     "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
@@ -38,9 +39,9 @@
   "depends": {
     "fabricloader": ">=0.12.6",
     "fabric": "*",
-    "sodium": "0.4.0-alpha1"
+    "sodium": "0.4.0-alpha5"
   },
   "recommends": {
-    "reeses-sodium-options": ">=1.2.4"
+    "reeses-sodium-options": ">=1.2.3"
   }
 }
