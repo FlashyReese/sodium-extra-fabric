@@ -36,12 +36,11 @@
     "sodium-extra.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.12.6",
     "fabric": "*",
-    "minecraft": "~1.17",
-    "sodium": "0.3.x"
+    "sodium": "0.4.0-alpha1"
   },
   "recommends": {
-    "reeses-sodium-options": "*"
+    "reeses-sodium-options": ">=1.2.4"
   }
 }

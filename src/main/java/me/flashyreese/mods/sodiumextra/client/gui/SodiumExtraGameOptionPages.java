@@ -297,7 +297,7 @@ public class SodiumExtraGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.cloud_height"))
                         .setTooltip(new TranslatableText("sodium-extra.option.cloud_height.tooltip"))
-                        .setControl(option -> new SliderControl(option, 0, 255, 1, ControlValueFormatter.number()))
+                        .setControl(option -> new SliderControl(option, -64, 319, 1, ControlValueFormatter.number()))
                         .setBinding((options, value) -> options.extraSettings.cloudHeight = value, options -> options.extraSettings.cloudHeight)
                         .build()
                 )

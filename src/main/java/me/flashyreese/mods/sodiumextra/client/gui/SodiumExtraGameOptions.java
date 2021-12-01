@@ -157,7 +157,7 @@ public class SodiumExtraGameOptions {
             this.showFps = false;
             this.showCoords = false;
             this.reduceResolutionOnMac = true;
-            this.cloudHeight = 128;
+            this.cloudHeight = 192;
             this.toasts = true;
             this.instantSneak = false;
             this.preventShaders = false;
