@@ -43,5 +43,10 @@
   },
   "recommends": {
     "reeses-sodium-options": ">=1.2.3"
+  },
+  "breaks": {
+    "retino": "*",
+    "canvas": "*",
+    "optifabric": 
   }
 }
