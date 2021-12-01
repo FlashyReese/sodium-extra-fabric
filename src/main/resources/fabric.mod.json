@@ -47,6 +47,6 @@
   "breaks": {
     "retino": "*",
     "canvas": "*",
-    "optifabric": 
+    "optifabric": "*"
   }
 }
