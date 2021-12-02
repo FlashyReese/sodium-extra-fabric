@@ -21,6 +21,11 @@ jobs:
         run: ./gradlew build
         env:
           BUILD_RELEASE: ${{ github.event.prerelease == false }}
+      - name: Publish to Modrinth
+        run: ./gradlew publishModrinth
+        env:
+          MODRINTH_API: ${{ secrets.MODRINTH_API }}
+          CHANGELOG: ${{ github.event.release.body }}
       - name: Upload assets to GitHub
         uses: AButler/upload-release-assets@v2.0
         with:
