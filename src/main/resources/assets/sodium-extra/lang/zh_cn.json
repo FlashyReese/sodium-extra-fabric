@@ -39,7 +39,7 @@
   "sodium-extra.option.rain_splash.tooltip": "开启或关闭雨滴粒子效果",
   "sodium-extra.option.redstone.tooltip": "开启或关闭红石粒子效果",
   "sodium-extra.option.reduce_resolution_on_mac": "在 macOS 上降低分辨率",
-  "sodium-extra.option.reduce_resolution_on_mac.tooltip": "在 Retina Displays 上使用一半的分辨率，能大幅提高在 MacOS 上的性能。\n更改此选项后需要重新启动游戏。",
+  "sodium-extra.option.reduce_resolution_on_mac.tooltip": "在 Retina Displays 上使用一半的分辨率，能大幅提高在 macOS 上的性能。\n更改此选项后需要重新启动游戏。",
   "sodium-extra.option.render": "显示",
   "sodium-extra.option.resolution.tooltip": "设置游戏的分辨率",
   "sodium-extra.option.show_coordinates": "显示坐标",
