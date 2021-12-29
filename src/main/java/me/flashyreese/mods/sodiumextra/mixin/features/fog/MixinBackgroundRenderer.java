@@ -21,8 +21,10 @@ public class MixinBackgroundRenderer {
 
     @Inject(method = "applyFog", at = @At(value = "HEAD"), cancellable = true)
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, CallbackInfo info) {
-        vanillaApplyFog(camera, fogType, viewDistance, thickFog);
-        info.cancel();
+        if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
+            vanillaApplyFog(camera, fogType, viewDistance, thickFog);
+            info.cancel();
+        }
     }
 
     // Vanilla copy
