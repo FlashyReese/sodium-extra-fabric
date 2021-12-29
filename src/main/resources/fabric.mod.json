@@ -38,8 +38,8 @@
   ],
   "depends": {
     "fabricloader": ">=0.12.6",
-    "fabric": "*",
-    "sodium": "0.4.0"
+    "fabric-lifecycle-events-v1": "*",
+    "sodium": "0.4.0-alpha5+build.9"
   },
   "recommends": {
     "reeses-sodium-options": ">=1.2.3"
