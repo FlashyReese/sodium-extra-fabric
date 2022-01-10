@@ -94,6 +94,8 @@ public class SodiumExtraGameOptions {
         public boolean environment;
         public boolean villagers;
         public boolean composter;
+        public boolean blockBreak;
+        public boolean blockBreaking;
 
         public ParticleSettings() {
             this.particles = true;
@@ -110,6 +112,8 @@ public class SodiumExtraGameOptions {
             this.environment = true;
             this.villagers = true;
             this.composter = true;
+            this.blockBreak = true;
+            this.blockBreaking = true;
         }
     }
 
