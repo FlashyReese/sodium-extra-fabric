@@ -18,6 +18,7 @@ loom {
 }
 
 repositories {
+    maven { url 'https://jitpack.io' }
     maven { 
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
@@ -41,6 +42,10 @@ dependencies {
     include(fabricApi.module("fabric-lifecycle-events-v1", project.fabric_version))
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
+
+    // Currently using altrisi/CaffeineConfig until it is officially available through CaffeineMC's maven repository
+    // Todo: Use https://github.com/CaffeineMC/mixin-config when available
+    include(modImplementation("com.github.FlashyReese:CaffeineConfig:383ee33be5"))
 }
 
 processResources {
