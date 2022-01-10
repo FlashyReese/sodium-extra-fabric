@@ -173,6 +173,20 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.particleSettings.composter = value, opts -> opts.particleSettings.composter)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.block_break"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.block_break.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.particleSettings.blockBreak = value, opts -> opts.particleSettings.blockBreak)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.block_breaking"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.block_breaking.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.particleSettings.blockBreaking = value, opts -> opts.particleSettings.blockBreaking)
+                        .build()
+                )
                 .build());
         return new OptionPage(new TranslatableText("options.particles"), ImmutableList.copyOf(groups));
     }
