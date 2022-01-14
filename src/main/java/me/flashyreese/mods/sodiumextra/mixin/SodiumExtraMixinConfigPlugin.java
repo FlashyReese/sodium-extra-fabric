@@ -10,28 +10,28 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
 
     @Override
     protected CaffeineConfig createConfig() {
-        // Todo: Organize and repackage to allow users to disable pages? bad idea maybe?
         return CaffeineConfig.builder("Sodium Extra")
-
-                .addMixinOption("features", true)
-                .addMixinOption("features.animation", true)
-                .addMixinOption("features.biome_colors", true)
-                .addMixinOption("features.cloud", true)
-                .addMixinOption("features.fog", true)
-                .addMixinOption("features.gui", true)
-                .addMixinOption("features.instant_sneak", true)
-                .addMixinOption("features.light_updates", true)
-                .addMixinOption("features.particle", true)
-                .addMixinOption("features.prevent_shaders", true)
-                .addMixinOption("features.reduce_resolution_on_mac", true)
-                .addMixinOption("features.render", true)
-                .addMixinOption("features.render.entity", true)
-                .addMixinOption("features.sky_colors", true)
-                .addMixinOption("features.toasts", true)
-
-                .addMixinOption("reeses_sodium_options", true)
-
+                .addMixinOption("animation", true)
+                .addMixinOption("biome_colors", true)
+                .addMixinOption("cloud", true)
+                .addMixinOption("compat", true) // Should not allow users to turn this off
+                .addMixinOption("compat.reeses_sodium_options", true)
+                .addMixinOption("compat.sodium", true) // Should not allow users to turn this off
+                .addMixinOption("entity", true)
+                .addMixinOption("fog", true)
+                .addMixinOption("gui", true)
+                .addMixinOption("instant_sneak", true)
+                .addMixinOption("light_updates", true)
+                .addMixinOption("particle", true)
+                .addMixinOption("prevent_shaders", true)
+                .addMixinOption("reduce_resolution_on_mac", true)
+                .addMixinOption("sky_colors", true)
                 .addMixinOption("sodium", true)
+                .addMixinOption("sodium.fast_random", true)
+                .addMixinOption("sodium.resolution", true)
+                .addMixinOption("sodium.resolution.reeses_sodium_options", true) // whacky packaging
+                .addMixinOption("toasts", true)
+
 
                 .withInfoUrl("https://github.com/FlashyReese/sodium-extra-fabric/wiki/Configuration-File")
                 .build(FabricLoader.getInstance().getConfigDir().resolve("sodium-extra.properties"));

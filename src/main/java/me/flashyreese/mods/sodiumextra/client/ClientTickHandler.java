@@ -1,7 +1,7 @@
 package me.flashyreese.mods.sodiumextra.client;
 
 import me.flashyreese.mods.sodiumextra.common.util.EvictingQueue;
-import me.flashyreese.mods.sodiumextra.mixin.features.gui.MinecraftClientAccessor;
+import me.flashyreese.mods.sodiumextra.mixin.gui.MinecraftClientAccessor;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
 import java.util.Queue;
