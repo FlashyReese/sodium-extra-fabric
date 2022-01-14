@@ -2,7 +2,7 @@ package me.flashyreese.mods.sodiumextra.mixin.sodium;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.jellysquid.mods.sodium.client.model.light.LightPipelineProvider;
-import me.jellysquid.mods.sodium.client.model.quad.blender.BiomeColorBlender;
+import me.jellysquid.mods.sodium.client.model.quad.blender.ColorBlender;
 import me.jellysquid.mods.sodium.client.render.pipeline.BlockRenderer;
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Final;
@@ -23,7 +23,7 @@ public class MixinBlockRenderer {
     private Random random;
 
     @Inject(method = "<init>", at = @At(value = "TAIL"))
-    private void init(MinecraftClient client, LightPipelineProvider lighters, BiomeColorBlender biomeColorBlender, CallbackInfo ci) {
+    private void init(MinecraftClient client, LightPipelineProvider lighters, ColorBlender colorBlender, CallbackInfo ci) {
         if (!SodiumExtraClientMod.options().extraSettings.useFastRandom) {
             this.random = new Random();
         }
