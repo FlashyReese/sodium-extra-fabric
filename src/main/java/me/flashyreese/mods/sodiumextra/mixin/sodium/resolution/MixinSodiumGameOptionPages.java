@@ -66,7 +66,7 @@ public class MixinSodiumGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName(new TranslatableText("options.screenEffectScale"))
                         .setTooltip(new TranslatableText("options.screenEffectScale.tooltip"))
-                        .setControl(option -> new SliderControl(option, 0, 100, 1, ControlValueFormatterExtended.percentageOff()))
+                        .setControl(option -> new SliderControl(option, 0, 100, 1, ControlValueFormatter.percentage()))
                         .setBinding((opts, value) -> opts.distortionEffectScale = (float) value / 100.0F, (opts) -> Math.round(opts.distortionEffectScale * 100.0F))
                         .setImpact(OptionImpact.LOW)
                         .build()
