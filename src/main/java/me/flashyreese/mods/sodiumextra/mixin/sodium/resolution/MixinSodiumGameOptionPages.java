@@ -4,8 +4,6 @@ import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlE
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.options.*;
-import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
-import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
@@ -57,28 +55,6 @@ public class MixinSodiumGameOptionPages {
                         .setFlags(OptionFlag.REQUIRES_GAME_RESTART)
                         .setImpact(OptionImpact.HIGH)
                         .build())
-                .build());
-    }
-
-    @Inject(method = "quality", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 2, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void quality(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups){
-        groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(int.class, vanillaOpts)
-                        .setName(new TranslatableText("options.screenEffectScale"))
-                        .setTooltip(new TranslatableText("options.screenEffectScale.tooltip"))
-                        .setControl(option -> new SliderControl(option, 0, 100, 1, ControlValueFormatter.percentage()))
-                        .setBinding((opts, value) -> opts.distortionEffectScale = (float) value / 100.0F, (opts) -> Math.round(opts.distortionEffectScale * 100.0F))
-                        .setImpact(OptionImpact.LOW)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(int.class, vanillaOpts)
-                        .setName(new TranslatableText("options.fovEffectScale"))
-                        .setTooltip(new TranslatableText("options.fovEffectScale.tooltip"))
-                        .setControl(option -> new SliderControl(option, 0, 100, 1, ControlValueFormatter.percentage()))
-                        .setBinding((opts, value) -> opts.fovEffectScale = (float) Math.sqrt(value / 100.0F), (opts) -> (int) Math.round(Math.pow(opts.fovEffectScale , 2.0D) * 100.0F))
-                        .setImpact(OptionImpact.LOW)
-                        .build()
-                )
                 .build());
     }
 }

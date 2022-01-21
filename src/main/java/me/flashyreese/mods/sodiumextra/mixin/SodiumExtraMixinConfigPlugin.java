@@ -27,6 +27,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("reduce_resolution_on_mac", true)
                 .addMixinOption("sky_colors", true)
                 .addMixinOption("sodium", true)
+                .addMixinOption("sodium.accessibility", true)
                 .addMixinOption("sodium.fast_random", true)
                 .addMixinOption("sodium.resolution", true)
                 .addMixinOption("sodium.resolution.reeses_sodium_options", true) // whacky packaging
