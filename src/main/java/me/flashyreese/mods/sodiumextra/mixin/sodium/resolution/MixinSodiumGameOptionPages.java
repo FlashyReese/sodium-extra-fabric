@@ -75,7 +75,7 @@ public class MixinSodiumGameOptionPages {
                         .setName(new TranslatableText("options.fovEffectScale"))
                         .setTooltip(new TranslatableText("options.fovEffectScale.tooltip"))
                         .setControl(option -> new SliderControl(option, 0, 100, 1, ControlValueFormatter.percentage()))
-                        .setBinding((opts, value) -> opts.fovEffectScale = (float) Math.sqrt(value / 100.0F), (opts) -> Math.round((int) Math.pow(opts.fovEffectScale, 2.0D) * 100.0F))
+                        .setBinding((opts, value) -> opts.fovEffectScale = (float) Math.sqrt(value / 100.0F), (opts) -> (int) Math.round(Math.pow(opts.fovEffectScale , 2.0D) * 100.0F))
                         .setImpact(OptionImpact.LOW)
                         .build()
                 )
