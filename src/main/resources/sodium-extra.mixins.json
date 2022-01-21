@@ -27,6 +27,7 @@
     "prevent_shaders.MixinGameRenderer",
     "reduce_resolution_on_mac.MixinWindow",
     "sky_colors.MixinBiome",
+    "sodium.accessibility.MixinSodiumGameOptionPages",
     "sodium.fast_random.MixinBlockRenderer",
     "sodium.resolution.reeses_sodium_options.MixinSodiumVideoOptionsScreen",
     "sodium.resolution.MixinSodiumGameOptionPages",
