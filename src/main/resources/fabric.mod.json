@@ -10,7 +10,8 @@
   "contributors": [
     "AMereBagatelle",
     "EatMyVenom",
-    "Madis0"
+    "Madis0",
+    "DragonEggBedrockBreaking"
   ],
   "contact": {
     "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
@@ -36,9 +37,8 @@
     "sodium-extra.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "~1.17",
+    "fabricloader": ">=0.12.12",
+    "fabric-lifecycle-events-v1": "*",
     "sodium": "0.3.x"
   },
   "recommends": {
