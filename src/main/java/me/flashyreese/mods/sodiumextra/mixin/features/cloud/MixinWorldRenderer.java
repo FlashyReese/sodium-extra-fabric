@@ -1,7 +1,7 @@
 package me.flashyreese.mods.sodiumextra.mixin.features.cloud;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
-import net.minecraft.client.options.CloudRenderMode;
+import net.minecraft.client.option.CloudRenderMode;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.SkyProperties;
 import net.minecraft.client.render.VertexFormats;
