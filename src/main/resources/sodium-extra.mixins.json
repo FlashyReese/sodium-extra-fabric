@@ -20,6 +20,7 @@
     "features.reduce_resolution_on_mac.MixinWindow",
     "features.render.entity.MixinArmorStandEntityRenderer",
     "features.render.entity.MixinItemFrameEntityRenderer",
+    "features.light_updates.MixinLightingProvider",
     "features.sky_colors.MixinBiome",
     "features.toasts.MixinToastManager",
     "features.particle.MixinWorldRenderer",
