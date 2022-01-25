@@ -14,6 +14,7 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+    maven { url 'https://jitpack.io' }
     maven { 
         name = "Modrinth"
         url = "https://api.modrinth.com/maven"
@@ -30,6 +31,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "maven.modrinth:sodium:${project.sodium_version}"
+    modImplementation "maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     implementation "org.joml:joml:1.10.2"
 
@@ -37,7 +39,9 @@ dependencies {
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 
-    modImplementation "maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options}"
+    // Currently using altrisi/CaffeineConfig until it is officially available through CaffeineMC's maven repository
+    // Todo: Use https://github.com/CaffeineMC/mixin-config when available
+    include(modImplementation("com.github.FlashyReese:CaffeineConfig:383ee33be5"))
 }
 
 processResources {
