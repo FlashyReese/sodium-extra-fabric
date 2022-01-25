@@ -57,5 +57,5 @@
   "sodium-extra.option.use_fast_random": "Использовать быстрый рандом",
   "sodium-extra.option.use_fast_random.tooltip": "Если включено, для рендеринга блоков будет использоваться функция быстрого рандома. Это может повлиять на положение случайно повёрнутых текстур по сравнению с ваниллой.",
   "sodium-extra.option.villagers.tooltip": "Переключение частиц жителей",
-  "sodium-extra.option.water.tooltip": "Переключение частиц воды"
+  "sodium-extra.option.water.tooltip": "Переключение частиц воды",
 }
