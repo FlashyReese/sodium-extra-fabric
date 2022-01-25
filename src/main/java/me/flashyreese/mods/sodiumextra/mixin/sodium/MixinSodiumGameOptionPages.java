@@ -8,6 +8,7 @@ import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStor
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
 import net.minecraft.client.util.Window;
+import net.minecraft.text.TranslatableText;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -32,9 +33,9 @@ public class MixinSodiumGameOptionPages {
 
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
-                        .setName("Resolution")
-                        .setTooltip("Sets resolution of the game.")
-                        .setControl(option -> new SliderControlExtended(option, 0, MinecraftClient.getInstance().getWindow().getMonitor() != null ? MinecraftClient.getInstance().getWindow().getMonitor().getVideoModeCount() : 0, 1, ControlValueFormatterExtended.resolution(), false))
+                        .setName(new TranslatableText("sodium-extra.option.resolution").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.resolution.tooltip").getString())
+                        .setControl(option -> new SliderControlExtended(option, 0, MinecraftClient.getInstance().getWindow().getMonitor() != null ? MinecraftClient.getInstance().getWindow().getMonitor().getVideoModeCount() : 0, 1, ControlValueFormatterExtended.resolution(), true))
                         .setBinding((options, value) -> {
                             if (window.getMonitor() != null) {
                                 if (value == 0) {
