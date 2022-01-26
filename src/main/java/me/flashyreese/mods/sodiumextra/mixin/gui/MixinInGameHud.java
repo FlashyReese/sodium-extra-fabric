@@ -54,23 +54,25 @@ public class MixinInGameHud {
         
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
-            case TOP_LEFT -> {
+            case TOP_LEFT:
                 x = 2;
                 y = 2;
-            }
-            case TOP_RIGHT -> {
+                return;
+            case TOP_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = 2;
-            }
-            case BOTTOM_LEFT -> {
+                return;
+            case BOTTOM_LEFT:
                 x = 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-            }
-            case BOTTOM_RIGHT -> {
+                return;
+            case BOTTOM_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-            }
-            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+                return;
+            default:
+                x = 2;
+                y = 2;
         }
 
         this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
@@ -84,23 +86,25 @@ public class MixinInGameHud {
 
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
-            case TOP_LEFT -> {
+            case TOP_LEFT:
                 x = 2;
                 y = 12;
-            }
-            case TOP_RIGHT -> {
+                return;
+            case TOP_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = 12;
-            }
-            case BOTTOM_LEFT -> {
+                return;
+            case BOTTOM_LEFT:
                 x = 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-            }
-            case BOTTOM_RIGHT -> {
+                return;
+            case BOTTOM_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-            }
-            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+                return;
+            default:
+                x = 2;
+                y = 12;
         }
 
         this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);

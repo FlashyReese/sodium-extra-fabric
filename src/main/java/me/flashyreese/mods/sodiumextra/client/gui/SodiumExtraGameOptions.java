@@ -189,8 +189,8 @@ public class SodiumExtraGameOptions {
         }
 
         @Override
-        public Text getLocalizedName() {
-            return this.text;
+        public String getLocalizedName() {
+            return this.text.getString();
         }
     }
 

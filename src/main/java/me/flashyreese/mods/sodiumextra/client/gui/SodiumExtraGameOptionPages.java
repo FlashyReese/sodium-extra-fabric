@@ -187,7 +187,7 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
-        return new OptionPage(new TranslatableText("sodium-extra.option.particles").getString(), ImmutableList.copyOf(groups));
+        return new OptionPage(new TranslatableText("options.particles").getString(), ImmutableList.copyOf(groups));
     }
 
     public static OptionPage detail() {
