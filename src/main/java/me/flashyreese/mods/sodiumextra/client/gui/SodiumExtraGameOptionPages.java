@@ -6,6 +6,7 @@ import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOpt
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
+import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import net.minecraft.client.MinecraftClient;
@@ -294,11 +295,25 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 ).build());
         groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(SodiumExtraGameOptions.OverlayCorner.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.overlay_corner"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.overlay_corner.tooltip"))
+                        .setControl(option -> new CyclingControl<>(option, SodiumExtraGameOptions.OverlayCorner.class))
+                        .setBinding((opts, value) -> opts.extraSettings.overlayCorner = value, opts -> opts.extraSettings.overlayCorner)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.show_fps"))
                         .setTooltip(new TranslatableText("sodium-extra.option.show_fps.tooltip"))
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.extraSettings.showFps = value, opts -> opts.extraSettings.showFps)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.show_fps_extended"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.show_fps_extended.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.extraSettings.showFPSExtended = value, opts -> opts.extraSettings.showFPSExtended)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
