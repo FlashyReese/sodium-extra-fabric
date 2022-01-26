@@ -3,6 +3,9 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 
 import java.io.File;
 import java.io.FileReader;
@@ -148,7 +151,9 @@ public class SodiumExtraGameOptions {
     }
 
     public static class ExtraSettings {
+        public OverlayCorner overlayCorner;
         public boolean showFps;
+        public boolean showFPSExtended;
         public boolean showCoords;
         public boolean reduceResolutionOnMac;
         public int cloudHeight;
@@ -158,7 +163,9 @@ public class SodiumExtraGameOptions {
         public boolean useFastRandom;
 
         public ExtraSettings() {
+            this.overlayCorner = OverlayCorner.TOP_LEFT;
             this.showFps = false;
+            this.showFPSExtended = true;
             this.showCoords = false;
             this.reduceResolutionOnMac = true;
             this.cloudHeight = 128;
@@ -166,6 +173,24 @@ public class SodiumExtraGameOptions {
             this.instantSneak = false;
             this.preventShaders = false;
             this.useFastRandom = true;
+        }
+    }
+
+    public enum OverlayCorner implements TextProvider {
+        TOP_LEFT("sodium-extra.option.overlay_corner.top_left"),
+        TOP_RIGHT("sodium-extra.option.overlay_corner.top_right"),
+        BOTTOM_LEFT("sodium-extra.option.overlay_corner.bottom_left"),
+        BOTTOM_RIGHT("sodium-extra.option.overlay_corner.bottom_right");
+
+        private final Text text;
+
+        OverlayCorner(String text) {
+            this.text = new TranslatableText(text);
+        }
+
+        @Override
+        public Text getLocalizedName() {
+            return this.text;
         }
     }
 

@@ -45,7 +45,6 @@
   "sodium-extra.option.reduce_resolution_on_mac": "Réduire la résolution sur macOS",
   "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Utiliser la moitié de la résolution sur les écrans Retina, cela améliore grandement les performances sur macOS.\nModifier cette option nécessitera de redémarrer le jeu",
   "sodium-extra.option.render": "Rendu",
-  "sodium-extra.option.resolution": "Résolution",
   "sodium-extra.option.resolution.tooltip": "Défini la résolution du jeu",
   "sodium-extra.option.show_coordinates": "Afficher les coordonnées",
   "sodium-extra.option.show_coordinates.tooltip": "Afficher les coordonnées actuelles dans le coin supérieur gauche",
@@ -55,8 +54,6 @@
   "sodium-extra.option.sky_colors.tooltip": "Changer la couleur du ciel selon le type de biome",
   "sodium-extra.option.smoke": "Fumée",
   "sodium-extra.option.smoke.tooltip": "Activer les particules de fumée",
-  "sodium-extra.option.static_fov": "Champ de vision statique",
-  "sodium-extra.option.static_fov.tooltip": "Cette option ne fait plus rien étant donné que Minecraft 1.16.2 fourni une option similaire. Cette dernière peut-être trouvée sous Paramètres d'accessibilité > Effets de ch. de vision",
   "sodium-extra.option.toasts": "Notifications",
   "sodium-extra.option.toasts.tooltip": "Afficher les notifications des succés et des craft",
   "sodium-extra.option.use_fast_random": "Fast Random",
@@ -64,5 +61,14 @@
   "sodium-extra.option.villagers.tooltip": "Activer les particules des villageois",
   "sodium-extra.option.water.tooltip": "Activer les particules de l'eau",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
-  "sodium-extra.overlay.fps": "%s FPS (max. %s / moy. %s / min. %s)"
+  "sodium-extra.overlay.fps": "%s FPS",
+  "sodium-extra.option.overlay_corner": "Overlay Corner",
+  "sodium-extra.option.overlay_corner.bottom_left": "Bottom Left",
+  "sodium-extra.option.overlay_corner.bottom_right": "Bottom Right",
+  "sodium-extra.option.overlay_corner.tooltip": "Determine which corner of the screen the overlay(fps and coordinates) will be rendered",
+  "sodium-extra.option.overlay_corner.top_left": "Top Left",
+  "sodium-extra.option.overlay_corner.top_right": "Top Right",
+  "sodium-extra.option.show_fps_extended": "Show FPS Extended",
+  "sodium-extra.option.show_fps_extended.tooltip": "Show max, average and min FPS on overlay",
+  "sodium-extra.overlay.fps_extended": "(max. %s / moy. %s / min. %s)"
 }

@@ -45,7 +45,6 @@
   "sodium-extra.option.reduce_resolution_on_mac": "Riduci risoluzione su macOS",
   "sodium-extra.option.reduce_resolution_on_mac.tooltip": "Usa la metà della risoluzione sui display retina, migliorando notevolmente le prestazioni su macOS.\nLa modifica di questa opzione richiederà il riavvio del gioco.",
   "sodium-extra.option.render": "Renderizzazione",
-  "sodium-extra.option.resolution": "Risoluzione",
   "sodium-extra.option.resolution.tooltip": "Imposta la risoluzione del gioco",
   "sodium-extra.option.show_coordinates": "Mostra coordinate",
   "sodium-extra.option.show_coordinates.tooltip": "Mostra le coordinate nell'angolo in alto a sinistra",
@@ -62,5 +61,14 @@
   "sodium-extra.option.villagers.tooltip": "Attiva/disattiva le particelle dei villager",
   "sodium-extra.option.water.tooltip": "Attiva/disattiva le particelle dell'acqua",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
-  "sodium-extra.overlay.fps": "%s FPS (max. %s / med. %s / min. %s)"
+  "sodium-extra.overlay.fps": "%s FPS",
+  "sodium-extra.option.overlay_corner": "Overlay Corner",
+  "sodium-extra.option.overlay_corner.bottom_left": "Bottom Left",
+  "sodium-extra.option.overlay_corner.bottom_right": "Bottom Right",
+  "sodium-extra.option.overlay_corner.tooltip": "Determine which corner of the screen the overlay(fps and coordinates) will be rendered",
+  "sodium-extra.option.overlay_corner.top_left": "Top Left",
+  "sodium-extra.option.overlay_corner.top_right": "Top Right",
+  "sodium-extra.option.show_fps_extended": "Show FPS Extended",
+  "sodium-extra.option.show_fps_extended.tooltip": "Show max, average and min FPS on overlay",
+  "sodium-extra.overlay.fps_extended": "(max. %s / med. %s / min. %s)"
 }
