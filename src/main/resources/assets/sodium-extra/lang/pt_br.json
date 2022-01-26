@@ -57,5 +57,18 @@
   "sodium-extra.option.use_fast_random": "Usar aleatoriedade rápida",
   "sodium-extra.option.use_fast_random.tooltip": "Caso habilitada, a função de aleatoriedade rápida será usada para o processamento visual de blocos.\nIsto pode afetar a função de rotação aleatória de algumas texturas de blocos tornando-as um pouco diferentes do padrão.",
   "sodium-extra.option.villagers.tooltip": "Alternar as partículas de aldeões",
-  "sodium-extra.option.water.tooltip": "Alterna as partículas de água"
+  "sodium-extra.option.water.tooltip": "Alterna as partículas de água",
+  "sodium-extra.option.block_break": "Block Break",
+  "sodium-extra.option.block_break.tooltip": "Process block break particles",
+  "sodium-extra.option.block_breaking": "Block Breaking",
+  "sodium-extra.option.block_breaking.tooltip": "Process block breaking particles",
+  "sodium-extra.option.overlay_corner": "Overlay Corner",
+  "sodium-extra.option.overlay_corner.bottom_left": "Bottom Left",
+  "sodium-extra.option.overlay_corner.bottom_right": "Bottom Right",
+  "sodium-extra.option.overlay_corner.tooltip": "Determine which corner of the screen the overlay(fps and coordinates) will be rendered",
+  "sodium-extra.option.overlay_corner.top_left": "Top Left",
+  "sodium-extra.option.overlay_corner.top_right": "Top Right",
+  "sodium-extra.option.show_fps_extended": "Show FPS Extended",
+  "sodium-extra.option.show_fps_extended.tooltip": "Show max, average and min FPS on overlay",
+  "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)"
 }

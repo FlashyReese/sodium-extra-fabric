@@ -61,5 +61,14 @@
   "sodium-extra.option.villagers.tooltip": "Habilita/deshabilita las partículas de aldeanos",
   "sodium-extra.option.water.tooltip": "Habilita/deshabilita las partículas de agua",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
-  "sodium-extra.overlay.fps": "%s FPS (max. %s / promedio. %s / min. %s)"
+  "sodium-extra.overlay.fps": "%s FPS",
+  "sodium-extra.option.overlay_corner": "Overlay Corner",
+  "sodium-extra.option.overlay_corner.bottom_left": "Bottom Left",
+  "sodium-extra.option.overlay_corner.bottom_right": "Bottom Right",
+  "sodium-extra.option.overlay_corner.tooltip": "Determine which corner of the screen the overlay(fps and coordinates) will be rendered",
+  "sodium-extra.option.overlay_corner.top_left": "Top Left",
+  "sodium-extra.option.overlay_corner.top_right": "Top Right",
+  "sodium-extra.option.show_fps_extended": "Show FPS Extended",
+  "sodium-extra.option.show_fps_extended.tooltip": "Show max, average and min FPS on overlay",
+  "sodium-extra.overlay.fps_extended": "(max. %s / promedio. %s / min. %s)"
 }
