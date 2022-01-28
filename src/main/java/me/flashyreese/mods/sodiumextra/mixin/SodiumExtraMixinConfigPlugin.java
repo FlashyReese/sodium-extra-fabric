@@ -29,6 +29,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("sodium", true)
                 .addMixinOption("sodium.accessibility", true)
                 .addMixinOption("sodium.fast_random", true)
+                .addMixinOption("sodium.gui_scale", true)
                 .addMixinOption("sodium.resolution", true)
                 .addMixinOption("sodium.resolution.reeses_sodium_options", true) // whacky packaging
                 .addMixinOption("toasts", true)
