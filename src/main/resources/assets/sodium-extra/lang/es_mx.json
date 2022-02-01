@@ -31,7 +31,7 @@
   "sodium-extra.option.instant_sneak.tooltip": "Si está habilitada, la cámara no moverá al agacharse.",
   "sodium-extra.option.item_frames.tooltip": "Si está habilitado, se renderizan los marcos.",
   "sodium-extra.option.light_updates": "Actualizaciones de iluminación",
-  "sodium-extra.option.light_updates.tooltip": "Si está habilitado, se procesarán las actualizaciones de iluminación.",
+  "sodium-extra.option.light_updates.tooltip": "Si está habilitado, se procesarán las actualizaciones de iluminación. Si está deshabilitado, esto puede afectar la iluminación al generar nuevos chunks. Solo deshabilite esto si sabe lo que está haciendo.",
   "sodium-extra.option.overlay_corner": "Esquina de superposición",
   "sodium-extra.option.overlay_corner.bottom_left": "Abajo a la izquierda",
   "sodium-extra.option.overlay_corner.bottom_right": "Abajo a la derecha",
