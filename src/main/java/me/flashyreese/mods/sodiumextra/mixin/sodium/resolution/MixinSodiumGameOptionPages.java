@@ -28,7 +28,7 @@ public class MixinSodiumGameOptionPages {
     private static MinecraftOptionsStorage vanillaOpts;
 
     @Inject(method = "general", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 1, shift = At.Shift.BEFORE), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void general(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups){
+    private static void general(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups) {
         Window window = MinecraftClient.getInstance().getWindow();
 
         groups.add(OptionGroup.createBuilder()

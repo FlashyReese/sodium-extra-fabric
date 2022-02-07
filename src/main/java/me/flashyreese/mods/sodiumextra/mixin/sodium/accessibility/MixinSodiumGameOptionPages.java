@@ -27,7 +27,7 @@ public class MixinSodiumGameOptionPages {
     private static MinecraftOptionsStorage vanillaOpts;
 
     @Inject(method = "quality", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup;createBuilder()Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 2, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILSOFT, remap = false)
-    private static void quality(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups){
+    private static void quality(CallbackInfoReturnable<OptionPage> cir, List<OptionGroup> groups) {
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(int.class, vanillaOpts)
                         .setName(new TranslatableText("options.screenEffectScale"))
