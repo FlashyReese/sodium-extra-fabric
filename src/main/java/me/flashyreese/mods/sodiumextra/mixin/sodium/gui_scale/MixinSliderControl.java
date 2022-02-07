@@ -26,7 +26,7 @@ public class MixinSliderControl {
     private ControlValueFormatter mode;
 
     @Inject(method = "createElement", at = @At(value = "HEAD"))
-    public void preCreateElement(Dim2i dim, CallbackInfoReturnable<ControlElement<Integer>> cir){
+    public void preCreateElement(Dim2i dim, CallbackInfoReturnable<ControlElement<Integer>> cir) {
         if (this.mode == ControlValueFormatter.guiScale()) {
             this.max = MinecraftClient.getInstance().getWindow().calculateScaleFactor(0, MinecraftClient.getInstance().forcesUnicodeFont());
         }

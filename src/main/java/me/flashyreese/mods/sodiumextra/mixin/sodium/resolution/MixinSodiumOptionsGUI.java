@@ -26,9 +26,9 @@ public class MixinSodiumOptionsGUI {
                     shift = At.Shift.AFTER
             ),
             locals = LocalCapture.CAPTURE_FAILSOFT)
-    public void applyChanges(CallbackInfo ci, HashSet<OptionStorage<?>> dirtyStorages, EnumSet<OptionFlag> flags){
+    public void applyChanges(CallbackInfo ci, HashSet<OptionStorage<?>> dirtyStorages, EnumSet<OptionFlag> flags) {
         MinecraftClient client = MinecraftClient.getInstance();
-        if (flags.contains(OptionFlag.REQUIRES_GAME_RESTART)){
+        if (flags.contains(OptionFlag.REQUIRES_GAME_RESTART)) {
             client.getWindow().applyVideoMode();
         }
     }
