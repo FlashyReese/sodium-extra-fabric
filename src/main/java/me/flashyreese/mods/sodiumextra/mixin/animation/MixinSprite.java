@@ -21,6 +21,6 @@ public class MixinSprite {
     public void createAnimation(Sprite.Info info, int nativeImageWidth, int nativeImageHeight, int maxLevel, CallbackInfoReturnable<Sprite.Animation> cir) {
         Sprite.Animation value = cir.getReturnValue();
         if (value != null)
-            ((SpriteAnimationExtended)value).setId(this.id);
+            ((SpriteAnimationExtended) value).setId(this.id);
     }
 }
