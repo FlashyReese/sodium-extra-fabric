@@ -84,7 +84,7 @@ public class MixinWorldRenderer {
             }
             if (!SodiumExtraClientMod.options().particleSettings.environment) {
                 if (parameters == ParticleTypes.ASH || parameters == ParticleTypes.CRIMSON_SPORE || parameters == ParticleTypes.WARPED_SPORE || parameters == ParticleTypes.WHITE_ASH) {
-                  callbackInfo.setReturnValue(null);
+                    callbackInfo.setReturnValue(null);
                 }
             }
             if (!SodiumExtraClientMod.options().particleSettings.villagers) {
