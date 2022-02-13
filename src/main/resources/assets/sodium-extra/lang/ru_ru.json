@@ -32,7 +32,7 @@
   "sodium-extra.option.item_frames.tooltip": "Переключение видимости рамок",
   "sodium-extra.option.light_updates": "Обновления света",
   "sodium-extra.option.light_updates.tooltip": "Обработка обновлений света",
-  "sodium-extra.option.overlay_corner": "Положение информации",
+  "sodium-extra.option.overlay_corner": "Наложение информации",
   "sodium-extra.option.overlay_corner.bottom_left": "Снизу слева",
   "sodium-extra.option.overlay_corner.bottom_right": "Снизу справа",
   "sodium-extra.option.overlay_corner.tooltip": "Позиция отображения дополнительной информации (частота кадров, координаты)",
