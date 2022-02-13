@@ -83,18 +83,18 @@ public class SodiumExtraGameOptions {
 
     public static class AnimationSettings {
         public boolean animation;
-        public boolean animateWater;
-        public boolean animateLava;
-        public boolean animateFire;
-        public boolean animatePortal;
+        public boolean water;
+        public boolean lava;
+        public boolean fire;
+        public boolean portal;
         public boolean blockAnimations;
 
         public AnimationSettings() {
             this.animation = true;
-            this.animateWater = true;
-            this.animateLava = true;
-            this.animateFire = true;
-            this.animatePortal = true;
+            this.water = true;
+            this.lava = true;
+            this.fire = true;
+            this.portal = true;
             this.blockAnimations = true;
         }
     }
