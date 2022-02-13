@@ -41,15 +41,15 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
         if (identifier != null) {
             String path = identifier.getPath();
             if (path.endsWith("water_still") || path.endsWith("water_flow")) {
-                return SodiumExtraClientMod.options().animationSettings.animateWater;
+                return SodiumExtraClientMod.options().animationSettings.water;
             } else if (path.endsWith("lava_still") || path.endsWith("lava_flow")) {
-                return SodiumExtraClientMod.options().animationSettings.animateLava;
+                return SodiumExtraClientMod.options().animationSettings.lava;
             } else if (path.endsWith("nether_portal")) {
-                return SodiumExtraClientMod.options().animationSettings.animatePortal;
+                return SodiumExtraClientMod.options().animationSettings.portal;
             } else if (path.endsWith("fire_0") || path.endsWith("fire_1") || path.endsWith("soul_fire_0") ||
                     path.endsWith("soul_fire_1") || path.endsWith("campfire_fire") || path.endsWith("campfire_log_lit") ||
                     path.endsWith("soul_campfire_fire") || path.endsWith("soul_campfire_log_lit")) {
-                return SodiumExtraClientMod.options().animationSettings.animateFire;
+                return SodiumExtraClientMod.options().animationSettings.fire;
             } else if (path.endsWith("magma") || path.endsWith("lantern") || path.endsWith("sea_lantern") ||
                     path.endsWith("soul_lantern") || path.endsWith("kelp") || path.endsWith("kelp_plant") ||
                     path.endsWith("seagrass") || path.endsWith("warped_stem") || path.endsWith("crimson_stem") ||
