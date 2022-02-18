@@ -4,8 +4,6 @@
   "plugin": "me.flashyreese.mods.sodiumextra.mixin.SodiumExtraMixinConfigPlugin",
   "package": "me.flashyreese.mods.sodiumextra.mixin",
   "compatibilityLevel": "JAVA_16",
-  "mixins": [
-  ],
   "client": [
     "animation.MixinSprite",
     "animation.MixinSpriteAnimation",
@@ -28,12 +26,16 @@
     "particle.MixinWorldRenderer",
     "prevent_shaders.MixinGameRenderer",
     "reduce_resolution_on_mac.MixinWindow",
+    "sky.MixinWorldRenderer",
     "sky_colors.MixinBiome",
     "sodium.accessibility.MixinSodiumGameOptionPages",
     "sodium.fast_random.MixinBlockRenderer",
-    "sodium.resolution.reeses_sodium_options.MixinSodiumVideoOptionsScreen",
+    "sodium.gui_scale.MixinSliderControl",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.resolution.MixinSodiumOptionsGUI",
+    "sodium.resolution.reeses_sodium_options.MixinSodiumVideoOptionsScreen",
+    "stars.MixinWorldRenderer",
+    "sun_moon.MixinWorldRenderer",
     "toasts.MixinToastManager"
   ],
   "injectors": {

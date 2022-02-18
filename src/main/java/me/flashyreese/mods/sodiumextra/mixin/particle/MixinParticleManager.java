@@ -13,14 +13,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ParticleManager.class)
 public class MixinParticleManager {
     @Inject(method = "addBlockBreakParticles", at = @At(value = "HEAD"), cancellable = true)
-    public void addBlockBreakParticles(BlockPos pos, BlockState state, CallbackInfo ci){
+    public void addBlockBreakParticles(BlockPos pos, BlockState state, CallbackInfo ci) {
         if (!SodiumExtraClientMod.options().particleSettings.particles || !SodiumExtraClientMod.options().particleSettings.blockBreak) {
             ci.cancel();
         }
     }
 
     @Inject(method = "addBlockBreakingParticles", at = @At(value = "HEAD"), cancellable = true)
-    public void addBlockBreakingParticles(BlockPos pos, Direction direction, CallbackInfo ci){
+    public void addBlockBreakingParticles(BlockPos pos, Direction direction, CallbackInfo ci) {
         if (!SodiumExtraClientMod.options().particleSettings.particles || !SodiumExtraClientMod.options().particleSettings.blockBreaking) {
             ci.cancel();
         }

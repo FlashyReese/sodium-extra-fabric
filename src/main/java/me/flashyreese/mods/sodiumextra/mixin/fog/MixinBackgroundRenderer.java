@@ -50,16 +50,16 @@ public class MixinBackgroundRenderer {
                 if (entity.isSpectator()) {
                     y = -8.0F;
                     ab = viewDistance * 0.5F;
-                } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
+                } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
                     y = 0.0F;
                     ab = 3.0F;
                 } else {
                     y = 0.25F;
                     ab = 1.0F;
                 }
-            } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
-                int m = ((LivingEntity)entity).getStatusEffect(StatusEffects.BLINDNESS).getDuration();
-                float n = MathHelper.lerp(Math.min(1.0F, (float)m / 20.0F), viewDistance, 5.0F);
+            } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
+                int m = ((LivingEntity) entity).getStatusEffect(StatusEffects.BLINDNESS).getDuration();
+                float n = MathHelper.lerp(Math.min(1.0F, (float) m / 20.0F), viewDistance, 5.0F);
                 if (fogType == BackgroundRenderer.FogType.FOG_SKY) {
                     y = 0.0F;
                     ab = n * 0.8F;
@@ -81,7 +81,7 @@ public class MixinBackgroundRenderer {
                     // Todo: Per dimension fog toggles and sliders perhaps
                     y = Short.MAX_VALUE - 1;
                     ab = Short.MAX_VALUE;
-                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0){
+                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
                     y = SodiumExtraClientMod.options().renderSettings.fogDistance * 16;
                     ab = (SodiumExtraClientMod.options().renderSettings.fogDistance + 1) * 16;
                 } else {
@@ -97,7 +97,7 @@ public class MixinBackgroundRenderer {
                     // Todo: Per dimension fog toggles and sliders perhaps
                     y = Short.MAX_VALUE - 1;
                     ab = Short.MAX_VALUE;
-                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0){
+                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
                     y = SodiumExtraClientMod.options().renderSettings.fogDistance * 16;
                     ab = (SodiumExtraClientMod.options().renderSettings.fogDistance + 1) * 16;
                 } else {
