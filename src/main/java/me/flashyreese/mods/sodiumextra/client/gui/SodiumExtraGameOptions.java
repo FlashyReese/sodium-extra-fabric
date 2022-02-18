@@ -14,18 +14,17 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 
 public class SodiumExtraGameOptions {
+    private static final Gson gson = new GsonBuilder()
+            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+            .setPrettyPrinting()
+            .excludeFieldsWithModifiers(Modifier.PRIVATE)
+            .create();
     public final AnimationSettings animationSettings = new AnimationSettings();
     public final ParticleSettings particleSettings = new ParticleSettings();
     public final DetailSettings detailSettings = new DetailSettings();
     public final RenderSettings renderSettings = new RenderSettings();
     public final ExtraSettings extraSettings = new ExtraSettings();
     private File file;
-
-    private static final Gson gson = new GsonBuilder()
-            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-            .setPrettyPrinting()
-            .excludeFieldsWithModifiers(Modifier.PRIVATE)
-            .create();
 
     public static SodiumExtraGameOptions load(File file) {
         SodiumExtraGameOptions config;
@@ -64,20 +63,38 @@ public class SodiumExtraGameOptions {
         }
     }
 
+    public enum OverlayCorner implements TextProvider {
+        TOP_LEFT("sodium-extra.option.overlay_corner.top_left"),
+        TOP_RIGHT("sodium-extra.option.overlay_corner.top_right"),
+        BOTTOM_LEFT("sodium-extra.option.overlay_corner.bottom_left"),
+        BOTTOM_RIGHT("sodium-extra.option.overlay_corner.bottom_right");
+
+        private final Text text;
+
+        OverlayCorner(String text) {
+            this.text = new TranslatableText(text);
+        }
+
+        @Override
+        public String getLocalizedName() {
+            return this.text.getString();
+        }
+    }
+
     public static class AnimationSettings {
         public boolean animation;
-        public boolean animateWater;
-        public boolean animateLava;
-        public boolean animateFire;
-        public boolean animatePortal;
+        public boolean water;
+        public boolean lava;
+        public boolean fire;
+        public boolean portal;
         public boolean blockAnimations;
 
         public AnimationSettings() {
             this.animation = true;
-            this.animateWater = true;
-            this.animateLava = true;
-            this.animateFire = true;
-            this.animatePortal = true;
+            this.water = true;
+            this.lava = true;
+            this.fire = true;
+            this.portal = true;
             this.blockAnimations = true;
         }
     }
@@ -121,11 +138,17 @@ public class SodiumExtraGameOptions {
     }
 
     public static class DetailSettings {
+        public boolean sky;
+        public boolean sunMoon;
+        public boolean stars;
         public boolean rainSnow;
         public boolean biomeColors;
         public boolean skyColors;
 
         public DetailSettings() {
+            this.sky = true;
+            this.sunMoon = true;
+            this.stars = true;
             this.rainSnow = true;
             this.biomeColors = true;
             this.skyColors = true;
@@ -173,24 +196,6 @@ public class SodiumExtraGameOptions {
             this.instantSneak = false;
             this.preventShaders = false;
             this.useFastRandom = true;
-        }
-    }
-
-    public enum OverlayCorner implements TextProvider {
-        TOP_LEFT("sodium-extra.option.overlay_corner.top_left"),
-        TOP_RIGHT("sodium-extra.option.overlay_corner.top_right"),
-        BOTTOM_LEFT("sodium-extra.option.overlay_corner.bottom_left"),
-        BOTTOM_RIGHT("sodium-extra.option.overlay_corner.bottom_right");
-
-        private final Text text;
-
-        OverlayCorner(String text) {
-            this.text = new TranslatableText(text);
-        }
-
-        @Override
-        public String getLocalizedName() {
-            return this.text.getString();
         }
     }
 

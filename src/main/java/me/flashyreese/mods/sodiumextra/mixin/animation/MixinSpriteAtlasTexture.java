@@ -35,15 +35,15 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
 
     private boolean shouldAnimate(Sprite sprite) {
         if (sprite.getId().getPath().endsWith("water_still") || sprite.getId().getPath().endsWith("water_flow")) {
-            return SodiumExtraClientMod.options().animationSettings.animateWater;
+            return SodiumExtraClientMod.options().animationSettings.water;
         } else if (sprite.getId().getPath().endsWith("lava_still") || sprite.getId().getPath().endsWith("lava_flow")) {
-            return SodiumExtraClientMod.options().animationSettings.animateLava;
+            return SodiumExtraClientMod.options().animationSettings.lava;
         } else if (sprite.getId().getPath().endsWith("nether_portal")) {
-            return SodiumExtraClientMod.options().animationSettings.animatePortal;
+            return SodiumExtraClientMod.options().animationSettings.portal;
         } else if (sprite.getId().getPath().endsWith("fire_0") || sprite.getId().getPath().endsWith("fire_1") || sprite.getId().getPath().endsWith("soul_fire_0") ||
                 sprite.getId().getPath().endsWith("soul_fire_1") || sprite.getId().getPath().endsWith("campfire_fire") || sprite.getId().getPath().endsWith("campfire_log_lit") ||
                 sprite.getId().getPath().endsWith("soul_campfire_fire") || sprite.getId().getPath().endsWith("soul_campfire_log_lit")) {
-            return SodiumExtraClientMod.options().animationSettings.animateFire;
+            return SodiumExtraClientMod.options().animationSettings.fire;
         } else if (sprite.getId().getPath().endsWith("magma") || sprite.getId().getPath().endsWith("lantern") || sprite.getId().getPath().endsWith("sea_lantern") ||
                 sprite.getId().getPath().endsWith("soul_lantern") || sprite.getId().getPath().endsWith("kelp") || sprite.getId().getPath().endsWith("kelp_plant") ||
                 sprite.getId().getPath().endsWith("seagrass") || sprite.getId().getPath().endsWith("warped_stem") || sprite.getId().getPath().endsWith("crimson_stem") ||

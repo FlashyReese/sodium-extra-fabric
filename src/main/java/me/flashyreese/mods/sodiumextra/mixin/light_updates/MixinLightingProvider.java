@@ -17,7 +17,7 @@ public class MixinLightingProvider {
             ci.cancel();
     }
 
-    @Inject(at = @At("HEAD"), method = "doLightUpdates", cancellable = true)
+    @Inject(at = @At("RETURN"), method = "doLightUpdates", cancellable = true)
     public void doLightUpdates(int maxUpdateCount, boolean doSkylight, boolean skipEdgeLightPropagation, CallbackInfoReturnable<Integer> cir) {
         if (!SodiumExtraClientMod.options().renderSettings.lightUpdates)
             cir.setReturnValue(0);
