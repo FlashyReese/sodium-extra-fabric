@@ -10,14 +10,8 @@ import java.io.File;
 @Environment(EnvType.CLIENT)
 public class SodiumExtraClientMod implements ClientModInitializer {
 
-    private static SodiumExtraGameOptions CONFIG;
-
     private static final ClientTickHandler clientTickHandler = new ClientTickHandler();
-
-    @Override
-    public void onInitializeClient() {
-        getClientTickHandler().onClientInitialize();
-    }
+    private static SodiumExtraGameOptions CONFIG;
 
     public static SodiumExtraGameOptions options() {
         if (CONFIG == null) {
@@ -33,5 +27,10 @@ public class SodiumExtraClientMod implements ClientModInitializer {
 
     private static SodiumExtraGameOptions loadConfig() {
         return SodiumExtraGameOptions.load(new File("config/sodium-extra-options.json"));
+    }
+
+    @Override
+    public void onInitializeClient() {
+        getClientTickHandler().onClientInitialize();
     }
 }

@@ -23,7 +23,7 @@ public class MixinInGameHud {
 
     @Shadow
     private int scaledWidth;
-    
+
     @Shadow
     private int scaledHeight;
 
@@ -51,7 +51,7 @@ public class MixinInGameHud {
         if (SodiumExtraClientMod.options().extraSettings.showFPSExtended)
             text = new LiteralText(String.format("%s %s", text.getString(), new TranslatableText("sodium-extra.overlay.fps_extended", SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
                     SodiumExtraClientMod.getClientTickHandler().getLowestFps()).getString()));
-        
+
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
             case TOP_LEFT -> {

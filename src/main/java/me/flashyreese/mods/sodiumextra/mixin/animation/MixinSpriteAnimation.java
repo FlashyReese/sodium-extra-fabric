@@ -11,12 +11,12 @@ public class MixinSpriteAnimation implements SpriteAnimationExtended {
     private Identifier identifier;
 
     @Override
-    public void setId(Identifier id) {
-        this.identifier = id;
+    public Identifier getId() {
+        return this.identifier;
     }
 
     @Override
-    public Identifier getId() {
-        return this.identifier;
+    public void setId(Identifier id) {
+        this.identifier = id;
     }
 }
