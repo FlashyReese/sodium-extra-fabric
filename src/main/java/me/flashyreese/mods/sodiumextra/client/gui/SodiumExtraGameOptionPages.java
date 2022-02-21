@@ -214,6 +214,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.sun_moon.tooltip"))
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.detailSettings.sunMoon = value, opts -> opts.detailSettings.sunMoon)
+                        .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
