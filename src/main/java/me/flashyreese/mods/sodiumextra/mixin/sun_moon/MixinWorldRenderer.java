@@ -1,16 +1,32 @@
 package me.flashyreese.mods.sodiumextra.mixin.sun_moon;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
 public class MixinWorldRenderer {
+
+    @Mutable
+    @Shadow
+    @Final
+    private static Identifier SUN;
+
+    @Mutable
+    @Shadow
+    @Final
+    private static Identifier MOON_PHASES;
+
     @Redirect(
             method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLjava/lang/Runnable;)V",
             at = @At(
@@ -26,35 +42,20 @@ public class MixinWorldRenderer {
         }
     }
 
-    @Redirect(
-            method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLjava/lang/Runnable;)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderTexture(ILnet/minecraft/util/Identifier;)V",
-                    ordinal = 0
-            )
+    @Inject(
+            method = "reload()V",
+            at = @At(value = "TAIL")
     )
-    public void preDrawSunPhases(int i, Identifier identifier) {
+    private void postWorldRendererReload(CallbackInfo ci) {
         if (SodiumExtraClientMod.options().detailSettings.sunMoon) {
-            RenderSystem.setShaderTexture(i, identifier);
+            MOON_PHASES = new Identifier("textures/environment/moon_phases.png");
+            SUN = new Identifier("textures/environment/sun.png");
         } else {
-            RenderSystem.setShaderTexture(i, new Identifier("sodium-extra","textures/transparent.png")); // Hack :)
-        }
-    }
-
-    @Redirect(
-            method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLjava/lang/Runnable;)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderTexture(ILnet/minecraft/util/Identifier;)V",
-                    ordinal = 1
-            )
-    )
-    public void preDrawMoonPhases(int i, Identifier identifier) {
-        if (SodiumExtraClientMod.options().detailSettings.sunMoon) {
-            RenderSystem.setShaderTexture(i, identifier);
-        } else {
-            RenderSystem.setShaderTexture(i, new Identifier("sodium-extra","textures/transparent.png")); // Hack :)
+            if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
+                SodiumExtraClientMod.logger().warn("Enhanced Celestials detected, moon phases will not be disabled while in lunar event.");
+            }
+            MOON_PHASES = new Identifier("sodium-extra", "textures/transparent.png");
+            SUN = new Identifier("sodium-extra", "textures/transparent.png");
         }
     }
 }
