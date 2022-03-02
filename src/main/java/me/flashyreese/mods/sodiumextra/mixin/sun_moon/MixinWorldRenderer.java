@@ -28,7 +28,7 @@ public class MixinWorldRenderer {
     private static Identifier MOON_PHASES;
 
     @Redirect(
-            method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLjava/lang/Runnable;)V",
+            method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLnet/minecraft/client/render/Camera;ZLjava/lang/Runnable;)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/render/DimensionEffects;getFogColorOverride(FF)[F"
