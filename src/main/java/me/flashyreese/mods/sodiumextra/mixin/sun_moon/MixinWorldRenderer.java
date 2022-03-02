@@ -2,15 +2,32 @@ package me.flashyreese.mods.sodiumextra.mixin.sun_moon;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.render.SkyProperties;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.texture.TextureManager;
 import net.minecraft.util.Identifier;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
 public class MixinWorldRenderer {
+
+    @Mutable
+    @Shadow
+    @Final
+    private static Identifier SUN;
+
+    @Mutable
+    @Shadow
+    @Final
+    private static Identifier MOON_PHASES;
+
     @Redirect(
             method = "renderSky",
             at = @At(
@@ -26,35 +43,20 @@ public class MixinWorldRenderer {
         }
     }
 
-    @Redirect(
-            method = "renderSky",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/texture/TextureManager;bindTexture(Lnet/minecraft/util/Identifier;)V",
-                    ordinal = 0
-            )
+    @Inject(
+            method = "reload()V",
+            at = @At(value = "TAIL")
     )
-    public void redirectSunTextureBind(TextureManager instance, Identifier id) {
+    private void postWorldRendererReload(CallbackInfo ci) {
         if (SodiumExtraClientMod.options().detailSettings.sunMoon) {
-            instance.bindTexture(id);
+            MOON_PHASES = new Identifier("textures/environment/moon_phases.png");
+            SUN = new Identifier("textures/environment/sun.png");
         } else {
-            instance.bindTexture(new Identifier("sodium-extra","textures/transparent.png")); // Hack :)
-        }
-    }
-
-    @Redirect(
-            method = "renderSky",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/texture/TextureManager;bindTexture(Lnet/minecraft/util/Identifier;)V",
-                    ordinal = 1
-            )
-    )
-    public void redirectMoonPhasesTextureBind(TextureManager instance, Identifier id) {
-        if (SodiumExtraClientMod.options().detailSettings.sunMoon) {
-            instance.bindTexture(id);
-        } else {
-            instance.bindTexture(new Identifier("sodium-extra","textures/transparent.png")); // Hack :)
+            if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
+                SodiumExtraClientMod.logger().warn("Enhanced Celestials detected, moon phases will not be disabled while in lunar event.");
+            }
+            MOON_PHASES = new Identifier("sodium-extra", "textures/transparent.png");
+            SUN = new Identifier("sodium-extra", "textures/transparent.png");
         }
     }
 }
