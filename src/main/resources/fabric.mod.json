@@ -35,7 +35,7 @@
     "sodium-extra.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.12",
+    "fabricloader": ">=0.13",
     "fabric-lifecycle-events-v1": "*",
     "sodium": "*"
   },
@@ -43,6 +43,6 @@
     "sodium": ["0.1.x", "0.2.0+IRIS_rev.400af47", ">=0.3.0"]
   },
   "recommends": {
-    "reeses-sodium-options": ">=1.4.0"
+    "reeses-sodium-options": ">=1.4.1"
   }
 }
