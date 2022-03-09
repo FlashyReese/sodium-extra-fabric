@@ -7,6 +7,7 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatte
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
+import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.TranslatableText;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SodiumExtraGameOptionPages {
+    private static final MinecraftOptionsStorage vanillaOpts = new MinecraftOptionsStorage();
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
 
     public static OptionPage animation() {
@@ -297,6 +299,13 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, vanillaOpts)
+                        .setName(new TranslatableText("sodium-extra.option.gl_debug_verbosity").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.gl_debug_verbosity.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.glDebugVerbosity = value ? 1 : 0, options -> options.glDebugVerbosity == 1)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.use_fast_random").getString())
                         .setTooltip(new TranslatableText("sodium-extra.option.use_fast_random.tooltip").getString())
