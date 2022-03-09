@@ -25,6 +25,8 @@
   "sodium-extra.option.fireworks.tooltip": "ถ้าเปิดตัวเลือกนี้ อนุภาคจากดอกไม้ไฟจะทำงาน",
   "sodium-extra.option.fog": "หมอก",
   "sodium-extra.option.fog.tooltip": "ปรับระยะห่างของเอฟเฟกต์หมอกในภูมิประเทศ \n0 - ใช้ค่าของหมอกจากวานิลลาดั้งเดิม \n1-32 - กำหนดระยะห่างของหมอก นับเป็นชังก์ \n33 - ระยะห่างของหมอกสูงสุด (หลัก ๆ แล้ว จะเป็นการปิดหมอก)",
+  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
+  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "ย่อแบบทันที",
   "sodium-extra.option.instant_sneak.tooltip": "ถ้าเปิดตัวเลือกนี้ ตัวกล้องจะไม่เลื่อนลงแบบช้า ๆ เมื่อย่อลงไป",
   "sodium-extra.option.item_frames.tooltip": "ถ้าเปิดตัวเลือกนี้ กรอบไอเท็มจะได้รับการเรนเดอร์",
