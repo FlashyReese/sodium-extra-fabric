@@ -25,6 +25,8 @@
   "sodium-extra.option.fireworks.tooltip": "Lülita ilutulestiku osakesed sisse/välja",
   "sodium-extra.option.fog": "Udu",
   "sodium-extra.option.fog.tooltip": "Reguleerib maastikul uduefekti kaugust.\n0 - kasuta vanilli udusätteid\n1-32 - määra udukaugus kamakates\n33 - maksimaalne udukaugus (sisuliselt keelab udu)",
+  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
+  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Kohene hiilimine",
   "sodium-extra.option.instant_sneak.tooltip": "Väldi hiilimisel kaamera hüplemist",
   "sodium-extra.option.item_frames.tooltip": "Lülita esemeraamide renderdamine sisse/välja",
