@@ -25,6 +25,8 @@
   "sodium-extra.option.fireworks.tooltip": "Havai fişek parçacıkları için aç/kapa",
   "sodium-extra.option.fog": "Sis",
   "sodium-extra.option.fog.tooltip": "Arazideki sis efekt menzilini ayarlar. \n0 - varsayılan sis ayarlarını kullan\n1-32 - yığın (chunk) olarak sis menzili ayarla\n33 - maksimum sis menzili (bir bakıma sisi devre dışı bırakır)",
+  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
+  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Hızlı Eğilme",
   "sodium-extra.option.instant_sneak.tooltip": "Eğilirken kameraya lineer enterpolasyon yapma",
   "sodium-extra.option.item_frames.tooltip": "Eşya çerçevelerini göstermek için aç/kapa",

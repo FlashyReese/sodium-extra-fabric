@@ -25,6 +25,8 @@
   "sodium-extra.option.fireworks.tooltip": "Переключение частиц фейерверка",
   "sodium-extra.option.fog": "Туман",
   "sodium-extra.option.fog.tooltip": "Регулирует дальность тумана на территории. \n0 - обычный ванильный туман\n1-32 - расстояние до тумана в чанках\n33 - максимальное расстояние тумана (по сути, отключает туман)",
+  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
+  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Моментальное приседание",
   "sodium-extra.option.instant_sneak.tooltip": "Отключает плавную камеру при приседании",
   "sodium-extra.option.item_frames.tooltip": "Переключение видимости рамок",
