@@ -15,8 +15,6 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("biome_colors", true)
                 .addMixinOption("cloud", true)
                 .addMixinOption("compat", true) // Should not allow users to turn this off
-                .addMixinOption("compat.reeses_sodium_options", true)
-                .addMixinOption("compat.sodium", true) // Should not allow users to turn this off
                 .addMixinOption("entity", true)
                 .addMixinOption("fog", true)
                 .addMixinOption("gui", true)

@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.compat.sodium;
+package me.flashyreese.mods.sodiumextra.mixin.compat;
 
 import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptionPages;
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;

@@ -21,13 +21,24 @@ jobs:
         run: ./gradlew build
         env:
           BUILD_RELEASE: ${{ github.event.prerelease == false }}
-      - name: Publish to Modrinth
-        run: ./gradlew publishModrinth
-        env:
-          MODRINTH_API: ${{ secrets.MODRINTH_API }}
-          CHANGELOG: ${{ github.event.release.body }}
-      - name: Upload assets to GitHub
-        uses: AButler/upload-release-assets@v2.0
+      - name: Publish to Modrinth & CurseForge
+        uses: Kir-Antipov/mc-publish@v2.1
         with:
-          files: 'build/libs/*;LICENSE.txt'
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          modrinth-id: PtjYWJkn
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          curseforge-id: 447673
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          version-type: release
+
+          loaders: fabric
+
+          version-resolver: latest
+          dependencies: |
+            sodium | depends | *
+            reeses-sodium-options | recommends | *
+            irisshaders | recommends | *
+            iris | recommends | *
