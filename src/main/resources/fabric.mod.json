@@ -42,6 +42,6 @@
     "sodium": "0.3.x"
   },
   "recommends": {
-    "reeses-sodium-options": ">=1.4.1"
+    "reeses-sodium-options": ">=1.4.2"
   }
 }
