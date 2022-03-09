@@ -299,6 +299,13 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, vanillaOpts)
+                        .setName(new TranslatableText("sodium-extra.option.gl_debug_verbosity").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.gl_debug_verbosity.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.glDebugVerbosity = value ? 1 : 0, options -> options.glDebugVerbosity == 1)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.use_fast_random").getString())
                         .setTooltip(new TranslatableText("sodium-extra.option.use_fast_random.tooltip").getString())
@@ -372,13 +379,6 @@ public class SodiumExtraGameOptionPages {
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.extraSettings.preventShaders = value, options -> options.extraSettings.preventShaders)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, vanillaOpts)
-                        .setName(new TranslatableText("sodium-extra.option.gl_debug_verbosity").getString())
-                        .setTooltip(new TranslatableText("sodium-extra.option.gl_debug_verbosity.tooltip").getString())
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.glDebugVerbosity = value ? 1 : 0, options -> options.glDebugVerbosity == 1)
                         .build()
                 )
                 .build());
