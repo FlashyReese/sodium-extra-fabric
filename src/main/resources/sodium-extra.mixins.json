@@ -9,6 +9,7 @@
     "biome_colors.MixinBiomeColors",
     "cloud.MixinWorldRenderer",
     "compat.MixinSodiumOptionsGUI",
+    "compat.MixinTitleScreen",
     "entity.MixinGuardianEntityRenderer",
     "entity.MixinItemFrameEntityRenderer",
     "entity.MixinLivingEntityRenderer",

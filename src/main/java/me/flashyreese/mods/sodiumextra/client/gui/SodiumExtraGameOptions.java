@@ -24,7 +24,9 @@ public class SodiumExtraGameOptions {
     public final DetailSettings detailSettings = new DetailSettings();
     public final RenderSettings renderSettings = new RenderSettings();
     public final ExtraSettings extraSettings = new ExtraSettings();
+    public final NotificationSettings notificationSettings = new NotificationSettings();
     private File file;
+    private boolean suggestedRSO;
 
     public static SodiumExtraGameOptions load(File file) {
         SodiumExtraGameOptions config;
@@ -40,6 +42,7 @@ public class SodiumExtraGameOptions {
         }
 
         config.file = file;
+        config.suggestedRSO = false;
         config.writeChanges();
 
         return config;
@@ -61,6 +64,14 @@ public class SodiumExtraGameOptions {
         } catch (IOException e) {
             throw new RuntimeException("Could not save configuration file", e);
         }
+    }
+
+    public boolean hasSuggestedRSO() {
+        return this.suggestedRSO;
+    }
+
+    public void setSuggestedRSO(boolean suggestedRSO) {
+        this.suggestedRSO = suggestedRSO;
     }
 
     public enum OverlayCorner implements TextProvider {
@@ -199,4 +210,11 @@ public class SodiumExtraGameOptions {
         }
     }
 
+    public static class NotificationSettings {
+        public boolean hideRSORecommendation;
+
+        public NotificationSettings() {
+            this.hideRSORecommendation = false;
+        }
+    }
 }
