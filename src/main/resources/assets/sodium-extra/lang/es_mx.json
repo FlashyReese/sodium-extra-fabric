@@ -76,5 +76,7 @@
   "sodium-extra.option.water.tooltip": "Si está habilitado, se procesan las partículas de agua.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
-  "sodium-extra.overlay.fps_extended": "(max. %s / prom. %s / min. %s)"
+  "sodium-extra.overlay.fps_extended": "(max. %s / prom. %s / min. %s)",
+  "sodium-extra.suggestRSO.header": "Sugerencia: Instale Reese's Sodium Options",
+  "sodium-extra.suggestRSO.message": "Se recomienda enfáticamente que instale Reese's Sodium Options junto con Sodium Extra. Debido a la creciente cantidad de funciones, ya no encaja correctamente en las opciones de video de Sodium."
 }
