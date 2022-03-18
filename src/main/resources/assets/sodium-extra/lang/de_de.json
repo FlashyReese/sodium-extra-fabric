@@ -76,5 +76,7 @@
   "sodium-extra.option.water.tooltip": "Wasserpartikel umschalten",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
-  "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)"
+  "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)",
+  "sodium-extra.suggestRSO.header": "Suggestion: Install Reese's Sodium Options",
+  "sodium-extra.suggestRSO.message": "It is highly recommended you install Reese's Sodium Options alongside Sodium Extra. Due to the growing amount of features, it no longer fits properly on Sodium's video options."
 }
