@@ -4,8 +4,8 @@ import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptions;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
@@ -26,7 +26,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
 
     public static Logger logger() {
         if (LOGGER == null) {
-            LOGGER = LogManager.getLogger("Sodium Extra");
+            LOGGER = LoggerFactory.getLogger("Sodium Extra");
         }
         return LOGGER;
     }
