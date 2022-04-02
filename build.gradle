@@ -1,6 +1,7 @@
 plugins {
     id 'fabric-loom' version '0.11-SNAPSHOT'
     id 'maven-publish'
+    id 'io.github.juuxel.loom-quiltflower' version '1.6.1'
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -38,7 +39,7 @@ dependencies {
 
     // Currently using altrisi/CaffeineConfig until it is officially available through CaffeineMC's maven repository
     // Todo: Use https://github.com/CaffeineMC/mixin-config when available
-    include(modImplementation("com.github.FlashyReese:CaffeineConfig:383ee33be5"))
+    include(modImplementation("com.github.FlashyReese:CaffeineConfig:d496db7619"))
 
     modRuntimeOnly "maven.modrinth:lazydfu:0.1.2"
 }
