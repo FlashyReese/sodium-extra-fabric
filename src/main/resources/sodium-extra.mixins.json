@@ -15,7 +15,7 @@
     "entity.MixinLivingEntityRenderer",
     "entity.MixinPaintingEntityRenderer",
     "entity.MixinPistonBlockEntityRenderer",
-    "fog.MixinSodiumWorldRenderer",
+    "fog.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
     "gui.MixinInGameHud",
     "instant_sneak.MixinCamera",
