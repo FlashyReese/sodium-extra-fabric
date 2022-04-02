@@ -1,40 +1,23 @@
 package me.flashyreese.mods.sodiumextra.mixin.animation;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
-import me.flashyreese.mods.sodiumextra.client.animation.SpriteAnimationExtended;
 import net.minecraft.client.texture.AbstractTexture;
+import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.texture.TextureTickListener;
 import net.minecraft.util.Identifier;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-
-import java.util.List;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(SpriteAtlasTexture.class)
 public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
-
-    @Shadow
-    @Final
-    private List<TextureTickListener> animatedSprites;
-
-    /**
-     * @author FlashyReese
-     */
-    @Overwrite
-    public void tickAnimatedSprites() {
-        this.bindTexture();
-
-        if (SodiumExtraClientMod.options().animationSettings.animation) {
-            for (TextureTickListener textureTickListener : this.animatedSprites) {
-                if (textureTickListener instanceof SpriteAnimationExtended animationExtended) {
-                    if (this.shouldAnimate(animationExtended.getId()))
-                        textureTickListener.tick();
-                }
-            }
-        }
+    
+    @Redirect(method = "upload", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/texture/Sprite;getAnimation()Lnet/minecraft/client/texture/TextureTickListener;"))
+    public TextureTickListener sodiumExtra$tickAnimatedSprites(Sprite instance) {
+        if (SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance.getId()))
+            return instance.getAnimation();
+        return null;
     }
 
     private boolean shouldAnimate(Identifier identifier) {
