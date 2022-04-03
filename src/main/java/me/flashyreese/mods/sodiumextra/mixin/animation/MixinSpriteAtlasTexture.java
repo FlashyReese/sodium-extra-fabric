@@ -39,6 +39,9 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
                     path.endsWith("blast_furnace_front_on") || path.endsWith("smoker_front_on") ||
                     path.endsWith("stonecutter_saw")) {
                 return SodiumExtraClientMod.options().animationSettings.blockAnimations;
+            } else if (path.endsWith("sculk_sensor_tendril_inactive") || path.endsWith("sculk_sensor_tendril_active") ||
+                    path.endsWith("particle/vibration")) {
+                return SodiumExtraClientMod.options().animationSettings.sculkSensor;
             }
         }
         return true;

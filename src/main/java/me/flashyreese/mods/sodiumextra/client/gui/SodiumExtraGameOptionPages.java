@@ -74,6 +74,14 @@ public class SodiumExtraGameOptionPages {
                         .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("block.minecraft.sculk_sensor"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.animate_sculk_sensor.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.animationSettings.sculkSensor = value, options -> options.animationSettings.sculkSensor)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
+                        .build()
+                )
                 .build());
         return new OptionPage(new TranslatableText("sodium-extra.option.animations"), ImmutableList.copyOf(groups));
     }
