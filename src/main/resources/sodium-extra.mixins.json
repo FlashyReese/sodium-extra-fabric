@@ -5,12 +5,11 @@
   "package": "me.flashyreese.mods.sodiumextra.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
-    "animation.MixinSprite",
-    "animation.MixinSpriteAnimation",
     "animation.MixinSpriteAtlasTexture",
     "biome_colors.MixinBiomeColors",
     "cloud.MixinWorldRenderer",
     "compat.MixinSodiumOptionsGUI",
+    "compat.MixinTitleScreen",
     "entity.MixinGuardianEntityRenderer",
     "entity.MixinItemFrameEntityRenderer",
     "entity.MixinLivingEntityRenderer",

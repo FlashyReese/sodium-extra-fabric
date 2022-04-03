@@ -7,5 +7,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(MinecraftClient.class)
 public interface MinecraftClientAccessor {
     @Accessor("currentFps")
-    int getCurrentFPS();
+    static int getCurrentFPS() {
+        return 0;
+    }
 }
