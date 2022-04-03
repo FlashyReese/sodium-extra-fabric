@@ -99,6 +99,7 @@ public class SodiumExtraGameOptions {
         public boolean fire;
         public boolean portal;
         public boolean blockAnimations;
+        public boolean sculkSensor;
 
         public AnimationSettings() {
             this.animation = true;
@@ -107,6 +108,7 @@ public class SodiumExtraGameOptions {
             this.fire = true;
             this.portal = true;
             this.blockAnimations = true;
+            this.sculkSensor = false;
         }
     }
 
