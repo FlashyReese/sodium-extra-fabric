@@ -1,6 +1,7 @@
 {
     "sodium-extra.option.animate_fire.tooltip": "활성화 하면, 불 애니메이션이 렌더링 됩니다.",
     "sodium-extra.option.animate_lava.tooltip": "활성화 하면, 용암 애니메이션이 렌더링 됩니다.",
+    "sodium-extra.option.animate_sculk_sensor.tooltip": "If enabled, sculk sensor animations are processed.",
     "sodium-extra.option.animate_portal.tooltip": "활성화 하면, 차원문 애니메이션이 렌더링 됩니다.",
     "sodium-extra.option.animate_water.tooltip": "활성화 하면, 물 애니메이션이 렌더링 됩니다.",
     "sodium-extra.option.animations": "애니메이션",
