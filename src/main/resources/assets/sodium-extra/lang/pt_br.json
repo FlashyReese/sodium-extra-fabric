@@ -1,6 +1,7 @@
 {
   "sodium-extra.option.animate_fire.tooltip": "Alterna a animação do fogo",
   "sodium-extra.option.animate_lava.tooltip": "Alterna a animação da lava",
+  "sodium-extra.option.animate_sculk_sensor.tooltip": "If enabled, sculk sensor animations are processed.",
   "sodium-extra.option.animate_portal.tooltip": "Alterna a animação do portal",
   "sodium-extra.option.animate_water.tooltip": "Alterna a animação da água",
   "sodium-extra.option.animations": "Animações",

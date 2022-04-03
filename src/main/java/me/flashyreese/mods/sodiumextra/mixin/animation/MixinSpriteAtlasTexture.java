@@ -15,7 +15,7 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
     
     @Redirect(method = "upload", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/texture/Sprite;getAnimation()Lnet/minecraft/client/texture/TextureTickListener;"))
     public TextureTickListener sodiumExtra$tickAnimatedSprites(Sprite instance) {
-        if (SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance.getId()))
+        if (instance.getAnimation() != null && SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance.getId()))
             return instance.getAnimation();
         return null;
     }
@@ -39,6 +39,9 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
                     path.endsWith("blast_furnace_front_on") || path.endsWith("smoker_front_on") ||
                     path.endsWith("stonecutter_saw")) {
                 return SodiumExtraClientMod.options().animationSettings.blockAnimations;
+            } else if (path.endsWith("sculk_sensor_tendril_inactive") || path.endsWith("sculk_sensor_tendril_active") ||
+                    path.endsWith("particle/vibration")) {
+                return SodiumExtraClientMod.options().animationSettings.sculkSensor;
             }
         }
         return true;

@@ -1,6 +1,7 @@
 {
   "sodium-extra.option.animate_fire.tooltip": "Activer l'animation du feu",
   "sodium-extra.option.animate_lava.tooltip": "Activer l'animation de la lave",
+  "sodium-extra.option.animate_sculk_sensor.tooltip": "If enabled, sculk sensor animations are processed.",
   "sodium-extra.option.animate_portal.tooltip": "Activer l'animation des portails",
   "sodium-extra.option.animate_water.tooltip": "Activer l'animation de l'eau",
   "sodium-extra.option.animations": "Animations",
