@@ -13,7 +13,7 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
 
     @Redirect(method = "upload", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/texture/Sprite;isAnimated()Z"))
     public boolean sodiumExtra$tickAnimatedSprites(Sprite instance) {
-        return SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance);
+        return instance.isAnimated() && SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance);
     }
 
     private boolean shouldAnimate(Sprite sprite) {
