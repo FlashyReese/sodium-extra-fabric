@@ -51,9 +51,6 @@ public class MixinWorldRenderer {
             MOON_PHASES = new Identifier("textures/environment/moon_phases.png");
             SUN = new Identifier("textures/environment/sun.png");
         } else {
-            if (FabricLoader.getInstance().isModLoaded("enhancedcelestials")) {
-                SodiumExtraClientMod.logger().warn("Enhanced Celestials detected, moon phases will not be disabled while in lunar event.");
-            }
             MOON_PHASES = new Identifier("sodium-extra", "textures/transparent.png");
             SUN = new Identifier("sodium-extra", "textures/transparent.png");
         }
