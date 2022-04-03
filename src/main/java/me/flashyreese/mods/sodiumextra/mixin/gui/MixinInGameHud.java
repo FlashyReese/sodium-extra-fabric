@@ -44,7 +44,7 @@ public class MixinInGameHud {
 
     //Should I make this OOP or just leave as it :> I don't think I will be adding any more than these 2.
     private void renderFPS(MatrixStack matrices) {
-        int currentFPS = ((MinecraftClientAccessor) this.client).getCurrentFPS();
+        int currentFPS = MinecraftClientAccessor.getCurrentFPS();
 
         Text text = new TranslatableText("sodium-extra.overlay.fps", currentFPS);
 
@@ -52,27 +52,24 @@ public class MixinInGameHud {
             text = new LiteralText(String.format("%s %s", text.getString(), new TranslatableText("sodium-extra.overlay.fps_extended", SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
                     SodiumExtraClientMod.getClientTickHandler().getLowestFps()).getString()));
 
-        int x, y;
+        int x = 0, y = 0;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
             case TOP_LEFT:
                 x = 2;
                 y = 2;
-                return;
+                break;
             case TOP_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = 2;
-                return;
+                break;
             case BOTTOM_LEFT:
                 x = 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-                return;
+                break;
             case BOTTOM_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-                return;
-            default:
-                x = 2;
-                y = 2;
+                break;
         }
 
         this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
@@ -84,27 +81,24 @@ public class MixinInGameHud {
 
         Text text = new TranslatableText("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z));
 
-        int x, y;
+        int x = 0, y = 0;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
             case TOP_LEFT:
                 x = 2;
                 y = 12;
-                return;
+                break;
             case TOP_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = 12;
-                return;
+                break;
             case BOTTOM_LEFT:
                 x = 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-                return;
+                break;
             case BOTTOM_RIGHT:
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-                return;
-            default:
-                x = 2;
-                y = 12;
+                break;
         }
 
         this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);

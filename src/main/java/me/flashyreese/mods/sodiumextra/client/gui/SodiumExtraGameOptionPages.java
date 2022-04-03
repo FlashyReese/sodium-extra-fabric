@@ -1,7 +1,9 @@
 package me.flashyreese.mods.sodiumextra.client.gui;
 
 import com.google.common.collect.ImmutableList;
+import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
+import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
@@ -26,6 +28,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.animations_all.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.animationSettings.animation = value, opts -> opts.animationSettings.animation)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .build());
@@ -36,6 +39,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.animate_water.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.animationSettings.water = value, opts -> opts.animationSettings.water)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -43,6 +47,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.animate_lava.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.animationSettings.lava = value, opts -> opts.animationSettings.lava)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -50,6 +55,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.animate_fire.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.animationSettings.fire = value, opts -> opts.animationSettings.fire)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -57,6 +63,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.animate_portal.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((opts, value) -> opts.animationSettings.portal = value, opts -> opts.animationSettings.portal)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -64,6 +71,7 @@ public class SodiumExtraGameOptionPages {
                         .setTooltip(new TranslatableText("sodium-extra.option.block_animations.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.animationSettings.blockAnimations = value, options -> options.animationSettings.blockAnimations)
+                        .setFlags(OptionFlag.REQUIRES_ASSET_RELOAD)
                         .build()
                 )
                 .build());
@@ -247,11 +255,11 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage render() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.fog").getString())
                         .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip").getString())
-                        .setControl(TickBoxControl::new)
-                        .setBinding((options, value) -> options.renderSettings.fog = value, options -> options.renderSettings.fog)
+                        .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
+                        .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
@@ -315,8 +323,8 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName("Reduce Resolution on macOS")
-                        .setTooltip("Use half the resolution on retina displays, vastly improving performance on macOS.\nModifying this option will require a game restart.")
+                        .setName(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac.tooltip").getString())
                         .setEnabled(MinecraftClient.IS_SYSTEM_MAC)
                         .setImpact(OptionImpact.HIGH)
                         .setControl(TickBoxControl::new)

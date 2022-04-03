@@ -4,33 +4,16 @@ import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
-
-import java.util.List;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(SpriteAtlasTexture.class)
 public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
 
-    @Shadow
-    @Final
-    private List<Sprite> animatedSprites;
-
-    /**
-     * @author FlashyReese
-     */
-    @Overwrite
-    public void tickAnimatedSprites() {
-        this.bindTexture();
-        if (SodiumExtraClientMod.options().animationSettings.animation) {
-            for (Sprite sprite : this.animatedSprites) {
-                if (this.shouldAnimate(sprite)) {
-                    sprite.tickAnimation();
-                }
-            }
-        }
+    @Redirect(method = "upload", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/texture/Sprite;isAnimated()Z"))
+    public boolean sodiumExtra$tickAnimatedSprites(Sprite instance) {
+        return instance.isAnimated() && SodiumExtraClientMod.options().animationSettings.animation && this.shouldAnimate(instance);
     }
 
     private boolean shouldAnimate(Sprite sprite) {
@@ -51,6 +34,6 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
                 sprite.getId().getPath().endsWith("stonecutter_saw")) {
             return SodiumExtraClientMod.options().animationSettings.blockAnimations;
         }
-        return true;
+        return sprite.isAnimated();
     }
 }

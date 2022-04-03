@@ -11,7 +11,7 @@ public class ClientTickHandler {
 
     public void onClientInitialize() {
         ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
-            int currentFPS = ((MinecraftClientAccessor) minecraftClient).getCurrentFPS();
+            int currentFPS = MinecraftClientAccessor.getCurrentFPS();
             this.averageFps.add(currentFPS);
         });
     }

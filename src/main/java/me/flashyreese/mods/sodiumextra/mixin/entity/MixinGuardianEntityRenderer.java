@@ -12,7 +12,7 @@ public class MixinGuardianEntityRenderer {
      * @reason Use the time of day instead of the time of the world in guardian beam rendering
      * @author AMereBagatelle
      */
-    @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getTime()J"))
+    @Redirect(method = "render(Lnet/minecraft/entity/mob/GuardianEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getTime()J"))
     private long useTimeOfDay(World world) {
         return world.getTimeOfDay();
     }
