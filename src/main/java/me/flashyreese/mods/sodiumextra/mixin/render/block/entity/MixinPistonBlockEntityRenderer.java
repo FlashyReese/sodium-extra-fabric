@@ -1,4 +1,4 @@
-package me.flashyreese.mods.sodiumextra.mixin.entity;
+package me.flashyreese.mods.sodiumextra.mixin.render.block.entity;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.block.entity.PistonBlockEntity;

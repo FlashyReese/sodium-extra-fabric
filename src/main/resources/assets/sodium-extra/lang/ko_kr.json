@@ -1,12 +1,14 @@
 {
     "sodium-extra.option.animate_fire.tooltip": "활성화 하면, 불 애니메이션이 렌더링 됩니다.",
     "sodium-extra.option.animate_lava.tooltip": "활성화 하면, 용암 애니메이션이 렌더링 됩니다.",
-    "sodium-extra.option.animate_sculk_sensor.tooltip": "If enabled, sculk sensor animations are processed.",
     "sodium-extra.option.animate_portal.tooltip": "활성화 하면, 차원문 애니메이션이 렌더링 됩니다.",
+    "sodium-extra.option.animate_sculk_sensor.tooltip": "If enabled, sculk sensor animations are processed.",
     "sodium-extra.option.animate_water.tooltip": "활성화 하면, 물 애니메이션이 렌더링 됩니다.",
     "sodium-extra.option.animations": "애니메이션",
     "sodium-extra.option.animations_all.tooltip": "비활성화 하면, 모든 애니메이션이 처리되지 않습니다.",
     "sodium-extra.option.armor_stands.tooltip": "활성화 하면, 갑옷 거치대가 렌더링됩니다.",
+    "sodium-extra.option.beacon_beam": "Beacon Beam",
+    "sodium-extra.option.beacon_beam.tooltip": "If enabled, beacon beams are processed.",
     "sodium-extra.option.biome_colors": "생물 군계 색",
     "sodium-extra.option.biome_colors.tooltip": "활성화 하면, 생물 군계 색이 생물 군계를 기준으로 변경됩니다.",
     "sodium-extra.option.block_animations": "블록 애니메이션",
@@ -80,4 +82,4 @@
     "sodium-extra.overlay.fps_extended": "(최대 %s / 평균 %s / 최소 %s)",
     "sodium-extra.suggestRSO.header": "Reese's Sodium Options 모드를 설치하는것을 추천합니다.",
     "sodium-extra.suggestRSO.message": "Sodium Extra와 함께 Reese's Sodium Options 모드를 설치하는것이 좋습니다. 기능의 수가 증가함에 따라 Sodium의 비디오 옵션에서 모두 표시되지 않을 수 있습니다."
-  }
+}

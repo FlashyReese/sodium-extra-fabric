@@ -175,6 +175,7 @@ public class SodiumExtraGameOptions {
         public boolean armorStand;
         public boolean painting;
         public boolean piston;
+        public boolean beaconBeam;
 
         public RenderSettings() {
             this.fogDistance = 0;
@@ -183,6 +184,7 @@ public class SodiumExtraGameOptions {
             this.armorStand = true;
             this.painting = true;
             this.piston = true;
+            this.beaconBeam = true;
         }
     }
 
