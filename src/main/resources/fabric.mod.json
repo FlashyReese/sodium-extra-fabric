@@ -40,6 +40,9 @@
     "fabric-lifecycle-events-v1": "*",
     "sodium": ">=0.4.1"
   },
+  "breaks": {
+    "reeses-sodium-options": "<1.4.2"
+  },
   "recommends": {
     "reeses-sodium-options": ">=1.4.2"
   }
