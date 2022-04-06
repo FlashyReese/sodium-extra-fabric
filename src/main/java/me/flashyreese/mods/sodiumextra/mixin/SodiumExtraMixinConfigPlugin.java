@@ -15,7 +15,6 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("biome_colors", true)
                 .addMixinOption("cloud", true)
                 .addMixinOption("compat", true) // Should not allow users to turn this off
-                .addMixinOption("entity", true)
                 .addMixinOption("fog", true)
                 .addMixinOption("gui", true)
                 .addMixinOption("instant_sneak", true)
@@ -23,6 +22,10 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("particle", true)
                 .addMixinOption("prevent_shaders", true)
                 .addMixinOption("reduce_resolution_on_mac", true)
+                .addMixinOption("render", true)
+                .addMixinOption("render.block", true)
+                .addMixinOption("render.block.entity", true)
+                .addMixinOption("render.entity", true)
                 .addMixinOption("sky", true)
                 .addMixinOption("sky_colors", true)
                 .addMixinOption("sodium", true)
