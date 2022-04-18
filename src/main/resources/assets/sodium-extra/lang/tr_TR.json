@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Havai fişek parçacıklarını aç/kapa",
   "sodium-extra.option.fog": "Sis",
   "sodium-extra.option.fog.tooltip": "Arazideki sis efekt menzilini ayarlar. \n0 - varsayılan sis ayarlarını kullan\n1-32 - yığın (chunk) olarak sis menzili ayarla\n33 - maksimum sis menzili (bir bakıma sisi devre dışı bırakır)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Hata Ayıklama Çıktısı",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Hata Ayıklama Çıktısı, OpenGL uygulamalarında hata ayıklamayı ve optimize etmeyi kolaylaştıran bir OpenGL özelliğidir. Kısaca, bu özellik, sürücünün uygulamaya metinsel mesaj bilgilerini geri sağlaması için bir yöntem sağlar.\nBu seçeneğin değiştirilmesi, oyunun yeniden başlatılmasını gerektirir.",
   "sodium-extra.option.instant_sneak": "Hızlı Eğilme",
   "sodium-extra.option.instant_sneak.tooltip": "Eğilirken kameraya lineer enterpolasyon yapma",
   "sodium-extra.option.item_frames.tooltip": "Eşya çerçevelerini işlemeyi aç/kapa",
