@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Переключение частиц фейерверка",
   "sodium-extra.option.fog": "Туман",
   "sodium-extra.option.fog.tooltip": "Регулирует дальность тумана на территории. \n0 - обычный ванильный туман\n1-32 - расстояние до тумана в чанках\n33 - максимальное расстояние тумана (по сути, отключает туман)",
-  "sodium-extra.option.gl_debug_verbosity": "Вывод отладки OpenGL",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Вывод отладки – это функция OpenGL, упрощающая отладку и оптимизацию приложений OpenGL. В целом, эта функция предоставляет для драйвера способ отправки текстовых сообщений обратно в графическое приложение.\nИзменение этой настройки требует перезапуска игры.",
   "sodium-extra.option.instant_sneak": "Моментальное приседание",
   "sodium-extra.option.instant_sneak.tooltip": "Отключает плавную камеру при приседании",
   "sodium-extra.option.item_frames.tooltip": "Переключение видимости рамок",

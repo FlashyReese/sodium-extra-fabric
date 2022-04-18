@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Si está habilitado, se procesan las partículas de fuegos artificiales.",
   "sodium-extra.option.fog": "Niebla",
   "sodium-extra.option.fog.tooltip": "Ajusta la distancia del efecto de niebla en el terreno.\n0 - use la configuración de niebla vainilla\n1-32 - establezca la distancia de niebla en trozos\n33 - distancia máxima de niebla (niebla esencialmente desactivada)",
-  "sodium-extra.option.gl_debug_verbosity": "Salida de depuración de OpenGL",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "La salida de depuración es una característica de OpenGL que facilita la depuración y optimización de aplicaciones OpenGL. Brevemente, esta función proporciona un método para que el controlador proporcione información de mensajes de texto a la aplicación.\nModificar esta opción requerirá reiniciar el juego.",
   "sodium-extra.option.instant_sneak": "Agachar instantáneo",
   "sodium-extra.option.instant_sneak.tooltip": "Si está habilitada, la cámara no moverá al agacharse.",
   "sodium-extra.option.item_frames.tooltip": "Si está habilitado, se renderizan los marcos.",

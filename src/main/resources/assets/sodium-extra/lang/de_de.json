@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Feuerwerkspartikel umschalten",
   "sodium-extra.option.fog": "Nebel",
   "sodium-extra.option.fog.tooltip": "Passt die Nebeleffekt-Distanz im Gelände an. \n0 - Vanilla Nebeleinstellungen benutzen\n1-32 - Nebeldistanz in Chunks setzen\n33 - Max. Nebeldistanz (deaktiviert Nebel im Grunde)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Sofort-Schleichen",
   "sodium-extra.option.instant_sneak.tooltip": "Kamera zum Schleichen nicht schwenken",
   "sodium-extra.option.item_frames.tooltip": "Darstellung von Rahmen umschalten",
