@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "If enabled, fireworks particles are processed.",
   "sodium-extra.option.fog": "Fog",
   "sodium-extra.option.fog.tooltip": "Adjusts the fog effect distance on the terrain. \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Instant Sneak",
   "sodium-extra.option.instant_sneak.tooltip": "If enabled, the camera will not lerp upon sneaking.",
   "sodium-extra.option.item_frames.tooltip": "If enabled, item frames are rendered.",

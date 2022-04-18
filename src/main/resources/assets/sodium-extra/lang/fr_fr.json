@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Activer les particules des feux d'artifice",
   "sodium-extra.option.fog": "Brouillard",
   "sodium-extra.option.fog.tooltip": "Ajuster la distance de l'effet de brouillard sur le terrain. \n0 - Paramètre par défaut du jeu\n1-32 - Défini la distance du brouillard en chunks\n33 - Distance maximum (Désactiver le brouillard entre autres)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Accroupissement instantané",
   "sodium-extra.option.instant_sneak.tooltip": "Désactiver l'animation de la caméra lors de l'accroupissement",
   "sodium-extra.option.item_frames.tooltip": "Activer le rendu des cadres",
