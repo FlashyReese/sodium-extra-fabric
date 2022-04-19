@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Alterna as partículas de fogos de artifício",
   "sodium-extra.option.fog": "Neblina",
   "sodium-extra.option.fog.tooltip": "Ajusta a distância do efeito de neblina no terreno. \n0 - utiliza os valores padrões.\n1-32 - determina o valor em 'Chunks' da distância.\n33 - Distância máxima da neblina (basicamente a desabilita)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Agachamento instantâneo",
   "sodium-extra.option.instant_sneak.tooltip": "A câmera não é suavisada ao agachar-se",
   "sodium-extra.option.item_frames.tooltip": "Renderizar molduras",
