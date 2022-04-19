@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Přepnout částice rachejtlí",
   "sodium-extra.option.fog": "Mlha",
   "sodium-extra.option.fog.tooltip": "Upraví vzdálenost efektu mlhy na terénu. \n0 - použít výchozí nastavení mlhy\n1-32 - nastavit vzdálenost mlhy v chuncích\n33 - maximální vzdálenost mlhy (v podstatě vypne mlhu)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Instantní plížení",
   "sodium-extra.option.instant_sneak.tooltip": "Neprovádět animaci plížení",
   "sodium-extra.option.item_frames.tooltip": "Přepnout vykreslování rámečků",
