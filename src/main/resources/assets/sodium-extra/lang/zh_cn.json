@@ -71,7 +71,7 @@
   "sodium-extra.option.sun_moon.tooltip": "开启或关闭太阳和月亮的渲染",
   "sodium-extra.option.toasts": "弹窗提示",
   "sodium-extra.option.toasts.tooltip": "显示成就和合成配方的弹窗提示",
-  "sodium-extra.option.use_fast_random": "快速随机材质",
+  "sodium-extra.option.use_fast_random": "快速随机纹理",
   "sodium-extra.option.use_fast_random.tooltip": "启用后, 将使用快速随机函数来渲染方块。\n与原版相比, 这会影响随机旋转纹理的旋转方向。",
   "sodium-extra.option.villagers.tooltip": "开启或关闭村民粒子效果",
   "sodium-extra.option.water.tooltip": "开启或关闭水面粒子效果",
