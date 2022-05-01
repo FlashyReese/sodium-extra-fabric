@@ -78,6 +78,7 @@
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(макс. %s / сред. %s / мин. %s)",
+  "sodium-extra.overlay.light_updates": "Light updates disabled",
   "sodium-extra.suggestRSO.header": "Совет: установите Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "Крайне рекомендуется использовать Reese's Sodium Options совместно с Sodium Extra. Из-за возрастающего количества функций его элементы не умещаются должным образом в обычном окне настроек графики Sodium."
 }
