@@ -78,7 +78,7 @@
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)",
-  "sodium-extra.overlay.light_updates": "光照更新已关闭",
+  "sodium-extra.overlay.light_updates": "光照更新已禁用",
   "sodium-extra.suggestRSO.header": "建议: 安装Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "强烈建议您在安装Sodium Extra的同时安装Reese's Sodium Options。由于越来越多的功能，它不再适合Sodium的视频设置。"
 }
