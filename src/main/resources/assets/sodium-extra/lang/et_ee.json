@@ -78,6 +78,7 @@
     "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
     "sodium-extra.overlay.fps": "%s k/s",
     "sodium-extra.overlay.fps_extended": "(max. %s / kesk. %s / min. %s)",
+    "sodium-extra.overlay.light_updates": "Valguse uuendused keelatud",
     "sodium-extra.suggestRSO.header": "Soovitus: paigalda Reese's Sodium Options",
     "sodium-extra.suggestRSO.message": "Tungivalt soovitatav on paigaldada Sodium Extra kõrvale Reese's Sodium Options. Kasvava funktsionaalsuse tõttu ei mahu valikud enam Sodiumi graafikasätetesse ära."
-  }
+}
