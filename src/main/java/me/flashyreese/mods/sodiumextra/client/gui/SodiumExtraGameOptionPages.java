@@ -19,7 +19,7 @@ import java.util.List;
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
 
-    private static net.minecraft.text.LiteralText parseVanillaString(String key){
+    private static LiteralText parseVanillaString(String key){
         return new LiteralText((new TranslatableText(key).getString()).replaceAll("§.", ""));
     }
 
