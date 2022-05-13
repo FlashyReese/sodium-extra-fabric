@@ -4,9 +4,7 @@ import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -49,10 +47,10 @@ public class MixinInGameHud {
     private void renderFPS(MatrixStack matrices) {
         int currentFPS = MinecraftClientAccessor.getCurrentFPS();
 
-        Text text = new TranslatableText("sodium-extra.overlay.fps", currentFPS);
+        Text text = Text.translatable("sodium-extra.overlay.fps", currentFPS);
 
         if (SodiumExtraClientMod.options().extraSettings.showFPSExtended)
-            text = new LiteralText(String.format("%s %s", text.getString(), new TranslatableText("sodium-extra.overlay.fps_extended", SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
+            text = Text.literal(String.format("%s %s", text.getString(), Text.translatable("sodium-extra.overlay.fps_extended", SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
                     SodiumExtraClientMod.getClientTickHandler().getLowestFps()).getString()));
 
         int x, y;
@@ -83,7 +81,7 @@ public class MixinInGameHud {
         if (this.client.player == null) return;
         Vec3d pos = this.client.player.getPos();
 
-        Text text = new TranslatableText("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z));
+        Text text = Text.translatable("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z));
 
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
@@ -110,7 +108,7 @@ public class MixinInGameHud {
     }
 
     private void renderLightUpdatesWarning(MatrixStack matrices){
-        Text text = new TranslatableText("sodium-extra.overlay.light_updates");
+        Text text = Text.translatable("sodium-extra.overlay.light_updates");
 
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {

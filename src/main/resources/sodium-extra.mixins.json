@@ -10,6 +10,7 @@
     "cloud.MixinWorldRenderer",
     "compat.MixinSodiumOptionsGUI",
     "compat.MixinTitleScreen",
+    "fog.BackgroundRendererAccessor",
     "fog.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
     "gui.MixinInGameHud",
@@ -28,7 +29,6 @@
     "sky.MixinWorldRenderer",
     "sky_colors.MixinBiome",
     "sodium.accessibility.MixinSodiumGameOptionPages",
-    "sodium.fast_random.MixinBlockRenderer",
     "sodium.gui_scale.MixinSliderControl",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.resolution.MixinSodiumOptionsGUI",
@@ -39,5 +39,8 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "fog.BackgroundRendererAccessor"
+  ]
 }

@@ -1,7 +1,7 @@
 plugins {
-    id 'fabric-loom' version '0.11-SNAPSHOT'
+    id 'fabric-loom' version '0.12-SNAPSHOT'
     id 'maven-publish'
-    id 'io.github.juuxel.loom-quiltflower' version '1.6.1'
+    id 'io.github.juuxel.loom-quiltflower' version '1.7.2'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -10,6 +10,10 @@ targetCompatibility = JavaVersion.VERSION_17
 archivesBaseName = "${project.archives_base_name}-mc${project.minecraft_version}"
 version = project.mod_version
 group = project.maven_group
+
+loom {
+    accessWidenerPath = file("src/main/resources/sodium-extra.accesswidener")
+}
 
 repositories {
     maven { url 'https://jitpack.io' }
@@ -28,8 +32,8 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "maven.modrinth:sodium:${project.sodium_version}"
-    modImplementation "maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options}"
+    modImplementation "com.github.FlashyReese:sodium-fabric:36da09d9ad" //"maven.modrinth:sodium:${project.sodium_version}"
+    modImplementation "com.github.FlashyReese:reeses-sodium-options:9536561981"//"maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     implementation "org.joml:joml:1.10.2"
 

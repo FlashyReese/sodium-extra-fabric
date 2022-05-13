@@ -5,7 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 
 import java.io.File;
 import java.io.FileReader;
@@ -83,7 +82,7 @@ public class SodiumExtraGameOptions {
         private final Text text;
 
         OverlayCorner(String text) {
-            this.text = new TranslatableText(text);
+            this.text = Text.translatable(text);
         }
 
         @Override
@@ -198,7 +197,6 @@ public class SodiumExtraGameOptions {
         public boolean toasts;
         public boolean instantSneak;
         public boolean preventShaders;
-        public boolean useFastRandom;
 
         public ExtraSettings() {
             this.overlayCorner = OverlayCorner.TOP_LEFT;
@@ -210,7 +208,6 @@ public class SodiumExtraGameOptions {
             this.toasts = true;
             this.instantSneak = false;
             this.preventShaders = false;
-            this.useFastRandom = true;
         }
     }
 

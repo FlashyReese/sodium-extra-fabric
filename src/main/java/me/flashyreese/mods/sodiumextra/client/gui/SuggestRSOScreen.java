@@ -7,23 +7,21 @@ import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.CheckboxWidget;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Util;
 
 public class SuggestRSOScreen extends Screen {
 
-    private static final Text HEADER = new TranslatableText("sodium-extra.suggestRSO.header").formatted(Formatting.BOLD);
-    private static final Text MESSAGE = new TranslatableText("sodium-extra.suggestRSO.message");
-    private static final Text CHECK_MESSAGE = new TranslatableText("multiplayerWarning.check");
+    private static final Text HEADER = Text.translatable("sodium-extra.suggestRSO.header").formatted(Formatting.BOLD);
+    private static final Text MESSAGE = Text.translatable("sodium-extra.suggestRSO.message");
+    private static final Text CHECK_MESSAGE = Text.translatable("multiplayerWarning.check");
     private CheckboxWidget checkbox;
     private MultilineText lines = MultilineText.EMPTY;
     private final Screen prevScreen;
 
     public SuggestRSOScreen(Screen prevScreen) {
-        super(new LiteralText("Reese's Sodium Options Suggestion"));
+        super(Text.literal("Reese's Sodium Options Suggestion"));
         this.prevScreen = prevScreen;
     }
 
@@ -32,8 +30,8 @@ public class SuggestRSOScreen extends Screen {
         super.init();
         this.lines = MultilineText.create(this.textRenderer, MESSAGE, this.width - 50);
         int i = (this.lines.count() + 1) * this.textRenderer.fontHeight * 2;
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, 130 + i, 150, 20, new LiteralText("CurseForge"), buttonWidget -> Util.getOperatingSystem().open("https://curseforge.com/minecraft/mc-mods/reeses-sodium-options")));
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155 + 160, 130 + i, 150, 20, new LiteralText("Modrinth"), buttonWidget -> Util.getOperatingSystem().open("https://modrinth.com/mod/reeses-sodium-options")));
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, 130 + i, 150, 20, Text.literal("CurseForge"), buttonWidget -> Util.getOperatingSystem().open("https://curseforge.com/minecraft/mc-mods/reeses-sodium-options")));
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155 + 160, 130 + i, 150, 20, Text.literal("Modrinth"), buttonWidget -> Util.getOperatingSystem().open("https://modrinth.com/mod/reeses-sodium-options")));
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 155, 100 + i, 150, 20, ScreenTexts.PROCEED, buttonWidget -> {
             if (this.checkbox.isChecked()) {
                 SodiumExtraClientMod.options().notificationSettings.hideRSORecommendation = true;
@@ -41,7 +39,7 @@ public class SuggestRSOScreen extends Screen {
             }
             this.client.setScreen(this.prevScreen);
         }));
-        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155 + 160, 100 + i, 150, 20, new TranslatableText("menu.quit"), buttonWidget -> this.client.scheduleStop()));
+        this.addDrawableChild(new ButtonWidget(this.width / 2 - 155 + 160, 100 + i, 150, 20, Text.translatable("menu.quit"), buttonWidget -> this.client.scheduleStop()));
         this.checkbox = new CheckboxWidget(this.width / 2 - 155 + 80, 76 + i, 150, 20, CHECK_MESSAGE, false);
         this.addDrawableChild(this.checkbox);
     }
