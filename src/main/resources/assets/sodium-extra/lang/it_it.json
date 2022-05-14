@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.toasts": "Popup",
   "sodium-extra.option.toasts.tooltip": "Popup progressi e ricette",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Usa random veloce",
   "sodium-extra.option.use_fast_random.tooltip": "Se abilitata, verrà utilizzata una funzione random veloce per il rendering dei blocchi. Questo può influenzare la rotazione delle texture ruotate casualmente rispetto alla vanilla.",
   "sodium-extra.option.villagers.tooltip": "Attiva/disattiva le particelle dei villager",

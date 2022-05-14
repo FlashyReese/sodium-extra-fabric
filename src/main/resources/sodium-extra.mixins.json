@@ -5,6 +5,7 @@
   "package": "me.flashyreese.mods.sodiumextra.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
+    "adaptive_sync.MixinWindow",
     "animation.MixinSpriteAtlasTexture",
     "biome_colors.MixinBiomeColors",
     "cloud.MixinWorldRenderer",
