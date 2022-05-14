@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.toasts": "Vyskakovací zprávy",
   "sodium-extra.option.toasts.tooltip": "Vyskakovací zprávy s pokroky a recepty",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Použít rychlý náhodný výběr",
   "sodium-extra.option.use_fast_random.tooltip": "Při povolení bude pro vykreslování bloků použita rychlá náhodná funkce. Toto může ovlivnit rotaci náhodně otočených textur při porovnání s vanillou.",
   "sodium-extra.option.villagers.tooltip": "Přepnout částice vesničanů",

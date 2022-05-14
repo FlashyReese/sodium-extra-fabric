@@ -71,6 +71,8 @@
     "sodium-extra.option.sun_moon.tooltip": "활성화 하면, 태양과 달이 렌더링 됩니다.",
     "sodium-extra.option.toasts": "토스트",
     "sodium-extra.option.toasts.tooltip": "활성화 하면, 토스트(도전과제, 레시피 등 알림) 가 표시됩니다.",
+    "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+    "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
     "sodium-extra.option.use_fast_random": "빠른 랜덤 함수 사용",
     "sodium-extra.option.use_fast_random.tooltip": "활성화 하면, 블록 렌더링을 위해 빠른 랜덤 함수가 사용됩니다. 클라이언트에서 회전되는 텍스쳐의 영향을 줄 수 있습니다.",
     "sodium-extra.option.villagers.tooltip": "활성화 하면, 주민 입자가 렌더링 됩니다.",
