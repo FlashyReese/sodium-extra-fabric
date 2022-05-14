@@ -11,6 +11,7 @@ import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -326,6 +327,15 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.use_adaptive_sync.name"))
+                        .setTooltip(Text.translatable("sodium-extra.option.use_adaptive_sync.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setImpact(OptionImpact.VARIES)
+                        .setEnabled(GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))
+                        .setBinding((opts, value) -> opts.extraSettings.useAdaptiveSync = value, opts -> opts.extraSettings.useAdaptiveSync)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(Text.translatable("sodium-extra.option.reduce_resolution_on_mac"))
                         .setTooltip(Text.translatable("sodium-extra.option.reduce_resolution_on_mac.tooltip"))

@@ -11,6 +11,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
     @Override
     protected CaffeineConfig createConfig() {
         return CaffeineConfig.builder("Sodium Extra").withSettingsKey("sodium-extra:options")
+                .addMixinOption("adaptive_sync", true)
                 .addMixinOption("animation", true)
                 .addMixinOption("biome_colors", true)
                 .addMixinOption("cloud", true)

@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "Отображение Солнца и Луны",
   "sodium-extra.option.toasts": "Уведомления",
   "sodium-extra.option.toasts.tooltip": "Всплывающие уведомления о достижениях и новых рецептах",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Использовать быстрый рандом",
   "sodium-extra.option.use_fast_random.tooltip": "Если включено, для рендеринга блоков будет использоваться функция быстрого рандома. Это может повлиять на положение случайно повёрнутых текстур по сравнению с ванилью.",
   "sodium-extra.option.villagers.tooltip": "Переключение частиц крестьян",

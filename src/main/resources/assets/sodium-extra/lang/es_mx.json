@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "Si está habilitado, se renderizarán el sol y la luna.",
   "sodium-extra.option.toasts": "Notificaciones",
   "sodium-extra.option.toasts.tooltip": "Si está habilitado, se mostrarán ventanas emergentes de recetas de avance y elaboración.",
+  "sodium-extra.option.use_adaptive_sync.name": "Utilice sincronización adaptiva",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "Si está habilitado, V-Sync podrá cambiar la fotograma media y deshabilitarse a sí mismo a veces, lo que generalmente ayuda notablemente a la tiempo de respuesta.",
   "sodium-extra.option.use_fast_random": "Utilice aleatorio rápido",
   "sodium-extra.option.use_fast_random.tooltip": "Si está habilitada, se utilizará una función aleatoria rápida para la representación de bloques. Esto puede afectar la rotación de texturas rotadas aleatoriamente en comparación con vainilla.",
   "sodium-extra.option.villagers.tooltip": "Si está habilitado, se procesan las partículas de los aldeanos.",
