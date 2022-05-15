@@ -71,6 +71,8 @@
     "sodium-extra.option.sun_moon.tooltip": "Lubamisel renderdatakse päike ja kuu.",
     "sodium-extra.option.toasts": "Hüpikud",
     "sodium-extra.option.toasts.tooltip": "Lubamisel kuvatakse edasijõudmiste ja meisterdusretseptide hüpikud.",
+    "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+    "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
     "sodium-extra.option.use_fast_random": "Kasuta kiiret juhuslikkust",
     "sodium-extra.option.use_fast_random.tooltip": "Lubamisel kasutatakse plokkide renderdamiseks kiiret juhuslikkuse meetodit. See võib muuta juhuslikult pööratud tekstuuride pöördenurga vanillist erinevaks.",
     "sodium-extra.option.villagers.tooltip": "Lubamisel töödeldakse külaelanike osakesi.",

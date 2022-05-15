@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.toasts": "Toasts",
   "sodium-extra.option.toasts.tooltip": "Popups für Fortschritte und Handwerksrezepte",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Schnellen Zufallsgenerator verwenden",
   "sodium-extra.option.use_fast_random.tooltip": "Falls aktiviert wird eine schnelle Zufallsgeneratorfunktion für das Block-Rendering genutzt. Dies kann die Rotation von einigen zufällig gedrehten Texturen im Vergleich zum Vanilla-Verhalten verändern.",
   "sodium-extra.option.villagers.tooltip": "Dorfbewohnerpartikel umschalten",

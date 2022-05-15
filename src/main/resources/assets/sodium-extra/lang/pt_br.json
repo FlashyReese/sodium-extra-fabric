@@ -71,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.toasts": "Notificação de conquistas e descobertas de receita",
   "sodium-extra.option.toasts.tooltip": "Alterna o aparecimento da notificação no canto superior direito ao conseguir uma conquista ou desbloquear alguma receita.",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Usar aleatoriedade rápida",
   "sodium-extra.option.use_fast_random.tooltip": "Caso habilitada, a função de aleatoriedade rápida será usada para o processamento visual de blocos.\nIsto pode afetar a função de rotação aleatória de algumas texturas de blocos tornando-as um pouco diferentes do padrão.",
   "sodium-extra.option.villagers.tooltip": "Alternar as partículas de aldeões",
