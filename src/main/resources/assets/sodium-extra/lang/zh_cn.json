@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "开启或关闭烟花粒子效果",
   "sodium-extra.option.fog": "迷雾",
   "sodium-extra.option.fog.tooltip": "设置地形开始显示迷雾效果的距离。\n0 - 使用原版的迷雾设置\n1-32 - 以方块为单位设置迷雾距离\n33 - 最大迷雾距离(基本上禁用迷雾)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL调试输出",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "调试输出是OpenGL的一个功能，它使得调试和优化OpenGL应用程序更加容易。简而言之，该功能为驱动程序提供了一种将文本信息返回给应用程序的方法。\n修改此选项需要重新启动游戏。",
   "sodium-extra.option.instant_sneak": "直接潜行",
   "sodium-extra.option.instant_sneak.tooltip": "潜行时视角直接下移而不是缓慢地",
   "sodium-extra.option.item_frames.tooltip": "开启或关闭显示物品展示框",
@@ -73,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "开启或关闭太阳和月亮的渲染",
   "sodium-extra.option.toasts": "弹窗提示",
   "sodium-extra.option.toasts.tooltip": "显示成就和合成配方的弹窗提示",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "快速随机材质",
   "sodium-extra.option.use_fast_random.tooltip": "启用后, 将使用快速随机函数来渲染方块。\n与原版相比, 这会影响随机旋转纹理的旋转方向。",
   "sodium-extra.option.villagers.tooltip": "开启或关闭村民粒子效果",
@@ -80,6 +80,7 @@
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)",
+  "sodium-extra.overlay.light_updates": "Light updates disabled",
   "sodium-extra.suggestRSO.header": "建议: 安装Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "强烈建议您在安装Sodium Extra的同时安装Reese's Sodium Options。由于越来越多的功能，它不再适合Sodium的视频设置。"
 }

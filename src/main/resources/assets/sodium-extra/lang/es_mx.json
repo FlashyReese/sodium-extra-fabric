@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Si está habilitado, se procesan las partículas de fuegos artificiales.",
   "sodium-extra.option.fog": "Niebla",
   "sodium-extra.option.fog.tooltip": "Ajusta la distancia del efecto de niebla en el terreno.\n0 - use la configuración de niebla vainilla\n1-32 - establezca la distancia de niebla en trozos\n33 - distancia máxima de niebla (niebla esencialmente desactivada)",
-  "sodium-extra.option.gl_debug_verbosity": "Salida de depuración de OpenGL",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "La salida de depuración es una característica de OpenGL que facilita la depuración y optimización de aplicaciones OpenGL. Brevemente, esta función proporciona un método para que el controlador proporcione información de mensajes de texto a la aplicación.\nModificar esta opción requerirá reiniciar el juego.",
   "sodium-extra.option.instant_sneak": "Agachar instantáneo",
   "sodium-extra.option.instant_sneak.tooltip": "Si está habilitada, la cámara no moverá al agacharse.",
   "sodium-extra.option.item_frames.tooltip": "Si está habilitado, se renderizan los marcos.",
@@ -73,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "Si está habilitado, se renderizarán el sol y la luna.",
   "sodium-extra.option.toasts": "Notificaciones",
   "sodium-extra.option.toasts.tooltip": "Si está habilitado, se mostrarán ventanas emergentes de recetas de avance y elaboración.",
+  "sodium-extra.option.use_adaptive_sync.name": "Utilice sincronización adaptiva",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "Si está habilitado, V-Sync podrá cambiar la fotograma media y deshabilitarse a sí mismo a veces, lo que generalmente ayuda notablemente a la tiempo de respuesta.",
   "sodium-extra.option.use_fast_random": "Utilice aleatorio rápido",
   "sodium-extra.option.use_fast_random.tooltip": "Si está habilitada, se utilizará una función aleatoria rápida para la representación de bloques. Esto puede afectar la rotación de texturas rotadas aleatoriamente en comparación con vainilla.",
   "sodium-extra.option.villagers.tooltip": "Si está habilitado, se procesan las partículas de los aldeanos.",
@@ -80,6 +80,7 @@
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(max. %s / prom. %s / min. %s)",
+  "sodium-extra.overlay.light_updates": "Actualizaciones de iluminación deshabilitado",
   "sodium-extra.suggestRSO.header": "Sugerencia: Instale Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "Se recomienda enfáticamente que instale Reese's Sodium Options junto con Sodium Extra. Debido a la creciente cantidad de funciones, ya no encaja correctamente en las opciones de video de Sodium."
 }

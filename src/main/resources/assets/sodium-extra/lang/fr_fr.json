@@ -28,8 +28,6 @@
   "sodium-extra.option.fireworks.tooltip": "Activer les particules des feux d'artifice",
   "sodium-extra.option.fog": "Brouillard",
   "sodium-extra.option.fog.tooltip": "Ajuster la distance de l'effet de brouillard sur le terrain. \n0 - Paramètre par défaut du jeu\n1-32 - Défini la distance du brouillard en chunks\n33 - Distance maximum (Désactiver le brouillard entre autres)",
-  "sodium-extra.option.gl_debug_verbosity": "OpenGL Debug Output",
-  "sodium-extra.option.gl_debug_verbosity.tooltip": "Debug Output is an OpenGL feature that makes debugging and optimizing OpenGL applications easier. Briefly, this feature provides a method for the driver to provide textual message information back to the application.\nModifying this option will require a game restart.",
   "sodium-extra.option.instant_sneak": "Accroupissement instantané",
   "sodium-extra.option.instant_sneak.tooltip": "Désactiver l'animation de la caméra lors de l'accroupissement",
   "sodium-extra.option.item_frames.tooltip": "Activer le rendu des cadres",
@@ -73,6 +71,8 @@
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.toasts": "Notifications",
   "sodium-extra.option.toasts.tooltip": "Afficher les notifications des succès et des craft",
+  "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
   "sodium-extra.option.use_fast_random": "Fast Random",
   "sodium-extra.option.use_fast_random.tooltip": "Si activé, une fonction d'aléatoire plus rapide sera utilisée pour le rendu des blocs. Cela peut affecter la rotation de certaines textures.",
   "sodium-extra.option.villagers.tooltip": "Activer les particules des villageois",
@@ -80,6 +80,7 @@
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(max. %s / moy. %s / min. %s)",
+  "sodium-extra.overlay.light_updates": "Light updates disabled",
   "sodium-extra.suggestRSO.header": "Suggestion: Install Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "It is highly recommended you install Reese's Sodium Options alongside Sodium Extra. Due to the growing amount of features, it no longer fits properly on Sodium's video options."
 }

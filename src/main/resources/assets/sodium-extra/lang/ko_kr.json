@@ -28,8 +28,6 @@
     "sodium-extra.option.fireworks.tooltip": "활성화 하면, 폭죽 입자가 렌더링 됩니다.",
     "sodium-extra.option.fog": "안개",
     "sodium-extra.option.fog.tooltip": "안개 효과의 거리를 조절합니다.\n0 - 바닐라 설정 사용\n1-32 - 청크 단위로 안개 거리 제어\n33 - 최대 안개 거리 (보통 안개를 제거함)",
-    "sodium-extra.option.gl_debug_verbosity": "OpenGL 디버그 출력",
-    "sodium-extra.option.gl_debug_verbosity.tooltip": "디버그 출력은 OpenGL 응용 프로그램의 디버깅과 최적화를 쉽게 하는 OpenGL의 기능입니다. 간단히 말해, 이 기능은 드라이버가 텍스트 메시지 정보를 응용 프로그램에 제공하는 방법을 제공합니다.\n이 옵션을 변경 사항을 적용하려면 게임을 재시작해야 합니다.",
     "sodium-extra.option.instant_sneak": "즉시 웅크리기",
     "sodium-extra.option.instant_sneak.tooltip": "활성화 하면, 카메라가 웅크릴때 선형보강법을 사용하지 않습니다.",
     "sodium-extra.option.item_frames.tooltip": "활성화 하면, 아이템 액자가 렌더링됩니다.",
@@ -73,6 +71,8 @@
     "sodium-extra.option.sun_moon.tooltip": "활성화 하면, 태양과 달이 렌더링 됩니다.",
     "sodium-extra.option.toasts": "토스트",
     "sodium-extra.option.toasts.tooltip": "활성화 하면, 토스트(도전과제, 레시피 등 알림) 가 표시됩니다.",
+    "sodium-extra.option.use_adaptive_sync.name": "Use Adaptive Sync",
+    "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness.",
     "sodium-extra.option.use_fast_random": "빠른 랜덤 함수 사용",
     "sodium-extra.option.use_fast_random.tooltip": "활성화 하면, 블록 렌더링을 위해 빠른 랜덤 함수가 사용됩니다. 클라이언트에서 회전되는 텍스쳐의 영향을 줄 수 있습니다.",
     "sodium-extra.option.villagers.tooltip": "활성화 하면, 주민 입자가 렌더링 됩니다.",
@@ -80,6 +80,7 @@
     "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
     "sodium-extra.overlay.fps": "%s FPS",
     "sodium-extra.overlay.fps_extended": "(최대 %s / 평균 %s / 최소 %s)",
+    "sodium-extra.overlay.light_updates": "Light updates disabled",
     "sodium-extra.suggestRSO.header": "Reese's Sodium Options 모드를 설치하는것을 추천합니다.",
     "sodium-extra.suggestRSO.message": "Sodium Extra와 함께 Reese's Sodium Options 모드를 설치하는것이 좋습니다. 기능의 수가 증가함에 따라 Sodium의 비디오 옵션에서 모두 표시되지 않을 수 있습니다."
 }
