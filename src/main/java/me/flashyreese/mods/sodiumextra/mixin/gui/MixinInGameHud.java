@@ -39,6 +39,9 @@ public class MixinInGameHud {
             } else if (SodiumExtraClientMod.options().extraSettings.showCoords) {
                 this.renderCoords(matrices);
             }
+            if (!SodiumExtraClientMod.options().renderSettings.lightUpdates){
+                this.renderLightUpdatesWarning(matrices);
+            }
         }
     }
 
@@ -99,6 +102,33 @@ public class MixinInGameHud {
             case BOTTOM_RIGHT -> {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+        }
+
+        this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+    }
+
+    private void renderLightUpdatesWarning(MatrixStack matrices){
+        Text text = new TranslatableText("sodium-extra.overlay.light_updates");
+
+        int x, y;
+        switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
+            case TOP_LEFT -> {
+                x = 2;
+                y = 22;
+            }
+            case TOP_RIGHT -> {
+                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                y = 22;
+            }
+            case BOTTOM_LEFT -> {
+                x = 2;
+                y = this.scaledHeight - this.client.textRenderer.fontHeight - 22;
+            }
+            case BOTTOM_RIGHT -> {
+                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                y = this.scaledHeight - this.client.textRenderer.fontHeight - 22;
             }
             default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }

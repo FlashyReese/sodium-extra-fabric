@@ -108,7 +108,7 @@ public class SodiumExtraGameOptions {
             this.fire = true;
             this.portal = true;
             this.blockAnimations = true;
-            this.sculkSensor = false;
+            this.sculkSensor = true;
         }
     }
 
@@ -175,6 +175,7 @@ public class SodiumExtraGameOptions {
         public boolean armorStand;
         public boolean painting;
         public boolean piston;
+        public boolean beaconBeam;
 
         public RenderSettings() {
             this.fogDistance = 0;
@@ -183,6 +184,7 @@ public class SodiumExtraGameOptions {
             this.armorStand = true;
             this.painting = true;
             this.piston = true;
+            this.beaconBeam = true;
         }
     }
 
@@ -192,6 +194,7 @@ public class SodiumExtraGameOptions {
         public boolean showFPSExtended;
         public boolean showCoords;
         public boolean reduceResolutionOnMac;
+        public boolean useAdaptiveSync;
         public int cloudHeight;
         public boolean toasts;
         public boolean instantSneak;
@@ -204,6 +207,7 @@ public class SodiumExtraGameOptions {
             this.showFPSExtended = true;
             this.showCoords = false;
             this.reduceResolutionOnMac = true;
+            this.useAdaptiveSync = true;
             this.cloudHeight = 192;
             this.toasts = true;
             this.instantSneak = false;

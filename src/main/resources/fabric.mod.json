@@ -32,14 +32,16 @@
       }
     }
   },
-  "accessWidener": "sodium-extra.accesswidener",
   "mixins": [
     "sodium-extra.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.13",
+    "fabricloader": ">=0.14",
     "fabric-lifecycle-events-v1": "*",
     "sodium": ">=0.4.1"
+  },
+  "breaks": {
+    "reeses-sodium-options": "<1.4.2"
   },
   "recommends": {
     "reeses-sodium-options": ">=1.4.2"
