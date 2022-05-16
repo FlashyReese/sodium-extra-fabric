@@ -27,6 +27,12 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        url "https://maven.flashyreese.me/releases"
+    }
+    maven {
+        url "https://maven.flashyreese.me/snapshots"
+    }
 }
 
 dependencies {
@@ -36,7 +42,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
     modImplementation "com.github.FlashyReese:sodium-fabric:36da09d9ad" //"maven.modrinth:sodium:${project.sodium_version}"
-    modImplementation "com.github.FlashyReese:reeses-sodium-options:9536561981"//"maven.modrinth:reeses-sodium-options:${project.reeses_sodium_options}"
+    modImplementation "me.flashyreese.mods:reeses-sodium-options:${project.reeses_sodium_options}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     implementation "org.joml:joml:1.10.2"
 
