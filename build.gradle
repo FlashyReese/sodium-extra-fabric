@@ -10,7 +10,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
-version = "${project.mod_version}+${getVersionMetadata()}"
+version = "${project.mod_version}+mc${project.minecraft_version}-${getVersionMetadata()}"
 group = project.maven_group
 
 
@@ -119,7 +119,7 @@ def getVersionMetadata() {
 
     // CI builds only
     if (build_id != null) {
-        return "${project.minecraft_version}-build.${build_id}"
+        return "build.${build_id}"
     }
 
     if (grgit != null) {
@@ -131,9 +131,9 @@ def getVersionMetadata() {
             id += "-dirty"
         }
 
-        return "${project.minecraft_version}-rev.${id}"
+        return "rev.${id}"
     }
 
     // No tracking information could be found about the build
-    return "${project.minecraft_version}-unknown"
+    return "unknown"
 }
