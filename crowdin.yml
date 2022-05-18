@@ -1,3 +1,1 @@
-files:
-  - source: /src/main/resources/assets/sodium-extra/lang/en_us.json
-    translation: /src/main/resources/assets/sodium-extra/lang/%locale_with_underscore%.json
+files: []
