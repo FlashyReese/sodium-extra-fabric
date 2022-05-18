@@ -26,6 +26,10 @@ or the path to it.
 The initial setup may take a few minutes. After Gradle has finished building everything, you can find the resulting
 artifacts in `build/libs`.
 
+# Contributing to localization
+
+Translations can be done on [Crowdin](https://crowdin.com/project/sodium-extra).
+
 # License
 
 Sodium Extra is licensed under GNU LGPLv3, a free and open-source license. For more information, please see the [license file](LICENSE.txt).
