@@ -31,6 +31,7 @@
     "sodium.accessibility.MixinSodiumGameOptionPages",
     "sodium.fast_random.MixinBlockRenderer",
     "sodium.gui_scale.MixinSliderControl",
+    "sodium.render_distance.MixinSodiumGameOptionsPages",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.resolution.MixinSodiumOptionsGUI",
     "sodium.resolution.reeses_sodium_options.MixinSodiumVideoOptionsScreen",
