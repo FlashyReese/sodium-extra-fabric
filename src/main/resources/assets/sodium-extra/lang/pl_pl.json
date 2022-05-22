@@ -72,7 +72,7 @@
   "sodium-extra.option.toasts": "Wyskakujące powiadomienia",
   "sodium-extra.option.toasts.tooltip": "Jeśli ta opcja jest włączona, wyskakujące powiadomienia o postępach i recepturach będą wyświetlane.",
   "sodium-extra.option.use_adaptive_sync.name": "Użyj Adaptive Sync",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "Jeśli ta opcja jest włączona, V-Sync będzie mógł zamienić się wsród-klatkowo i czasami wyłączyć się, przeważnie ulepszając responsywność.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "Jeśli ta opcja jest włączona, V-Sync będzie mógł zamieniać śródklatkowo i czasami wyłączać się, przeważnie polepszając responsywność.",
   "sodium-extra.option.use_fast_random": "Użyj szybkiej losowości",
   "sodium-extra.option.use_fast_random.tooltip": "Jeśli ta opcja jest włączona, do renderowania bloków zostanie użyta szybka funkcja losowa. Może to wpłynąć na rotację losowo obracanych tekstur w porównaniu z domyślnym ustawieniem.",
   "sodium-extra.option.villagers.tooltip": "Jeśli ta opcja jest włączona, cząsteczki osadników będą przetwarzane.",
