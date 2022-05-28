@@ -1,0 +1,58 @@
+{
+    "schema_version": 1,
+    "quilt_loader": {
+        "group": "me.flashyreese.mods",
+        "id": "sodium-extra",
+        "version": "${version}",
+        "metadata": {
+            "name": "Sodium Extra",
+            "description": "Features that shouldn't be in Sodium",
+            "contributors": {
+                "FlashyReese": "Owner",
+                "DragonEggBedrockBreaking": "Contributor",
+                "AMereBagatelle": "Contributor",
+                "EatMyVenom": "Contributor",
+                "Madis0": "Contributor"
+            },
+            "contact": {
+                "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
+                "issues": "https://github.com/FlashyReese/sodium-extra-fabric/issues"
+            },
+            "license": "LGPL-3.0"
+        },
+        "icon": "assets/sodium-extra/icon.png",
+        "environment": "client",
+        "intermediate_mappings": "net.fabricmc:intermediary",
+        "entrypoints": {
+            "client": "me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod"
+        },
+        "mixins": "sodium-extra.mixins.json",
+        "depends": [
+            "fabric-lifecycle-events-v1",
+            {
+                "id": "sodium",
+                "version": ">=0.4.1"
+            }
+        ],
+        "breaks": [
+            {
+                "id": "reeses-sodium-options",
+                "unless": {
+                    "id": "reeses-sodium-options",
+                    "version": ">=1.4.2"
+                }
+            }
+        ],
+        "recommends": [
+            {
+                "id": "reeses-sodium-options",
+                "version": ">=1.4.2"
+            }
+        ]
+    },
+    "modmenu": {
+        "parent": {
+            "id": "sodium"
+        }
+    }
+}

@@ -58,6 +58,9 @@ processResources {
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
+    filesMatching("quilt.mod.json") {
+        expand "version": project.version
+    }
 }
 
 // ensure that the encoding is set to UTF-8, no matter what the system default is
