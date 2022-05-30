@@ -27,6 +27,10 @@
             "client": "me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod"
         },
         "mixins": "sodium-extra.mixins.json",
+        "jars": [
+            "META-INF/jars/fabric-lifecycle-events-v1-2.0.3+2d83e92c60.jar",
+            "META-INF/jars/CaffeineConfig-afbaa017c6.jar"
+        ],
         "depends": [
             "fabric-lifecycle-events-v1",
             {
