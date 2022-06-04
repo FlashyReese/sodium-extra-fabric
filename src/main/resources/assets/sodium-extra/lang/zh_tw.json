@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "If enabled, portal particles are processed.",
   "sodium-extra.option.potions.tooltip": "If enabled, potion particles are processed.",
   "sodium-extra.option.prevent_shaders": "Prevent Shaders",
-  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading.",
   "sodium-extra.option.rain_snow.tooltip": "If enabled, rain & snow are processed.",
   "sodium-extra.option.rain_splash.tooltip": "If enabled, rain splash particles are processed.",
   "sodium-extra.option.redstone.tooltip": "If enabled, redstone particles are processed.",
