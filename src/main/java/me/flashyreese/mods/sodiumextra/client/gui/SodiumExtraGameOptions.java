@@ -205,7 +205,7 @@ public class SodiumExtraGameOptions {
             this.showFPSExtended = true;
             this.showCoords = false;
             this.reduceResolutionOnMac = true;
-            this.useAdaptiveSync = true;
+            this.useAdaptiveSync = false;
             this.cloudHeight = 128;
             this.toasts = true;
             this.instantSneak = false;

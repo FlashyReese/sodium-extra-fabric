@@ -334,7 +334,11 @@ public class SodiumExtraGameOptionPages {
                         .setControl(TickBoxControl::new)
                         .setImpact(OptionImpact.VARIES)
                         .setEnabled(GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))
-                        .setBinding((opts, value) -> opts.extraSettings.useAdaptiveSync = value, opts -> opts.extraSettings.useAdaptiveSync)
+                        .setBinding((opts, value) -> {
+                            opts.extraSettings.useAdaptiveSync = value;
+                            // Update the swap buffer
+                            MinecraftClient.getInstance().getWindow().setVsync(MinecraftClient.getInstance().options.enableVsync);
+                        }, opts -> opts.extraSettings.useAdaptiveSync)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
