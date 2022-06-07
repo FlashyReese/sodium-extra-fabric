@@ -15,7 +15,7 @@ group = project.maven_group
 
 
 loom {
-    accessWidenerPath = file("src/main/resources/sodium-extra.accesswidener")
+    accessWidenerPath.set file("src/main/resources/sodium-extra.accesswidener")
 }
 
 repositories {
@@ -41,10 +41,9 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modImplementation "com.github.FlashyReese:sodium-fabric:36da09d9ad" //"maven.modrinth:sodium:${project.sodium_version}"
+    modImplementation "me.jellysquid.mods:sodium-fabric:${project.sodium_version}"
     modImplementation "me.flashyreese.mods:reeses-sodium-options:${project.reeses_sodium_options}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-    implementation "org.joml:joml:1.10.2"
 
     include(fabricApi.module("fabric-lifecycle-events-v1", project.fabric_version))
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
@@ -52,7 +51,7 @@ dependencies {
 
     // Currently using altrisi/CaffeineConfig until it is officially available through CaffeineMC's maven repository
     // Todo: Use https://github.com/CaffeineMC/mixin-config when available
-    include(modImplementation("com.github.FlashyReese:CaffeineConfig:afbaa017c6"))
+    include(modImplementation("net.caffeinemc:mixin-config:1.0.0+1.17"))
 
     modRuntimeOnly "maven.modrinth:lazydfu:0.1.2"
 }
@@ -88,13 +87,7 @@ jar {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            // add all the jars that should be included when publishing to maven
-            artifact(remapJar) {
-                builtBy remapJar
-            }
-            artifact(sourcesJar) {
-                builtBy remapSourcesJar
-            }
+            from components.java
         }
     }
 
