@@ -40,8 +40,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "mixins": [
-    "fog.BackgroundRendererAccessor"
-  ]
+  }
 }
