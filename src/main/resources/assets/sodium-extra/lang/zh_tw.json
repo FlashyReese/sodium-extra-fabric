@@ -78,8 +78,8 @@
   "sodium-extra.option.villagers.tooltip": "如果啟用，則處理村民粒子。",
   "sodium-extra.option.water.tooltip": "如果啟用，則處理水粒子。",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
-  "sodium-extra.overlay.fps": "％sFPS",
-  "sodium-extra.overlay.fps_extended": " FPS (最高. %s / 平均. %s / 最小. %s)",
+  "sodium-extra.overlay.fps": "%s FPS",
+  "sodium-extra.overlay.fps_extended": "(最高. %s / 平均. %s / 最小. %s)",
   "sodium-extra.overlay.light_updates": "光罩更新已停用",
   "sodium-extra.suggestRSO.header": "建議：安裝Reese的鈉選項",
   "sodium-extra.suggestRSO.message": "強烈建議您將Reese的鈉選項與Extra鈉一起安裝。由於功能數量增多，它不再適合鈉的視頻選項。"
