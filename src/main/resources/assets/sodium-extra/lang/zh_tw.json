@@ -39,7 +39,7 @@
   "sodium-extra.option.overlay_corner.tooltip": "決定疊層（FPS 與 坐標）於畫面何處顯示。",
   "sodium-extra.option.overlay_corner.top_left": "左上方",
   "sodium-extra.option.overlay_corner.top_right": "右上方",
-  "sodium-extra.option.paintings.tooltip": "或啟用，將繪製繪畫。",
+  "sodium-extra.option.paintings.tooltip": "若啟用，將繪製繪畫。",
   "sodium-extra.option.particles_all.tooltip": "若啟用，將處理粒子效果。",
   "sodium-extra.option.piston.tooltip": "若啟用，將處理活塞延伸動畫。",
   "sodium-extra.option.portal.tooltip": "若啟用，將處理傳送門粒子效果。",
