@@ -82,5 +82,5 @@
   "sodium-extra.overlay.fps_extended": "（最高 %s / 平均 %s / 最低 %s）",
   "sodium-extra.overlay.light_updates": "照明更新已停用",
   "sodium-extra.suggestRSO.header": "建議：安裝 Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "強烈建議您將 Reese's Sodium Options 與 Sodium Extra 一同安裝。由於功能選項變多，它不再適合於 Sodium 的預設動畫選項中使用。"
+  "sodium-extra.suggestRSO.message": "由於更多功能選項增加，Sodium預設的顯示設定已無法相容，強烈建議你下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組"
 }
