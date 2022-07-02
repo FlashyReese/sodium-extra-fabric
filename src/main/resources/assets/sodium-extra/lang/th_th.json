@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "ถ้าเปิดตัวเลือกนี้ อนุภาคจากประตูมิติเนเธอร์จะทำงาน",
   "sodium-extra.option.potions.tooltip": "ถ้าเปิดตัวเลือกนี้ อนุภาคของน้ำยาจะทำงาน",
   "sodium-extra.option.prevent_shaders": "กีดกันการใช้แสงเงา",
-  "sodium-extra.option.prevent_shaders.tooltip": "ถ้าเปิดตัวเลือกนี้ แสงเงาของวานิลลาทุกรูปแบบจะถูกกีดกันจากการโหลด",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "ถ้าเปิดตัวเลือกนี้ ฝนและหิมะจะทำงาน",
   "sodium-extra.option.rain_splash.tooltip": "ถ้าเปิดตัวเลือกนี้ อนุภาคน้ำกระเซ็นจะทำงาน",
   "sodium-extra.option.redstone.tooltip": "ถ้าเปิดตัวเลือกนี้ อนุภาคของเรดสโตนจะทำงาน",
