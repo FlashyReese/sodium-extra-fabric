@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "Activer les particules des portails",
   "sodium-extra.option.potions.tooltip": "Activer les particules des potions",
   "sodium-extra.option.prevent_shaders": "Désactiver les shaders",
-  "sodium-extra.option.prevent_shaders.tooltip": "Empêcher tout type de shader de charger",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "Activer la pluie et la neige",
   "sodium-extra.option.rain_splash.tooltip": "Activer les particules de pluie au sol",
   "sodium-extra.option.redstone.tooltip": "Activer les particules de la redstone",
