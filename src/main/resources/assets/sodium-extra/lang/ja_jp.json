@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "有効にした場合、ネザーポータルのパーティクルの処理は実行されます。",
   "sodium-extra.option.potions.tooltip": "有効にした場合、ポーションのパーティクルの処理は実行されます。",
   "sodium-extra.option.prevent_shaders": "シェーダー読み込みの防止",
-  "sodium-extra.option.prevent_shaders.tooltip": "有効にした場合、任意のタイプのバニラのシェーダーを読み込むことが防止されます。",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "有効にした場合、雨と雪の処理は実行されます。",
   "sodium-extra.option.rain_splash.tooltip": "有効にした場合、雨の水しぶきの処理は実行されます。",
   "sodium-extra.option.redstone.tooltip": "有効にした場合、レッドストーンのパーティクルの処理は実行されます。",
