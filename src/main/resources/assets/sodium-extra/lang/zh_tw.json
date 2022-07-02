@@ -39,13 +39,13 @@
   "sodium-extra.option.overlay_corner.tooltip": "決定疊層（FPS 與 坐標）於畫面何處顯示。",
   "sodium-extra.option.overlay_corner.top_left": "左上角",
   "sodium-extra.option.overlay_corner.top_right": "右上角",
-  "sodium-extra.option.paintings.tooltip": "若啟用，將渲染繪畫",
+  "sodium-extra.option.paintings.tooltip": "若啟用，將繪製繪畫。",
   "sodium-extra.option.particles_all.tooltip": "若啟用，將處理粒子效果",
   "sodium-extra.option.piston.tooltip": "若啟用，將處理活塞延伸動畫",
   "sodium-extra.option.portal.tooltip": "若啟用，將處理傳送門粒子效果",
   "sodium-extra.option.potions.tooltip": "若啟用，將處理藥水粒子效果",
   "sodium-extra.option.prevent_shaders": "禁止載入光影包",
-  "sodium-extra.option.prevent_shaders.tooltip": "若啟用，將防止載入任何類型的原版著色器。",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "若啟用，將處理雨和雪。",
   "sodium-extra.option.rain_splash.tooltip": "若啟用，將處理雨水噴濺粒子效果。",
   "sodium-extra.option.redstone.tooltip": "若啟用，將處理紅石粒子效果。",
@@ -56,7 +56,7 @@
   "sodium-extra.option.show_coordinates": "顯示坐標",
   "sodium-extra.option.show_coordinates.tooltip": "在疊層上顯示玩家座標。",
   "sodium-extra.option.show_fps": "顯示 FPS",
-  "sodium-extra.option.show_fps.tooltip": "在疊層上顯示遊戲的即時 FPS。",
+  "sodium-extra.option.show_fps.tooltip": "在畫面上顯示遊戲的即時 FPS。",
   "sodium-extra.option.show_fps_extended": "顯示詳細 FPS",
   "sodium-extra.option.show_fps_extended.tooltip": "在即時 FPS 疊層旁顯示詳細資訊（最高、平均和最低 FPS）。",
   "sodium-extra.option.sky": "天空",
@@ -82,5 +82,5 @@
   "sodium-extra.overlay.fps_extended": "（最高 %s / 平均 %s / 最低 %s）",
   "sodium-extra.overlay.light_updates": "照明更新已停用",
   "sodium-extra.suggestRSO.header": "建議：安裝 Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "由於更多功能選項增加，Sodium預設的顯示設定已無法相容，強烈建議你下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組"
+  "sodium-extra.suggestRSO.message": "由於功能選項的增加，Sodium 預設的顯示設定已無法相容，強烈建議您下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組。"
 }
