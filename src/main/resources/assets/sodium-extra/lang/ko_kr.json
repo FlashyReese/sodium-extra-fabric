@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "활성화 하면, 차원문 입자가 처리됩니다.",
   "sodium-extra.option.potions.tooltip": "활성화 하면, 포션 효과 입자가 처리됩니다.",
   "sodium-extra.option.prevent_shaders": "셰이더 차단",
-  "sodium-extra.option.prevent_shaders.tooltip": "활성화 하면, 모든 바닐라 셰이더가 로드되지 않습니다.",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "활성화 하면, 비와 눈 입자가 처리됩니다.",
   "sodium-extra.option.rain_splash.tooltip": "활성화 하면, 떨어진 빗방울 입자가 처리됩니다.",
   "sodium-extra.option.redstone.tooltip": "활성화 하면, 레드스톤 입자가 처리됩니다.",
