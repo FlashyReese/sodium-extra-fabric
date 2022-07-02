@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "Alterna as partículas de portal",
   "sodium-extra.option.potions.tooltip": "Alterna as partículas de poções",
   "sodium-extra.option.prevent_shaders": "Desativar sombreadores",
-  "sodium-extra.option.prevent_shaders.tooltip": "Impede que quaisquer sombreadores sejam carregados",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "Chuva e neve",
   "sodium-extra.option.rain_splash.tooltip": "Alterna as partículas de respingos de chuva",
   "sodium-extra.option.redstone.tooltip": "Alterna as partículas de redstone",
