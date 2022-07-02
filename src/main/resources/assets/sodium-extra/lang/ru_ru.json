@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "Переключение частиц портала",
   "sodium-extra.option.potions.tooltip": "Переключение частиц зелий",
   "sodium-extra.option.prevent_shaders": "Предотвращение шейдеров",
-  "sodium-extra.option.prevent_shaders.tooltip": "Предотвращает загрузку любых типов шейдеров",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "Переключение дождя и снега",
   "sodium-extra.option.rain_splash.tooltip": "Переключение брызг дождя",
   "sodium-extra.option.redstone.tooltip": "Переключение частиц редстоуна",
