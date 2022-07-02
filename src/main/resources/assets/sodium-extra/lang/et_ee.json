@@ -45,7 +45,7 @@
   "sodium-extra.option.portal.tooltip": "Lubamisel töödeldakse portaaliosakesi.",
   "sodium-extra.option.potions.tooltip": "Lubamisel töödeldakse võlujoogiosakesi.",
   "sodium-extra.option.prevent_shaders": "Väldi varjutajaid",
-  "sodium-extra.option.prevent_shaders.tooltip": "Lubamisel keelatakse mistahes tüüpi vanilli varjutajate laadimine. Näiteks moonutatud vaade vaatlusrežiimis ämbliku vaateväljast jälgides.",
+  "sodium-extra.option.prevent_shaders.tooltip": "Lubamisel keelatakse mistahes tüüpi vanilli varjutajate laadimine.",
   "sodium-extra.option.rain_snow.tooltip": "Lubamisel töödeldakse vihma ja lund.",
   "sodium-extra.option.rain_splash.tooltip": "Lubamisel töödeldakse vihma plärtsatuste osakesi.",
   "sodium-extra.option.redstone.tooltip": "Lubamisel töödeldakse redstone-osakesi.",
