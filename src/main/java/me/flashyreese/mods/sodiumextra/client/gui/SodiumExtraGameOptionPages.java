@@ -11,10 +11,14 @@ import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
@@ -208,6 +212,22 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
+        Map<String, List<Identifier>> otherParticles = Registry.PARTICLE_TYPE.getIds().stream()
+                .filter(identifier -> !identifier.getNamespace().equals("minecraft"))
+                .collect(Collectors.groupingBy(Identifier::getNamespace));
+        otherParticles.forEach((namespace, identifiers) -> groups.add(identifiers.stream().collect(
+                OptionGroup::createBuilder,
+                (builder, identifier) -> builder.add(
+                        OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                                .setName(Text.translatable(identifier.toTranslationKey("options.particles")))
+                                .setTooltip(Text.translatable(identifier.toTranslationKey("options.particles").concat(".tooltip")))
+                                .setControl(TickBoxControl::new)
+                                .setBinding((opts, val) -> opts.particleSettings.otherMap.put(identifier, val),
+                                        opts -> opts.particleSettings.otherMap.get(identifier))
+                                .build()
+                ),
+                (b1, b2) -> {}
+        ).build()));
         return new OptionPage(parseVanillaString("options.particles"), ImmutableList.copyOf(groups));
     }
 

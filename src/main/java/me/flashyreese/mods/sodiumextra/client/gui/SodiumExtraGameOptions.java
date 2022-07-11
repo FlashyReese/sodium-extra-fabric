@@ -3,17 +3,23 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
+import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
+import java.util.Map;
 
 public class SodiumExtraGameOptions {
     private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Identifier.class, new Identifier.Serializer())
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .setPrettyPrinting()
             .excludeFieldsWithModifiers(Modifier.PRIVATE)
@@ -128,6 +134,8 @@ public class SodiumExtraGameOptions {
         public boolean composter;
         public boolean blockBreak;
         public boolean blockBreaking;
+        @SerializedName("other")
+        public Map<Identifier, Boolean> otherMap = new Object2BooleanArrayMap<>();
 
         public ParticleSettings() {
             this.particles = true;
@@ -146,6 +154,9 @@ public class SodiumExtraGameOptions {
             this.composter = true;
             this.blockBreak = true;
             this.blockBreaking = true;
+            Registry.PARTICLE_TYPE.getIds().stream()
+                    .filter(identifier -> !identifier.getNamespace().equals("minecraft"))
+                    .forEach(identifier -> this.otherMap.put(identifier, true));
         }
     }
 
