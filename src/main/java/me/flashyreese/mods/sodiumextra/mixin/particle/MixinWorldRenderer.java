@@ -6,7 +6,8 @@ import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.particle.ParticleEffect;
-import net.minecraft.particle.ParticleTypes;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -33,74 +34,9 @@ public class MixinWorldRenderer {
     @Inject(method = "spawnParticle(Lnet/minecraft/particle/ParticleEffect;ZZDDDDDD)Lnet/minecraft/client/particle/Particle;", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;getRandomParticleSpawnChance(Z)Lnet/minecraft/client/option/ParticlesMode;"), cancellable = true)
     private void spawnParticle(ParticleEffect parameters, boolean alwaysSpawn, boolean canSpawnOnMinimal, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<Particle> callbackInfo) {
         if (SodiumExtraClientMod.options().particleSettings.particles) {
-            if (!SodiumExtraClientMod.options().particleSettings.explosion) {
-                if (parameters == ParticleTypes.EXPLOSION_EMITTER || parameters == ParticleTypes.EXPLOSION || parameters == ParticleTypes.POOF) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.water) {
-                if (parameters == ParticleTypes.UNDERWATER) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.smoke) {
-                if (parameters == ParticleTypes.SMOKE || parameters == ParticleTypes.LARGE_SMOKE || parameters == ParticleTypes.CAMPFIRE_COSY_SMOKE || parameters == ParticleTypes.CAMPFIRE_SIGNAL_SMOKE) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.potion) {
-                if (parameters == ParticleTypes.ENTITY_EFFECT || parameters == ParticleTypes.AMBIENT_ENTITY_EFFECT || parameters == ParticleTypes.EFFECT || parameters == ParticleTypes.INSTANT_EFFECT || parameters == ParticleTypes.WITCH) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.portal) {
-                if (parameters == ParticleTypes.PORTAL || parameters == ParticleTypes.REVERSE_PORTAL) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.drip) {
-                if (parameters == ParticleTypes.DRIPPING_WATER || parameters == ParticleTypes.FALLING_WATER || parameters == ParticleTypes.DRIPPING_LAVA ||
-                        parameters == ParticleTypes.FALLING_LAVA || parameters == ParticleTypes.LANDING_LAVA || parameters == ParticleTypes.DRIPPING_HONEY ||
-                        parameters == ParticleTypes.FALLING_HONEY || parameters == ParticleTypes.LANDING_HONEY || parameters == ParticleTypes.FALLING_NECTAR ||
-                        parameters == ParticleTypes.DRIPPING_OBSIDIAN_TEAR || parameters == ParticleTypes.FALLING_OBSIDIAN_TEAR || parameters == ParticleTypes.LANDING_OBSIDIAN_TEAR) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.firework) {
-                if (parameters == ParticleTypes.FIREWORK) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.bubble) {
-                if (parameters == ParticleTypes.BUBBLE || parameters == ParticleTypes.BUBBLE_POP || parameters == ParticleTypes.BUBBLE_COLUMN_UP ||
-                        parameters == ParticleTypes.CURRENT_DOWN) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.redstone) {
-                if (parameters == ParticleTypes.DUST) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.environment) {
-                if (parameters == ParticleTypes.ASH || parameters == ParticleTypes.CRIMSON_SPORE || parameters == ParticleTypes.WARPED_SPORE || parameters == ParticleTypes.WHITE_ASH) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.villagers) {
-                if (parameters == ParticleTypes.ANGRY_VILLAGER || parameters == ParticleTypes.HAPPY_VILLAGER) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.villagers) {
-                if (parameters == ParticleTypes.ANGRY_VILLAGER || parameters == ParticleTypes.HAPPY_VILLAGER) {
-                    callbackInfo.setReturnValue(null);
-                }
-            }
-            if (!SodiumExtraClientMod.options().particleSettings.composter) {
-                if (parameters == ParticleTypes.COMPOSTER) {
-                    callbackInfo.setReturnValue(null);
-                }
+            Identifier particleTypeId = Registry.PARTICLE_TYPE.getId(parameters.getType());
+            if (!SodiumExtraClientMod.options().particleSettings.otherMap.getOrDefault(particleTypeId, true)) {
+                callbackInfo.setReturnValue(null);
             }
         } else {
             callbackInfo.setReturnValue(null);
