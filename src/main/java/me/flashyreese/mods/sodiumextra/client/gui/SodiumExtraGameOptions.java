@@ -8,7 +8,6 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.io.File;
 import java.io.FileReader;
@@ -120,43 +119,17 @@ public class SodiumExtraGameOptions {
     public static class ParticleSettings {
         public boolean particles;
         public boolean rainSplash;
-        public boolean explosion;
-        public boolean water;
-        public boolean smoke;
-        public boolean potion;
-        public boolean portal;
-        public boolean redstone;
-        public boolean drip;
-        public boolean firework;
-        public boolean bubble;
-        public boolean environment;
-        public boolean villagers;
-        public boolean composter;
         public boolean blockBreak;
         public boolean blockBreaking;
         @SerializedName("other")
-        public Map<Identifier, Boolean> otherMap = new Object2BooleanArrayMap<>();
+        public Map<Identifier, Boolean> otherMap;
 
         public ParticleSettings() {
             this.particles = true;
             this.rainSplash = true;
-            this.explosion = true;
-            this.water = true;
-            this.smoke = true;
-            this.potion = true;
-            this.portal = true;
-            this.redstone = true;
-            this.drip = true;
-            this.firework = true;
-            this.bubble = true;
-            this.environment = true;
-            this.villagers = true;
-            this.composter = true;
             this.blockBreak = true;
             this.blockBreaking = true;
-            Registry.PARTICLE_TYPE.getIds().stream()
-                    .filter(identifier -> !identifier.getNamespace().equals("minecraft"))
-                    .forEach(identifier -> this.otherMap.put(identifier, true));
+            this.otherMap = new Object2BooleanArrayMap<>();
         }
     }
 
