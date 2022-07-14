@@ -69,5 +69,5 @@
   "sodium-extra.overlay.light_updates": "照明更新已停用",
   "sodium-extra.suggestRSO.header": "建議：安裝 Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "由於功能選項的增加，Sodium 預設的顯示設定已無法相容，強烈建議您下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組。",
-  "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed."
+  "sodium-extra.option.particles.tooltips": "若啟用，將處理%s的粒子效果。"
 }
