@@ -36,7 +36,7 @@
   "sodium-extra.option.particles_all.tooltip": "Tüm parçacıkları aç/kapa",
   "sodium-extra.option.piston.tooltip": "Piston animasyonlarını işle",
   "sodium-extra.option.prevent_shaders": "Shader Engelle",
-  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
+  "sodium-extra.option.prevent_shaders.tooltip": "Etkinleştirilirse, her türlü vanilla shader yüklenmesi engellenir. Örneğin, bir örümceğin bakış açısından seyrederken çarpık görüntü oluşturulmasını engellemek gibi.",
   "sodium-extra.option.rain_snow.tooltip": "Yağmur ve kar efektlerini aç/kapa",
   "sodium-extra.option.rain_splash.tooltip": "Yağmur düşme parçacıklarını aç/kapa",
   "sodium-extra.option.reduce_resolution_on_mac": "macOS üzerinde çözünürlüğü azalt",
@@ -69,5 +69,5 @@
   "sodium-extra.overlay.light_updates": "Işık güncellemeleri devre dışı",
   "sodium-extra.suggestRSO.header": "Öneri: Reese's Sodium Options modunu indirin",
   "sodium-extra.suggestRSO.message": "Sodium Extra'nın yanı sıra Reese's Sodium Options modunu kurmanız şiddetle tavsiye edilir. Artan sayıda özellik nedeniyle, artık Sodium'un video seçeneklerine tam olarak uymuyor.",
-  "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed."
+  "sodium-extra.option.particles.tooltips": "Eğer etkinleştirilse, %s parçacıkları işlenecek."
 }
