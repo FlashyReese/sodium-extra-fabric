@@ -33,6 +33,7 @@
   "sodium-extra.option.overlay_corner.top_left": "左上",
   "sodium-extra.option.overlay_corner.top_right": "右上",
   "sodium-extra.option.paintings.tooltip": "开启或关闭显示画",
+  "sodium-extra.option.particles.tooltips": "开启或关闭%s粒子效果",
   "sodium-extra.option.particles_all.tooltip": "开启或关闭全部粒子效果",
   "sodium-extra.option.piston.tooltip": "开启或关闭显示活塞过程动画",
   "sodium-extra.option.prevent_shaders": "禁止着色器",
@@ -57,6 +58,11 @@
   "sodium-extra.option.stars.tooltip": "开启或关闭星星渲染",
   "sodium-extra.option.sun_moon": "太阳和月亮",
   "sodium-extra.option.sun_moon.tooltip": "开启或关闭太阳和月亮的渲染",
+  "sodium-extra.option.text_contrast": "文本对比度",
+  "sodium-extra.option.text_contrast.background": "背景",
+  "sodium-extra.option.text_contrast.none": "无",
+  "sodium-extra.option.text_contrast.shadow": "阴影",
+  "sodium-extra.option.text_contrast.tooltip": "Adjusts the contrast of the FPS/Coordinates counter.\n- None: Default plain white text\n- Background: Renders a background to the text like the debug menu\n- Shadow: Plain white text with shadow",
   "sodium-extra.option.toasts": "弹窗提示",
   "sodium-extra.option.toasts.tooltip": "显示成就和合成配方的弹窗提示",
   "sodium-extra.option.use_adaptive_sync.name": "使用自适应同步",
@@ -68,6 +74,5 @@
   "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)",
   "sodium-extra.overlay.light_updates": "光照更新已禁用",
   "sodium-extra.suggestRSO.header": "建议: 安装Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "强烈建议您在安装Sodium Extra的同时安装Reese's Sodium Options。由于越来越多的功能，它不再适合Sodium的视频设置。",
-  "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed."
+  "sodium-extra.suggestRSO.message": "强烈建议您在安装Sodium Extra的同时安装Reese's Sodium Options。由于越来越多的功能，它不再适合Sodium的视频设置。"
 }
