@@ -33,6 +33,7 @@
   "sodium-extra.option.overlay_corner.top_left": "左上角",
   "sodium-extra.option.overlay_corner.top_right": "右上角",
   "sodium-extra.option.paintings.tooltip": "若啟用，將繪製繪畫。",
+  "sodium-extra.option.particles.tooltips": "若啟用，將處理%s的粒子效果。",
   "sodium-extra.option.particles_all.tooltip": "若啟用，將處理粒子效果。",
   "sodium-extra.option.piston.tooltip": "若啟用，將處理活塞的延伸動畫。",
   "sodium-extra.option.prevent_shaders": "避免載入著色器",
@@ -57,6 +58,11 @@
   "sodium-extra.option.stars.tooltip": "若啟用，將繪製星辰。",
   "sodium-extra.option.sun_moon": "太陽與月亮",
   "sodium-extra.option.sun_moon.tooltip": "若啟用，將繪製太陽與月亮。",
+  "sodium-extra.option.text_contrast": "Text Contrast",
+  "sodium-extra.option.text_contrast.background": "Background",
+  "sodium-extra.option.text_contrast.none": "None",
+  "sodium-extra.option.text_contrast.shadow": "Shadow",
+  "sodium-extra.option.text_contrast.tooltip": "Adjusts the contrast of the FPS/Coordinates counter.\n- None: Default plain white text\n- Background: Renders a background to the text like the debug menu\n- Shadow: Plain white text with shadow",
   "sodium-extra.option.toasts": "彈出提示框",
   "sodium-extra.option.toasts.tooltip": "若啟用，將顯示進度和合成配方的彈出提示框。",
   "sodium-extra.option.use_adaptive_sync.name": "使用自適應同步",
@@ -68,6 +74,5 @@
   "sodium-extra.overlay.fps_extended": "（最高 %s / 平均 %s / 最低 %s）",
   "sodium-extra.overlay.light_updates": "照明更新已停用",
   "sodium-extra.suggestRSO.header": "建議：安裝 Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "由於功能選項的增加，Sodium 預設的顯示設定已無法相容，強烈建議您下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組。",
-  "sodium-extra.option.particles.tooltips": "若啟用，將處理%s的粒子效果。"
+  "sodium-extra.suggestRSO.message": "由於功能選項的增加，Sodium 預設的顯示設定已無法相容，強烈建議您下載 Reese's Sodium Options 和 Sodium Extra 這兩個模組。"
 }
