@@ -97,6 +97,23 @@ public class SodiumExtraGameOptions {
         }
     }
 
+    public enum TextContrast implements TextProvider {
+        NONE("sodium-extra.option.text_contrast.none"),
+        BACKGROUND("sodium-extra.option.text_contrast.background"),
+        SHADOW("sodium-extra.option.text_contrast.shadow");
+
+        private final Text text;
+
+        TextContrast(String text) {
+            this.text = new TranslatableText(text);
+        }
+
+        @Override
+        public Text getLocalizedName() {
+            return this.text;
+        }
+    }
+
     public static class AnimationSettings {
         public boolean animation;
         public boolean water;
@@ -174,6 +191,7 @@ public class SodiumExtraGameOptions {
 
     public static class ExtraSettings {
         public OverlayCorner overlayCorner;
+        public TextContrast textContrast;
         public boolean showFps;
         public boolean showFPSExtended;
         public boolean showCoords;
@@ -187,6 +205,7 @@ public class SodiumExtraGameOptions {
 
         public ExtraSettings() {
             this.overlayCorner = OverlayCorner.TOP_LEFT;
+            this.textContrast = TextContrast.NONE;
             this.showFps = false;
             this.showFPSExtended = true;
             this.showCoords = false;

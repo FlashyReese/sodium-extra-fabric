@@ -1,7 +1,9 @@
 package me.flashyreese.mods.sodiumextra.mixin.gui;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
+import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptions;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
@@ -39,7 +41,7 @@ public class MixinInGameHud {
             } else if (SodiumExtraClientMod.options().extraSettings.showCoords) {
                 this.renderCoords(matrices);
             }
-            if (!SodiumExtraClientMod.options().renderSettings.lightUpdates){
+            if (!SodiumExtraClientMod.options().renderSettings.lightUpdates) {
                 this.renderLightUpdatesWarning(matrices);
             }
         }
@@ -73,10 +75,11 @@ public class MixinInGameHud {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
             }
-            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+            default ->
+                    throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+        this.drawString(matrices, text, x, y);
     }
 
     private void renderCoords(MatrixStack matrices) {
@@ -103,10 +106,11 @@ public class MixinInGameHud {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
             }
-            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+            default ->
+                    throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+        this.drawString(matrices, text, x, y);
     }
 
     private void renderLightUpdatesWarning(MatrixStack matrices){
@@ -130,9 +134,21 @@ public class MixinInGameHud {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 22;
             }
-            default -> throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+            default ->
+                    throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+        this.drawString(matrices, text, x, y);
+    }
+
+    private void drawString(MatrixStack matrices, Text text, int x, int y) {
+        if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.NONE) {
+            this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+        } else if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.BACKGROUND) {
+            DrawableHelper.fill(matrices, x - 1, y - 1, x + this.client.textRenderer.getWidth(text) + 1, y + this.client.textRenderer.fontHeight, -1873784752);
+            this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+        } else if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.SHADOW) {
+            this.client.textRenderer.drawWithShadow(matrices, text, x, y, 0xffffffff);
+        }
     }
 }
