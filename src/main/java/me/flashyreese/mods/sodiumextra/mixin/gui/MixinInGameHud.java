@@ -84,6 +84,7 @@ public class MixinInGameHud {
 
     private void renderCoords(MatrixStack matrices) {
         if (this.client.player == null) return;
+        if (this.client.hasReducedDebugInfo()) return;
         Vec3d pos = this.client.player.getPos();
 
         Text text = new TranslatableText("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z));
