@@ -34,6 +34,7 @@
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.resolution.MixinSodiumOptionsGUI",
     "sodium.resolution.reeses_sodium_options.MixinSodiumVideoOptionsScreen",
+    "sodium.scrollable_page.MixinSodiumOptionsGUI",
     "stars.MixinWorldRenderer",
     "sun_moon.MixinWorldRenderer",
     "toasts.MixinToastManager"
