@@ -11,10 +11,13 @@ import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
+import net.minecraft.text.Texts;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 import org.lwjgl.glfw.GLFW;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
@@ -110,90 +113,6 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("subtitles.entity.generic.explode"))
-                        .setTooltip(Text.translatable("sodium-extra.option.explosions.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.explosion = value, opts -> opts.particleSettings.explosion)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("block.minecraft.water"))
-                        .setTooltip(Text.translatable("sodium-extra.option.water.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.water = value, opts -> opts.particleSettings.water)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(Text.translatable("sodium-extra.option.smoke"))
-                        .setTooltip(Text.translatable("sodium-extra.option.smoke.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.smoke = value, opts -> opts.particleSettings.smoke)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("item.minecraft.potion"))
-                        .setTooltip(Text.translatable("sodium-extra.option.potions.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.potion = value, opts -> opts.particleSettings.potion)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("block.minecraft.nether_portal"))
-                        .setTooltip(Text.translatable("sodium-extra.option.portal.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.portal = value, opts -> opts.particleSettings.portal)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("itemGroup.redstone"))
-                        .setTooltip(Text.translatable("sodium-extra.option.redstone.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.redstone = value, opts -> opts.particleSettings.redstone)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(Text.translatable("sodium-extra.option.dripping_particles"))
-                        .setTooltip(Text.translatable("sodium-extra.option.dripping_particles.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.drip = value, opts -> opts.particleSettings.drip)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("subtitles.entity.firework_rocket.blast"))
-                        .setTooltip(Text.translatable("sodium-extra.option.fireworks.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.firework = value, opts -> opts.particleSettings.firework)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("block.minecraft.bubble_column"))
-                        .setTooltip(Text.translatable("sodium-extra.option.bubbles.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.bubble = value, opts -> opts.particleSettings.bubble)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("soundCategory.ambient"))
-                        .setTooltip(Text.translatable("sodium-extra.option.environment.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.environment = value, opts -> opts.particleSettings.environment)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("entity.minecraft.villager"))
-                        .setTooltip(Text.translatable("sodium-extra.option.villagers.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.villagers = value, opts -> opts.particleSettings.villagers)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(parseVanillaString("block.minecraft.composter"))
-                        .setTooltip(Text.translatable("sodium-extra.option.composter.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setBinding((opts, value) -> opts.particleSettings.composter = value, opts -> opts.particleSettings.composter)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(parseVanillaString("subtitles.block.generic.break"))
                         .setTooltip(Text.translatable("sodium-extra.option.block_break.tooltip"))
                         .setControl(TickBoxControl::new)
@@ -208,6 +127,25 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
+
+        Map<String, List<Identifier>> otherParticles = Registry.PARTICLE_TYPE.getIds().stream()
+                .collect(Collectors.groupingBy(Identifier::getNamespace));
+        otherParticles.forEach((namespace, identifiers) -> groups.add(identifiers.stream()
+                .map(identifier -> OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(translatableName(identifier, "particles"))
+                        .setTooltip(translatableTooltip(identifier, "particles"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, val) -> opts.particleSettings.otherMap.put(identifier, val),
+                                opts -> opts.particleSettings.otherMap.getOrDefault(identifier, true))
+                        .build())
+                .sorted(Comparator.comparing(o -> o.getName().getString()))
+                .collect(
+                        OptionGroup::createBuilder,
+                        OptionGroup.Builder::add,
+                        (b1, b2) -> {}
+                ).build()
+        ));
+
         return new OptionPage(parseVanillaString("options.particles"), ImmutableList.copyOf(groups));
     }
 
@@ -357,6 +295,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((opts, value) -> opts.extraSettings.overlayCorner = value, opts -> opts.extraSettings.overlayCorner)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(SodiumExtraGameOptions.TextContrast.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.text_contrast"))
+                        .setTooltip(Text.translatable("sodium-extra.option.text_contrast.tooltip"))
+                        .setControl(option -> new CyclingControl<>(option, SodiumExtraGameOptions.TextContrast.class))
+                        .setBinding((opts, value) -> opts.extraSettings.textContrast = value, opts -> opts.extraSettings.textContrast)
+                        .build()
+                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(Text.translatable("sodium-extra.option.show_fps"))
                         .setTooltip(Text.translatable("sodium-extra.option.show_fps.tooltip"))
@@ -409,5 +354,32 @@ public class SodiumExtraGameOptionPages {
                 .build());
 
         return new OptionPage(Text.translatable("sodium-extra.option.extras"), ImmutableList.copyOf(groups));
+    }
+
+    private static Text translatableName(Identifier identifier, String category) {
+        String key = identifier.toTranslationKey("options.".concat(category));
+
+        Text translatable = Text.translatable(key);
+        if (!Texts.hasTranslation(translatable)) {
+            translatable = Text.literal(
+                    Arrays.stream(key.substring(key.lastIndexOf('.') + 1).split("_"))
+                            .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
+                            .collect(Collectors.joining(" "))
+            );
+        }
+        return translatable;
+    }
+
+    private static Text translatableTooltip(Identifier identifier, String category) {
+        String key = identifier.toTranslationKey("options.".concat(category)).concat(".tooltip");
+
+        Text translatable = Text.translatable(key);
+        if (!Texts.hasTranslation(translatable)) {
+            translatable = Text.translatable(
+                    "sodium-extra.option.".concat(category).concat(".tooltips"),
+                    translatableName(identifier, category)
+            );
+        }
+        return translatable;
     }
 }

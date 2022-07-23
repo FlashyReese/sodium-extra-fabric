@@ -3,17 +3,22 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.SerializedName;
+import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
+import java.util.Map;
 
 public class SodiumExtraGameOptions {
     private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Identifier.class, new Identifier.Serializer())
             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
             .setPrettyPrinting()
             .excludeFieldsWithModifiers(Modifier.PRIVATE)
@@ -91,6 +96,23 @@ public class SodiumExtraGameOptions {
         }
     }
 
+    public enum TextContrast implements TextProvider {
+        NONE("sodium-extra.option.text_contrast.none"),
+        BACKGROUND("sodium-extra.option.text_contrast.background"),
+        SHADOW("sodium-extra.option.text_contrast.shadow");
+
+        private final Text text;
+
+        TextContrast(String text) {
+            this.text = Text.translatable(text);
+        }
+
+        @Override
+        public Text getLocalizedName() {
+            return this.text;
+        }
+    }
+
     public static class AnimationSettings {
         public boolean animation;
         public boolean water;
@@ -114,38 +136,17 @@ public class SodiumExtraGameOptions {
     public static class ParticleSettings {
         public boolean particles;
         public boolean rainSplash;
-        public boolean explosion;
-        public boolean water;
-        public boolean smoke;
-        public boolean potion;
-        public boolean portal;
-        public boolean redstone;
-        public boolean drip;
-        public boolean firework;
-        public boolean bubble;
-        public boolean environment;
-        public boolean villagers;
-        public boolean composter;
         public boolean blockBreak;
         public boolean blockBreaking;
+        @SerializedName("other")
+        public Map<Identifier, Boolean> otherMap;
 
         public ParticleSettings() {
             this.particles = true;
             this.rainSplash = true;
-            this.explosion = true;
-            this.water = true;
-            this.smoke = true;
-            this.potion = true;
-            this.portal = true;
-            this.redstone = true;
-            this.drip = true;
-            this.firework = true;
-            this.bubble = true;
-            this.environment = true;
-            this.villagers = true;
-            this.composter = true;
             this.blockBreak = true;
             this.blockBreaking = true;
+            this.otherMap = new Object2BooleanArrayMap<>();
         }
     }
 
@@ -189,6 +190,7 @@ public class SodiumExtraGameOptions {
 
     public static class ExtraSettings {
         public OverlayCorner overlayCorner;
+        public TextContrast textContrast;
         public boolean showFps;
         public boolean showFPSExtended;
         public boolean showCoords;
@@ -201,6 +203,7 @@ public class SodiumExtraGameOptions {
 
         public ExtraSettings() {
             this.overlayCorner = OverlayCorner.TOP_LEFT;
+            this.textContrast = TextContrast.NONE;
             this.showFps = false;
             this.showFPSExtended = true;
             this.showCoords = false;
