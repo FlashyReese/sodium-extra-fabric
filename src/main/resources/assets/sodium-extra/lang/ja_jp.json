@@ -33,6 +33,7 @@
   "sodium-extra.option.overlay_corner.top_left": "左上",
   "sodium-extra.option.overlay_corner.top_right": "右上",
   "sodium-extra.option.paintings.tooltip": "有効にした場合、絵画は描画されます。",
+  "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed.",
   "sodium-extra.option.particles_all.tooltip": "有効にした場合、全てのパーティクルの処理は実行されます。",
   "sodium-extra.option.piston.tooltip": "有効にした場合、ピストンのアニメーションの処理は実行されます。",
   "sodium-extra.option.prevent_shaders": "シェーダー読み込みの防止",
@@ -57,6 +58,11 @@
   "sodium-extra.option.stars.tooltip": "有効にした場合、星は描画されます。",
   "sodium-extra.option.sun_moon": "太陽と月",
   "sodium-extra.option.sun_moon.tooltip": "有効にした場合、太陽と月は描画されます。",
+  "sodium-extra.option.text_contrast": "Text Contrast",
+  "sodium-extra.option.text_contrast.background": "Background",
+  "sodium-extra.option.text_contrast.none": "None",
+  "sodium-extra.option.text_contrast.shadow": "Shadow",
+  "sodium-extra.option.text_contrast.tooltip": "Adjusts the contrast of the FPS/Coordinates counter.\n- None: Default plain white text\n- Background: Renders a background to the text like the debug menu\n- Shadow: Plain white text with shadow",
   "sodium-extra.option.toasts": "進捗の通知",
   "sodium-extra.option.toasts.tooltip": "有効にした場合、進捗とクラフトのレシピの通知が表示されます。",
   "sodium-extra.option.use_adaptive_sync.name": "アダプティブシンクを使う",
@@ -68,6 +74,5 @@
   "sodium-extra.overlay.fps_extended": "(最大 %s / 平均 %s / 最小 %s)",
   "sodium-extra.overlay.light_updates": "光の状態の更新が無効",
   "sodium-extra.suggestRSO.header": "提案: Reese's Sodium Optionsをインストールしましょう",
-  "sodium-extra.suggestRSO.message": "機能の増加により、Sodiumのビデオ設定に適切に収まらないことがあるので、Reese's Sodium OptionsをSodium Extraと一緒にインストールすることを強くお勧めします。",
-  "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed."
+  "sodium-extra.suggestRSO.message": "機能の増加により、Sodiumのビデオ設定に適切に収まらないことがあるので、Reese's Sodium OptionsをSodium Extraと一緒にインストールすることを強くお勧めします。"
 }
