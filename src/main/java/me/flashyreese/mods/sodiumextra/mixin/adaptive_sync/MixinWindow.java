@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinWindow {
     @Redirect(method = "setVsync", at = @At(value = "INVOKE", target = "Lorg/lwjgl/glfw/GLFW;glfwSwapInterval(I)V"))
     private void setSwapInterval(int interval) {
-        if (SodiumExtraClientMod.options().extraSettings.useAdaptiveSync) {
+        if (SodiumExtraClientMod.options().extraSettings.useAdaptiveSync && (GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))) {
             GLFW.glfwSwapInterval(interval == 1 ? -1 : 0);
         } else {
             GLFW.glfwSwapInterval(interval);
