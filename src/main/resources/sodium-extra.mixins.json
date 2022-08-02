@@ -19,6 +19,7 @@
     "light_updates.MixinLightingProvider",
     "particle.MixinParticleManager",
     "particle.MixinWorldRenderer",
+    "particle.MixinFireworkParticle",
     "prevent_shaders.MixinGameRenderer",
     "reduce_resolution_on_mac.MixinWindow",
     "render.block.entity.MixinBeaconBlockEntityRenderer",
