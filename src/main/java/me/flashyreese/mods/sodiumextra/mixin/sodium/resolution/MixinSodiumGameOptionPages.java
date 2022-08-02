@@ -44,6 +44,7 @@ public class MixinSodiumGameOptionPages {
                                     window.setVideoMode(Optional.of(window.getMonitor().getVideoMode(value - 1)));
                                 }
                             }
+                            window.applyVideoMode();
                         }, options -> {
                             if (window.getMonitor() == null) {
                                 return 0;
@@ -52,7 +53,6 @@ public class MixinSodiumGameOptionPages {
                                 return optional.map((videoMode) -> window.getMonitor().findClosestVideoModeIndex(videoMode) + 1).orElse(0);
                             }
                         })
-                        .setFlags(OptionFlag.REQUIRES_GAME_RESTART)
                         .setImpact(OptionImpact.HIGH)
                         .build())
                 .build());
