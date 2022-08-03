@@ -268,19 +268,6 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.use_adaptive_sync.name").getString())
-                        .setTooltip(new TranslatableText("sodium-extra.option.use_adaptive_sync.tooltip").getString())
-                        .setControl(TickBoxControl::new)
-                        .setImpact(OptionImpact.VARIES)
-                        .setEnabled(GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))
-                        .setBinding((opts, value) -> {
-                            opts.extraSettings.useAdaptiveSync = value;
-                            // Update the swap buffer
-                            MinecraftClient.getInstance().getWindow().setVsync(MinecraftClient.getInstance().options.enableVsync);
-                        }, opts -> opts.extraSettings.useAdaptiveSync)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac").getString())
                         .setTooltip(new TranslatableText("sodium-extra.option.reduce_resolution_on_mac.tooltip").getString())
                         .setEnabled(MinecraftClient.IS_SYSTEM_MAC)
