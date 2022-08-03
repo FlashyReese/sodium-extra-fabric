@@ -34,6 +34,7 @@
     "sodium.gui_scale.MixinSliderControl",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.scrollable_page.MixinSodiumOptionsGUI",
+    "sodium.vsync.MixinSodiumGameOptionsPages",
     "stars.MixinWorldRenderer",
     "sun_moon.MixinWorldRenderer",
     "toasts.MixinToastManager"
