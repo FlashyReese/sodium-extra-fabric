@@ -9,12 +9,14 @@ import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
+import org.lwjgl.glfw.GLFW;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 import java.util.Map;
 
 public class SodiumExtraGameOptions {
@@ -111,6 +113,33 @@ public class SodiumExtraGameOptions {
         @Override
         public Text getLocalizedName() {
             return this.text;
+        }
+    }
+
+    public enum VerticalSyncOption implements TextProvider {
+        OFF("options.off"),
+        ON("options.on"),
+        ADAPTIVE("sodium-extra.option.use_adaptive_sync.name", GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"));
+
+        private final Text name;
+        private final boolean supported;
+
+        VerticalSyncOption(String name) {
+            this(name, true);
+        }
+
+        VerticalSyncOption(String name, boolean supported) {
+            this.name = new TranslatableText(name);
+            this.supported = supported;
+        }
+
+        @Override
+        public Text getLocalizedName() {
+            return this.name;
+        }
+
+        public static VerticalSyncOption[] getAvailableOptions() {
+            return Arrays.stream(VerticalSyncOption.values()).filter((o) -> o.supported) .toArray(VerticalSyncOption[]::new);
         }
     }
 
