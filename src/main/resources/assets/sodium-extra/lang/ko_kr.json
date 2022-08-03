@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "FPS/좌표 카운터의 대비를 조정합니다.\n- 비활성화: 기본 일반 흰색 텍스트\n- 배경: 디버그 메뉴와 같이 텍스트에 배경을 렌더링\n- 그림자: 그림자가 포함된 일반 흰색 텍스트",
   "sodium-extra.option.toasts": "토스트",
   "sodium-extra.option.toasts.tooltip": "활성화를 하면 토스트(발전과제, 레시피 등 팝업 알림) 들이 표시됩니다.",
-  "sodium-extra.option.use_adaptive_sync.name": "적응형 동기화 사용",
+  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
   "sodium-extra.option.use_adaptive_sync.tooltip": "활성화를 하면 수직 동기화가 필요에 따라 프레임을 낮추거나 비활성화 할 수 있게 되어 응답성이 개선됩니다.",
   "sodium-extra.option.use_fast_random": "빠른 랜덤 함수 사용",
   "sodium-extra.option.use_fast_random.tooltip": "활성화를 하면 블록 렌더링을 위해 빠른 랜덤 함수가 사용됩니다. 바닐라와 비교할 때 무작위로 회전된 텍스처의 회전에 영향을 줄 수 있습니다.",
