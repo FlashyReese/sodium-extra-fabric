@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "调整FPS/坐标的对比度\n- 无：默认白色文本\n- 背景：像调试菜单背景一样渲染文本背景\n- 阴影：有阴影的白色文本",
   "sodium-extra.option.toasts": "弹窗提示",
   "sodium-extra.option.toasts.tooltip": "显示成就和合成配方的弹窗提示",
-  "sodium-extra.option.use_adaptive_sync.name": "使用自适应同步",
+  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
   "sodium-extra.option.use_adaptive_sync.tooltip": "启用后，垂直同步将能够交换中间帧，并不时禁用自己，通常有助于响应",
   "sodium-extra.option.use_fast_random": "快速随机纹理",
   "sodium-extra.option.use_fast_random.tooltip": "启用后, 将使用快速随机函数来渲染方块。\n与原版相比, 这会影响随机旋转纹理的旋转方向。",
