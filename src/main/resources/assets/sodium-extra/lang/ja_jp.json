@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "FPS/Coordinates カウンターのコントラストを調整します。\n- 無し　デフォルトの文字を描画します。\n- 背景　文字にデバッグメニューのような背景を描画します。\n- 影　　デフォルトの文字に影を描画します。",
   "sodium-extra.option.toasts": "進捗の通知",
   "sodium-extra.option.toasts.tooltip": "有効にした場合、進捗とクラフトのレシピの通知が表示されます。",
-  "sodium-extra.option.use_adaptive_sync.name": "アダプティブシンクを使う",
+  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
   "sodium-extra.option.use_adaptive_sync.tooltip": "有効にした場合、V-Syncはフレームの途中に移され、時にはそれ自体が無効にされます。通常は応答性を顕著に向上させることができます。",
   "sodium-extra.option.use_fast_random": "高速な乱数を使う",
   "sodium-extra.option.use_fast_random.tooltip": "有効にした場合、高速な乱数関数がブロックレンダリングに使用されます。バニラと比較したときに、ランダムに回転するテスクチャの向きに影響があります。",
