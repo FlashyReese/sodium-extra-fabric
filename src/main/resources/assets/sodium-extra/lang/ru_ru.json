@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "Регулирует контраст счетчика ФПС/коодринат. \n- Выключено: Простой белый текст по умолчанию\n- Фон: Отрисовывает задний фон текста как на экране отладки\n- Тень: Белый текст с тенью",
   "sodium-extra.option.toasts": "Уведомления",
   "sodium-extra.option.toasts.tooltip": "Всплывающие уведомления о достижениях и новых рецептах",
-  "sodium-extra.option.use_adaptive_sync.name": "Адаптивная синхронизация",
+  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
   "sodium-extra.option.use_adaptive_sync.tooltip": "Вертикальная синхронизация сможет переключаться между кадрами и время от времени отключаться, что обычно заметно улучшает быстродействие.",
   "sodium-extra.option.use_fast_random": "Использовать быстрый рандом",
   "sodium-extra.option.use_fast_random.tooltip": "Если включено, для рендеринга блоков будет использоваться функция быстрого рандома. Это может повлиять на положение случайно повёрнутых текстур по сравнению с ванилью.",
