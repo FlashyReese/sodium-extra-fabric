@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "調整 FPS／座標的文字對比。\n- 無：預設文字\n- 背景：像除錯選單那樣為文字加入背景\n- 陰影：帶有陰影的文字",
   "sodium-extra.option.toasts": "彈出提示框",
   "sodium-extra.option.toasts.tooltip": "若啟用，將顯示進度和合成配方的彈出提示框。",
-  "sodium-extra.option.use_adaptive_sync.name": "使用自適應同步",
+  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
   "sodium-extra.option.use_adaptive_sync.tooltip": "若啟用，垂直同步將能夠交換中間幀並適時停用，通常有助於提升顯示器的回應速度。",
   "sodium-extra.option.use_fast_random": "快速隨機材質",
   "sodium-extra.option.use_fast_random.tooltip": "若啟用，將使用快速隨機函數來繪製方塊。\n與原版相比，這可能會影響隨機旋轉紋理的旋轉方向。",
