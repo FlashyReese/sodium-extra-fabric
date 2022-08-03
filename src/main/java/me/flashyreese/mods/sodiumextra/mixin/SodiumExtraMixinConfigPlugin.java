@@ -35,6 +35,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("sodium.gui_scale", true)
                 .addMixinOption("sodium.resolution", true)
                 .addMixinOption("sodium.scrollable_page", true)
+                .addMixinOption("sodium.vsync", true)
                 .addMixinOption("stars", true)
                 .addMixinOption("sun_moon", true)
                 .addMixinOption("toasts", true)
