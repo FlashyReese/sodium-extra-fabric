@@ -65,7 +65,7 @@
   "sodium-extra.option.text_contrast.tooltip": "FPS/Koordinatlar sayacının kontrastını ayarlar.\n- Yok: Varsayılan düz beyaz metin\n- Arka Plan: Hata ayıklama menüsü gibi metne bir arka plan oluşturur\n- Gölge: Gölgeli düz beyaz metin",
   "sodium-extra.option.toasts": "Bildirim Kutucuğu",
   "sodium-extra.option.toasts.tooltip": "Gelişim ve üretim tarif bildirimleri",
-  "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
+  "sodium-extra.option.use_adaptive_sync.name": "Uyarlanabilir Senkronizasyon",
   "sodium-extra.option.use_adaptive_sync.tooltip": "Etkinleştirilirse, V-Sync orta kareyi değiştirebilir ve zaman zaman kendini devre dışı bırakabilir, bu da genellikle hızlı yanıt vermeye yardımcı olur.",
   "sodium-extra.option.use_fast_random": "Hızlı Olasılık Dağılımı Kullan",
   "sodium-extra.option.use_fast_random.tooltip": "Etkin ise, bir hızlı olasılık dağılım fonksiyonu blok görüntülemesi için kullanılacak. Bu ayar, vanillaya göre rastgele döndürülmüş dokuların rotasyonunu etkileyecektir.",
