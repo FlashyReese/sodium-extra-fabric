@@ -1,7 +1,6 @@
 package me.flashyreese.mods.sodiumextra.mixin.sun_moon;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.DimensionEffects;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.util.Identifier;
