@@ -14,7 +14,6 @@ import net.minecraft.text.Text;
 import net.minecraft.text.Texts;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ import java.util.stream.Collectors;
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
 
-    private static Text parseVanillaString(String key){
+    private static Text parseVanillaString(String key) {
         return Text.literal((Text.translatable(key).getString()).replaceAll("§.", ""));
     }
 
@@ -142,7 +141,8 @@ public class SodiumExtraGameOptionPages {
                 .collect(
                         OptionGroup::createBuilder,
                         OptionGroup.Builder::add,
-                        (b1, b2) -> {}
+                        (b1, b2) -> {
+                        }
                 ).build()
         ));
 
