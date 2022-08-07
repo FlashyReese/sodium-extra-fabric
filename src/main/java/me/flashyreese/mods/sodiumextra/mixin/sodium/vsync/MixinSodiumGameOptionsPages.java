@@ -34,7 +34,7 @@ public class MixinSodiumGameOptionsPages {
                 .setControl((opt) -> new CyclingControl<>(opt, SodiumExtraGameOptions.VerticalSyncOption.class,
                         SodiumExtraGameOptions.VerticalSyncOption.getAvailableOptions()))
                 .setBinding((opts, value) -> {
-                    switch(value) {
+                    switch (value) {
                         case OFF:
                             opts.extraSettings.useAdaptiveSync = false;
                             vanillaOpts.getData().enableVsync = false;

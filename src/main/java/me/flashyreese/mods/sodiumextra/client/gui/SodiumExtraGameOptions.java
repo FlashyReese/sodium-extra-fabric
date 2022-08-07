@@ -133,13 +133,13 @@ public class SodiumExtraGameOptions {
             this.supported = supported;
         }
 
+        public static VerticalSyncOption[] getAvailableOptions() {
+            return Arrays.stream(VerticalSyncOption.values()).filter((o) -> o.supported).toArray(VerticalSyncOption[]::new);
+        }
+
         @Override
         public String getLocalizedName() {
             return this.name.getString();
-        }
-
-        public static VerticalSyncOption[] getAvailableOptions() {
-            return Arrays.stream(VerticalSyncOption.values()).filter((o) -> o.supported) .toArray(VerticalSyncOption[]::new);
         }
     }
 

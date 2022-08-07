@@ -110,7 +110,7 @@ public class MixinInGameHud {
         this.drawString(matrices, text, x, y);
     }
 
-    private void renderLightUpdatesWarning(MatrixStack matrices){
+    private void renderLightUpdatesWarning(MatrixStack matrices) {
         Text text = new TranslatableText("sodium-extra.overlay.light_updates");
 
         int x = 0, y = 0;

@@ -32,7 +32,7 @@ public class MixinParticleManager {
     }
 
     @Inject(method = "addParticle(Lnet/minecraft/particle/ParticleEffect;DDDDDD)Lnet/minecraft/client/particle/Particle;", at = @At(value = "HEAD"), cancellable = true)
-    public void addParticle(ParticleEffect parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<Particle> cir){
+    public void addParticle(ParticleEffect parameters, double x, double y, double z, double velocityX, double velocityY, double velocityZ, CallbackInfoReturnable<Particle> cir) {
         if (SodiumExtraClientMod.options().particleSettings.particles) {
             Identifier particleTypeId = Registry.PARTICLE_TYPE.getId(parameters.getType());
             if (!SodiumExtraClientMod.options().particleSettings.otherMap.getOrDefault(particleTypeId, true)) {

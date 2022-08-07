@@ -17,7 +17,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = SodiumOptionsGUI.class, remap = false)
 public abstract class MixinSodiumOptionsGUI extends Screen {
 
-    @Shadow private OptionPage currentPage;
+    @Shadow
+    private OptionPage currentPage;
 
     protected MixinSodiumOptionsGUI(Text title) {
         super(title);
