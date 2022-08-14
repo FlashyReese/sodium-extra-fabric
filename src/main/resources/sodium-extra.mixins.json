@@ -22,6 +22,7 @@
     "prevent_shaders.MixinGameRenderer",
     "reduce_resolution_on_mac.MixinWindow",
     "render.block.entity.MixinBeaconBlockEntityRenderer",
+    "render.block.entity.MixinEnchantingTableBlockEntityRenderer",
     "render.block.entity.MixinPistonBlockEntityRenderer",
     "render.entity.MixinGuardianEntityRenderer",
     "render.entity.MixinItemFrameEntityRenderer",

@@ -204,6 +204,7 @@ public class SodiumExtraGameOptions {
         public boolean painting;
         public boolean piston;
         public boolean beaconBeam;
+        public boolean enchantingTableBook;
         public boolean itemFrameNameTag;
         public boolean playerNameTag;
 
@@ -215,6 +216,7 @@ public class SodiumExtraGameOptions {
             this.painting = true;
             this.piston = true;
             this.beaconBeam = true;
+            this.enchantingTableBook = true;
             this.itemFrameNameTag = true;
             this.playerNameTag = true;
         }
