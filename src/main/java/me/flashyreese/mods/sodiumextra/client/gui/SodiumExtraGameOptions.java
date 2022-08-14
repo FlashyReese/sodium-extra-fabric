@@ -205,6 +205,8 @@ public class SodiumExtraGameOptions {
         public boolean painting;
         public boolean piston;
         public boolean beaconBeam;
+        public boolean itemFrameNameTag;
+        public boolean playerNameTag;
 
         public RenderSettings() {
             this.fogDistance = 0;
@@ -214,6 +216,8 @@ public class SodiumExtraGameOptions {
             this.painting = true;
             this.piston = true;
             this.beaconBeam = true;
+            this.itemFrameNameTag = true;
+            this.playerNameTag = true;
         }
     }
 
