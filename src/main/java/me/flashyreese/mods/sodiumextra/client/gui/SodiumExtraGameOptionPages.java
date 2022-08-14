@@ -260,6 +260,22 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.item_frame_name_tag"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.item_frame_name_tag.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.renderSettings.itemFrameNameTag = value, opts -> opts.renderSettings.itemFrameNameTag)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.player_name_tag"))
+                        .setTooltip(new TranslatableText("sodium-extra.option.player_name_tag.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.renderSettings.playerNameTag = value, options -> options.renderSettings.playerNameTag)
+                        .build()
+                )
+                .build());
         return new OptionPage(new TranslatableText("sodium-extra.option.render"), ImmutableList.copyOf(groups));
     }
 

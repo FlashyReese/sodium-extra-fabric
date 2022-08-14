@@ -1,6 +1,7 @@
 package me.flashyreese.mods.sodiumextra.mixin.render.entity;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -10,10 +11,12 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
+import net.minecraft.entity.decoration.ItemFrameEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntityRenderer.class)
 abstract class MixinLivingEntityRenderer<T extends LivingEntity, M extends EntityModel<T>> extends EntityRenderer<T> implements FeatureRendererContext<T, M> {
@@ -28,6 +31,13 @@ abstract class MixinLivingEntityRenderer<T extends LivingEntity, M extends Entit
             if (this.hasLabel(entity)) {
                 this.renderLabelIfPresent(entity, entity.getDisplayName(), matrixStack, vertexConsumerProvider, i);
             }
+        }
+    }
+
+    @Inject(method = "hasLabel(Lnet/minecraft/entity/LivingEntity;)Z", at = @At(value = "HEAD"), cancellable = true)
+    private <T extends LivingEntity> void hasLabel(T entity, CallbackInfoReturnable<Boolean> cir) {
+        if (entity instanceof AbstractClientPlayerEntity && !SodiumExtraClientMod.options().renderSettings.playerNameTag) {
+            cir.setReturnValue(false);
         }
     }
 }
