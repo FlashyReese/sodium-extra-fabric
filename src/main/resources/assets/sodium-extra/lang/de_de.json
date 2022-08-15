@@ -111,6 +111,8 @@
   "sodium-extra.option.cloud_height": "Wolken-Höhe",
   "sodium-extra.option.cloud_height.tooltip": "Passt die Höhe der Wolken an",
   "sodium-extra.option.details": "Einzelheiten",
+  "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
+  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Extras",
   "sodium-extra.option.fog": "Nebel",
   "sodium-extra.option.fog.tooltip": "Passt die Nebeleffekt-Distanz im Gelände an. \n0 - Vanilla Nebeleinstellungen benutzen\n1-32 - Nebeldistanz in Chunks setzen\n33 - Max. Nebeldistanz (deaktiviert Nebel im Grunde)",
