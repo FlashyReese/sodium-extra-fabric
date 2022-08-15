@@ -111,6 +111,8 @@
   "sodium-extra.option.cloud_height": "Altezza nuvole",
   "sodium-extra.option.cloud_height.tooltip": "Regola l'altezza delle nuvole",
   "sodium-extra.option.details": "Dettagli",
+  "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
+  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Extra",
   "sodium-extra.option.fog": "Nebbia",
   "sodium-extra.option.fog.tooltip": "Regola la distanza dell'effetto nebbia sul terreno. \n0 - usa le impostazioni nebbia predefinite\n1-32 - imposta la distanza nebbia in chunk\n33 - distanza nebbia massima (disabilita la nebbia)",
