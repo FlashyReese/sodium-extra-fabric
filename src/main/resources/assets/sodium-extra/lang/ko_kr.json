@@ -111,6 +111,8 @@
   "sodium-extra.option.cloud_height": "구름 높이",
   "sodium-extra.option.cloud_height.tooltip": "렌더링되는 구룸의 높이를 제어합니다.",
   "sodium-extra.option.details": "상세",
+  "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
+  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "기타",
   "sodium-extra.option.fog": "안개",
   "sodium-extra.option.fog.tooltip": "안개 효과의 거리를 조절합니다.\n0 - 바닐라 설정 사용\n1-32 - 청크 단위로 안개 거리 제어\n33 - 최대 안개 거리 (보통 안개를 제거함)",
