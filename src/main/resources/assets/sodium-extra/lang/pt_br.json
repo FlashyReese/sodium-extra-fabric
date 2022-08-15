@@ -111,6 +111,8 @@
   "sodium-extra.option.cloud_height": "Altura das nuvens",
   "sodium-extra.option.cloud_height.tooltip": "Ajusta a altura das nuvens.",
   "sodium-extra.option.details": "Detalhes",
+  "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
+  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Opções Adicionais",
   "sodium-extra.option.fog": "Neblina",
   "sodium-extra.option.fog.tooltip": "Ajusta a distância do efeito de neblina no terreno. \n0 - utiliza os valores padrões.\n1-32 - determina o valor em 'Chunks' da distância.\n33 - Distância máxima da neblina (basicamente a desabilita)",
