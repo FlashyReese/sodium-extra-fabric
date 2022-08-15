@@ -111,6 +111,8 @@
   "sodium-extra.option.cloud_height": "Výška mraků",
   "sodium-extra.option.cloud_height.tooltip": "Upravit výšku mraků",
   "sodium-extra.option.details": "Detaily",
+  "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
+  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Ostatní",
   "sodium-extra.option.fog": "Mlha",
   "sodium-extra.option.fog.tooltip": "Upraví vzdálenost efektu mlhy na terénu. \n0 - použít výchozí nastavení mlhy\n1-32 - nastavit vzdálenost mlhy v chuncích\n33 - maximální vzdálenost mlhy (v podstatě vypne mlhu)",
