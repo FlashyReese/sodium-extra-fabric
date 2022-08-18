@@ -112,7 +112,7 @@
   "sodium-extra.option.cloud_height.tooltip": "调整云层的高度",
   "sodium-extra.option.details": "细节",
   "sodium-extra.option.enchanting_table_book": "附魔台上的书",
-  "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
+  "sodium-extra.option.enchanting_table_book.tooltip": "开启或关闭附魔台上的书的渲染",
   "sodium-extra.option.extras": "其他",
   "sodium-extra.option.fog": "迷雾",
   "sodium-extra.option.fog.tooltip": "设置地形开始显示迷雾效果的距离。\n0 - 使用原版的迷雾设置\n1-32 - 以区块为单位设置迷雾距离\n33 - 最大迷雾距离(基本上禁用迷雾)",
