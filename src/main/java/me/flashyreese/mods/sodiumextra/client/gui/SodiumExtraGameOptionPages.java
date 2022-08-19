@@ -15,7 +15,6 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -246,10 +245,33 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.enchanting_table_book").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.enchanting_table_book.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.renderSettings.enchantingTableBook = value, opts -> opts.renderSettings.enchantingTableBook)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(parseVanillaString("block.minecraft.piston"))
                         .setTooltip(new TranslatableText("sodium-extra.option.piston.tooltip").getString())
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.renderSettings.piston = value, options -> options.renderSettings.piston)
+                        .build()
+                )
+                .build());
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.item_frame_name_tag").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.item_frame_name_tag.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.renderSettings.itemFrameNameTag = value, opts -> opts.renderSettings.itemFrameNameTag)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.player_name_tag").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.player_name_tag.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.renderSettings.playerNameTag = value, options -> options.renderSettings.playerNameTag)
                         .build()
                 )
                 .build());
@@ -265,19 +287,6 @@ public class SodiumExtraGameOptionPages {
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.extraSettings.useFastRandom = value, options -> options.extraSettings.useFastRandom)
                         .setFlags(OptionFlag.REQUIRES_RENDERER_RELOAD)
-                        .build()
-                )
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.use_adaptive_sync.name").getString())
-                        .setTooltip(new TranslatableText("sodium-extra.option.use_adaptive_sync.tooltip").getString())
-                        .setControl(TickBoxControl::new)
-                        .setImpact(OptionImpact.VARIES)
-                        .setEnabled(GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))
-                        .setBinding((opts, value) -> {
-                            opts.extraSettings.useAdaptiveSync = value;
-                            // Update the swap buffer
-                            MinecraftClient.getInstance().getWindow().setVsync(MinecraftClient.getInstance().options.enableVsync);
-                        }, opts -> opts.extraSettings.useAdaptiveSync)
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)

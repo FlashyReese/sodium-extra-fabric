@@ -22,7 +22,7 @@ import java.util.Objects;
 
 @Mixin(BackgroundRenderer.class)
 public class MixinBackgroundRenderer {
-    
+
     @Inject(method = "applyFog", at = @At(value = "HEAD"), cancellable = true)
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, CallbackInfo info) {
         if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
@@ -39,7 +39,7 @@ public class MixinBackgroundRenderer {
             float f;
             f = 0.05f;
             if (entity instanceof ClientPlayerEntity) {
-                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity)entity;
+                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity) entity;
                 f -= clientPlayerEntity.getUnderwaterVisibility() * clientPlayerEntity.getUnderwaterVisibility() * 0.03f;
                 Biome biome = clientPlayerEntity.world.getBiome(clientPlayerEntity.getBlockPos());
                 if (biome.getCategory() == Biome.Category.SWAMP) {
@@ -52,16 +52,16 @@ public class MixinBackgroundRenderer {
             float fogEnd;
             float fogStart;
             if (fluidState.isIn(FluidTags.LAVA)) {
-                if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
+                if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
                     fogStart = 0.0f;
                     fogEnd = 3.0f;
                 } else {
                     fogStart = 0.25f;
                     fogEnd = 1.0f;
                 }
-            } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
+            } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
                 int biome = Objects.requireNonNull(((LivingEntity) entity).getStatusEffect(StatusEffects.BLINDNESS)).getDuration();
-                float g = MathHelper.lerp(Math.min(1.0f, (float)biome / 20.0f), viewDistance, 5.0f);
+                float g = MathHelper.lerp(Math.min(1.0f, (float) biome / 20.0f), viewDistance, 5.0f);
                 if (fogType == BackgroundRenderer.FogType.FOG_SKY) {
                     fogStart = 0.0f;
                     fogEnd = g * 0.8f;
@@ -75,7 +75,7 @@ public class MixinBackgroundRenderer {
                     // Todo: Per dimension fog toggles and sliders perhaps
                     fogStart = Short.MAX_VALUE - 1;
                     fogEnd = Short.MAX_VALUE;
-                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0){
+                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
                     fogStart = SodiumExtraClientMod.options().renderSettings.fogDistance * 16;
                     fogEnd = (SodiumExtraClientMod.options().renderSettings.fogDistance + 1) * 16;
                 } else {
@@ -91,7 +91,7 @@ public class MixinBackgroundRenderer {
                     // Todo: Per dimension fog toggles and sliders perhaps
                     fogStart = Short.MAX_VALUE - 1;
                     fogEnd = Short.MAX_VALUE;
-                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0){
+                } else if (SodiumExtraClientMod.options().renderSettings.fogDistance != 0) {
                     fogStart = SodiumExtraClientMod.options().renderSettings.fogDistance * 16;
                     fogEnd = (SodiumExtraClientMod.options().renderSettings.fogDistance + 1) * 16;
                 } else {
