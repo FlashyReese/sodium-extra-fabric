@@ -41,7 +41,7 @@ public class MixinBackgroundRenderer {
             if (entity.isSpectator()) {
                 f = -8.0f;
                 g = viewDistance * 0.5f;
-            } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
+            } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
                 f = 0.0f;
                 g = 3.0f;
             } else {
@@ -56,9 +56,9 @@ public class MixinBackgroundRenderer {
                 f = 0.0f;
                 g = 2.0f;
             }
-        } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
-            int i = ((LivingEntity)entity).getStatusEffect(StatusEffects.BLINDNESS).getDuration();
-            float h = MathHelper.lerp(Math.min(1.0f, (float)i / 20.0f), viewDistance, 5.0f);
+        } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.BLINDNESS)) {
+            int i = ((LivingEntity) entity).getStatusEffect(StatusEffects.BLINDNESS).getDuration();
+            float h = MathHelper.lerp(Math.min(1.0f, (float) i / 20.0f), viewDistance, 5.0f);
             if (fogType == BackgroundRenderer.FogType.FOG_SKY) {
                 f = 0.0f;
                 g = h * 0.8f;
@@ -70,7 +70,7 @@ public class MixinBackgroundRenderer {
             f = -8.0f;
             g = 96.0f;
             if (entity instanceof ClientPlayerEntity) {
-                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity)entity;
+                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity) entity;
                 g *= Math.max(0.25f, clientPlayerEntity.getUnderwaterVisibility());
                 RegistryEntry<Biome> registryEntry = clientPlayerEntity.world.getBiome(clientPlayerEntity.getBlockPos());
                 if (Biome.getCategory(registryEntry) == Biome.Category.SWAMP) {

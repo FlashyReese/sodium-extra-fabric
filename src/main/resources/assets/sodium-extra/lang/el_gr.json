@@ -136,7 +136,7 @@
   "sodium-extra.option.player_name_tag": "Player Name Tag",
   "sodium-extra.option.player_name_tag.tooltip": "If enabled, player name tags are rendered.",
   "sodium-extra.option.prevent_shaders": "Prevent Shaders",
-  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading.",
+  "sodium-extra.option.prevent_shaders.tooltip": "If enabled, any type of vanilla shaders will be prevented from loading. For example, the distorted view when spectating from a spider's point of view.",
   "sodium-extra.option.rain_snow.tooltip": "If enabled, rain & snow are processed.",
   "sodium-extra.option.rain_splash.tooltip": "If enabled, rain splash particles are processed.",
   "sodium-extra.option.reduce_resolution_on_mac": "Reduce Resolution on macOS",
