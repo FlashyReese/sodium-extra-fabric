@@ -14,7 +14,6 @@ import net.minecraft.text.Text;
 import net.minecraft.text.Texts;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,7 +21,7 @@ import java.util.stream.Collectors;
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
 
-    private static Text parseVanillaString(String key){
+    private static Text parseVanillaString(String key) {
         return Text.literal((Text.translatable(key).getString()).replaceAll("§.", ""));
     }
 
@@ -142,7 +141,8 @@ public class SodiumExtraGameOptionPages {
                 .collect(
                         OptionGroup::createBuilder,
                         OptionGroup.Builder::add,
-                        (b1, b2) -> {}
+                        (b1, b2) -> {
+                        }
                 ).build()
         ));
 
@@ -252,10 +252,33 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.enchanting_table_book"))
+                        .setTooltip(Text.translatable("sodium-extra.option.enchanting_table_book.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.renderSettings.enchantingTableBook = value, opts -> opts.renderSettings.enchantingTableBook)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(parseVanillaString("block.minecraft.piston"))
                         .setTooltip(Text.translatable("sodium-extra.option.piston.tooltip"))
                         .setControl(TickBoxControl::new)
                         .setBinding((options, value) -> options.renderSettings.piston = value, options -> options.renderSettings.piston)
+                        .build()
+                )
+                .build());
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.item_frame_name_tag"))
+                        .setTooltip(Text.translatable("sodium-extra.option.item_frame_name_tag.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((opts, value) -> opts.renderSettings.itemFrameNameTag = value, opts -> opts.renderSettings.itemFrameNameTag)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.player_name_tag"))
+                        .setTooltip(Text.translatable("sodium-extra.option.player_name_tag.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.renderSettings.playerNameTag = value, options -> options.renderSettings.playerNameTag)
                         .build()
                 )
                 .build());
@@ -265,19 +288,6 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage extra() {
         List<OptionGroup> groups = new ArrayList<>();
         groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
-                        .setName(Text.translatable("sodium-extra.option.use_adaptive_sync.name"))
-                        .setTooltip(Text.translatable("sodium-extra.option.use_adaptive_sync.tooltip"))
-                        .setControl(TickBoxControl::new)
-                        .setImpact(OptionImpact.VARIES)
-                        .setEnabled(GLFW.glfwExtensionSupported("GLX_EXT_swap_control_tear") || GLFW.glfwExtensionSupported("WGL_EXT_swap_control_tear"))
-                        .setBinding((opts, value) -> {
-                            opts.extraSettings.useAdaptiveSync = value;
-                            // Update the swap buffer
-                            MinecraftClient.getInstance().getWindow().setVsync(MinecraftClient.getInstance().options.getEnableVsync().getValue());
-                        }, opts -> opts.extraSettings.useAdaptiveSync)
-                        .build()
-                )
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(Text.translatable("sodium-extra.option.reduce_resolution_on_mac"))
                         .setTooltip(Text.translatable("sodium-extra.option.reduce_resolution_on_mac.tooltip"))

@@ -42,7 +42,7 @@ public class MixinBackgroundRenderer {
             if (entity.isSpectator()) {
                 fogData.fogStart = -8.0f;
                 fogData.fogEnd = viewDistance * 0.5f;
-            } else if (entity instanceof LivingEntity && ((LivingEntity)entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
+            } else if (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
                 fogData.fogStart = 0.0f;
                 fogData.fogEnd = 3.0f;
             } else {
@@ -58,7 +58,7 @@ public class MixinBackgroundRenderer {
                 fogData.fogEnd = 2.0f;
             }
         } else if (statusEffectFogModifier != null) {
-            LivingEntity livingEntity = (LivingEntity)entity;
+            LivingEntity livingEntity = (LivingEntity) entity;
             StatusEffectInstance statusEffectInstance = livingEntity.getStatusEffect(statusEffectFogModifier.getStatusEffect());
             if (statusEffectInstance != null) {
                 statusEffectFogModifier.applyStartEndModifier(fogData, livingEntity, statusEffectInstance, viewDistance, tickDelta);
@@ -67,7 +67,7 @@ public class MixinBackgroundRenderer {
             fogData.fogStart = -8.0f;
             fogData.fogEnd = 96.0f;
             if (entity instanceof ClientPlayerEntity) {
-                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity)entity;
+                ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity) entity;
                 fogData.fogEnd *= Math.max(0.25f, clientPlayerEntity.getUnderwaterVisibility());
                 RegistryEntry<Biome> registryEntry = clientPlayerEntity.world.getBiome(clientPlayerEntity.getBlockPos());
                 if (registryEntry.isIn(BiomeTags.HAS_CLOSER_WATER_FOG)) {

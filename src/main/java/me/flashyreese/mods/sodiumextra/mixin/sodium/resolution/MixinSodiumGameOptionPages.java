@@ -3,7 +3,10 @@ package me.flashyreese.mods.sodiumextra.mixin.sodium.resolution;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
 import me.jellysquid.mods.sodium.client.gui.SodiumGameOptionPages;
-import me.jellysquid.mods.sodium.client.gui.options.*;
+import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
+import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;
+import me.jellysquid.mods.sodium.client.gui.options.OptionImpl;
+import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.VideoMode;
@@ -44,6 +47,7 @@ public class MixinSodiumGameOptionPages {
                                     window.setVideoMode(Optional.of(window.getMonitor().getVideoMode(value - 1)));
                                 }
                             }
+                            window.applyVideoMode();
                         }, options -> {
                             if (window.getMonitor() == null) {
                                 return 0;
@@ -52,7 +56,6 @@ public class MixinSodiumGameOptionPages {
                                 return optional.map((videoMode) -> window.getMonitor().findClosestVideoModeIndex(videoMode) + 1).orElse(0);
                             }
                         })
-                        .setFlags(OptionFlag.REQUIRES_GAME_RESTART)
                         .setImpact(OptionImpact.HIGH)
                         .build())
                 .build());

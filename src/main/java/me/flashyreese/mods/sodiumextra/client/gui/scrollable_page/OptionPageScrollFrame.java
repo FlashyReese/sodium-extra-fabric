@@ -1,6 +1,9 @@
 package me.flashyreese.mods.sodiumextra.client.gui.scrollable_page;
 
-import me.jellysquid.mods.sodium.client.gui.options.*;
+import me.jellysquid.mods.sodium.client.gui.options.Option;
+import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
+import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;
+import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
 import me.jellysquid.mods.sodium.client.gui.options.control.Control;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
@@ -105,7 +108,7 @@ public class OptionPageScrollFrame extends AbstractFrame {
 
         int boxWidth = 200;
 
-        int boxY = dim.y();
+        int boxY = Math.max(dim.y(), this.dim.y());
         int boxX = this.dim.getLimitX() + boxPadding;
 
         Option<?> option = element.getOption();

@@ -16,9 +16,9 @@ public class SuggestRSOScreen extends Screen {
     private static final Text HEADER = Text.translatable("sodium-extra.suggestRSO.header").formatted(Formatting.BOLD);
     private static final Text MESSAGE = Text.translatable("sodium-extra.suggestRSO.message");
     private static final Text CHECK_MESSAGE = Text.translatable("multiplayerWarning.check");
+    private final Screen prevScreen;
     private CheckboxWidget checkbox;
     private MultilineText lines = MultilineText.EMPTY;
-    private final Screen prevScreen;
 
     public SuggestRSOScreen(Screen prevScreen) {
         super(Text.literal("Reese's Sodium Options Suggestion"));
