@@ -7,6 +7,7 @@ import me.jellysquid.mods.sodium.client.gui.options.Option;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpl;
+import me.jellysquid.mods.sodium.client.gui.options.binding.compat.VanillaBooleanOptionBinding;
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.text.LiteralText;
@@ -34,18 +35,19 @@ public class MixinSodiumGameOptionsPages {
                 .setControl((opt) -> new CyclingControl<>(opt, SodiumExtraGameOptions.VerticalSyncOption.class,
                         SodiumExtraGameOptions.VerticalSyncOption.getAvailableOptions()))
                 .setBinding((opts, value) -> {
+                    VanillaBooleanOptionBinding binding = new VanillaBooleanOptionBinding(net.minecraft.client.option.Option.VSYNC);
                     switch (value) {
                         case OFF -> {
                             opts.extraSettings.useAdaptiveSync = false;
-                            vanillaOpts.getData().enableVsync = false;
+                            binding.setValue(vanillaOpts.getData(), false);
                         }
                         case ON -> {
                             opts.extraSettings.useAdaptiveSync = false;
-                            vanillaOpts.getData().enableVsync = true;
+                            binding.setValue(vanillaOpts.getData(), true);
                         }
                         case ADAPTIVE -> {
                             opts.extraSettings.useAdaptiveSync = true;
-                            vanillaOpts.getData().enableVsync = false;
+                            binding.setValue(vanillaOpts.getData(), false);
                         }
                     }
                     vanillaOpts.save();
