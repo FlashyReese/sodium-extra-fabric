@@ -7,6 +7,7 @@ import me.jellysquid.mods.sodium.client.gui.options.Option;
 import me.jellysquid.mods.sodium.client.gui.options.OptionGroup;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpact;
 import me.jellysquid.mods.sodium.client.gui.options.OptionImpl;
+import me.jellysquid.mods.sodium.client.gui.options.binding.compat.VanillaBooleanOptionBinding;
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.text.LiteralText;
@@ -25,7 +26,7 @@ public class MixinSodiumGameOptionsPages {
 
     @Redirect(method = "general", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;add(Lme/jellysquid/mods/sodium/client/gui/options/Option;)Lme/jellysquid/mods/sodium/client/gui/options/OptionGroup$Builder;", ordinal = 5), remap = false)
     private static OptionGroup.Builder redirectVsyncToggle(OptionGroup.Builder instance, Option<?> option) {
-        if (!option.getTooltip().getString().equals(new TranslatableText("sodium.options.v_sync.tooltip").getString())) {
+        if (!option.getTooltip().getString().equals("If enabled, the game's frame rate will be synchronized to the monitor's refresh rate, making for a generally smoother experience at the expense of overall input latency. This setting might reduce performance if your system is too slow.")) {
             return instance.add(option);
         }
         return instance.add(OptionImpl.createBuilder(SodiumExtraGameOptions.VerticalSyncOption.class, SodiumExtraGameOptionPages.sodiumExtraOpts)
@@ -34,18 +35,19 @@ public class MixinSodiumGameOptionsPages {
                 .setControl((opt) -> new CyclingControl<>(opt, SodiumExtraGameOptions.VerticalSyncOption.class,
                         SodiumExtraGameOptions.VerticalSyncOption.getAvailableOptions()))
                 .setBinding((opts, value) -> {
+                    VanillaBooleanOptionBinding binding = new VanillaBooleanOptionBinding(net.minecraft.client.option.Option.VSYNC);
                     switch (value) {
                         case OFF:
                             opts.extraSettings.useAdaptiveSync = false;
-                            vanillaOpts.getData().enableVsync = false;
+                            binding.setValue(vanillaOpts.getData(), false);
                             break;
                         case ON:
                             opts.extraSettings.useAdaptiveSync = false;
-                            vanillaOpts.getData().enableVsync = true;
+                            binding.setValue(vanillaOpts.getData(), true);
                             break;
                         case ADAPTIVE:
                             opts.extraSettings.useAdaptiveSync = true;
-                            vanillaOpts.getData().enableVsync = false;
+                            binding.setValue(vanillaOpts.getData(), false);
                             break;
                         default:
                             throw new IllegalStateException("Unexpected value: " + value);
