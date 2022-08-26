@@ -11,7 +11,6 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
     @Override
     protected CaffeineConfig createConfig() {
         return CaffeineConfig.builder("Sodium Extra").withSettingsKey("sodium-extra:options")
-                .addMixinOption("adaptive_sync", true)
                 .addMixinOption("animation", true)
                 .addMixinOption("biome_colors", true)
                 .addMixinOption("cloud", true)
@@ -31,10 +30,9 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("sky_colors", true)
                 .addMixinOption("sodium", true)
                 .addMixinOption("sodium.accessibility", true)
-                .addMixinOption("sodium.gui_scale", true)
                 .addMixinOption("sodium.resolution", true)
                 .addMixinOption("sodium.scrollable_page", true)
-                .addMixinOption("sodium.vsync", true)
+                .addMixinOption("sodium.vsync", false)
                 .addMixinOption("stars", true)
                 .addMixinOption("sun_moon", true)
                 .addMixinOption("toasts", true)
