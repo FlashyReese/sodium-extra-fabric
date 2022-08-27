@@ -4,10 +4,9 @@ import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptions;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
 
 @Environment(EnvType.CLIENT)
 public class SodiumExtraClientMod implements ClientModInitializer {
@@ -37,7 +36,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
     }
 
     private static SodiumExtraGameOptions loadConfig() {
-        return SodiumExtraGameOptions.load(new File("config/sodium-extra-options.json"));
+        return SodiumExtraGameOptions.load(FabricLoader.getInstance().getConfigDir().resolve("sodium-extra-options.json").toFile());
     }
 
     @Override
