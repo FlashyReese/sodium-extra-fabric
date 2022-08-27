@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
+import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -41,7 +42,8 @@ public class SodiumExtraGameOptions {
             try (FileReader reader = new FileReader(file)) {
                 config = gson.fromJson(reader, SodiumExtraGameOptions.class);
             } catch (IOException e) {
-                throw new RuntimeException("Could not parse config", e);
+                SodiumExtraClientMod.logger().error("Could not parse config, falling back to defaults!", e);
+                config = new SodiumExtraGameOptions();
             }
         } else {
             config = new SodiumExtraGameOptions();
@@ -230,7 +232,6 @@ public class SodiumExtraGameOptions {
         public boolean showFPSExtended;
         public boolean showCoords;
         public boolean reduceResolutionOnMac;
-        public boolean useAdaptiveSync;
         public int cloudHeight;
         public boolean toasts;
         public boolean instantSneak;
@@ -243,7 +244,6 @@ public class SodiumExtraGameOptions {
             this.showFPSExtended = true;
             this.showCoords = false;
             this.reduceResolutionOnMac = true;
-            this.useAdaptiveSync = false;
             this.cloudHeight = 192;
             this.toasts = true;
             this.instantSneak = false;
