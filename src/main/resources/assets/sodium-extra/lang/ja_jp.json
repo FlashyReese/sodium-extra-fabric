@@ -165,13 +165,13 @@
   "sodium-extra.option.toasts": "進捗の通知",
   "sodium-extra.option.toasts.tooltip": "有効にした場合、進捗とクラフトのレシピの通知が表示されます。",
   "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "有効にした場合、V-Syncはフレームの途中に移され、時にはそれ自体が無効にされます。通常は応答性を顕著に向上させることができます。",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "有効にした場合、V-Syncにおいてフレームの描画中に次のフレームを入れ替えることが出来るようになり、時にはそのフレーム自体を無効にします。通常は応答性を顕著に向上させます。",
   "sodium-extra.option.use_fast_random": "高速な乱数を使う",
-  "sodium-extra.option.use_fast_random.tooltip": "有効にした場合、高速な乱数関数がブロックレンダリングに使用されます。バニラと比較したときに、ランダムに回転するテスクチャの向きに影響があります。",
+  "sodium-extra.option.use_fast_random.tooltip": "有効にした場合、高速な乱数関数がブロックレンダリングに使用されます。バニラと比較したとき、ランダムに回転するテクスチャの向きに影響を与える可能性があります。",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
   "sodium-extra.overlay.fps": "%s FPS",
   "sodium-extra.overlay.fps_extended": "(最大 %s / 平均 %s / 最小 %s)",
-  "sodium-extra.overlay.light_updates": "光の状態の更新が無効",
-  "sodium-extra.suggestRSO.header": "提案: Reese's Sodium Optionsをインストールしましょう",
-  "sodium-extra.suggestRSO.message": "機能の増加により、Sodiumのビデオ設定に適切に収まらないことがあるので、Reese's Sodium OptionsをSodium Extraと一緒にインストールすることを強くお勧めします。"
+  "sodium-extra.overlay.light_updates": "光の状態更新が無効",
+  "sodium-extra.suggestRSO.header": "提案: Reese's Sodium Optionsをインストールしましょう！",
+  "sodium-extra.suggestRSO.message": "機能の増加により、Sodiumのビデオ設定に適切に収まらないことがあります。Reese's Sodium OptionsをSodium Extraと一緒にインストールすることを強くお勧めします。"
 }
