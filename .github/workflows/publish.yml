@@ -41,6 +41,7 @@ jobs:
           version-resolver: latest
           dependencies: |
             sodium | depends | *
+            fabric-api | depends | *
             reeses-sodium-options | recommends | *
             irisshaders | recommends | *
             iris | recommends | *
