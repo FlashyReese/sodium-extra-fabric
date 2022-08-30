@@ -12,11 +12,6 @@ archivesBaseName = project.archives_base_name
 version = "${project.mod_version}+mc${project.minecraft_version}-${getVersionMetadata()}"
 group = project.maven_group
 
-
-loom {
-    accessWidenerPath.set file("src/main/resources/sodium-extra.accesswidener")
-}
-
 repositories {
     maven { 
         name = "Modrinth"

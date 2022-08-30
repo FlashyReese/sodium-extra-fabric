@@ -33,7 +33,6 @@
       }
     }
   },
-  "accessWidener": "sodium-extra.accesswidener",
   "mixins": [
     "sodium-extra.mixins.json"
   ],

@@ -11,7 +11,6 @@
     "cloud.MixinWorldRenderer",
     "compat.MixinSodiumOptionsGUI",
     "compat.MixinTitleScreen",
-    "fog.BackgroundRendererAccessor",
     "fog.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
     "gui.MixinInGameHud",
