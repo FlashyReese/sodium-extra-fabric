@@ -8,28 +8,42 @@
 [![CurseForge](http://cf.way2muchnoise.eu/title/447673.svg)](https://www.curseforge.com/minecraft/mc-mods/sodium-extra)
 [![Support Server](https://img.shields.io/discord/748363294749753484.svg?color=7289da&label=FlashyReese&logo=discord&style=flat-square)](https://discord.gg/TBGGM9VzH9)
 
-
 Features that shouldn't be in Sodium.
 
 ## Building from source
+### Prerequisites
+- Java Development Kit 8 or above
+- Git
+### Compiling
+1. Clone the repository and navigate into the cloned repository.
+   ```
+   git clone https://github.com/FlashyReese/sodium-extra-fabric.git
+   cd sodium-extra-fabric
+   ```
+2. Navigate to the directory you've cloned this repository and launch a build with Gradle. If you are not using the Gradle wrapper, simply replace `gradlew` with `gradle` or the path to it.
+   - Windows
+   ```
+   gradlew build
+   ```
+   - Linux/macOS
+   ```
+   ./gradlew build
+   ```
+3. The initial setup may take a few minutes. After Gradle has finished building everything, you can find the resulting artifacts in `build/libs`.
 
-#### Prerequisites
+## Contributing to localization
+**By submitting translations, you are agreeing to have them licensed under the [Creative Commons Zero (CC0)](https://creativecommons.org/share-your-work/public-domain/cc0/) license.**
 
-- Java 8 or above
+You can contribute to the translation effort on our Crowdin [project page](https://crowdin.com/project/sodium-extra)! First you'll need to [register](https://accounts.crowdin.com/register) a Crowdin account if you haven't already. Translators are able to **translate** (submit a translation for an untranslated phrase), **suggest** (propose a better translation compared to an existing one), or **vote** (vote up or down the quality of a translation).
 
-#### Compiling
+For more information on using Crowdin, please see their "[Intro For Volunteer Translators](https://support.crowdin.com/for-volunteer-translators/)" support page.
 
-Navigate to the directory you've cloned this repository and launch a build with Gradle using `gradlew build` (Windows)
-or `./gradlew build` (macOS/Linux). If you are not using the Gradle wrapper, simply replace `gradlew` with `gradle`
-or the path to it.
+### FAQ
+#### A translation(s) uses an offensive phrase. What can I do?
+We sincerely apologize. Translations are community submitted, and despite our best efforts, vandalism will occasionally slip through. Please [open an issue](#issues) explaining, and it will be removed as soon as possible.
 
-The initial setup may take a few minutes. After Gradle has finished building everything, you can find the resulting
-artifacts in `build/libs`.
+#### How can I suggest a new language to add for translation?
+Thank you for your interest! Please [open an issue](#issues) with the [in-game Locale Code](https://minecraft.fandom.com/wiki/Language#Languages) from the linked table. We've kept the number of languages relatively small to set a reasonable starting goal, and will add more as requests come in.
 
-# Contributing to localization
-
-Translations can be done on [Crowdin](https://crowdin.com/project/sodium-extra).
-
-# License
-
+## License
 Sodium Extra is licensed under GNU LGPLv3, a free and open-source license. For more information, please see the [license file](LICENSE.txt).
