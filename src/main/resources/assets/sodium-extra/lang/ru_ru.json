@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Эффекты маяка",
   "options.particles.minecraft.angry_villager": "Злость",
   "options.particles.minecraft.ash": "Тёмный пепел",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Книга стола зачаровывания",
   "sodium-extra.option.enchanting_table_book.tooltip": "Переключение видимости книги на столе зачаровывания",
   "sodium-extra.option.extras": "Прочее",
-  "sodium-extra.option.fog": "Туман",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Регулирует дальность тумана на территории. \n0 - обычный ванильный туман\n1-32 - расстояние до тумана в чанках\n33 - максимальное расстояние тумана (по сути, отключает туман)",
   "sodium-extra.option.instant_sneak": "Моментальное приседание",
   "sodium-extra.option.instant_sneak.tooltip": "Переключение плавной анимации приседания",
