@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Keskkondlik olemimõju",
   "options.particles.minecraft.angry_villager": "Vihane külaelanik",
   "options.particles.minecraft.ash": "Tuhk",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Loitsimislaua raamat",
   "sodium-extra.option.enchanting_table_book.tooltip": "Lubamisel renderdatakse loitsimislaua raamatuid.",
   "sodium-extra.option.extras": "Lisad",
-  "sodium-extra.option.fog": "Udu",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Reguleerib maastikul uduefekti kaugust.\n0 - kasuta vanilli udusätteid\n1-32 - määra udukaugus kamakates\n33 - maksimaalne udukaugus (sisuliselt keelab udu)",
   "sodium-extra.option.instant_sneak": "Kohene hiilimine",
   "sodium-extra.option.instant_sneak.tooltip": "Lubamisel väldib hiilimisel kaamera hüplemist.",
