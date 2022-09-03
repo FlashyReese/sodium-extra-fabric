@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Ambient Entity Effect",
   "options.particles.minecraft.angry_villager": "Angry Villager",
   "options.particles.minecraft.ash": "Ash",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
   "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Opções Adicionais",
-  "sodium-extra.option.fog": "Neblina",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Ajusta a distância do efeito de neblina no terreno. \n0 - utiliza os valores padrões.\n1-32 - determina o valor em 'Chunks' da distância.\n33 - Distância máxima da neblina (basicamente a desabilita)",
   "sodium-extra.option.instant_sneak": "Agachamento instantâneo",
   "sodium-extra.option.instant_sneak.tooltip": "A câmera não é suavisada ao agachar-se",
