@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Efekt okolní entity",
   "options.particles.minecraft.angry_villager": "Rozzlobený vesničan",
   "options.particles.minecraft.ash": "Popel",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Kniha oltáře očarování",
   "sodium-extra.option.enchanting_table_book.tooltip": "Přepnout vykreslování knih oltářů očarování",
   "sodium-extra.option.extras": "Ostatní",
-  "sodium-extra.option.fog": "Mlha",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Upraví vzdálenost efektu mlhy na terénu. \n0 - použít výchozí nastavení mlhy\n1-32 - nastavit vzdálenost mlhy v chuncích\n33 - maximální vzdálenost mlhy (v podstatě vypne mlhu)",
   "sodium-extra.option.instant_sneak": "Instantní plížení",
   "sodium-extra.option.instant_sneak.tooltip": "Neprovádět animaci plížení",
