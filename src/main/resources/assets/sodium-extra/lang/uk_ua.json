@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Ефект з істот навколишнього середовища",
   "options.particles.minecraft.angry_villager": "Злий селянин",
   "options.particles.minecraft.ash": "Зола",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Книга на чародійському столі",
   "sodium-extra.option.enchanting_table_book.tooltip": "Якщо ввімкнуто, книга на чародійському столі буде промальовуватись.",
   "sodium-extra.option.extras": "Інше",
-  "sodium-extra.option.fog": "Туман",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Регулює дальність ефекту туману на місцевості. \n0 - звичайний ванільний туман\n1-32 - відстань до туману в чанках\n33 - максимальна відстань туману (по суті відключає туман)",
   "sodium-extra.option.instant_sneak": "Миттєве присідання",
   "sodium-extra.option.instant_sneak.tooltip": "Якщо ввімкнено, присідання буде відбуватися різко.",
