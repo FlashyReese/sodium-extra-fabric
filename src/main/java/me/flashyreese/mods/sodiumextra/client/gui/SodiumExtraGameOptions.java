@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
+import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
 import net.minecraft.text.Text;
@@ -201,7 +202,8 @@ public class SodiumExtraGameOptions {
     }
 
     public static class RenderSettings {
-        public int fogDistance;
+        @SerializedName("dimensionFogDistance")
+        public Map<Identifier, Integer> dimensionFogDistanceMap;
         public boolean lightUpdates;
         public boolean itemFrame;
         public boolean armorStand;
@@ -213,7 +215,7 @@ public class SodiumExtraGameOptions {
         public boolean playerNameTag;
 
         public RenderSettings() {
-            this.fogDistance = 0;
+            this.dimensionFogDistanceMap = new Object2IntArrayMap<>();
             this.lightUpdates = true;
             this.itemFrame = true;
             this.armorStand = true;

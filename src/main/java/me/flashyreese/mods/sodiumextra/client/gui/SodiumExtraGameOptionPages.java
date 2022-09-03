@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
+import me.flashyreese.mods.sodiumextra.mixin.fog.DimensionOptionsAccessor;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
@@ -204,14 +205,24 @@ public class SodiumExtraGameOptionPages {
 
     public static OptionPage render() {
         List<OptionGroup> groups = new ArrayList<>();
-        groups.add(OptionGroup.createBuilder()
-                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.fog"))
+
+        groups.add((MinecraftClient.getInstance().getServer() != null ? MinecraftClient.getInstance().getServer().getWorldRegistryKeys() : DimensionOptionsAccessor.getBaseDimensions()).stream()
+                .map(dimensionOptionsRegistryKey -> OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                        .setName(translatableName(dimensionOptionsRegistryKey.getValue(), "dimensions"))
                         .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip"))
                         .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
-                        .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
-                        .build()
-                )
+                        .setBinding((opts, val) -> opts.renderSettings.dimensionFogDistanceMap.put(dimensionOptionsRegistryKey.getValue(), val),
+                                opts -> opts.renderSettings.dimensionFogDistanceMap.getOrDefault(dimensionOptionsRegistryKey.getValue(), 0))
+                        .build())
+                .collect(
+                        OptionGroup::createBuilder,
+                        OptionGroup.Builder::add,
+                        (b1, b2) -> {
+                        }
+                ).build()
+        );
+
+        groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.light_updates"))
                         .setTooltip(new TranslatableText("sodium-extra.option.light_updates.tooltip"))
