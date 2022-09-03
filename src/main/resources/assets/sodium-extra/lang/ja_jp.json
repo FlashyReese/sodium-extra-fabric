@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "ビーコンのエフェクト",
   "options.particles.minecraft.angry_villager": "怒った村人",
   "options.particles.minecraft.ash": "灰",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "エンチャントテーブルの本",
   "sodium-extra.option.enchanting_table_book.tooltip": "有効にした場合、エンチャントテーブルの本は描画されます。",
   "sodium-extra.option.extras": "追加の機能",
-  "sodium-extra.option.fog": "霧",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "地形上の霧の距離を調整します。\n0 - バニラの霧の設定を使用します。\n1-32 - 霧の距離をチャンクに応じて設定します。\n33 - 霧距離の最大値 (本質的に霧を無効にします)",
   "sodium-extra.option.instant_sneak": "インスタントスニーク",
   "sodium-extra.option.instant_sneak.tooltip": "有効にした場合、スニーク時の視点の移動は瞬間的に行われます。",
