@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Ambient Entity Effect",
   "options.particles.minecraft.angry_villager": "Angry Villager",
   "options.particles.minecraft.ash": "Ash",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
   "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Extras",
-  "sodium-extra.option.fog": "Nebel",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Passt die Nebeleffekt-Distanz im Gelände an. \n0 - Vanilla Nebeleinstellungen benutzen\n1-32 - Nebeldistanz in Chunks setzen\n33 - Max. Nebeldistanz (deaktiviert Nebel im Grunde)",
   "sodium-extra.option.instant_sneak": "Sofort-Schleichen",
   "sodium-extra.option.instant_sneak.tooltip": "Kamera zum Schleichen nicht schwenken",
