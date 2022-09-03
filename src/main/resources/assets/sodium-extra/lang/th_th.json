@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Ambient Entity Effect",
   "options.particles.minecraft.angry_villager": "Angry Villager",
   "options.particles.minecraft.ash": "Ash",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
   "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "พิเศษ",
-  "sodium-extra.option.fog": "หมอก",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "ปรับระยะห่างของเอฟเฟกต์หมอกในภูมิประเทศ \n0 - ใช้ค่าของหมอกจากวานิลลาดั้งเดิม \n1-32 - กำหนดระยะห่างของหมอก นับเป็นชังก์ \n33 - ระยะห่างของหมอกสูงสุด (หลัก ๆ แล้ว จะเป็นการปิดหมอก)",
   "sodium-extra.option.instant_sneak": "ย่อแบบทันที",
   "sodium-extra.option.instant_sneak.tooltip": "ถ้าเปิดตัวเลือกนี้ ตัวกล้องจะไม่เลื่อนลงแบบช้า ๆ เมื่อย่อลงไป",
