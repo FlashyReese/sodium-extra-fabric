@@ -208,7 +208,7 @@ public class SodiumExtraGameOptionPages {
 
         groups.add((MinecraftClient.getInstance().getServer() != null ? MinecraftClient.getInstance().getServer().getWorldRegistryKeys() : DimensionOptionsAccessor.getBaseDimensions()).stream()
                 .map(dimensionOptionsRegistryKey -> OptionImpl.createBuilder(int.class, sodiumExtraOpts)
-                        .setName(translatableName(dimensionOptionsRegistryKey.getValue(), "dimensions"))
+                        .setName(new TranslatableText("sodium-extra.option.fog", translatableName(dimensionOptionsRegistryKey.getValue(), "dimensions").getString()))
                         .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip"))
                         .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
                         .setBinding((opts, val) -> opts.renderSettings.dimensionFogDistanceMap.put(dimensionOptionsRegistryKey.getValue(), val),
