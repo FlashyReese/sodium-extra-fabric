@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Fener Efektleri",
   "options.particles.minecraft.angry_villager": "Kızgın Köylü",
   "options.particles.minecraft.ash": "Kül",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Büyü Masası Kitabı",
   "sodium-extra.option.enchanting_table_book.tooltip": "Etkinleştirilirse, Büyü Masası kitapları oluşturulur.",
   "sodium-extra.option.extras": "Ekstralar",
-  "sodium-extra.option.fog": "Sis",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Arazideki sis efekt menzilini ayarlar. \n0 - varsayılan sis ayarlarını kullan\n1-32 - yığın (chunk) olarak sis menzili ayarla\n33 - maksimum sis menzili (bir bakıma sisi devre dışı bırakır)",
   "sodium-extra.option.instant_sneak": "Hızlı Eğilme",
   "sodium-extra.option.instant_sneak.tooltip": "Eğilirken kameraya lineer enterpolasyon yapma",
