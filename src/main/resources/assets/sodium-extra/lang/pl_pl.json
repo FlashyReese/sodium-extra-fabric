@@ -1,4 +1,7 @@
 {
+  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.the_nether": "Nether",
+  "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Ambient Entity Effect",
   "options.particles.minecraft.angry_villager": "Angry Villager",
   "options.particles.minecraft.ash": "Ash",
@@ -114,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
   "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",
   "sodium-extra.option.extras": "Dodatki",
-  "sodium-extra.option.fog": "Mgła",
+  "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Dostosowuje odległość efektu mgły na terenie. \n0 - użyj domyślnych ustawień mgły\n1-32 - ustaw odległość mgły w chunkach\n33 - maksymalna odległość mgły (zasadniczo wyłącza mgłę)",
   "sodium-extra.option.instant_sneak": "Natychmiastowe skradanie się",
   "sodium-extra.option.instant_sneak.tooltip": "Jeśli ta opcja jest włączona, kamera nie będzie się płynnie obniżać przy skradaniu.",
