@@ -1,7 +1,7 @@
 {
-  "options.dimensions.minecraft.overworld": "Overworld",
-  "options.dimensions.minecraft.the_nether": "Nether",
-  "options.dimensions.minecraft.the_end": "End",
+  "options.dimensions.minecraft.overworld": "Верхній світ",
+  "options.dimensions.minecraft.the_nether": "Нижній світ",
+  "options.dimensions.minecraft.the_end": "Кінець",
   "options.particles.minecraft.ambient_entity_effect": "Ефект з істот навколишнього середовища",
   "options.particles.minecraft.angry_villager": "Злий селянин",
   "options.particles.minecraft.ash": "Зола",
