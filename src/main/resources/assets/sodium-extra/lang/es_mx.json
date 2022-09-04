@@ -1,5 +1,5 @@
 {
-  "options.dimensions.minecraft.overworld": "Overworld",
+  "options.dimensions.minecraft.overworld": "Superficie",
   "options.dimensions.minecraft.the_nether": "Nether",
   "options.dimensions.minecraft.the_end": "End",
   "options.particles.minecraft.ambient_entity_effect": "Efecto Entidad Ambiental",
@@ -117,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "Libro de la mesa de encantamientos",
   "sodium-extra.option.enchanting_table_book.tooltip": "Si está habilitado, el libro de la mesa de encantamientos serán renderizados.",
   "sodium-extra.option.extras": "Extras",
-  "sodium-extra.option.fog": "%s Fog",
+  "sodium-extra.option.fog": "Niebla del %s",
   "sodium-extra.option.fog.tooltip": "Ajusta la distancia del efecto de niebla en el terreno.\n0 - use la configuración de niebla vainilla\n1-32 - establezca la distancia de niebla en trozos\n33 - distancia máxima de niebla (niebla esencialmente desactivada)",
   "sodium-extra.option.instant_sneak": "Agachar instantáneo",
   "sodium-extra.option.instant_sneak.tooltip": "Si está habilitada, la cámara no moverá al agacharse.",
