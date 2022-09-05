@@ -117,7 +117,7 @@
   "sodium-extra.option.enchanting_table_book": "附魔台上的书",
   "sodium-extra.option.enchanting_table_book.tooltip": "开启或关闭附魔台上的书的渲染",
   "sodium-extra.option.extras": "其他",
-  "sodium-extra.option.fog": "%s雾",
+  "sodium-extra.option.fog": "%s的雾",
   "sodium-extra.option.fog.tooltip": "设置地形开始显示迷雾效果的距离。\n0 - 使用原版的迷雾设置\n1-32 - 以区块为单位设置迷雾距离\n33 - 最大迷雾距离(基本上禁用迷雾)",
   "sodium-extra.option.instant_sneak": "直接潜行",
   "sodium-extra.option.instant_sneak.tooltip": "潜行时视角直接下移而不是缓慢地",
