@@ -1,6 +1,7 @@
 package me.flashyreese.mods.sodiumextra.client.gui;
 
 import com.google.common.collect.ImmutableList;
+import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
@@ -198,21 +199,61 @@ public class SodiumExtraGameOptionPages {
     public static OptionPage render() {
         List<OptionGroup> groups = new ArrayList<>();
 
-        groups.add((MinecraftClient.getInstance().getServer() != null ? MinecraftClient.getInstance().getServer().getWorldRegistryKeys() : DimensionOptionsAccessor.getBaseDimensions()).stream()
-                .map(dimensionOptionsRegistryKey -> OptionImpl.createBuilder(int.class, sodiumExtraOpts)
-                        .setName(new TranslatableText("sodium-extra.option.fog", translatableName(dimensionOptionsRegistryKey.getValue(), "dimensions").getString()).getString())
-                        .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip").getString())
-                        .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
-                        .setBinding((opts, val) -> opts.renderSettings.dimensionFogDistanceMap.put(dimensionOptionsRegistryKey.getValue(), val),
-                                opts -> opts.renderSettings.dimensionFogDistanceMap.getOrDefault(dimensionOptionsRegistryKey.getValue(), 0))
-                        .build())
-                .collect(
-                        OptionGroup::createBuilder,
-                        OptionGroup.Builder::add,
-                        (b1, b2) -> {
-                        }
-                ).build()
-        );
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.multi_dimension_fog").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.multi_dimension_fog.tooltip").getString())
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.renderSettings.multiDimensionFogControl = value, options -> options.renderSettings.multiDimensionFogControl)
+                        .build()
+                )
+                .build());
+
+        if (SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl) {
+            if (SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.size() < DimensionOptionsAccessor.getBaseDimensions().size()) {
+                groups.add(DimensionOptionsAccessor.getBaseDimensions().stream()
+                        .map(dimensionOptionsRegistryKey -> OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                                .setName(new TranslatableText("sodium-extra.option.fog", translatableName(dimensionOptionsRegistryKey.getValue(), "dimensions").getString()).getString())
+                                .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip").getString())
+                                .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
+                                .setBinding((opts, val) -> opts.renderSettings.dimensionFogDistanceMap.put(dimensionOptionsRegistryKey.getValue(), val),
+                                        opts -> opts.renderSettings.dimensionFogDistanceMap.getOrDefault(dimensionOptionsRegistryKey.getValue(), 0))
+                                .build())
+                        .collect(
+                                OptionGroup::createBuilder,
+                                OptionGroup.Builder::add,
+                                (b1, b2) -> {
+                                }
+                        ).build()
+                );
+            } else {
+                groups.add(SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.keySet().stream()
+                        .map(identifier -> OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                                .setName(new TranslatableText("sodium-extra.option.fog", translatableName(identifier, "dimensions").getString()).getString())
+                                .setTooltip(new TranslatableText("sodium-extra.option.fog.tooltip").getString())
+                                .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
+                                .setBinding((opts, val) -> opts.renderSettings.dimensionFogDistanceMap.put(identifier, val),
+                                        opts -> opts.renderSettings.dimensionFogDistanceMap.getOrDefault(identifier, 0))
+                                .build()
+                        ).collect(
+                                OptionGroup::createBuilder,
+                                OptionGroup.Builder::add,
+                                (b1, b2) -> {
+                                }
+                        ).build()
+                );
+            }
+        } else {
+            groups.add(OptionGroup.createBuilder()
+                    .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                            .setName(new TranslatableText("sodium-extra.option.single_fog").getString())
+                            .setTooltip(new TranslatableText("sodium-extra.option.single_fog.tooltip").getString())
+                            .setControl(option -> new SliderControlExtended(option, 0, 33, 1, ControlValueFormatterExtended.fogDistance(), false))
+                            .setBinding((options, value) -> options.renderSettings.fogDistance = value, options -> options.renderSettings.fogDistance)
+                            .build()
+                    )
+                    .build());
+        }
 
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
