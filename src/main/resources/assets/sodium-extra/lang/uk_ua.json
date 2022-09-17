@@ -172,7 +172,7 @@
   "sodium-extra.option.use_fast_random": "Швидка випадковість",
   "sodium-extra.option.use_fast_random.tooltip": "Якщо ввімкнено, для промальовки блоків використовуватиметься функція швидкої випадковості. Це може вплинути на положення випадково повернутих текстур у порівнянні з ваніллю.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
-  "sodium-extra.overlay.fps": "%s FPS",
+  "sodium-extra.overlay.fps": "FPS: %s",
   "sodium-extra.overlay.fps_extended": "(%s макс. / %s серед. / %s мін.)",
   "sodium-extra.overlay.light_updates": "Оновлення світла вимкнено",
   "sodium-extra.suggestRSO.header": "Порада: встановіть Reese's Sodium Options",
