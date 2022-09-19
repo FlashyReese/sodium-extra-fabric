@@ -177,7 +177,7 @@
   "sodium-extra.option.use_adaptive_sync.tooltip": "Si activée, la synchronisation verticale sera en mesure de permuter le milieu de l'image et de se désactiver parfois, ce qui aide généralement à la réactivité.",
   "sodium-extra.option.use_fast_random": "Fast Random",
   "sodium-extra.option.use_fast_random.tooltip": "Si activé, une fonction d'aléatoire plus rapide sera utilisée pour le rendu des blocs. Cela peut affecter la rotation de certaines textures.",
-  "sodium-extra.overlay.coordinates": "X : %s, Y : %s, Z : %s",
+  "sodium-extra.overlay.coordinates": "X : %s, Y : %s, Z : %s",
   "sodium-extra.overlay.fps": "%s IPS",
   "sodium-extra.overlay.fps_extended": "(max. %s / moy. %s / min. %s)",
   "sodium-extra.overlay.light_updates": "Mises à jour de l'éclairage désactivé",
