@@ -1,6 +1,6 @@
 {
   "options.dimensions.minecraft.overworld": "Верхний мир",
-  "options.dimensions.minecraft.the_end": "Край",
+  "options.dimensions.minecraft.the_end": "Энд",
   "options.dimensions.minecraft.the_nether": "Незер",
   "options.particles.minecraft.ambient_entity_effect": "Эффекты маяка",
   "options.particles.minecraft.angry_villager": "Злость",
@@ -33,8 +33,8 @@
   "options.particles.minecraft.electric_spark": "Искры",
   "options.particles.minecraft.enchant": "Знания книг",
   "options.particles.minecraft.enchanted_hit": "Зачарованный удар",
-  "options.particles.minecraft.end_rod": "Стержень Края",
-  "options.particles.minecraft.entity_effect": "Эффект сущности",
+  "options.particles.minecraft.end_rod": "Стержень Энда",
+  "options.particles.minecraft.entity_effect": "Эффекты сущности",
   "options.particles.minecraft.explosion": "Взрыв",
   "options.particles.minecraft.explosion_emitter": "Большой взрыв",
   "options.particles.minecraft.falling_dripstone_lava": "Стёкшая лава",
