@@ -65,6 +65,10 @@ public class MixinInGameHud {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
                 y = 2;
             }
+            case TOP_MIDDLE -> {
+                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
+                y = 2;
+            }
             case BOTTOM_LEFT -> {
                 x = 2;
                 y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
@@ -76,7 +80,6 @@ public class MixinInGameHud {
             default ->
                     throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
-
         this.drawString(matrices, text, x, y);
     }
 
@@ -95,6 +98,10 @@ public class MixinInGameHud {
             }
             case TOP_RIGHT -> {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                y = 12;
+            }
+            case TOP_MIDDLE -> {
+                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
                 y = 12;
             }
             case BOTTOM_LEFT -> {
@@ -123,6 +130,10 @@ public class MixinInGameHud {
             }
             case TOP_RIGHT -> {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                y = 22;
+            }
+            case TOP_MIDDLE -> {
+                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
                 y = 22;
             }
             case BOTTOM_LEFT -> {
