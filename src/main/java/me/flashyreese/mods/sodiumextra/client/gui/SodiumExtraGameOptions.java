@@ -244,6 +244,10 @@ public class SodiumExtraGameOptions {
         public boolean useAdaptiveSync;
         public int cloudHeight;
         public boolean toasts;
+        public boolean advancementToast;
+        public boolean recipeToast;
+        public boolean systemToast;
+        public boolean tutorialToast;
         public boolean instantSneak;
         public boolean preventShaders;
         public boolean useFastRandom;
@@ -258,6 +262,10 @@ public class SodiumExtraGameOptions {
             this.useAdaptiveSync = false;
             this.cloudHeight = 192;
             this.toasts = true;
+            this.advancementToast = true;
+            this.recipeToast = true;
+            this.systemToast = true;
+            this.tutorialToast = true;
             this.instantSneak = false;
             this.preventShaders = false;
             this.useFastRandom = true;
