@@ -207,6 +207,13 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((options, value) -> options.renderSettings.multiDimensionFogControl = value, options -> options.renderSettings.multiDimensionFogControl)
                         .build()
                 )
+                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                        .setName(new TranslatableText("sodium-extra.option.fog_start").getString())
+                        .setTooltip(new TranslatableText("sodium-extra.option.fog_start.tooltip").getString())
+                        .setControl(option -> new SliderControlExtended(option, 0, 100, 1, ControlValueFormatter.percentage(), false))
+                        .setBinding((options, value) -> options.renderSettings.fogStart = value, options -> options.renderSettings.fogStart)
+                        .build()
+                )
                 .build());
 
         if (SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl) {
