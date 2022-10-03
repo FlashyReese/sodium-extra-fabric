@@ -202,6 +202,7 @@ public class SodiumExtraGameOptions {
 
     public static class RenderSettings {
         public int fogDistance;
+        public int fogStart;
         public boolean multiDimensionFogControl;
         @SerializedName("dimensionFogDistance")
         public Map<Identifier, Integer> dimensionFogDistanceMap;
@@ -218,6 +219,7 @@ public class SodiumExtraGameOptions {
 
         public RenderSettings() {
             this.fogDistance = 0;
+            this.fogStart = 100;
             this.multiDimensionFogControl = false;
             this.dimensionFogDistanceMap = new Object2IntArrayMap<>();
             this.useLinearFlatColorBlender = false;

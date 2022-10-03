@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BackgroundRenderer.class)
@@ -31,13 +32,20 @@ public abstract class MixinBackgroundRenderer {
             return;
         }
         if (camera.getSubmersionType() == CameraSubmersionType.NONE && (thickFog || fogType == BackgroundRenderer.FogType.FOG_TERRAIN)) {
+            float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
             if (fogDistance == 33) {
-                RenderSystem.setShaderFogStart(Short.MAX_VALUE - 1);
+                RenderSystem.setShaderFogStart(Short.MAX_VALUE - 1 * fogStart);
                 RenderSystem.setShaderFogEnd(Short.MAX_VALUE);
             } else {
-                RenderSystem.setShaderFogStart(fogDistance * 16);
+                RenderSystem.setShaderFogStart(fogDistance * 16 * fogStart);
                 RenderSystem.setShaderFogEnd((fogDistance + 1) * 16);
             }
         }
+    }
+
+    @Redirect(method = "applyFog", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;setShaderFogStart(F)V"))
+    private static void redirectSetShaderFogStart(float shaderFogStart) {
+        float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
+        RenderSystem.setShaderFogStart(shaderFogStart * fogStart);
     }
 }
