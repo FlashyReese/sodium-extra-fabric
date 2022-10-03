@@ -119,6 +119,8 @@
   "sodium-extra.option.extras": "Extras",
   "sodium-extra.option.fog": "%s Fog",
   "sodium-extra.option.fog.tooltip": "Adjusts the fog effect distance on the terrain per dimension. Disable Multi Dimension Fog to control fog using Single Fog \n0 - use vanilla fog settings\n1-32 - set fog distance in chunks\n33 - max fog distance (essentially disables fog)",
+  "sodium-extra.option.fog_start": "Fog Start Multiplier",
+  "sodium-extra.option.fog_start.tooltip": "Adjusts when the terrain fog begins to render for the player.",
   "sodium-extra.option.instant_sneak": "Instant Sneak",
   "sodium-extra.option.instant_sneak.tooltip": "If enabled, the camera will not lerp upon sneaking.",
   "sodium-extra.option.item_frame_name_tag": "Item Frame Name Tag",
