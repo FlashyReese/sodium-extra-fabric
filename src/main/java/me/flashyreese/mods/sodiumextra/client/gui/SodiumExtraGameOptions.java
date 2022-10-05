@@ -85,7 +85,6 @@ public class SodiumExtraGameOptions {
 
     public enum OverlayCorner implements TextProvider {
         TOP_LEFT("sodium-extra.option.overlay_corner.top_left"),
-        TOP_MIDDLE("sodium-extra.option.overlay_corner.top_middle"),
         TOP_RIGHT("sodium-extra.option.overlay_corner.top_right"),
         BOTTOM_LEFT("sodium-extra.option.overlay_corner.bottom_left"),
         BOTTOM_RIGHT("sodium-extra.option.overlay_corner.bottom_right");

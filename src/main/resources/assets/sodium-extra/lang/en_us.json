@@ -140,7 +140,6 @@
   "sodium-extra.option.overlay_corner.tooltip": "Determines which corner of the screen the overlay(fps and coordinates) will be rendered.",
   "sodium-extra.option.overlay_corner.top_left": "Top Left",
   "sodium-extra.option.overlay_corner.top_right": "Top Right",
-  "sodium-extra.option.overlay_corner.top_middle": "Top Middle",
   "sodium-extra.option.paintings.tooltip": "If enabled, paintings are rendered.",
   "sodium-extra.option.particles.tooltips": "If enabled, %s particles are processed.",
   "sodium-extra.option.particles_all.tooltip": "If enabled, particles are processed.",

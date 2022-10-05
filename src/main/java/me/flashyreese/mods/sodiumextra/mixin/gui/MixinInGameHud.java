@@ -27,6 +27,8 @@ public class MixinInGameHud {
     @Shadow
     private int scaledHeight;
 
+    Text oldFPS;
+    Text oldCoords;
     @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;renderStatusEffectOverlay(Lnet/minecraft/client/util/math/MatrixStack;)V", shift = At.Shift.BEFORE))
     public void render(MatrixStack matrices, float tickDelta, CallbackInfo callbackInfo) {
         if (!this.client.options.debugEnabled) {
@@ -55,32 +57,31 @@ public class MixinInGameHud {
             text = Text.literal(String.format("%s %s", text.getString(), Text.translatable("sodium-extra.overlay.fps_extended", SodiumExtraClientMod.getClientTickHandler().getHighestFps(), SodiumExtraClientMod.getClientTickHandler().getAverageFps(),
                     SodiumExtraClientMod.getClientTickHandler().getLowestFps()).getString()));
 
-        int x, y;
-        switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
-            case TOP_LEFT -> {
-                x = 2;
-                y = 2;
+        if(text != oldFPS){
+            oldFPS = text;
+            int x, y;
+            switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
+                case TOP_LEFT -> {
+                    x = 2;
+                    y = 2;
+                }
+                case TOP_RIGHT -> {
+                    x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                    y = 2;
+                }
+                case BOTTOM_LEFT -> {
+                    x = 2;
+                    y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
+                }
+                case BOTTOM_RIGHT -> {
+                    x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                    y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
+                }
+                default ->
+                        throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
             }
-            case TOP_RIGHT -> {
-                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
-                y = 2;
-            }
-            case TOP_MIDDLE -> {
-                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
-                y = 2;
-            }
-            case BOTTOM_LEFT -> {
-                x = 2;
-                y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-            }
-            case BOTTOM_RIGHT -> {
-                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
-                y = this.scaledHeight - this.client.textRenderer.fontHeight - 2;
-            }
-            default ->
-                    throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
+            this.drawString(matrices, text, x, y);
         }
-        this.drawString(matrices, text, x, y);
     }
 
     private void renderCoords(MatrixStack matrices) {
@@ -90,38 +91,36 @@ public class MixinInGameHud {
 
         Text text = Text.translatable("sodium-extra.overlay.coordinates", String.format("%.2f", pos.x), String.format("%.2f", pos.y), String.format("%.2f", pos.z));
 
-        int x, y;
-        switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
-            case TOP_LEFT -> {
-                x = 2;
-                y = 12;
+        if(text != oldCoords) {
+            oldCoords = text;
+            int x, y;
+            switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
+                case TOP_LEFT -> {
+                    x = 2;
+                    y = 12;
+                }
+                case TOP_RIGHT -> {
+                    x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                    y = 12;
+                }
+                case BOTTOM_LEFT -> {
+                    x = 2;
+                    y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
+                }
+                case BOTTOM_RIGHT -> {
+                    x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
+                    y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
+                }
+                default ->
+                        throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
             }
-            case TOP_RIGHT -> {
-                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
-                y = 12;
-            }
-            case TOP_MIDDLE -> {
-                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
-                y = 12;
-            }
-            case BOTTOM_LEFT -> {
-                x = 2;
-                y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-            }
-            case BOTTOM_RIGHT -> {
-                x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
-                y = this.scaledHeight - this.client.textRenderer.fontHeight - 12;
-            }
-            default ->
-                    throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
-        }
 
-        this.drawString(matrices, text, x, y);
+            this.drawString(matrices, text, x, y);
+        }
     }
 
     private void renderLightUpdatesWarning(MatrixStack matrices) {
         Text text = Text.translatable("sodium-extra.overlay.light_updates");
-
         int x, y;
         switch (SodiumExtraClientMod.options().extraSettings.overlayCorner) {
             case TOP_LEFT -> {
@@ -130,10 +129,6 @@ public class MixinInGameHud {
             }
             case TOP_RIGHT -> {
                 x = this.scaledWidth - this.client.textRenderer.getWidth(text) - 2;
-                y = 22;
-            }
-            case TOP_MIDDLE -> {
-                x = ( this.scaledWidth - this.client.textRenderer.getWidth(text) - 2 ) / 2;
                 y = 22;
             }
             case BOTTOM_LEFT -> {
