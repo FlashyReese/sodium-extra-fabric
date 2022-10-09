@@ -3,6 +3,7 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
@@ -43,7 +44,7 @@ public class SodiumExtraGameOptions {
         if (file.exists()) {
             try (FileReader reader = new FileReader(file)) {
                 config = gson.fromJson(reader, SodiumExtraGameOptions.class);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 SodiumExtraClientMod.logger().error("Could not parse config, falling back to defaults!", e);
                 config = new SodiumExtraGameOptions();
             }
