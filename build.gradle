@@ -2,7 +2,7 @@ plugins {
     id 'signing'
     id 'fabric-loom' version '1.0-SNAPSHOT'
     id 'maven-publish'
-    id 'io.github.juuxel.loom-quiltflower' version '1.7.3'
+    id 'io.github.juuxel.loom-quiltflower' version '1.7.4'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
