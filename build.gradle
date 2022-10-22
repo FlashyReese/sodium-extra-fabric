@@ -1,8 +1,8 @@
 plugins {
     id 'signing'
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'fabric-loom' version '1.0.+'
     id 'maven-publish'
-    id 'io.github.juuxel.loom-quiltflower' version '1.7.3'
+    id 'io.github.juuxel.loom-quiltflower' version '1.7.4'
 }
 
 sourceCompatibility = JavaVersion.VERSION_17
@@ -51,7 +51,7 @@ dependencies {
     // Todo: Use https://github.com/CaffeineMC/mixin-config when available
     include(modImplementation("net.caffeinemc:mixin-config:1.0.0+1.17"))
 
-    modRuntimeOnly "maven.modrinth:lazydfu:0.1.2"
+    modRuntimeOnly "maven.modrinth:lazydfu:0.1.3"
 }
 
 processResources {
