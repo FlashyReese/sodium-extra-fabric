@@ -5,7 +5,6 @@ import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.flashyreese.mods.sodiumextra.client.gui.options.control.SliderControlExtended;
 import me.flashyreese.mods.sodiumextra.client.gui.options.storage.SodiumExtraOptionsStorage;
 import me.flashyreese.mods.sodiumextra.common.util.ControlValueFormatterExtended;
-import me.flashyreese.mods.sodiumextra.mixin.fog.DimensionOptionsAccessor;
 import me.jellysquid.mods.sodium.client.gui.options.*;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
@@ -16,9 +15,11 @@ import net.minecraft.text.Text;
 import net.minecraft.text.Texts;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.dimension.DimensionOptions;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
@@ -224,8 +225,8 @@ public class SodiumExtraGameOptionPages {
                 .build());
 
         if (SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl) {
-            DimensionOptionsAccessor.getBaseDimensions()
-                    .stream()
+            DimensionOptions
+                    .streamRegistry(Stream.empty())
                     .filter(dim -> !SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.containsKey(dim.getValue()))
                     .forEach(dim -> SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.put(dim.getValue(), 0));
             groups.add(SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.keySet().stream()
