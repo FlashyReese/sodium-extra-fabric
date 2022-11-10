@@ -95,7 +95,7 @@
   "options.particles.minecraft.firework": "Firework",
   "options.particles.minecraft.firework.tooltip": "Firework rocket trail and explosion (trail is not shown when the \"minimal\" particle setting is used), when dolphins track shipwrecks and underwater ruins.",
   "options.particles.minecraft.fishing": "Fishing",
-  "options.particles.minecraft.fishing.tooltip": "Fishing",
+  "options.particles.minecraft.fishing.tooltip": "Fishing.",
   "options.particles.minecraft.flame": "Flame",
   "options.particles.minecraft.flame.tooltip": "Torches, furnaces, magma cubes, spawners.",
   "options.particles.minecraft.flash": "Flash",
