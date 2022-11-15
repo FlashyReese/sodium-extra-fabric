@@ -3,6 +3,7 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
 import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
@@ -43,7 +44,7 @@ public class SodiumExtraGameOptions {
         if (file.exists()) {
             try (FileReader reader = new FileReader(file)) {
                 config = gson.fromJson(reader, SodiumExtraGameOptions.class);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 SodiumExtraClientMod.logger().error("Could not parse config, falling back to defaults!", e);
                 config = new SodiumExtraGameOptions();
             }
@@ -203,6 +204,7 @@ public class SodiumExtraGameOptions {
 
     public static class RenderSettings {
         public int fogDistance;
+        public int fogStart;
         public boolean multiDimensionFogControl;
         @SerializedName("dimensionFogDistance")
         public Map<Identifier, Integer> dimensionFogDistanceMap;
@@ -219,6 +221,7 @@ public class SodiumExtraGameOptions {
 
         public RenderSettings() {
             this.fogDistance = 0;
+            this.fogStart = 100;
             this.multiDimensionFogControl = false;
             this.dimensionFogDistanceMap = new Object2IntArrayMap<>();
             this.useLinearFlatColorBlender = false;
@@ -244,6 +247,10 @@ public class SodiumExtraGameOptions {
         public boolean useAdaptiveSync;
         public int cloudHeight;
         public boolean toasts;
+        public boolean advancementToast;
+        public boolean recipeToast;
+        public boolean systemToast;
+        public boolean tutorialToast;
         public boolean instantSneak;
         public boolean preventShaders;
         public boolean useFastRandom;
@@ -258,6 +265,10 @@ public class SodiumExtraGameOptions {
             this.useAdaptiveSync = false;
             this.cloudHeight = 128;
             this.toasts = true;
+            this.advancementToast = true;
+            this.recipeToast = true;
+            this.systemToast = true;
+            this.tutorialToast = true;
             this.instantSneak = false;
             this.preventShaders = false;
             this.useFastRandom = true;
