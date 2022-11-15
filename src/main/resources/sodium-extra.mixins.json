@@ -11,7 +11,6 @@
     "cloud.MixinWorldRenderer",
     "compat.MixinSodiumOptionsGUI",
     "compat.MixinTitleScreen",
-    "fog.DimensionOptionsAccessor",
     "fog.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
     "gui.MixinInGameHud",
@@ -38,7 +37,11 @@
     "sodium.vsync.MixinSodiumGameOptionsPages",
     "stars.MixinWorldRenderer",
     "sun_moon.MixinWorldRenderer",
-    "toasts.MixinToastManager"
+    "toasts.MixinToastManager",
+    "toasts.MixinAdvancementToast",
+    "toasts.MixinRecipeToast",
+    "toasts.MixinSystemToast",
+    "toasts.MixinTutorialToast"
   ],
   "injectors": {
     "defaultRequire": 1
