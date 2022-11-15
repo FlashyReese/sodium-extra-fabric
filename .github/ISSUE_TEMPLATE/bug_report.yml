@@ -1,0 +1,56 @@
+name: Bug Report
+description: File a bug report
+labels: bug
+body:
+  - type: checkboxes
+    id: unique
+    attributes:
+      label: Make sure you are not opening a duplicate.
+      options:
+        - label: "[I have searched the issue tracker](https://github.com/FlashyReese/sodium-extra-fabric/issues?q=) and did not find an issue describing my bug."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Are you using the latest version of the mod? If not, try updating to see if it resolves your issue. You can [find the latest versions here](https://github.com/FlashyReese/sodium-extra-fabric/releases)."
+  - type: input
+    id: version-mc
+    attributes:
+      label: Minecraft version.
+      placeholder: ex. 1.17.1
+    validations:
+      required: true
+  - type: input
+    id: version-sodium-extra
+    attributes:
+      label: Sodium Extra version.
+      placeholder: ex. 0.3.2
+    validations:
+      required: true
+  - type: input
+    id: version-sodium
+    attributes:
+      label: Sodium version.
+      placeholder: ex. 0.2.0
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder:  ex. I can't disable some particles.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant log.
+      description: Please upload your latest.log (From the logs folder, it's in your Minecraft root directory, like the mods folder) to any pastebin service ex. gist.github.com, hastebin.com, pastebin.ubuntu.com, paste.ee or paste.gg
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information.
+      description: Provide a list of any other mods you are using, along with their respective versions. If you have any screenshots, videos, or other information that you feel is necessary to explain the issue, feel free to attach them here.
