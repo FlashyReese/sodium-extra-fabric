@@ -46,7 +46,7 @@ body:
     id: log
     attributes:
       label: Relevant log.
-      description: Please upload your latest.log (log folder it's in your Minecraft root directory, like the mods folder) to any pastebin service ex. gist.github.com, hastebin.com, pastebin.ubuntu.com, paste.ee or paste.gg
+      description: Please upload your latest.log (From the logs folder, it's in your Minecraft root directory, like the mods folder) to any pastebin service ex. gist.github.com, hastebin.com, pastebin.ubuntu.com, paste.ee or paste.gg
     validations:
       required: true
   - type: textarea
