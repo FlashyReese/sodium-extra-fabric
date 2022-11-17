@@ -31,12 +31,17 @@
     "sky.MixinWorldRenderer",
     "sky_colors.MixinBiome",
     "sodium.accessibility.MixinSodiumGameOptionPages",
+    "sodium.biome_blend.MixinChunkRenderCache",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.scrollable_page.MixinSodiumOptionsGUI",
     "sodium.vsync.MixinSodiumGameOptionsPages",
     "stars.MixinWorldRenderer",
     "sun_moon.MixinWorldRenderer",
-    "toasts.MixinToastManager"
+    "toasts.MixinToastManager",
+    "toasts.MixinAdvancementToast",
+    "toasts.MixinRecipeToast",
+    "toasts.MixinSystemToast",
+    "toasts.MixinTutorialToast"
   ],
   "injectors": {
     "defaultRequire": 1
