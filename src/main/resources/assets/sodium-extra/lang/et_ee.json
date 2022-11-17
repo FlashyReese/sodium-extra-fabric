@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "Tutorial Toasts",
   "sodium-extra.option.tutorial_toast.tooltip": "If enabled, tutorial popups will be displayed.",
   "sodium-extra.option.use_adaptive_sync.name": "Kohanduv",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "Lubamisel saab V-Sync keset kaadrit vahetuda ning end vajadusel keelata, tõstes jõudlust üldjuhul märgatavalt.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "Kasuta kiiret juhuslikkust",
   "sodium-extra.option.use_fast_random.tooltip": "Lubamisel kasutatakse plokkide renderdamiseks kiiret juhuslikkuse meetodit. See võib muuta juhuslikult pööratud tekstuuride pöördenurga vanillist erinevaks.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
