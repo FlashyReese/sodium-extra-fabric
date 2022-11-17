@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "Tutorial Toasts",
   "sodium-extra.option.tutorial_toast.tooltip": "If enabled, tutorial popups will be displayed.",
   "sodium-extra.option.use_adaptive_sync.name": "Adaptive",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "활성화를 하면 수직 동기화가 필요에 따라 프레임을 낮추거나 비활성화 할 수 있게 되어 응답성이 개선됩니다.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "빠른 랜덤 함수 사용",
   "sodium-extra.option.use_fast_random.tooltip": "활성화를 하면 블록 렌더링을 위해 빠른 랜덤 함수가 사용됩니다. 바닐라와 비교할 때 무작위로 회전된 텍스처의 회전에 영향을 줄 수 있습니다.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
