@@ -25,7 +25,8 @@ public abstract class MixinBackgroundRenderer {
     @Inject(method = "applyFog", at = @At(value = "TAIL"))
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, float tickDelta, CallbackInfo ci) {
         Entity entity = camera.getFocusedEntity();
-        int fogDistance = SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl ? SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.putIfAbsent(entity.world.getDimension().effects(), 0) : SodiumExtraClientMod.options().renderSettings.fogDistance;
+        SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.putIfAbsent(entity.world.getDimension().effects(), 0);
+        int fogDistance = SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl ? SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.get(entity.world.getDimension().effects()) : SodiumExtraClientMod.options().renderSettings.fogDistance;
         BackgroundRenderer.StatusEffectFogModifier statusEffectFogModifier = getFogModifier(entity, tickDelta);
         if (fogDistance == 0 || statusEffectFogModifier != null) {
             return;
