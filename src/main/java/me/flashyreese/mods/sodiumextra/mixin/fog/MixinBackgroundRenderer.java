@@ -11,7 +11,6 @@ import net.minecraft.tag.FluidTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BackgroundRenderer.class)
@@ -34,11 +33,5 @@ public abstract class MixinBackgroundRenderer {
                 RenderSystem.fogEnd((fogDistance + 1) * 16);
             }
         }
-    }
-
-    @Redirect(method = "applyFog", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;fogStart(F)V"))
-    private static void redirectSetShaderFogStart(float shaderFogStart) {
-        float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
-        RenderSystem.fogStart(shaderFogStart * fogStart);
     }
 }
