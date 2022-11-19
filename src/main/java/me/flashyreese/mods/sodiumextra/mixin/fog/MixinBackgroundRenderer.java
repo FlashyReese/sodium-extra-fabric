@@ -11,7 +11,6 @@ import net.minecraft.tag.FluidTags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BackgroundRenderer.class)
@@ -19,7 +18,8 @@ public abstract class MixinBackgroundRenderer {
     @Inject(method = "applyFog", at = @At(value = "TAIL"))
     private static void applyFog(Camera camera, BackgroundRenderer.FogType fogType, float viewDistance, boolean thickFog, CallbackInfo ci) {
         Entity entity = camera.getFocusedEntity();
-        int fogDistance = SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl ? SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.putIfAbsent(entity.world.getDimension().getSkyProperties(), 0) : SodiumExtraClientMod.options().renderSettings.fogDistance;
+        SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.putIfAbsent(entity.world.getDimension().getSkyProperties(), 0);
+        int fogDistance = SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl ? SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.get(entity.world.getDimension().getSkyProperties()) : SodiumExtraClientMod.options().renderSettings.fogDistance;
         if (fogDistance == 0 || (entity instanceof LivingEntity && ((LivingEntity) entity).hasStatusEffect(StatusEffects.BLINDNESS))) {
             return;
         }
@@ -33,11 +33,5 @@ public abstract class MixinBackgroundRenderer {
                 RenderSystem.fogEnd((fogDistance + 1) * 16);
             }
         }
-    }
-
-    @Redirect(method = "applyFog", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/systems/RenderSystem;fogStart(F)V"))
-    private static void redirectSetShaderFogStart(float shaderFogStart) {
-        float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
-        RenderSystem.fogStart(shaderFogStart * fogStart);
     }
 }

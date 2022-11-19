@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "チュートリアルの通知",
   "sodium-extra.option.tutorial_toast.tooltip": "有効にした場合チュートリアルのポップアップは表示されます。",
   "sodium-extra.option.use_adaptive_sync.name": "アダプティブ",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "有効にした場合、V-Syncにおいてフレームの描画中に次のフレームを入れ替えることが出来るようになり、時にはそのフレーム自体を無効にします。通常は応答性を顕著に向上させます。",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "高速な乱数を使う",
   "sodium-extra.option.use_fast_random.tooltip": "有効にした場合、高速な乱数関数がブロックレンダリングに使用されます。バニラと比較したとき、ランダムに回転するテクスチャの向きに影響を与える可能性があります。",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",

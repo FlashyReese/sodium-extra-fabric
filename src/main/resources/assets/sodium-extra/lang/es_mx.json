@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "Notificación de tutorial",
   "sodium-extra.option.tutorial_toast.tooltip": "Si está habilitado, se mostrarán ventanas emergentes de tutorial.",
   "sodium-extra.option.use_adaptive_sync.name": "Adaptivo",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "Si está habilitado, V-Sync podrá cambiar la fotograma media y deshabilitarse a sí mismo a veces, lo que generalmente ayuda notablemente a la tiempo de respuesta.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "Utilice aleatorio rápido",
   "sodium-extra.option.use_fast_random.tooltip": "Si está habilitada, se utilizará una función aleatoria rápida para la representación de bloques. Esto puede afectar la rotación de texturas rotadas aleatoriamente en comparación con vainilla.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",

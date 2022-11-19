@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "Toasty samouczka",
   "sodium-extra.option.tutorial_toast.tooltip": "Jeśli włączone, wyskakujące okienka poradnika będą wyświetlane.",
   "sodium-extra.option.use_adaptive_sync.name": "Adaptacyjny",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "Jeśli ta opcja jest włączona, V-Sync będzie mógł zamieniać śródklatkowo i czasami wyłączać się, przeważnie polepszając responsywność.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "Użyj szybkiej losowości",
   "sodium-extra.option.use_fast_random.tooltip": "Jeśli ta opcja jest włączona, do renderowania bloków zostanie użyta szybka funkcja losowa. Może to wpłynąć na rotację losowo obracanych tekstur w porównaniu z domyślnym ustawieniem.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
