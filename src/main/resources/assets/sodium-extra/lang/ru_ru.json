@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "Обучающие подсказки",
   "sodium-extra.option.tutorial_toast.tooltip": "Всплывающие уведомления с советами по игровому процессу.",
   "sodium-extra.option.use_adaptive_sync.name": "Адаптивная",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "Вертикальная синхронизация сможет переключаться между кадрами и время от времени отключаться, что обычно заметно улучшает быстродействие.",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "Использовать быстрый рандом",
   "sodium-extra.option.use_fast_random.tooltip": "Если включено, для рендеринга блоков будет использоваться функция быстрого рандома. Это может повлиять на видимое положение случайно повёрнутых текстур по сравнению с немодифицированной игрой.",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
