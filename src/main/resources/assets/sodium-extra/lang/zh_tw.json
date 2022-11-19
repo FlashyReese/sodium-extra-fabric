@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "教學彈出提示框",
   "sodium-extra.option.tutorial_toast.tooltip": "若啟用，將會顯示教學彈出提示框。",
   "sodium-extra.option.use_adaptive_sync.name": "自適應",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "若啟用，垂直同步將能夠交換中間幀並適時停用，通常有助於提升顯示器的反應速度。",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "快速隨機材質",
   "sodium-extra.option.use_fast_random.tooltip": "若啟用，將使用快速隨機函數來繪製方塊。\n與原版相比，這可能會影響隨機旋轉紋理的旋轉方向。",
   "sodium-extra.overlay.coordinates": "X：%s，Y：%s，Z：%s",
