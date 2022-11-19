@@ -17,6 +17,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("cloud", true)
                 .addMixinOption("compat", true) // Should not allow users to turn this off
                 .addMixinOption("fog", true)
+                .addMixinOption("fog.falloff", true)
                 .addMixinOption("gui", true)
                 .addMixinOption("instant_sneak", true)
                 .addMixinOption("light_updates", true)
