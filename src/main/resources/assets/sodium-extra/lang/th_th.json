@@ -281,7 +281,7 @@
   "sodium-extra.option.tutorial_toast": "โทสต์สอนการเล่น",
   "sodium-extra.option.tutorial_toast.tooltip": "เมื่อเปิดตัวเลือกนี้ ป็อบอัพการสอนการเล่นจะแสดงขึ้นมาให้เห็น",
   "sodium-extra.option.use_adaptive_sync.name": "ปรับตัวได้",
-  "sodium-extra.option.use_adaptive_sync.tooltip": "เมื่อเปิดตัวเลือกนี้ V-Sync จะสามารถสลับไปยังอัตราเฟรมระดับกลางและปิดตัวเองในบางเวลาได้ ช่วยในเรื่องของการตอบสนองของเกมได้อย่างเห็นได้ชัด",
+  "sodium-extra.option.use_adaptive_sync.tooltip": "If enabled, V-Sync will be able to swap mid-frame and disable itself at times, usually notably helping responsiveness. May cause issues with some GPU drivers.",
   "sodium-extra.option.use_fast_random": "ใช้การสุ่มเร็ว",
   "sodium-extra.option.use_fast_random.tooltip": "ถ้าเปิดตัวเลือกนี้ ฟังก์ชั่นการสุ่มเร็วจะถูกใช้ในการเรนเดอร์บล็อกต่าง ๆ ตัวเลือกนี้จะมีผลต่อการหมุนพื้นผิวแบบสุ่มอีกด้วยเมื่อเทียบกับแบบวานิลลา",
   "sodium-extra.overlay.coordinates": "X: %s, Y: %s, Z: %s",
