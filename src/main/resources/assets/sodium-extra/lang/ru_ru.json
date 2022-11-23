@@ -218,7 +218,7 @@
   "sodium-extra.option.extras": "Прочее",
   "sodium-extra.option.fog": "Туман %s",
   "sodium-extra.option.fog.tooltip": "Изменяет общую дальность тумана для всех измерений.\n0 - ванильный вид тумана\n1-32 - расстояние в чанках\n33 - предельная дальность (по сути, отключает туман)\nОтключите \"Разный туман\" для его настройки глобально.",
-  "sodium-extra.option.fog_start": "Густота тумана",
+  "sodium-extra.option.fog_start": "Прозрачность тумана",
   "sodium-extra.option.fog_start.tooltip": "Настойка удалённости видимой границы тумана.",
   "sodium-extra.option.instant_sneak": "Моментальное приседание",
   "sodium-extra.option.instant_sneak.tooltip": "Переключение плавной анимации приседания.",
