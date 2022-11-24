@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
-@Mixin(BlockRenderer.class)
+@Mixin(value = BlockRenderer.class, remap = false)
 public class MixinBlockRenderer {
     @Shadow
     @Final
