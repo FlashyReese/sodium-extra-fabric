@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.List;
 
-@Mixin(SodiumGameOptionPages.class)
+@Mixin(value = SodiumGameOptionPages.class, remap = false)
 public class MixinSodiumGameOptionPages {
 
     @Shadow
