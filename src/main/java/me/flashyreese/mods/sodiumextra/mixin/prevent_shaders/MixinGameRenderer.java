@@ -11,14 +11,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GameRenderer.class)
 public class MixinGameRenderer {
 
-    @Inject(method = "toggleShadersEnabled", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "togglePostProcessorEnabled", at = @At("HEAD"), cancellable = true)
     private void preventShaders(CallbackInfo ci) {
         if (SodiumExtraClientMod.options().extraSettings.preventShaders) {
             ci.cancel();
         }
     }
 
-    @Inject(method = "loadShader", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "loadPostProcessor", at = @At("HEAD"), cancellable = true)
     private void dontLoadShader(Identifier identifier, CallbackInfo ci) {
         if (SodiumExtraClientMod.options().extraSettings.preventShaders) {
             ci.cancel();
