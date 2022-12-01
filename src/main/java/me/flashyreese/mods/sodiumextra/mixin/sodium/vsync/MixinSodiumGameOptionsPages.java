@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(SodiumGameOptionPages.class)
+@Mixin(value = SodiumGameOptionPages.class, remap = false)
 public class MixinSodiumGameOptionsPages {
     @Shadow
     @Final
