@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinWorldRenderer {
 
     @Redirect(
-            method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FDDD)V",
+            method = "renderClouds(Lnet/minecraft/client/util/math/MatrixStack;Lorg/joml/Matrix4f;FDDD)V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/DimensionEffects;getCloudsHeight()F")
     )
     private float getCloudHeight(DimensionEffects skyProperties) {
