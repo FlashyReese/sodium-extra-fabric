@@ -155,7 +155,7 @@
   "options.particles.minecraft.small_flame": "Küçük ateş",
   "options.particles.minecraft.small_flame.tooltip": "Küçük ateş.",
   "options.particles.minecraft.smoke": "Duman",
-  "options.particles.minecraft.smoke.tooltip": "Torches, primed TNT, droppers, dispensers, end portals, brewing stands, spawners, furnaces, ghast fireballs, wither skulls, taming, withers, lava (when raining), placing an eye of ender in an end portal frame, redstone torches burning out, food items on campfire.",
+  "options.particles.minecraft.smoke.tooltip": "Meşaleler, ateşlenmiş TNT, bırakıcılar, dağıtıcılar, end portalları, iksir standları, spawnerlar, fırınlar, ghast ateş topları, wither kafaları, evcilleştirme, witherlar, lav (yağmur yağarken), portal çerçevesine ender gözü yerleştirmek, redstone meşaleleri, kamp ateşindeki yiyecekler.",
   "options.particles.minecraft.sneeze": "Hapşırık",
   "options.particles.minecraft.sneeze.tooltip": "Yavru pandalar hapşırıyor.",
   "options.particles.minecraft.snowflake": "Kar Tanesi",
