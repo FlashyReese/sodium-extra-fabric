@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Частицы окружения в базальтовых дельтах.",
   "options.particles.minecraft.witch": "Магия ведьмы",
   "options.particles.minecraft.witch.tooltip": "Частицы магии, изредка окутывающие ведьму.",
+  "sodium-extra.option.advanced_item_tooltips": "Advanced Item Tooltips",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "If enabled, tooltips for items will display the identifier and durability.",
   "sodium-extra.option.advancement_toast": "Достижения",
   "sodium-extra.option.advancement_toast.tooltip": "Всплывающие уведомления о получении достижений.",
   "sodium-extra.option.animate_fire.tooltip": "Переключение анимации огня.",
