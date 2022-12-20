@@ -11,6 +11,7 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatte
 import me.jellysquid.mods.sodium.client.gui.options.control.CyclingControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.SliderControl;
 import me.jellysquid.mods.sodium.client.gui.options.control.TickBoxControl;
+import me.jellysquid.mods.sodium.client.gui.options.storage.MinecraftOptionsStorage;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 
 public class SodiumExtraGameOptionPages {
     public static final SodiumExtraOptionsStorage sodiumExtraOpts = new SodiumExtraOptionsStorage();
+    public static final MinecraftOptionsStorage vanillaOpts = new MinecraftOptionsStorage();
 
     private static String parseVanillaString(String key) {
         return new LiteralText((new TranslatableText(key).getString()).replaceAll("§.", "")).getString();
@@ -395,6 +397,15 @@ public class SodiumExtraGameOptionPages {
                         .setBinding((options, value) -> options.extraSettings.cloudHeight = value, options -> options.extraSettings.cloudHeight)
                         .build()
                 )
+                .build());
+        groups.add(OptionGroup.createBuilder()
+                        .add(OptionImpl.createBuilder(boolean.class, vanillaOpts)
+                                .setName(new TranslatableText("sodium-extra.option.advanced_item_tooltips").getString())
+                                .setTooltip(new TranslatableText("sodium-extra.option.advanced_item_tooltips.tooltip").getString())
+                                .setControl(TickBoxControl::new)
+                                .setBinding((opts, value) -> opts.advancedItemTooltips = value, opts -> opts.advancedItemTooltips)
+                                .build()
+                        )
                 .build());
         groups.add(OptionGroup.createBuilder()
                 .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
