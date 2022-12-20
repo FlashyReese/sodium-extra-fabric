@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Naturally generated in basalt deltas biome environment.",
   "options.particles.minecraft.witch": "แม่มด",
   "options.particles.minecraft.witch.tooltip": "Witch.",
+  "sodium-extra.option.advanced_item_tooltips": "Advanced Item Tooltips",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "If enabled, tooltips for items will display the identifier and durability.",
   "sodium-extra.option.advancement_toast": "โทสต์ความก้าวหน้า",
   "sodium-extra.option.advancement_toast.tooltip": "เมื่อเปิดตัวเลือกนี้ ป็อปอัพความก้าวหน้าจะมีการแสดงขึ้นมาให้เห็น",
   "sodium-extra.option.animate_fire.tooltip": "ถ้าเปิดตัวเลือกนี้ ภาพเคลื่อนไหวของไฟจะทำงาน",
