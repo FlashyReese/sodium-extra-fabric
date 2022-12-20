@@ -15,7 +15,6 @@
     "fog.MixinBackgroundRenderer",
     "fog_falloff.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
-    "gui.MixinInGameHud",
     "instant_sneak.MixinCamera",
     "light_updates.MixinLightingProvider",
     "particle.MixinParticleManager",
