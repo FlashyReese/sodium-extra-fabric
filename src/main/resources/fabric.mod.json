@@ -40,7 +40,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.14",
-    "fabric": "*",
+    "fabric-api": "*",
     "sodium": ">=0.4.4"
   },
   "breaks": {
