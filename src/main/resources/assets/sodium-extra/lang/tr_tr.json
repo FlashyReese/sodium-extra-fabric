@@ -193,7 +193,7 @@
   "options.particles.minecraft.witch": "Cadı",
   "options.particles.minecraft.witch.tooltip": "Cadı.",
   "sodium-extra.option.advanced_item_tooltips": "Gelişmiş Eşya İpuçları",
-  "sodium-extra.option.advanced_item_tooltips.tooltip": "If enabled, tooltips for items will display the identifier and durability.",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "Etkinleştirilirse, öğeler için araç ipuçları tanımlayıcıyı ve dayanıklılığı görüntüler.",
   "sodium-extra.option.advancement_toast": "Gelişim Bildirim Kutucuğu",
   "sodium-extra.option.advancement_toast.tooltip": "Eğer aktif edilirse, Gelişim bildirimleri gözükecektir.",
   "sodium-extra.option.animate_fire.tooltip": "Ateş animasyonunu aç/kapa",
