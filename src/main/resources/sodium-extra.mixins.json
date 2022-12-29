@@ -8,7 +8,7 @@
     "adaptive_sync.MixinWindow",
     "animation.MixinSpriteAtlasTexture",
     "biome_colors.MixinBiomeColors",
-    "cloud.MixinWorldRenderer",
+    "cloud.MixinSkyPropertiesOverworld",
     "compat.MixinSodiumOptionsGUI",
     "compat.MixinTitleScreen",
     "fog.DimensionOptionsAccessor",
