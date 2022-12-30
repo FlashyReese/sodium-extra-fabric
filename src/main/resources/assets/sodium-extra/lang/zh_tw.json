@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "在玄武岩三角洲生態域中飄散的顆粒。",
   "options.particles.minecraft.witch": "女巫",
   "options.particles.minecraft.witch.tooltip": "女巫產生的粒子",
+  "sodium-extra.option.advanced_item_tooltips": "進階物品提示",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "如果啟用，物品提示將顯示命名空間ID和耐久度。",
   "sodium-extra.option.advancement_toast": "進度彈出提示框",
   "sodium-extra.option.advancement_toast.tooltip": "若啟用，將會顯示進度彈出提示框。",
   "sodium-extra.option.animate_fire.tooltip": "若啟用，將處理火焰的動畫效果。",
