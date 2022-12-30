@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Naturally generated in basalt deltas biome environment.",
   "options.particles.minecraft.witch": "Witch",
   "options.particles.minecraft.witch.tooltip": "Witch.",
+  "sodium-extra.option.advanced_item_tooltips": "Advanced Item Tooltips",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "If enabled, tooltips for items will display the identifier and durability.",
   "sodium-extra.option.advancement_toast": "Advancement Toasts",
   "sodium-extra.option.advancement_toast.tooltip": "If enabled, advancement popups will be displayed.",
   "sodium-extra.option.animate_fire.tooltip": "If enabled, fire animations are processed.",
