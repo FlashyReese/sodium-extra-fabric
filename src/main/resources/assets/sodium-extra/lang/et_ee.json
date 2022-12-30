@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Naturally generated in basalt deltas biome environment.",
   "options.particles.minecraft.witch": "Nõid",
   "options.particles.minecraft.witch.tooltip": "Nõid.",
+  "sodium-extra.option.advanced_item_tooltips": "Advanced Item Tooltips",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "If enabled, tooltips for items will display the identifier and durability.",
   "sodium-extra.option.advancement_toast": "Edasijõudmiste hüpikud",
   "sodium-extra.option.advancement_toast.tooltip": "Lubamisel kuvatakse edasijõudmiste hüpikud.",
   "sodium-extra.option.animate_fire.tooltip": "Lubamisel töödeldakse tuleanimatsioone.",

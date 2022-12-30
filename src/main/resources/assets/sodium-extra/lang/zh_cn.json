@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "在玄武岩三角洲生物群系环境中自然生成。",
   "options.particles.minecraft.witch": "女巫",
   "options.particles.minecraft.witch.tooltip": "女巫产生的粒子",
+  "sodium-extra.option.advanced_item_tooltips": "高级物品信息提示",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "物品的工具提示将会显示ID和耐久值",
   "sodium-extra.option.advancement_toast": "进度弹窗提示",
   "sodium-extra.option.advancement_toast.tooltip": "显示进度的弹窗提示",
   "sodium-extra.option.animate_fire.tooltip": "开启或关闭火焰动画",
