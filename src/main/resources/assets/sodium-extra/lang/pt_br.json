@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Geradas naturalmente no ambiente do bioma de deltas de basalto.",
   "options.particles.minecraft.witch": "Bruxa",
   "options.particles.minecraft.witch.tooltip": "Bruxas.",
+  "sodium-extra.option.advanced_item_tooltips": "Dicas de ferramentas avançadas de itens",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "Se ativado, as dicas de ferramentas para itens exibirão o identificador e a durabilidade.",
   "sodium-extra.option.advancement_toast": "Notificações de progressos",
   "sodium-extra.option.advancement_toast.tooltip": "Exibe as notificações de progressos.",
   "sodium-extra.option.animate_fire.tooltip": "Alterna o processamento da animação do fogo",
