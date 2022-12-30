@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "Generado naturalmente en el medio ambiente bioma del deltas de basalto.",
   "options.particles.minecraft.witch": "Bruja",
   "options.particles.minecraft.witch.tooltip": "Bruja.",
+  "sodium-extra.option.advanced_item_tooltips": "Información sobre herramientas de items avanzados",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "Si está habilitado, la información sobre herramientas de los items mostrará el identificador y la durabilidad.",
   "sodium-extra.option.advancement_toast": "Notificación de avance",
   "sodium-extra.option.advancement_toast.tooltip": "Si está habilitado, se mostrarán ventanas emergentes de avance.",
   "sodium-extra.option.animate_fire.tooltip": "Si está habilitado, se procesan las animaciones de fuego.",

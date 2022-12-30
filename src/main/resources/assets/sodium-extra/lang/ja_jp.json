@@ -192,6 +192,8 @@
   "options.particles.minecraft.white_ash.tooltip": "玄武岩の三角州で自然に発生するパーティクル",
   "options.particles.minecraft.witch": "ウィッチの呪文",
   "options.particles.minecraft.witch.tooltip": "ウィッチがたまにだすパーティクル",
+  "sodium-extra.option.advanced_item_tooltips": "追加のアイテムのツールチップ",
+  "sodium-extra.option.advanced_item_tooltips.tooltip": "有効にした場合、アイテムのツールチップはIDと耐久を表示します。",
   "sodium-extra.option.advancement_toast": "進捗の通知",
   "sodium-extra.option.advancement_toast.tooltip": "有効にした場合、進捗のポップアップは表示されます。",
   "sodium-extra.option.animate_fire.tooltip": "有効にした場合、炎のアニメーションの処理は実行されます。",
