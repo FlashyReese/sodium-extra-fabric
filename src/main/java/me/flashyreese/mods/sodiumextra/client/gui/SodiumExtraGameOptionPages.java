@@ -212,7 +212,7 @@ public class SodiumExtraGameOptionPages {
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
                         .setName(new TranslatableText("sodium-extra.option.fog_start").getString())
                         .setTooltip(new TranslatableText("sodium-extra.option.fog_start.tooltip").getString())
-                        .setControl(option -> new SliderControlExtended(option, 0, 100, 1, ControlValueFormatter.percentage(), false))
+                        .setControl(option -> new SliderControlExtended(option, 20, 100, 1, ControlValueFormatter.percentage(), false))
                         .setBinding((options, value) -> options.renderSettings.fogStart = value, options -> options.renderSettings.fogStart)
                         .build()
                 )
