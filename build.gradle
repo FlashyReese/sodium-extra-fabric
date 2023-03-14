@@ -69,7 +69,7 @@ dependencies {
 
     // Currently using altrisi/CaffeineConfig until it is officially available through CaffeineMC's maven repository
     // Todo: Use https://github.com/CaffeineMC/mixin-config when available
-    include(modImplementation("net.caffeinemc:mixin-config:1.0.0+1.17"))
+    include(modImplementation("net.caffeinemc:CaffeineConfig:1.1.0+1.17"))
     include(modImplementation("de.guntram.mcmod:crowdin-translate:${project.crowdin_translate}"))
 
     modRuntimeOnly "maven.modrinth:lazydfu:0.1.3"
