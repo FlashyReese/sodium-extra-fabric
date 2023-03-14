@@ -24,7 +24,6 @@
     "render.block.entity.MixinBeaconBlockEntityRenderer",
     "render.block.entity.MixinEnchantingTableBlockEntityRenderer",
     "render.block.entity.MixinPistonBlockEntityRenderer",
-    "render.entity.MixinGuardianEntityRenderer",
     "render.entity.MixinItemFrameEntityRenderer",
     "render.entity.MixinLivingEntityRenderer",
     "render.entity.MixinPaintingEntityRenderer",

@@ -47,7 +47,7 @@ public class SuggestRSOScreen extends Screen {
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackgroundTexture(0);
+        this.renderBackground(matrices);
         drawTextWithShadow(matrices, this.textRenderer, HEADER, 25, 30, 0xFFFFFF);
         this.lines.drawWithShadow(matrices, 25, 70, this.textRenderer.fontHeight * 2, 0xFFFFFF);
         super.render(matrices, mouseX, mouseY, delta);
