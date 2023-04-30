@@ -5,8 +5,8 @@ import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,7 +35,7 @@ public abstract class MixinSodiumOptionsGUI extends Screen {
     }
 
     @Inject(method = "renderOptionTooltip", at = @At(value = "HEAD"), cancellable = true)
-    private void renderOptionTooltip(MatrixStack matrixStack, ControlElement<?> element, CallbackInfo ci) {
+    private void renderOptionTooltip(DrawContext drawContext, ControlElement<?> element, CallbackInfo ci) {
         ci.cancel();
     }
 }

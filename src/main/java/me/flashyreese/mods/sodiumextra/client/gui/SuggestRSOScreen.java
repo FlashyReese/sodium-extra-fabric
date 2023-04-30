@@ -2,10 +2,10 @@ package me.flashyreese.mods.sodiumextra.client.gui;
 
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.minecraft.client.font.MultilineText;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.CheckboxWidget;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -46,10 +46,10 @@ public class SuggestRSOScreen extends Screen {
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        this.renderBackground(matrices);
-        drawTextWithShadow(matrices, this.textRenderer, HEADER, 25, 30, 0xFFFFFF);
-        this.lines.drawWithShadow(matrices, 25, 70, this.textRenderer.fontHeight * 2, 0xFFFFFF);
-        super.render(matrices, mouseX, mouseY, delta);
+    public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
+        this.renderBackground(drawContext);
+        drawContext.drawTextWithShadow(this.textRenderer, HEADER, 25, 30, 0XFFFFFF);
+        this.lines.drawWithShadow(drawContext, 25, 70, this.textRenderer.fontHeight * 2, 0xFFFFFF);
+        super.render(drawContext, mouseX, mouseY, delta);
     }
 }

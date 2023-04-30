@@ -4,8 +4,7 @@ import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.flashyreese.mods.sodiumextra.mixin.gui.MinecraftClientAccessor;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
-import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.Vec3d;
 
@@ -14,25 +13,25 @@ public class HudRenderImpl implements HudRenderCallback {
     private final MinecraftClient client = MinecraftClient.getInstance();
 
     @Override
-    public void onHudRender(MatrixStack matrixStack, float tickDelta) {
+    public void onHudRender(DrawContext drawContext, float tickDelta) {
         if (!this.client.options.debugEnabled) {
             //Gotta love hardcoding
             if (SodiumExtraClientMod.options().extraSettings.showFps && SodiumExtraClientMod.options().extraSettings.showCoords) {
-                this.renderFPS(matrixStack);
-                this.renderCoords(matrixStack);
+                this.renderFPS(drawContext);
+                this.renderCoords(drawContext);
             } else if (SodiumExtraClientMod.options().extraSettings.showFps) {
-                this.renderFPS(matrixStack);
+                this.renderFPS(drawContext);
             } else if (SodiumExtraClientMod.options().extraSettings.showCoords) {
-                this.renderCoords(matrixStack);
+                this.renderCoords(drawContext);
             }
             if (!SodiumExtraClientMod.options().renderSettings.lightUpdates) {
-                this.renderLightUpdatesWarning(matrixStack);
+                this.renderLightUpdatesWarning(drawContext);
             }
         }
     }
 
     //Should I make this OOP or just leave as it :> I don't think I will be adding any more than these 2.
-    private void renderFPS(MatrixStack matrices) {
+    private void renderFPS(DrawContext drawContext) {
         int currentFPS = MinecraftClientAccessor.getCurrentFPS();
 
         Text text = Text.translatable("sodium-extra.overlay.fps", currentFPS);
@@ -63,10 +62,10 @@ public class HudRenderImpl implements HudRenderCallback {
                     throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.drawString(matrices, text, x, y);
+        this.drawString(drawContext, text, x, y);
     }
 
-    private void renderCoords(MatrixStack matrices) {
+    private void renderCoords(DrawContext drawContext) {
         if (this.client.player == null) return;
         if (this.client.hasReducedDebugInfo()) return;
         Vec3d pos = this.client.player.getPos();
@@ -95,10 +94,10 @@ public class HudRenderImpl implements HudRenderCallback {
                     throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.drawString(matrices, text, x, y);
+        this.drawString(drawContext, text, x, y);
     }
 
-    private void renderLightUpdatesWarning(MatrixStack matrices) {
+    private void renderLightUpdatesWarning(DrawContext drawContext) {
         Text text = Text.translatable("sodium-extra.overlay.light_updates");
 
         int x, y;
@@ -123,17 +122,17 @@ public class HudRenderImpl implements HudRenderCallback {
                     throw new IllegalStateException("Unexpected value: " + SodiumExtraClientMod.options().extraSettings.overlayCorner);
         }
 
-        this.drawString(matrices, text, x, y);
+        this.drawString(drawContext, text, x, y);
     }
 
-    private void drawString(MatrixStack matrices, Text text, int x, int y) {
+    private void drawString(DrawContext drawContext, Text text, int x, int y) {
         if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.NONE) {
-            this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+            drawContext.drawText(this.client.textRenderer, text, x, y, 0xffffffff, false);
         } else if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.BACKGROUND) {
-            DrawableHelper.fill(matrices, x - 1, y - 1, x + this.client.textRenderer.getWidth(text) + 1, y + this.client.textRenderer.fontHeight, -1873784752);
-            this.client.textRenderer.draw(matrices, text, x, y, 0xffffffff);
+            drawContext.fill(x - 1, y - 1, x + this.client.textRenderer.getWidth(text) + 1, y + this.client.textRenderer.fontHeight, -1873784752);
+            drawContext.drawText(this.client.textRenderer, text, x, y, 0xffffffff, false);
         } else if (SodiumExtraClientMod.options().extraSettings.textContrast == SodiumExtraGameOptions.TextContrast.SHADOW) {
-            this.client.textRenderer.drawWithShadow(matrices, text, x, y, 0xffffffff);
+            drawContext.drawText(this.client.textRenderer, text, x, y, 0xffffffff, true);
         }
     }
 }

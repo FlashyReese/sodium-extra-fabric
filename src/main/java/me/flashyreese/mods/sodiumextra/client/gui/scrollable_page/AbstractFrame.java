@@ -5,10 +5,10 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
 import me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.gui.Element;
 import net.minecraft.client.gui.ParentElement;
-import net.minecraft.client.util.math.MatrixStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -41,9 +41,9 @@ public abstract class AbstractFrame extends AbstractWidget implements ParentElem
     }
 
     @Override
-    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+    public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
         for (Drawable drawable : this.drawable) {
-            drawable.render(matrices, mouseX, mouseY, delta);
+            drawable.render(drawContext, mouseX, mouseY, delta);
         }
     }
 
