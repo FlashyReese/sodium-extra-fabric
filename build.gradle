@@ -12,7 +12,7 @@ buildscript {
 
 plugins {
     id 'signing'
-    id 'fabric-loom' version '1.1-SNAPSHOT'
+    id 'fabric-loom' version '1.2-SNAPSHOT'
     id 'maven-publish'
     id 'io.github.juuxel.loom-quiltflower' version '1.8.0'
 }
@@ -61,6 +61,7 @@ dependencies {
     modImplementation "maven.modrinth:sodium:${project.sodium_version}"
     modImplementation("me.flashyreese.mods:reeses-sodium-options:${project.reeses_sodium_options}") {
         exclude group: "net.coderbot.iris_mc1_19", module: "iris"
+        exclude group: "maven.modrinth", module: "iris"
     }
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
@@ -72,7 +73,7 @@ dependencies {
     include(modImplementation("net.caffeinemc:CaffeineConfig:1.1.0+1.17"))
     include(modImplementation("de.guntram.mcmod:crowdin-translate:${project.crowdin_translate}"))
 
-    modRuntimeOnly "maven.modrinth:lazydfu:0.1.3"
+    //modRuntimeOnly "maven.modrinth:lazydfu:0.1.3"
 }
 
 processResources {
