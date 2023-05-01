@@ -41,7 +41,7 @@
   "depends": {
     "fabricloader": ">=0.14",
     "fabric-api": "*",
-    "sodium": ">=0.4.10"
+    "sodium": ">=0.4.11"
   },
   "breaks": {
     "reeses-sodium-options": "<1.4.2"
