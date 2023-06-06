@@ -30,7 +30,7 @@
     "sky.MixinWorldRenderer",
     "sky_colors.MixinBiome",
     "sodium.accessibility.MixinSodiumGameOptionPages",
-    "sodium.biome_blend.MixinBiomeColorBlender",
+    "sodium.biome_blend.MixinChunkRenderCache",
     "sodium.resolution.MixinSodiumGameOptionPages",
     "sodium.scrollable_page.MixinSodiumOptionsGUI",
     "sodium.vsync.MixinSodiumGameOptionsPages",

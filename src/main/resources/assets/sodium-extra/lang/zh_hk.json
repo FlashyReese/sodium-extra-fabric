@@ -155,7 +155,7 @@
   "options.particles.minecraft.small_flame": "小火焰",
   "options.particles.minecraft.small_flame.tooltip": "小火焰。",
   "options.particles.minecraft.smoke": "烟",
-  "options.particles.minecraft.smoke.tooltip": "火把、点燃的 TNT、漏斗、发射器、末地传送门、酿造台、刷怪笼、熔炉、恶魂火球、凋灵之首、驯服、凋灵、熔岩（下雨时）、在末地传送门框架中放置末影之眼、红石火把熄灭 ，营火上的食物。",
+  "options.particles.minecraft.smoke.tooltip": "火把、点燃的 TNT、漏斗、发射器、末地传送门、酿造台、刷怪笼、熔炉、恶魂火球、凋灵之首、驯服、凋灵、熔岩（下雨时）、在末地传送门上放置末影之眼、红石火把熄灭 ，营火上的食物。",
   "options.particles.minecraft.sneeze": "喷嚏",
   "options.particles.minecraft.sneeze.tooltip": "幼年熊猫的喷嚏粒子。",
   "options.particles.minecraft.snowflake": "雪花",
