@@ -28,4 +28,8 @@ public interface ControlValueFormatterExtended extends ControlValueFormatter {
             }
         };
     }
+
+    static ControlValueFormatter ticks() {
+        return (v) -> Text.translatable("sodium-extra.units.ticks", v).getString();
+    }
 }

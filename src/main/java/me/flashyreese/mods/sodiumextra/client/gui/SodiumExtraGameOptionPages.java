@@ -460,6 +460,22 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .build());
+        groups.add(OptionGroup.createBuilder()
+                .add(OptionImpl.createBuilder(boolean.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.steady_debug_hud"))
+                        .setTooltip(Text.translatable("sodium-extra.option.steady_debug_hud.tooltip"))
+                        .setControl(TickBoxControl::new)
+                        .setBinding((options, value) -> options.extraSettings.steadyDebugHud = value, options -> options.extraSettings.steadyDebugHud)
+                        .build()
+                )
+                .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
+                        .setName(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_rate"))
+                        .setTooltip(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_rate.tooltip"))
+                        .setControl(option -> new SliderControlExtended(option, 1, 20, 1, ControlValueFormatterExtended.ticks(), false))
+                        .setBinding((options, value) -> options.extraSettings.steadyDebugHudRefreshRate = value, options -> options.extraSettings.steadyDebugHudRefreshRate)
+                        .build()
+                )
+                .build());
 
         return new OptionPage(Text.translatable("sodium-extra.option.extras"), ImmutableList.copyOf(groups));
     }

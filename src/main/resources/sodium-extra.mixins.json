@@ -35,6 +35,7 @@
     "sodium.scrollable_page.MixinSodiumOptionsGUI",
     "sodium.vsync.MixinSodiumGameOptionsPages",
     "stars.MixinWorldRenderer",
+    "steady_debug_hud.MixinDebugHud",
     "sun_moon.MixinWorldRenderer",
     "toasts.MixinToastManager",
     "toasts.MixinAdvancementToast",

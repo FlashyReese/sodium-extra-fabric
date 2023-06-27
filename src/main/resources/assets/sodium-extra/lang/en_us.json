@@ -273,6 +273,10 @@
   "sodium-extra.option.sky_colors.tooltip": "If enabled, sky colors are changed based on the biome.",
   "sodium-extra.option.stars": "Stars",
   "sodium-extra.option.stars.tooltip": "If enabled, the stars will be rendered.",
+  "sodium-extra.option.steady_debug_hud": "Steady Debug Hud",
+  "sodium-extra.option.steady_debug_hud.tooltip": "If enabled, the debug hud will be refreshed at a certain amount of ticks configured by the Steady Debug Hud Refresh Rate.",
+  "sodium-extra.option.steady_debug_hud_refresh_rate": "Steady Debug Hud Refresh Rate",
+  "sodium-extra.option.steady_debug_hud_refresh_rate.tooltip": "Adjusts the rate of when the debug hud will be refreshed in ticks.",
   "sodium-extra.option.sun_moon": "Sun & Moon",
   "sodium-extra.option.sun_moon.tooltip": "If enabled, the sun and moon will be rendered.",
   "sodium-extra.option.system_toast": "System Toasts",
@@ -295,5 +299,6 @@
   "sodium-extra.overlay.fps_extended": "(max. %s / avg. %s / min. %s)",
   "sodium-extra.overlay.light_updates": "Light updates disabled",
   "sodium-extra.suggestRSO.header": "Suggestion: Install Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "It is highly recommended you install Reese's Sodium Options alongside Sodium Extra. Due to the growing amount of features, it no longer fits properly on Sodium's video options."
+  "sodium-extra.suggestRSO.message": "It is highly recommended you install Reese's Sodium Options alongside Sodium Extra. Due to the growing amount of features, it no longer fits properly on Sodium's video options.",
+  "sodium-extra.units.ticks": "%s tick(s)"
 }
