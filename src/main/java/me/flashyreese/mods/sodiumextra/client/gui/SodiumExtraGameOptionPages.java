@@ -469,10 +469,10 @@ public class SodiumExtraGameOptionPages {
                         .build()
                 )
                 .add(OptionImpl.createBuilder(int.class, sodiumExtraOpts)
-                        .setName(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_rate"))
-                        .setTooltip(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_rate.tooltip"))
+                        .setName(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_interval"))
+                        .setTooltip(Text.translatable("sodium-extra.option.steady_debug_hud_refresh_interval.tooltip"))
                         .setControl(option -> new SliderControlExtended(option, 1, 20, 1, ControlValueFormatterExtended.ticks(), false))
-                        .setBinding((options, value) -> options.extraSettings.steadyDebugHudRefreshRate = value, options -> options.extraSettings.steadyDebugHudRefreshRate)
+                        .setBinding((options, value) -> options.extraSettings.steadyDebugHudRefreshInterval = value, options -> options.extraSettings.steadyDebugHudRefreshInterval)
                         .build()
                 )
                 .build());

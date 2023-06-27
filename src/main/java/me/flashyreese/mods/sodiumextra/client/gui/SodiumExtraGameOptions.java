@@ -253,7 +253,7 @@ public class SodiumExtraGameOptions {
         public boolean instantSneak;
         public boolean preventShaders;
         public boolean steadyDebugHud;
-        public int steadyDebugHudRefreshRate;
+        public int steadyDebugHudRefreshInterval;
 
         public ExtraSettings() {
             this.overlayCorner = OverlayCorner.TOP_LEFT;
@@ -272,7 +272,7 @@ public class SodiumExtraGameOptions {
             this.instantSneak = false;
             this.preventShaders = false;
             this.steadyDebugHud = true;
-            this.steadyDebugHudRefreshRate = 1;
+            this.steadyDebugHudRefreshInterval = 1;
         }
     }
 

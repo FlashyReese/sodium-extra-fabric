@@ -36,7 +36,7 @@ public abstract class MixinDebugHud {
             final long currentTime = Util.getMeasuringTimeMs();
             if (currentTime > this.nextTime) {
                 this.rebuild = true;
-                this.nextTime = currentTime + (SodiumExtraClientMod.options().extraSettings.steadyDebugHudRefreshRate * 50L);
+                this.nextTime = currentTime + (SodiumExtraClientMod.options().extraSettings.steadyDebugHudRefreshInterval * 50L);
             } else {
                 this.rebuild = false;
             }
@@ -44,7 +44,6 @@ public abstract class MixinDebugHud {
             this.rebuild = true;
         }
     }
-
 
     @Redirect(method = "drawLeftText", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/DebugHud;drawText(Lnet/minecraft/client/gui/DrawContext;Ljava/util/List;Z)V"))
     public void sodiumExtra$redirectDrawLeftText(DebugHud instance, DrawContext context, List<String> text, boolean left) {
