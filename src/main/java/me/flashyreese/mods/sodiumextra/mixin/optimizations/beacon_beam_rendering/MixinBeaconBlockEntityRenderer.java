@@ -65,24 +65,32 @@ public class MixinBeaconBlockEntityRenderer {
         float v1 = (float) maxY * heightScale * (0.5F / innerRadius) + v2;
 
         int color1 = ColorABGR.pack(red, green, blue, 1.0F);
-        writeBeamLayerVertices(matrices, noneTranslucent, color1, yOffset, height, 0.0F, innerRadius, innerRadius, 0.0F, x3, 0.0F, 0.0F, z4, v1, v2);
-
-        matrices.pop();
-        x1 = -outerRadius;
-        float z1 = -outerRadius;
-        z2 = -outerRadius;
-        x3 = -outerRadius;
-        v2 = -1.0F + h;
-        v1 = (float) maxY * heightScale + v2;
-
         int color2 = ColorABGR.pack(red, green, blue, 0.125F);
-        writeBeamLayerVertices(matrices, translucent, color2, yOffset, height, x1, z1, outerRadius, z2, x3, outerRadius, outerRadius, outerRadius, v1, v2);
+
+
+        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+            long buffer = stack.nmalloc(2 * 16 * ModelVertex.STRIDE);
+            long ptr = buffer;
+            ptr = writeBeamLayerVertices(ptr, matrices, color1, yOffset, height, 0.0F, innerRadius, innerRadius, 0.0F, x3, 0.0F, 0.0F, z4, v1, v2);
+            noneTranslucent.push(stack, buffer, 16, ModelVertex.FORMAT);
+
+            matrices.pop();
+            x1 = -outerRadius;
+            float z1 = -outerRadius;
+            z2 = -outerRadius;
+            x3 = -outerRadius;
+            v2 = -1.0F + h;
+            v1 = (float) maxY * heightScale + v2;
+
+            ptr = writeBeamLayerVertices(ptr, matrices, color2, yOffset, height, x1, z1, outerRadius, z2, x3, outerRadius, outerRadius, outerRadius, v1, v2);
+            translucent.push(stack, buffer, 16, ModelVertex.FORMAT);
+        }
         matrices.pop();
     }
 
-    private static void writeBeamLayerVertices(
+    private static long writeBeamLayerVertices(
+            long ptr,
             MatrixStack matrices,
-            VertexBufferWriter writer,
             int color,
             int yOffset,
             int height,
@@ -97,64 +105,58 @@ public class MixinBeaconBlockEntityRenderer {
         // The packed transformed normal vector
         var normal = MatrixHelper.transformNormal(matrix3f, (float) 0.0, (float) 1.0, (float) 0.0);
 
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
-            long buffer = stack.nmalloc(16 * ModelVertex.STRIDE);
-            long ptr = buffer;
+        // section
+        transformWrite(ptr, matrix4f, x1, height, z1, color, 1.0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            // section
-            transformWrite(ptr, matrix4f, x1, height, z1, color, 1.0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x1, yOffset, z1, color, 1.0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x1, yOffset, z1, color, 1.0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x2, yOffset, z2, color, 0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x2, yOffset, z2, color, 0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x2, height, z2, color, 0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x2, height, z2, color, 0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        // section
+        transformWrite(ptr, matrix4f, x4, height, z4, color, 1.0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            // section
-            transformWrite(ptr, matrix4f, x4, height, z4, color, 1.0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x4, yOffset, z4, color, 1.0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x4, yOffset, z4, color, 1.0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x3, yOffset, z3, color, 0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x3, yOffset, z3, color, 0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x3, height, z3, color, 0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x3, height, z3, color, 0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        // section
+        transformWrite(ptr, matrix4f, x2, height, z2, color, 1.0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            // section
-            transformWrite(ptr, matrix4f, x2, height, z2, color, 1.0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x2, yOffset, z2, color, 1.0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x2, yOffset, z2, color, 1.0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x4, yOffset, z4, color, 0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x4, yOffset, z4, color, 0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x4, height, z4, color, 0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x4, height, z4, color, 0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        // section
+        transformWrite(ptr, matrix4f, x3, height, z3, color, 1.0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
 
-            // section
-            transformWrite(ptr, matrix4f, x3, height, z3, color, 1.0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x3, yOffset, z3, color, 1.0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x3, yOffset, z3, color, 1.0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
+        transformWrite(ptr, matrix4f, x1, yOffset, z1, color, 0f, v2, normal);
+        ptr += ModelVertex.STRIDE;
 
-            transformWrite(ptr, matrix4f, x1, yOffset, z1, color, 0f, v2, normal);
-            ptr += ModelVertex.STRIDE;
-
-            transformWrite(ptr, matrix4f, x1, height, z1, color, 0f, v1, normal);
-            ptr += ModelVertex.STRIDE;
-
-            writer.push(stack, buffer, 16, ModelVertex.FORMAT);
-        }
+        transformWrite(ptr, matrix4f, x1, height, z1, color, 0f, v1, normal);
+        ptr += ModelVertex.STRIDE;
+        return ptr;
     }
 
     private static void transformWrite(long ptr, Matrix4f matPosition, float x, float y, float z, int color, float u, float v, int normal) {
