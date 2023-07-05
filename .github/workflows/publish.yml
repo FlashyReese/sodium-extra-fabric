@@ -6,7 +6,8 @@ on:
       - published
 
 jobs:
-  build:
+  publish:
+    if: github.repository_owner == 'FlashyReese'
     runs-on: self-hosted
     steps:
       - name: Checkout Repository

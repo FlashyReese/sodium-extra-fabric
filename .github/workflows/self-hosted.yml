@@ -3,7 +3,8 @@ name: Self-Hosted runner CI with Gradle
 on: [ push ]
 
 jobs:
-  build:
+  selfhost-build:
+    if: github.repository_owner == 'FlashyReese'
     runs-on: self-hosted
 
     steps:
