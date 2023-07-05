@@ -16,6 +16,7 @@
     "gui.MinecraftClientAccessor",
     "instant_sneak.MixinCamera",
     "light_updates.MixinLightingProvider",
+    "optimizations.beacon_beam_rendering.MixinBeaconBlockEntityRenderer",
     "particle.MixinParticleManager",
     "particle.MixinWorldRenderer",
     "particle.MixinFireworkParticle",
