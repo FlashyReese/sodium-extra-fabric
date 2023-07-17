@@ -50,7 +50,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
                     .addMixinOption("instant_sneak", true)
                     .addMixinOption("light_updates", true)
                     .addMixinOption("optimizations", true)
-                    .addMixinOption("optimizations.beacon_beam_rendering", !FabricLoader.getInstance().isModLoaded("iris")) // See #133, we disable this when Iris is detected
+                    .addMixinOption("optimizations.beacon_beam_rendering", true)
                     .addMixinOption("particle", true)
                     .addMixinOption("prevent_shaders", true)
                     .addMixinOption("reduce_resolution_on_mac", true)

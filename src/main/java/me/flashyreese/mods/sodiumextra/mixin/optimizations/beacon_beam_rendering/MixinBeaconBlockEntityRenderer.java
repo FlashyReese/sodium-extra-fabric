@@ -1,5 +1,6 @@
 package me.flashyreese.mods.sodiumextra.mixin.optimizations.beacon_beam_rendering;
 
+import me.flashyreese.mods.sodiumextra.compat.IrisCompat;
 import me.jellysquid.mods.sodium.client.render.RenderGlobal;
 import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
 import me.jellysquid.mods.sodium.client.render.vertex.formats.ModelVertex;
@@ -32,6 +33,12 @@ public class MixinBeaconBlockEntityRenderer {
      */
     @Overwrite
     public static void renderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius) {
+        if (IrisCompat.isIrisPresent()) {
+            if (IrisCompat.isRenderingShadowPass()) {
+                return;
+            }
+        }
+
         int height = yOffset + maxY;
         matrices.push();
         matrices.translate(0.5, 0.0, 0.5);
