@@ -8,8 +8,6 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import me.jellysquid.mods.sodium.client.gui.options.TextProvider;
-import net.caffeinemc.caffeineconfig.CaffeineConfig;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
@@ -29,45 +27,6 @@ public class SodiumExtraGameOptions {
             .setPrettyPrinting()
             .excludeFieldsWithModifiers(Modifier.PRIVATE)
             .create();
-
-    private final CaffeineConfig mixinConfig = CaffeineConfig.builder("Sodium Extra").withSettingsKey("sodium-extra:options")
-            .addMixinOption("adaptive_sync", true)
-            .addMixinOption("animation", true)
-            .addMixinOption("biome_colors", true)
-            .addMixinOption("cloud", true)
-            .addMixinOption("compat", true, false)
-            .addMixinOption("fog", true)
-            .addMixinOption("fog_falloff", true)
-            .addMixinOption("gui", true)
-            .addMixinOption("instant_sneak", true)
-            .addMixinOption("light_updates", true)
-            .addMixinOption("optimizations", true)
-            .addMixinOption("optimizations.beacon_beam_rendering", true)
-            .addMixinOption("particle", true)
-            .addMixinOption("prevent_shaders", true)
-            .addMixinOption("reduce_resolution_on_mac", true)
-            .addMixinOption("render", true)
-            .addMixinOption("render.block", true)
-            .addMixinOption("render.block.entity", true)
-            .addMixinOption("render.entity", true)
-            .addMixinOption("sky", true)
-            .addMixinOption("sky_colors", true)
-            .addMixinOption("sodium", true)
-            .addMixinOption("sodium.accessibility", true)
-            .addMixinOption("sodium.biome_blend", true)
-            .addMixinOption("sodium.resolution", true)
-            .addMixinOption("sodium.scrollable_page", true)
-            .addMixinOption("sodium.vsync", true)
-            .addMixinOption("stars", true)
-            .addMixinOption("steady_debug_hud", true)
-            .addMixinOption("sun_moon", true)
-            .addMixinOption("toasts", true)
-
-            .withLogger(SodiumExtraClientMod.logger())
-            .withInfoUrl("https://github.com/FlashyReese/sodium-extra-fabric/wiki/Configuration-File")
-            .build(FabricLoader.getInstance().getConfigDir().resolve("sodium-extra.properties"));
-
-
     public final AnimationSettings animationSettings = new AnimationSettings();
     public final ParticleSettings particleSettings = new ParticleSettings();
     public final DetailSettings detailSettings = new DetailSettings();
@@ -123,10 +82,6 @@ public class SodiumExtraGameOptions {
 
     public void setSuggestedRSO(boolean suggestedRSO) {
         this.suggestedRSO = suggestedRSO;
-    }
-
-    public CaffeineConfig getMixinConfig() {
-        return mixinConfig;
     }
 
     public enum OverlayCorner implements TextProvider {
