@@ -19,7 +19,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build
-      - name: Upload Auild Artifacts
+      - name: Upload Build Artifacts
         uses: actions/upload-artifact@v3
         with:
           name: 'Sodium Extra Artifacts'
