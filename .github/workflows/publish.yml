@@ -38,7 +38,6 @@ jobs:
 
           version-type: release
           loaders: fabric
-          version-resolver: latest
           dependencies: |
             sodium | depends | *
             fabric-api | depends | *
