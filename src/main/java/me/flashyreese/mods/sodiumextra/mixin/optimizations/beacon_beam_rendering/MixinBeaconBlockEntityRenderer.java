@@ -67,6 +67,7 @@ public class MixinBeaconBlockEntityRenderer {
             innerV2 = -1.0F + fractionalPart;
             innerV1 = (float) maxY * heightScale + innerV2;
 
+            buffer = ptr;
             ptr = writeBeamLayerVertices(ptr, matrices, colorTranslucent, yOffset, height, innerX1, outerZ1, outerRadius, innerZ2, innerX3, outerRadius, outerRadius, outerRadius, innerV1, innerV2);
             VertexBufferWriter.of(vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(textureId, true))).push(stack, buffer, 16, ModelVertex.FORMAT);
         }
