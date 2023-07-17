@@ -21,6 +21,8 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("gui", true)
                 .addMixinOption("instant_sneak", true)
                 .addMixinOption("light_updates", true)
+                .addMixinOption("optimizations", true)
+                .addMixinOption("optimizations.beacon_beam_rendering", true)
                 .addMixinOption("particle", true)
                 .addMixinOption("prevent_shaders", true)
                 .addMixinOption("reduce_resolution_on_mac", true)
@@ -37,6 +39,7 @@ public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlu
                 .addMixinOption("sodium.scrollable_page", true)
                 .addMixinOption("sodium.vsync", true)
                 .addMixinOption("stars", true)
+                .addMixinOption("steady_debug_hud", true)
                 .addMixinOption("sun_moon", true)
                 .addMixinOption("toasts", true)
 

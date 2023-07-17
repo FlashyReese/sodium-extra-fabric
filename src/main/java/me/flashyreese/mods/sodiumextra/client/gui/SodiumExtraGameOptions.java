@@ -252,6 +252,8 @@ public class SodiumExtraGameOptions {
         public boolean tutorialToast;
         public boolean instantSneak;
         public boolean preventShaders;
+        public boolean steadyDebugHud;
+        public int steadyDebugHudRefreshInterval;
 
         public ExtraSettings() {
             this.overlayCorner = OverlayCorner.TOP_LEFT;
@@ -259,7 +261,7 @@ public class SodiumExtraGameOptions {
             this.showFps = false;
             this.showFPSExtended = true;
             this.showCoords = false;
-            this.reduceResolutionOnMac = true;
+            this.reduceResolutionOnMac = false;
             this.useAdaptiveSync = false;
             this.cloudHeight = 192;
             this.toasts = true;
@@ -269,6 +271,8 @@ public class SodiumExtraGameOptions {
             this.tutorialToast = true;
             this.instantSneak = false;
             this.preventShaders = false;
+            this.steadyDebugHud = true;
+            this.steadyDebugHudRefreshInterval = 1;
         }
     }
 
