@@ -1,8 +1,8 @@
 package me.flashyreese.mods.sodiumextra.mixin;
 
+import me.flashyreese.mods.sodiumextra.client.SodiumExtraClientMod;
 import net.caffeinemc.caffeineconfig.AbstractCaffeineConfigMixinPlugin;
 import net.caffeinemc.caffeineconfig.CaffeineConfig;
-import net.fabricmc.loader.api.FabricLoader;
 
 public class SodiumExtraMixinConfigPlugin extends AbstractCaffeineConfigMixinPlugin {
 
