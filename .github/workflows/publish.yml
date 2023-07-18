@@ -8,7 +8,7 @@ on:
 jobs:
   publish:
     if: github.repository_owner == 'FlashyReese'
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -38,6 +38,7 @@ jobs:
 
           version-type: release
           loaders: fabric
+          game-version-filter: releases
           dependencies: |
             sodium | depends | *
             fabric-api | depends | *
