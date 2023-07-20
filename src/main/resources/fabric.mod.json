@@ -16,6 +16,7 @@
     "Madis0"
   ],
   "contact": {
+    "homepage": "https://modrinth.com/mod/sodium-extra",
     "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
     "issues": "https://github.com/FlashyReese/sodium-extra-fabric/issues"
   },
@@ -31,6 +32,9 @@
     "modmenu": {
       "parent": {
         "id": "sodium"
+      },
+      "links": {
+        "modmenu.discord": "https://discord.gg/MPHVG6MH4e"
       }
     }
   },
