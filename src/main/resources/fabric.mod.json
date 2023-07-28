@@ -34,7 +34,13 @@
         "id": "sodium"
       },
       "links": {
-        "modmenu.discord": "https://discord.gg/MPHVG6MH4e"
+        "modmenu.crowdin": "https://crowdin.com/project/sodium-extra",
+        "modmenu.curseforge": "https://curseforge.com/minecraft/mc-mods/sodium-extra",
+        "modmenu.discord": "https://discord.gg/MPHVG6MH4e",
+        "modmenu.donate": "https://ko-fi.com/flashyreese",
+        "modmenu.github_releases": "https://github.com/FlashyReese/sodium-extra-fabric/releases",
+        "modmenu.kofi": "https://ko-fi.com/flashyreese",
+        "modmenu.modrinth": "https://modrinth.com/mod/sodium-extra"
       }
     }
   },
