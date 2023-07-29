@@ -291,5 +291,7 @@
   "sodium-extra.overlay.fps_extended": "(макс. %s / сред. %s / мин. %s)",
   "sodium-extra.overlay.light_updates": "Обновления света отключены",
   "sodium-extra.suggestRSO.header": "Совет: установите Reese's Sodium Options",
-  "sodium-extra.suggestRSO.message": "Крайне рекомендуется использовать Reese's Sodium Options совместно с Sodium Extra. Из-за возрастающего количества функций его элементы не умещаются должным образом в обычном окне настроек графики Sodium."
+  "sodium-extra.suggestRSO.message": "Крайне рекомендуется использовать Reese's Sodium Options совместно с Sodium Extra. Из-за возрастающего количества функций его элементы не умещаются должным образом в обычном окне настроек графики Sodium.",
+  "modmenu.summaryTranslation.sodium-extra": "Функции, выходящие за рамки Sodium.",
+  "modmenu.descriptionTranslation.sodium-extra": "Sodium Extra стремится восполнить нехватку настроек персонализации графики из OptiFine, дополняя их исправлениями графических ошибок и прочими настройками производительности, которых пока нет в Sodium."
 }
