@@ -300,5 +300,7 @@
   "sodium-extra.overlay.light_updates": "Light updates disabled",
   "sodium-extra.suggestRSO.header": "Suggestion: Install Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "It is highly recommended you install Reese's Sodium Options alongside Sodium Extra. Due to the growing amount of features, it no longer fits properly on Sodium's video options.",
-  "sodium-extra.units.ticks": "%s tick(s)"
+  "sodium-extra.units.ticks": "%s tick(s)",
+  "modmenu.summaryTranslation.sodium-extra": "Features that shouldn't be in Sodium.",
+  "modmenu.descriptionTranslation.sodium-extra": "Sodium Extra aims to bring most of OptiFine's eye-candy options to Sodium; in addition to providing some features such as visual bug fixes and other performance options that are not yet available on Sodium."
 }
