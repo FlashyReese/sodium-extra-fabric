@@ -173,7 +173,7 @@ public abstract class MixinDrawContext {
             TextureColorVertex.write(ptr, matrix4f, x2, y2, z, color, u2, v2);
             ptr += TextureColorVertex.STRIDE;
 
-            TextureColorVertex.write(ptr, matrix4f, x2, y1, z, color, u2, v2);
+            TextureColorVertex.write(ptr, matrix4f, x2, y1, z, color, u2, v1);
             ptr += TextureColorVertex.STRIDE;
 
             writer.push(stack, buffer, 4, TextureColorVertex.FORMAT);
