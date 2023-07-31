@@ -1,12 +1,13 @@
 package me.flashyreese.mods.sodiumextra.client;
 
 import de.guntram.mcmod.crowdintranslate.CrowdinTranslate;
-import me.flashyreese.mods.sodiumextra.client.gui.HudRenderImpl;
+import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraHud;
 import me.flashyreese.mods.sodiumextra.client.gui.SodiumExtraGameOptions;
 import net.caffeinemc.caffeineconfig.CaffeineConfig;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
@@ -50,7 +51,8 @@ public class SodiumExtraClientMod implements ClientModInitializer {
                     .addMixinOption("instant_sneak", true)
                     .addMixinOption("light_updates", true)
                     .addMixinOption("optimizations", true)
-                    .addMixinOption("optimizations.beacon_beam_rendering", !FabricLoader.getInstance().isModLoaded("iris")) // See #133, we disable this when Iris is detected
+                    .addMixinOption("optimizations.beacon_beam_rendering", true)
+                    .addMixinOption("optimizations.draw_helpers", true)
                     .addMixinOption("particle", true)
                     .addMixinOption("prevent_shaders", true)
                     .addMixinOption("reduce_resolution_on_mac", true)
@@ -96,6 +98,8 @@ public class SodiumExtraClientMod implements ClientModInitializer {
         }
 
         getClientTickHandler().onClientInitialize();
-        HudRenderCallback.EVENT.register(new HudRenderImpl());
+        SodiumExtraHud sodiumExtraHud = new SodiumExtraHud();
+        HudRenderCallback.EVENT.register(sodiumExtraHud);
+        ClientTickEvents.START_CLIENT_TICK.register(sodiumExtraHud);
     }
 }

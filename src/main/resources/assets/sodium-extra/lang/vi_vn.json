@@ -300,5 +300,7 @@
   "sodium-extra.overlay.light_updates": "Cập nhật chiếu sáng bị tắt",
   "sodium-extra.suggestRSO.header": "Gợi ý: Nên cài đặt Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "Bạn nên cài đặt Reese's Sodium Options cùng với Sodium Extra. Do các tính năng ngày một nhiều lên, các tùy chọn không còn vừa với cài đặt hình ảnh mặc định của Sodium nữa.",
-  "sodium-extra.units.ticks": "%s nhịp"
+  "sodium-extra.units.ticks": "%s nhịp",
+  "modmenu.summaryTranslation.sodium-extra": "Các tính năng không sẵn có trong Sodium.",
+  "modmenu.descriptionTranslation.sodium-extra": "Mục tiêu của Sodium Extra là mang hầu hết các tùy chọn bắt mắt đến Sodium; cũng như bổ sung một số tính năng, chẳng hạn như sửa các lỗi trực quan cùng các tinh chỉnh hiệu năng khác chưa có trong Sodium."
 }

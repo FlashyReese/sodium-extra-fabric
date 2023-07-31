@@ -300,5 +300,7 @@
   "sodium-extra.overlay.light_updates": "Aktualizace světel zakázány",
   "sodium-extra.suggestRSO.header": "Návrh: Nainstalujte Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "Je velmi doporučeno nainstalovat Reese's Sodium Options společně se Sodium Extra. Kvůli rostoucímu množství funkcí, již nezapadají do možností Sodium.",
-  "sodium-extra.units.ticks": "%s tik(ů)"
+  "sodium-extra.units.ticks": "%s tik(ů)",
+  "modmenu.summaryTranslation.sodium-extra": "Funkce, které by neměly být v Sodiu.",
+  "modmenu.descriptionTranslation.sodium-extra": "Sodium Extra si klade za cíl přenést většinu vnímatelných možností z OptiFine do Sodia; navíc poskytuje další funkce, jako jsou vizuální opravy chyb a jiné možnosti zvýšení výkonu, které zatím nejsou dostupné v Sodiu."
 }
