@@ -300,5 +300,7 @@
   "sodium-extra.overlay.light_updates": "Aktualizacje oświetlenia wyłączone",
   "sodium-extra.suggestRSO.header": "Sugestia: Zainstaluj Reese's Sodium Options",
   "sodium-extra.suggestRSO.message": "Wysoce rekomendowane jest zainstalowanie moda Reese's Sodium Options wraz z Sodium Extra. Przez ciągle zwiększającą się liczbę funkcji, opcje nie mieszczą się na ekranie ustawień Sodium.",
-  "sodium-extra.units.ticks": "%s tick(ów)"
+  "sodium-extra.units.ticks": "%s tick(ów)",
+  "modmenu.summaryTranslation.sodium-extra": "Funkcje, których nie powinno być w Sodium.",
+  "modmenu.descriptionTranslation.sodium-extra": "Sodium Extra ma na celu przeniesienie większości atrakcyjnych opcji OptiFine do Sodium, oprócz niektórych funkcji, takich jak wizualne poprawki błędów i inne opcje wydajności, które nie są jeszcze dostępne w Sodium."
 }
