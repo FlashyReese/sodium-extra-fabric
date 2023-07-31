@@ -52,6 +52,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
                     .addMixinOption("light_updates", true)
                     .addMixinOption("optimizations", true)
                     .addMixinOption("optimizations.beacon_beam_rendering", true)
+                    .addMixinOption("optimizations.draw_helpers", true)
                     .addMixinOption("particle", true)
                     .addMixinOption("prevent_shaders", true)
                     .addMixinOption("reduce_resolution_on_mac", true)
