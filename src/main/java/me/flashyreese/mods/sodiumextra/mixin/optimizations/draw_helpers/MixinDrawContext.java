@@ -4,9 +4,9 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import me.flashyreese.mods.sodiumextra.client.render.vertex.formats.TextureColorVertex;
 import me.flashyreese.mods.sodiumextra.client.render.vertex.formats.TextureVertex;
 import me.flashyreese.mods.sodiumextra.common.util.ColorRGBA;
-import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
-import me.jellysquid.mods.sodium.client.render.vertex.formats.ColorVertex;
-import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
+import net.caffeinemc.mods.sodium.api.util.ColorABGR;
+import net.caffeinemc.mods.sodium.api.vertex.buffer.VertexBufferWriter;
+import net.caffeinemc.mods.sodium.api.vertex.format.common.ColorVertex;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(DrawContext.class)
+@Mixin(value = DrawContext.class, priority = 1500)
 public abstract class MixinDrawContext {
 
     @Shadow
@@ -49,16 +49,16 @@ public abstract class MixinDrawContext {
             final long buffer = stack.nmalloc(4 * ColorVertex.STRIDE);
             long ptr = buffer;
 
-            ColorVertex.write(ptr, matrix4f, startX, startY, z, colorStart);
+            ColorVertex.put(ptr, matrix4f, startX, startY, z, colorStart);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, startX, endY, z, colorEnd);
+            ColorVertex.put(ptr, matrix4f, startX, endY, z, colorEnd);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, endX, endY, z, colorEnd);
+            ColorVertex.put(ptr, matrix4f, endX, endY, z, colorEnd);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, endX, startY, z, colorStart);
+            ColorVertex.put(ptr, matrix4f, endX, startY, z, colorStart);
             ptr += ColorVertex.STRIDE;
 
             writer.push(stack, buffer, 4, ColorVertex.FORMAT);
@@ -91,16 +91,16 @@ public abstract class MixinDrawContext {
             final long buffer = stack.nmalloc(4 * ColorVertex.STRIDE);
             long ptr = buffer;
 
-            ColorVertex.write(ptr, matrix4f, x1, y1, z, color);
+            ColorVertex.put(ptr, matrix4f, x1, y1, z, color);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, x1, y2, z, color);
+            ColorVertex.put(ptr, matrix4f, x1, y2, z, color);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, x2, y2, z, color);
+            ColorVertex.put(ptr, matrix4f, x2, y2, z, color);
             ptr += ColorVertex.STRIDE;
 
-            ColorVertex.write(ptr, matrix4f, x2, y1, z, color);
+            ColorVertex.put(ptr, matrix4f, x2, y1, z, color);
             ptr += ColorVertex.STRIDE;
 
             writer.push(stack, buffer, 4, ColorVertex.FORMAT);

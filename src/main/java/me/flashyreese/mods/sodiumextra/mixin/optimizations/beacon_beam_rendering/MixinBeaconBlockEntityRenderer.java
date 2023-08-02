@@ -1,11 +1,10 @@
 package me.flashyreese.mods.sodiumextra.mixin.optimizations.beacon_beam_rendering;
 
 import me.flashyreese.mods.sodiumextra.compat.IrisCompat;
-import me.jellysquid.mods.sodium.client.render.RenderGlobal;
-import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
-import me.jellysquid.mods.sodium.client.render.vertex.formats.ModelVertex;
-import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
-import me.jellysquid.mods.sodium.common.util.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.math.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.util.ColorABGR;
+import net.caffeinemc.mods.sodium.api.vertex.buffer.VertexBufferWriter;
+import net.caffeinemc.mods.sodium.api.vertex.format.common.ModelVertex;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -60,7 +59,7 @@ public class MixinBeaconBlockEntityRenderer {
         int colorNoneTranslucent = ColorABGR.pack(red, green, blue, 1.0F);
         int colorTranslucent = ColorABGR.pack(red, green, blue, 0.125F);
 
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             long buffer = stack.nmalloc(2 * 16 * ModelVertex.STRIDE);
             long ptr = buffer;
             ptr = writeBeamLayerVertices(ptr, matrices, colorNoneTranslucent, yOffset, height, 0.0F, innerRadius, innerRadius, 0.0F, innerX3, 0.0F, 0.0F, innerZ4, innerV1, innerV2);

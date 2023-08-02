@@ -1,14 +1,14 @@
 package me.flashyreese.mods.sodiumextra.client.render.vertex.formats;
 
-import me.jellysquid.mods.sodium.client.render.vertex.VertexFormatDescription;
-import me.jellysquid.mods.sodium.client.render.vertex.VertexFormatRegistry;
-import me.jellysquid.mods.sodium.common.util.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.math.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.vertex.format.VertexFormatDescription;
+import net.caffeinemc.mods.sodium.api.vertex.format.VertexFormatRegistry;
 import net.minecraft.client.render.VertexFormats;
 import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryUtil;
 
 public class TextureColorVertex {
-    public static final VertexFormatDescription FORMAT = VertexFormatRegistry.get(VertexFormats.POSITION_COLOR_TEXTURE);
+    public static final VertexFormatDescription FORMAT = VertexFormatRegistry.instance().get(VertexFormats.POSITION_COLOR_TEXTURE);
 
     public static final int STRIDE = 24;
 
@@ -25,13 +25,13 @@ public class TextureColorVertex {
     }
 
     public static void write(long ptr, float x, float y, float z, int color, float u, float v) {
-        MemoryUtil.memPutFloat(ptr + OFFSET_POSITION + 0, x);
+        MemoryUtil.memPutFloat(ptr + OFFSET_POSITION, x);
         MemoryUtil.memPutFloat(ptr + OFFSET_POSITION + 4, y);
         MemoryUtil.memPutFloat(ptr + OFFSET_POSITION + 8, z);
 
-        MemoryUtil.memPutInt(ptr + OFFSET_COLOR + 0, color);
+        MemoryUtil.memPutInt(ptr + OFFSET_COLOR, color);
 
-        MemoryUtil.memPutFloat(ptr + OFFSET_TEXTURE + 0, u);
+        MemoryUtil.memPutFloat(ptr + OFFSET_TEXTURE, u);
         MemoryUtil.memPutFloat(ptr + OFFSET_TEXTURE + 4, v);
     }
 }
