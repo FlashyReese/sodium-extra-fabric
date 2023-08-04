@@ -4,7 +4,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import me.flashyreese.mods.sodiumextra.client.render.vertex.formats.TextureColorVertex;
 import me.flashyreese.mods.sodiumextra.client.render.vertex.formats.TextureVertex;
 import me.flashyreese.mods.sodiumextra.common.util.ColorRGBA;
-import me.jellysquid.mods.sodium.client.render.RenderGlobal;
 import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
 import me.jellysquid.mods.sodium.client.render.vertex.formats.ColorVertex;
 import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
@@ -16,7 +15,6 @@ import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryStack;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -47,7 +45,7 @@ public abstract class MixinDrawContext {
         Matrix4f matrix4f = this.matrices.peek().getPositionMatrix();
         colorStart = ColorRGBA.fromOrToABGR(ColorRGBA.fromARGB(colorStart));
         colorEnd = ColorRGBA.fromOrToABGR(ColorRGBA.fromARGB(colorEnd));
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             final long buffer = stack.nmalloc(4 * ColorVertex.STRIDE);
             long ptr = buffer;
 
@@ -89,7 +87,7 @@ public abstract class MixinDrawContext {
         VertexConsumer vertexConsumer = this.vertexConsumers.getBuffer(layer);
         VertexBufferWriter writer = VertexBufferWriter.of(vertexConsumer);
         color = ColorRGBA.fromOrToABGR(ColorRGBA.fromARGB(color));
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             final long buffer = stack.nmalloc(4 * ColorVertex.STRIDE);
             long ptr = buffer;
 
@@ -124,7 +122,7 @@ public abstract class MixinDrawContext {
         BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
         bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
         VertexBufferWriter writer = VertexBufferWriter.of(bufferBuilder);
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             final long buffer = stack.nmalloc(4 * TextureVertex.STRIDE);
             long ptr = buffer;
 
@@ -160,7 +158,7 @@ public abstract class MixinDrawContext {
         bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR_TEXTURE);
         VertexBufferWriter writer = VertexBufferWriter.of(bufferBuilder);
         int color = ColorABGR.pack(red, green, blue, alpha);
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             final long buffer = stack.nmalloc(4 * TextureColorVertex.STRIDE);
             long ptr = buffer;
 

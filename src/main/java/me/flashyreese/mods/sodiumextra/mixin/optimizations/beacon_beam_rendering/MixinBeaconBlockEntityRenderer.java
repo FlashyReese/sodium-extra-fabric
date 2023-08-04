@@ -1,7 +1,6 @@
 package me.flashyreese.mods.sodiumextra.mixin.optimizations.beacon_beam_rendering;
 
 import me.flashyreese.mods.sodiumextra.compat.IrisCompat;
-import me.jellysquid.mods.sodium.client.render.RenderGlobal;
 import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
 import me.jellysquid.mods.sodium.client.render.vertex.formats.ModelVertex;
 import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
@@ -50,7 +49,7 @@ public class MixinBeaconBlockEntityRenderer {
         List<BeaconBlockEntity.BeamSegment> list = beaconBlockEntity.getBeamSegments();
         int yOffsetNoneTranslucent = 0;
         int yOffsetTranslucent = 0;
-        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+        try (MemoryStack stack = MemoryStack.stackPush()) {
             long buffer = stack.nmalloc(beaconBlockEntity.getBeamSegments().size() * 2 * quads * ModelVertex.STRIDE);
             long ptr = buffer;
             float innerRadius = 0.2F;
