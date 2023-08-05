@@ -50,7 +50,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
                     .addMixinOption("gui", true)
                     .addMixinOption("instant_sneak", true)
                     .addMixinOption("light_updates", true)
-                    .addMixinOption("optimizations", true)
+                    .addMixinOption("optimizations", false)
                     .addMixinOption("optimizations.beacon_beam_rendering", true)
                     .addMixinOption("optimizations.draw_helpers", true)
                     .addMixinOption("particle", true)
