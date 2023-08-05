@@ -6,8 +6,8 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlValueFormatter;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.util.math.Rect2i;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.Validate;
 
@@ -92,7 +92,7 @@ public class SliderControlExtended implements Control<Integer> {
             int sliderWidth = this.sliderBounds.getWidth();
             int sliderHeight = this.sliderBounds.getHeight();
 
-            String label = this.formatter.format(this.option.getValue());
+            Text label = this.formatter.format(this.option.getValue());
             int labelWidth = this.font.getWidth(label);
 
             this.drawString(drawContext, label, sliderX + sliderWidth - labelWidth, sliderY + (sliderHeight / 2) - 4, 0xFFFFFFFF);
@@ -111,10 +111,10 @@ public class SliderControlExtended implements Control<Integer> {
             double thumbX = sliderX + thumbOffset - THUMB_WIDTH;
             double trackY = sliderY + (sliderHeight / 2) - ((double) TRACK_HEIGHT / 2);
 
-            this.drawRect(thumbX, sliderY, thumbX + (THUMB_WIDTH * 2), sliderY + sliderHeight, 0xFFFFFFFF);
-            this.drawRect(sliderX, trackY, sliderX + sliderWidth, trackY + TRACK_HEIGHT, 0xFFFFFFFF);
+            this.drawRect(drawContext, (int) thumbX, sliderY, (int) (thumbX + (THUMB_WIDTH * 2)), sliderY + sliderHeight, 0xFFFFFFFF);
+            this.drawRect(drawContext, sliderX, (int) trackY, sliderX + sliderWidth, (int) (trackY + TRACK_HEIGHT), 0xFFFFFFFF);
 
-            String label = this.displayIntValueWhileSliding ? String.valueOf(this.getIntValue()) : this.formatter.format(this.option.getValue());
+            Text label = this.displayIntValueWhileSliding ? Text.of(String.valueOf(this.getIntValue())) : this.formatter.format(this.option.getValue());
 
             int labelWidth = this.font.getWidth(label);
 

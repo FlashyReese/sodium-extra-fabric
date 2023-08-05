@@ -51,7 +51,7 @@
   "depends": {
     "fabricloader": ">=0.14",
     "fabric-api": "*",
-    "sodium": "<0.5.0 >=0.4.10",
+    "sodium": ">=0.5.0",
     "minecraft": ">=1.20"
   },
   "breaks": {

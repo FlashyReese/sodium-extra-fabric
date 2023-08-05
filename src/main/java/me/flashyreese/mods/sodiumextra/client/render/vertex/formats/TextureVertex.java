@@ -1,14 +1,14 @@
 package me.flashyreese.mods.sodiumextra.client.render.vertex.formats;
 
-import me.jellysquid.mods.sodium.client.render.vertex.VertexFormatDescription;
-import me.jellysquid.mods.sodium.client.render.vertex.VertexFormatRegistry;
-import me.jellysquid.mods.sodium.common.util.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.math.MatrixHelper;
+import net.caffeinemc.mods.sodium.api.vertex.format.VertexFormatDescription;
+import net.caffeinemc.mods.sodium.api.vertex.format.VertexFormatRegistry;
 import net.minecraft.client.render.VertexFormats;
 import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryUtil;
 
 public class TextureVertex {
-    public static final VertexFormatDescription FORMAT = VertexFormatRegistry.get(VertexFormats.POSITION_TEXTURE);
+    public static final VertexFormatDescription FORMAT = VertexFormatRegistry.instance().get(VertexFormats.POSITION_TEXTURE);
 
     public static final int STRIDE = 20;
 

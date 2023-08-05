@@ -131,7 +131,7 @@ public class OptionPageScrollFrame extends AbstractFrame {
             boxY -= boxYLimit - boxYCutoff;
         }
 
-        this.drawRect(boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xE0000000);
+        this.drawRect(drawContext, boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xE0000000);
 
         for (int i = 0; i < tooltip.size(); i++) {
             drawContext.drawText(MinecraftClient.getInstance().textRenderer, tooltip.get(i), boxX + textPadding, boxY + textPadding + (i * 12), 0xFFFFFFFF, false);
