@@ -1,11 +1,11 @@
 package me.flashyreese.mods.sodiumextra.mixin.optimizations.beacon_beam_rendering;
 
 import me.flashyreese.mods.sodiumextra.compat.IrisCompat;
+import me.jellysquid.mods.sodium.client.render.RenderGlobal;
 import me.jellysquid.mods.sodium.client.render.vertex.VertexBufferWriter;
 import me.jellysquid.mods.sodium.client.render.vertex.formats.ModelVertex;
 import me.jellysquid.mods.sodium.client.util.color.ColorABGR;
 import me.jellysquid.mods.sodium.common.util.MatrixHelper;
-import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -18,108 +18,77 @@ import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryStack;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.List;
 
 @Mixin(BeaconBlockEntityRenderer.class)
 public class MixinBeaconBlockEntityRenderer {
 
-    @Shadow
-    @Final
-    public static Identifier BEAM_TEXTURE;
-
-    @Inject(method = "render(Lnet/minecraft/block/entity/BeaconBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V", at = @At(value = "HEAD"), cancellable = true)
-    public void render(BeaconBlockEntity beaconBlockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
-        ci.cancel();
+    /**
+     * For Sodium 0.5 is method will only reduce allocations
+     *
+     * @author FlashyReese
+     * @reason Use optimized vertex writer, also avoids unnecessary allocations
+     */
+    @Overwrite
+    public static void renderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius) {
         if (IrisCompat.isIrisPresent()) {
             if (IrisCompat.isRenderingShadowPass()) {
                 return;
             }
         }
 
-        int quads = 16;
-        long worldTime = beaconBlockEntity.getWorld().getTime();
-        List<BeaconBlockEntity.BeamSegment> list = beaconBlockEntity.getBeamSegments();
-        int yOffsetNoneTranslucent = 0;
-        int yOffsetTranslucent = 0;
-        try (MemoryStack stack = MemoryStack.stackPush()) {
-            long buffer = stack.nmalloc(beaconBlockEntity.getBeamSegments().size() * 2 * quads * ModelVertex.STRIDE);
+        int height = yOffset + maxY;
+        matrices.push();
+        matrices.translate(0.5, 0.0, 0.5);
+        float time = (float) Math.floorMod(worldTime, 40) + tickDelta;
+        float negativeTime = maxY < 0 ? time : -time;
+        float fractionalPart = MathHelper.fractionalPart(negativeTime * 0.2F - (float) MathHelper.floor(negativeTime * 0.1F));
+        float red = color[0];
+        float green = color[1];
+        float blue = color[2];
+        matrices.push();
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(time * 2.25F - 45.0F));
+        float innerX1;
+        float innerZ2;
+        float innerX3 = -innerRadius;
+        float innerZ4 = -innerRadius;
+        float innerV2 = -1.0F + fractionalPart;
+        float innerV1 = (float) maxY * heightScale * (0.5F / innerRadius) + innerV2;
+
+        int colorNoneTranslucent = ColorABGR.pack(red, green, blue, 1.0F);
+        int colorTranslucent = ColorABGR.pack(red, green, blue, 0.125F);
+
+        try (MemoryStack stack = RenderGlobal.VERTEX_DATA.push()) {
+            long buffer = stack.nmalloc(2 * 16 * ModelVertex.STRIDE);
             long ptr = buffer;
-            float innerRadius = 0.2F;
-            float outerRadius = 0.25F;
-            float heightScale = 1.0F;
+            ptr = writeBeamLayerVertices(ptr, matrices, colorNoneTranslucent, yOffset, height, 0.0F, innerRadius, innerRadius, 0.0F, innerX3, 0.0F, 0.0F, innerZ4, innerV1, innerV2);
+            VertexBufferWriter.of(vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(textureId, false))).push(stack, buffer, 16, ModelVertex.FORMAT);
 
-            float time = (float) Math.floorMod(worldTime, 40) + tickDelta;
-
-            matrices.push();
-            matrices.translate(0.5, 0.0, 0.5);
-            matrices.push();
-            matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(time * 2.25F - 45.0F));
-            MatrixStack.Entry entry = matrices.peek();
-            Matrix4f positionMatrix = entry.getPositionMatrix();
-            Matrix3f normalMatrix = entry.getNormalMatrix();
-
-            var normal = MatrixHelper.transformNormal(normalMatrix, (float) 0.0, (float) 1.0, (float) 0.0);
-            for (int m = 0; m < list.size(); ++m) {
-                BeaconBlockEntity.BeamSegment beamSegment = list.get(m);
-
-                int maxY = m == list.size() - 1 ? 1024 : beamSegment.getHeight();
-                int height = yOffsetNoneTranslucent + maxY;
-                float red = beamSegment.getColor()[0];
-                float green = beamSegment.getColor()[1];
-                float blue = beamSegment.getColor()[2];
-                float negativeTime = maxY < 0 ? time : -time;
-                float fractionalPart = MathHelper.fractionalPart(negativeTime * 0.2F - (float) MathHelper.floor(negativeTime * 0.1F));
-                float innerV2 = -1.0F + fractionalPart;
-                float innerV1 = (float) maxY * heightScale * (0.5F / innerRadius) + innerV2;
-
-                int colorNoneTranslucent = ColorABGR.pack(red, green, blue, 1.0F);
-
-                buffer = ptr;
-                ptr = writeBeamLayerVertices(ptr, positionMatrix, colorNoneTranslucent, yOffsetNoneTranslucent, height, 0.0F, innerRadius, innerRadius, 0.0F, -innerRadius, 0.0F, 0.0F, -innerRadius, innerV1, innerV2, normal);
-                VertexBufferWriter.of(vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(BEAM_TEXTURE, false))).push(stack, buffer, 16, ModelVertex.FORMAT);
-                yOffsetNoneTranslucent += beamSegment.getHeight();
-            }
             matrices.pop();
-            entry = matrices.peek();
-            positionMatrix = entry.getPositionMatrix();
-            normalMatrix = entry.getNormalMatrix();
+            innerX1 = -outerRadius;
+            float outerZ1 = -outerRadius;
+            innerZ2 = -outerRadius;
+            innerX3 = -outerRadius;
+            innerV2 = -1.0F + fractionalPart;
+            innerV1 = (float) maxY * heightScale + innerV2;
 
-            normal = MatrixHelper.transformNormal(normalMatrix, (float) 0.0, (float) 1.0, (float) 0.0);
-
-            for (int m = 0; m < list.size(); ++m) {
-                BeaconBlockEntity.BeamSegment beamSegment = list.get(m);
-
-                int maxY = m == list.size() - 1 ? 1024 : beamSegment.getHeight();
-                int height = yOffsetTranslucent + maxY;
-                float red = beamSegment.getColor()[0];
-                float green = beamSegment.getColor()[1];
-                float blue = beamSegment.getColor()[2];
-                float negativeTime = maxY < 0 ? time : -time;
-                float fractionalPart = MathHelper.fractionalPart(negativeTime * 0.2F - (float) MathHelper.floor(negativeTime * 0.1F));
-                float innerV2 = -1.0F + fractionalPart;
-                float innerV1 = (float) maxY * heightScale + innerV2;
-
-                int colorTranslucent = ColorABGR.pack(red, green, blue, 0.125F);
-
-                buffer = ptr;
-                ptr = writeBeamLayerVertices(ptr, positionMatrix, colorTranslucent, yOffsetTranslucent, height, -outerRadius, -outerRadius, outerRadius, -outerRadius, -outerRadius, outerRadius, outerRadius, outerRadius, innerV1, innerV2, normal);
-                VertexBufferWriter.of(vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(BEAM_TEXTURE, true))).push(stack, buffer, 16, ModelVertex.FORMAT);
-                yOffsetTranslucent += beamSegment.getHeight();
-            }
-            matrices.pop();
+            buffer = ptr;
+            ptr = writeBeamLayerVertices(ptr, matrices, colorTranslucent, yOffset, height, innerX1, outerZ1, outerRadius, innerZ2, innerX3, outerRadius, outerRadius, outerRadius, innerV1, innerV2);
+            VertexBufferWriter.of(vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(textureId, true))).push(stack, buffer, 16, ModelVertex.FORMAT);
         }
+        matrices.pop();
     }
 
     @Unique
-    private static long writeBeamLayerVertices(long ptr, Matrix4f positionMatrix, int color, int yOffset, int height, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float v1, float v2, int normal) {
+    private static long writeBeamLayerVertices(long ptr, MatrixStack matrixStack, int color, int yOffset, int height, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float v1, float v2) {
+        MatrixStack.Entry entry = matrixStack.peek();
+        Matrix4f positionMatrix = entry.getPositionMatrix();
+        Matrix3f normalMatrix = entry.getNormalMatrix();
+
+        var normal = MatrixHelper.transformNormal(normalMatrix, (float) 0.0, (float) 1.0, (float) 0.0);
+
         ptr = transformAndWriteVertex(ptr, positionMatrix, x1, height, z1, color, 1.0f, v1, normal);
         ptr = transformAndWriteVertex(ptr, positionMatrix, x1, yOffset, z1, color, 1.0f, v2, normal);
         ptr = transformAndWriteVertex(ptr, positionMatrix, x2, yOffset, z2, color, 0f, v2, normal);
