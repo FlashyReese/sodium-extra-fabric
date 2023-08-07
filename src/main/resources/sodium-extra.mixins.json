@@ -19,6 +19,7 @@
     "optimizations.beacon_beam_rendering.MixinBeaconBlockEntityRenderer",
     "optimizations.beacon_beam_rendering.MixinVertexSerializerRegistryImpl",
     "optimizations.draw_helpers.MixinDrawContext",
+    "optimizations.fast_weather.MixinWorldRenderer",
     "particle.MixinParticleManager",
     "particle.MixinWorldRenderer",
     "particle.MixinFireworkParticle",
