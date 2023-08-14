@@ -18,10 +18,12 @@ import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.lwjgl.system.MemoryStack;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(BeaconBlockEntityRenderer.class)
+@Mixin(value = BeaconBlockEntityRenderer.class, priority = 1500)
 public class MixinBeaconBlockEntityRenderer {
 
     /**
@@ -30,8 +32,9 @@ public class MixinBeaconBlockEntityRenderer {
      * @author FlashyReese
      * @reason Use optimized vertex writer, also avoids unnecessary allocations
      */
-    @Overwrite
-    public static void renderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius) {
+    @Inject(method = "renderBeam(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/util/Identifier;FFJII[FFF)V", at = @At(value = "HEAD"), cancellable = true)
+    private static void renderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius, CallbackInfo ci) {
+        ci.cancel();
         if (IrisCompat.isIrisPresent()) {
             if (IrisCompat.isRenderingShadowPass()) {
                 return;

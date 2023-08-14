@@ -88,7 +88,10 @@ public class OptionPageScrollFrame extends AbstractFrame {
         ControlElement<?> hoveredElement = this.controlElements.stream()
                 .filter(ControlElement::isHovered)
                 .findFirst()
-                .orElse(null);
+                .orElse(this.controlElements.stream() // If there is no hovered element, use the focused element.
+                        .filter(ControlElement::isFocused)
+                        .findFirst()
+                        .orElse(null));
         this.applyScissor(this.dim.x(), this.dim.y(), this.dim.width(), this.dim.height(), () -> super.render(drawContext, mouseX, mouseY, delta));
         if (this.canScroll) {
             this.scrollBar.render(drawContext, mouseX, mouseY, delta);

@@ -16,13 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BackgroundRenderer.class)
 public abstract class MixinBackgroundRenderer {
     @Shadow
-    private static float red;
-    @Shadow
-    private static float green;
-    @Shadow
-    private static float blue;
-
-    @Shadow
     @Nullable
     private static BackgroundRenderer.@Nullable StatusEffectFogModifier getFogModifier(Entity entity, float tickDelta) {
         return null;
@@ -40,7 +33,7 @@ public abstract class MixinBackgroundRenderer {
         if (camera.getSubmersionType() == CameraSubmersionType.NONE && (thickFog || fogType == BackgroundRenderer.FogType.FOG_TERRAIN)) {
             float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
             if (fogDistance == 33) {
-                RenderSystem.setShaderFogColor(red, green, blue, 0f);
+                RenderSystem.setShaderFogColor(0f, 0f, 0f, 0f);
                 //RenderSystem.setShaderFogStart(Short.MAX_VALUE - 1 * fogStart);
                 //RenderSystem.setShaderFogEnd(Short.MAX_VALUE);
             } else {
