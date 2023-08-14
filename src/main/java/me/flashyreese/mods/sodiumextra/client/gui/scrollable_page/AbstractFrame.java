@@ -5,10 +5,9 @@ import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
 import me.jellysquid.mods.sodium.client.gui.widgets.AbstractWidget;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.Drawable;
-import net.minecraft.client.gui.Element;
-import net.minecraft.client.gui.ParentElement;
+import net.minecraft.client.gui.*;
+import net.minecraft.client.gui.navigation.GuiNavigation;
+import net.minecraft.client.gui.navigation.GuiNavigationPath;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -84,5 +83,15 @@ public abstract class AbstractFrame extends AbstractWidget implements ParentElem
     @Override
     public boolean isMouseOver(double mouseX, double mouseY) {
         return this.dim.containsCursor(mouseX, mouseY);
+    }
+
+    @Override
+    public @Nullable GuiNavigationPath getNavigationPath(GuiNavigation navigation) {
+        return ParentElement.super.getNavigationPath(navigation);
+    }
+
+    @Override
+    public ScreenRect getNavigationFocus() {
+        return new ScreenRect(this.dim.x(), this.dim.y(), this.dim.width(), this.dim.height());
     }
 }

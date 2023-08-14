@@ -38,4 +38,12 @@ public abstract class MixinSodiumOptionsGUI extends Screen {
     private void renderOptionTooltip(DrawContext drawContext, ControlElement<?> element, CallbackInfo ci) {
         ci.cancel();
     }
+
+    // Fixme:
+    // Fixes issue introduce with Sodium 20006a85fb7a64889f507eb13521e55693ae0d7e
+    // This override prevents focused element from staying focused because we are using a ParentElement for scroll frames
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        return super.mouseClicked(mouseX, mouseY, button);
+    }
 }
