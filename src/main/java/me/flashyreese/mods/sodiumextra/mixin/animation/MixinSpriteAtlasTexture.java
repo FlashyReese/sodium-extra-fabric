@@ -6,6 +6,7 @@ import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
@@ -20,6 +21,7 @@ public abstract class MixinSpriteAtlasTexture extends AbstractTexture {
         return null;
     }
 
+    @Unique
     private boolean shouldAnimate(Identifier identifier) {
         if (identifier != null) {
             String path = identifier.getPath();
