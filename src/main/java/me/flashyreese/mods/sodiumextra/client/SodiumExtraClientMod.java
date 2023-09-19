@@ -65,6 +65,7 @@ public class SodiumExtraClientMod implements ClientModInitializer {
                     .addMixinOption("sky_colors", true)
                     .addMixinOption("sodium", true)
                     .addMixinOption("sodium.accessibility", true)
+                    .addMixinOption("sodium.fog", true)
                     .addMixinOption("sodium.resolution", true)
                     .addMixinOption("sodium.scrollable_page", true)
                     .addMixinOption("sodium.vsync", true)
