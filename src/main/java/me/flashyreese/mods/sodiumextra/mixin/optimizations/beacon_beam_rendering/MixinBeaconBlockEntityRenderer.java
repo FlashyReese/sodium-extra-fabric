@@ -5,13 +5,13 @@ import net.caffeinemc.mods.sodium.api.math.MatrixHelper;
 import net.caffeinemc.mods.sodium.api.util.ColorABGR;
 import net.caffeinemc.mods.sodium.api.vertex.buffer.VertexBufferWriter;
 import net.caffeinemc.mods.sodium.api.vertex.format.common.ModelVertex;
-import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.block.entity.BeaconBlockEntity;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BeaconBlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix3f;
@@ -26,9 +26,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = BeaconBlockEntityRenderer.class, priority = 1500)
 public class MixinBeaconBlockEntityRenderer {
 
+    @Inject(method = "render(Lnet/minecraft/block/entity/BeaconBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V", at = @At(value = "HEAD"), cancellable = true)
+    public void render(BeaconBlockEntity beaconBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
+        Frustum frustum = ((WorldRendererAccessor) MinecraftClient.getInstance().worldRenderer).getFrustum();
+        Box box = new Box(
+                beaconBlockEntity.getPos().getX() - 1.0,
+                beaconBlockEntity.getPos().getY() - 1.0,
+                beaconBlockEntity.getPos().getZ() - 1.0,
+                beaconBlockEntity.getPos().getX() + 1.0,
+                beaconBlockEntity.getPos().getY() + (beaconBlockEntity.getBeamSegments().isEmpty() ? 1.0 : 1024.0), // todo: probably want to limit this to max height vanilla overshoots as well
+                beaconBlockEntity.getPos().getZ() + 1.0);
+
+        if (!frustum.isVisible(box)) {
+            ci.cancel();
+        }
+    }
+
     /**
-     * For Sodium 0.5 is method will only reduce allocations
-     *
      * @author FlashyReese
      * @reason Use optimized vertex writer, also avoids unnecessary allocations
      */
