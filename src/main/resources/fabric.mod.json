@@ -51,8 +51,8 @@
   "depends": {
     "fabricloader": ">=0.14",
     "fabric-api": "*",
-    "sodium": ">=0.5.1",
-    "minecraft": ">=1.20"
+    "sodium": ">=0.5.3",
+    "minecraft": ">=1.20.2"
   },
   "breaks": {
     "reeses-sodium-options": "<1.4.2"
