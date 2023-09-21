@@ -47,7 +47,7 @@ public class SuggestRSOScreen extends Screen {
 
     @Override
     public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
-        this.renderBackground(drawContext);
+        this.renderBackground(drawContext, mouseX, mouseY, delta);
         drawContext.drawTextWithShadow(this.textRenderer, HEADER, 25, 30, 0XFFFFFF);
         this.lines.drawWithShadow(drawContext, 25, 70, this.textRenderer.fontHeight * 2, 0xFFFFFF);
         super.render(drawContext, mouseX, mouseY, delta);

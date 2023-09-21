@@ -175,12 +175,12 @@ public class OptionPageScrollFrame extends AbstractFrame {
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double amount) {
-        if (super.mouseScrolled(mouseX, mouseY, amount)) {
+    public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
+        if (super.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount)) {
             return true;
         }
         if (this.canScroll) {
-            return this.scrollBar.mouseScrolled(mouseX, mouseY, amount);
+            return this.scrollBar.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
         }
         return false;
     }
