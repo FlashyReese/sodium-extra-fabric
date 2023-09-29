@@ -10,7 +10,6 @@
     "biome_colors.MixinBiomeColors",
     "cloud.MixinDimensionEffectsOverworld",
     "compat.MixinSodiumOptionsGUI",
-    "compat.MixinTitleScreen",
     "fog.MixinBackgroundRenderer",
     "fog_falloff.MixinBackgroundRenderer",
     "gui.MinecraftClientAccessor",
