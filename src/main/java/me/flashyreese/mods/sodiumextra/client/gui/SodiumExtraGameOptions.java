@@ -243,6 +243,7 @@ public class SodiumExtraGameOptions {
         public boolean reduceResolutionOnMac;
         public boolean useAdaptiveSync;
         public int cloudHeight;
+        public int cloudDistance;
         public boolean toasts;
         public boolean advancementToast;
         public boolean recipeToast;
@@ -262,6 +263,7 @@ public class SodiumExtraGameOptions {
             this.reduceResolutionOnMac = false;
             this.useAdaptiveSync = false;
             this.cloudHeight = 192;
+            this.cloudDistance = 100;
             this.toasts = true;
             this.advancementToast = true;
             this.recipeToast = true;
