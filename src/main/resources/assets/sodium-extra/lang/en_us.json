@@ -218,6 +218,8 @@
   "sodium-extra.option.block_breaking.tooltip": "If enabled, block breaking particles are processed.",
   "sodium-extra.option.cloud_height": "Cloud Height",
   "sodium-extra.option.cloud_height.tooltip": "Controls the height of clouds that are rendered.",
+  "sodium-extra.option.cloud_distance": "Cloud Distance",
+  "sodium-extra.option.cloud_distance.tooltip": "Controls the distance away from the player that clouds are rendered.",
   "sodium-extra.option.details": "Details",
   "sodium-extra.option.enchanting_table_book": "Enchanting Table Book",
   "sodium-extra.option.enchanting_table_book.tooltip": "If enabled, enchanting table books are rendered.",

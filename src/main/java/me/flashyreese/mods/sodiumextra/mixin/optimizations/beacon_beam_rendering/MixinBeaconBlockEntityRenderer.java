@@ -24,30 +24,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = BeaconBlockEntityRenderer.class, priority = 1500)
-public class MixinBeaconBlockEntityRenderer {
-
-    @Inject(method = "render(Lnet/minecraft/block/entity/BeaconBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V", at = @At(value = "HEAD"), cancellable = true)
-    public void render(BeaconBlockEntity beaconBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
-        Frustum frustum = ((WorldRendererAccessor) MinecraftClient.getInstance().worldRenderer).getFrustum();
-        Box box = new Box(
-                beaconBlockEntity.getPos().getX() - 1.0,
-                beaconBlockEntity.getPos().getY() - 1.0,
-                beaconBlockEntity.getPos().getZ() - 1.0,
-                beaconBlockEntity.getPos().getX() + 1.0,
-                beaconBlockEntity.getPos().getY() + (beaconBlockEntity.getBeamSegments().isEmpty() ? 1.0 : 1024.0), // todo: probably want to limit this to max height vanilla overshoots as well
-                beaconBlockEntity.getPos().getZ() + 1.0);
-
-        if (!frustum.isVisible(box)) {
-            ci.cancel();
-        }
-    }
+public abstract class MixinBeaconBlockEntityRenderer {
 
     /**
      * @author FlashyReese
      * @reason Use optimized vertex writer, also avoids unnecessary allocations
      */
     @Inject(method = "renderBeam(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;Lnet/minecraft/util/Identifier;FFJII[FFF)V", at = @At(value = "HEAD"), cancellable = true)
-    private static void renderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius, CallbackInfo ci) {
+    private static void optimizeRenderBeam(MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, Identifier textureId, float tickDelta, float heightScale, long worldTime, int yOffset, int maxY, float[] color, float innerRadius, float outerRadius, CallbackInfo ci) {
         ci.cancel();
         if (IrisCompat.isIrisPresent()) {
             if (IrisCompat.isRenderingShadowPass()) {
@@ -136,5 +120,21 @@ public class MixinBeaconBlockEntityRenderer {
         ModelVertex.write(ptr, transformedX, transformedY, transformedZ, color, u, v, LightmapTextureManager.MAX_LIGHT_COORDINATE, OverlayTexture.DEFAULT_UV, normal);
         ptr += ModelVertex.STRIDE;
         return ptr;
+    }
+
+    @Inject(method = "render(Lnet/minecraft/block/entity/BeaconBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V", at = @At(value = "HEAD"), cancellable = true)
+    public void render(BeaconBlockEntity beaconBlockEntity, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci) {
+        Frustum frustum = ((WorldRendererAccessor) MinecraftClient.getInstance().worldRenderer).getFrustum();
+        Box box = new Box(
+                beaconBlockEntity.getPos().getX() - 1.0,
+                beaconBlockEntity.getPos().getY() - 1.0,
+                beaconBlockEntity.getPos().getZ() - 1.0,
+                beaconBlockEntity.getPos().getX() + 1.0,
+                beaconBlockEntity.getPos().getY() + (beaconBlockEntity.getBeamSegments().isEmpty() ? 1.0 : 1024.0), // todo: probably want to limit this to max height vanilla overshoots as well
+                beaconBlockEntity.getPos().getZ() + 1.0);
+
+        if (!frustum.isVisible(box)) {
+            ci.cancel();
+        }
     }
 }

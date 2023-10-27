@@ -1,6 +1,6 @@
 package me.flashyreese.mods.sodiumextra.client;
 
-import me.flashyreese.mods.sodiumextra.common.util.EvictingQueue;
+import com.google.common.collect.EvictingQueue;
 import me.flashyreese.mods.sodiumextra.mixin.gui.MinecraftClientAccessor;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
@@ -9,7 +9,7 @@ import java.util.Queue;
 
 public class ClientTickHandler {
     private int averageFps, lowestFps, highestFps;
-    private final Queue<Integer> fpsQueue = new EvictingQueue<>(200);
+    private final Queue<Integer> fpsQueue = EvictingQueue.create(200);
 
     public void onClientInitialize() {
         ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
