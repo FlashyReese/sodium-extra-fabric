@@ -33,7 +33,7 @@ public abstract class MixinBackgroundRenderer {
         if (camera.getSubmersionType() == CameraSubmersionType.NONE && (thickFog || fogType == BackgroundRenderer.FogType.FOG_TERRAIN)) {
             float fogStart = (float) SodiumExtraClientMod.options().renderSettings.fogStart / 100;
             if (fogDistance == 33) {
-                RenderSystem.setShaderFogColor(0f, 0f, 0f, 0f);
+                RenderSystem.setShaderFogColor(1f, 1f, 1f, 0f);
                 //RenderSystem.setShaderFogStart(Short.MAX_VALUE - 1 * fogStart);
                 //RenderSystem.setShaderFogEnd(Short.MAX_VALUE);
             } else {
