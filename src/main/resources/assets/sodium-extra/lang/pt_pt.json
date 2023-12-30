@@ -60,8 +60,8 @@
   "options.particles.minecraft.dust_color_transition.tooltip": "Sensor de sculk ativado.",
   "options.particles.minecraft.effect": "Efeitos",
   "options.particles.minecraft.effect.tooltip": "Poções arremessáveis, poções prolongadas, frascos de experiência, invocadores.",
-  "options.particles.minecraft.egg_crack": "Quebra de Ovo",
-  "options.particles.minecraft.egg_crack.tooltip": "Quebra de Ovo.",
+  "options.particles.minecraft.egg_crack": "Rachar do ovo",
+  "options.particles.minecraft.egg_crack.tooltip": "Rachar do ovo.",
   "options.particles.minecraft.elder_guardian": "Guardião-mestre",
   "options.particles.minecraft.elder_guardian.tooltip": "Guardião-mestre.",
   "options.particles.minecraft.electric_spark": "Faísca elétrica",
@@ -273,10 +273,10 @@
   "sodium-extra.option.sky_colors.tooltip": "Ao ativar, as cores do céu mudam de acordo com o bioma.",
   "sodium-extra.option.stars": "Estrelas",
   "sodium-extra.option.stars.tooltip": "Ao ativar, as estrelas são renderizadas.",
-  "sodium-extra.option.steady_debug_hud": "Hud de depuração constante",
-  "sodium-extra.option.steady_debug_hud.tooltip": "Se ativado, o hud de depuração será atualizado em uma determinada quantidade de ticks configurados pela Hud de depuração constante.",
-  "sodium-extra.option.steady_debug_hud_refresh_interval": "Intervalo de atualização do Hud de depuração constante",
-  "sodium-extra.option.steady_debug_hud_refresh_interval.tooltip": "Ajusta o intervalo de quando o hud de depuração será atualizado em ticks.",
+  "sodium-extra.option.steady_debug_hud": "HUD de depuração constante",
+  "sodium-extra.option.steady_debug_hud.tooltip": "Se ativado, o HUD de depuração será atualizado em uma determinada quantidade de ciclos configurados pela taxa de atualização do HUD de depuração constante.",
+  "sodium-extra.option.steady_debug_hud_refresh_interval": "Intervalo de atualização do HUD de depuração constante",
+  "sodium-extra.option.steady_debug_hud_refresh_interval.tooltip": "Ajusta o intervalo de quando o HUD de depuração será atualizado em ticks.",
   "sodium-extra.option.sun_moon": "Sol e Lua",
   "sodium-extra.option.sun_moon.tooltip": "Ao ativar, o Sol e a Lua são renderizados.",
   "sodium-extra.option.system_toast": "Balões do sistema",
@@ -302,5 +302,5 @@
   "sodium-extra.suggestRSO.message": "Instale o Reese's Sodium Options junto com o Sodium Extra. Assim, todas as opções são exibidas adequadamente no menu de definições gráficas.",
   "sodium-extra.units.ticks": "%s ciclo(s)",
   "modmenu.summaryTranslation.sodium-extra": "Recursos que não deveriam estar no Sodium.",
-  "modmenu.descriptionTranslation.sodium-extra": "O Sodium Extra tem como objetivo trazer a maioria das opções atraentes do OptiFine para o Sodium; além de fornecer alguns recursos como correções visuais de bugs e outras opções de desempenho que ainda não estão disponíveis no Sodium."
+  "modmenu.descriptionTranslation.sodium-extra": "O Sodium Extra visa trazer a maioria das opções atraentes do OptiFine para o Sodium; além de fornecer alguns recursos como correções visuais e outras opções de desempenho que ainda não estão disponíveis no Sodium."
 }
