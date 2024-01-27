@@ -4,10 +4,12 @@ import me.flashyreese.mods.sodiumextra.client.gui.scrollable_page.OptionPageScro
 import me.jellysquid.mods.sodium.client.gui.SodiumOptionsGUI;
 import me.jellysquid.mods.sodium.client.gui.options.OptionPage;
 import me.jellysquid.mods.sodium.client.gui.options.control.ControlElement;
+import me.jellysquid.mods.sodium.client.gui.prompt.ScreenPrompt;
 import me.jellysquid.mods.sodium.client.util.Dim2i;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,6 +21,9 @@ public abstract class MixinSodiumOptionsGUI extends Screen {
 
     @Shadow
     private OptionPage currentPage;
+
+    @Shadow
+    private @Nullable ScreenPrompt prompt;
 
     protected MixinSodiumOptionsGUI(Text title) {
         super(title);
@@ -44,6 +49,9 @@ public abstract class MixinSodiumOptionsGUI extends Screen {
     // This override prevents focused element from staying focused because we are using a ParentElement for scroll frames
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        if (this.prompt != null) {
+            return this.prompt.mouseClicked(mouseX, mouseY, button);
+        }
         return super.mouseClicked(mouseX, mouseY, button);
     }
 }
