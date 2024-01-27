@@ -11,16 +11,17 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
+          check-latest: true
       - name: Upload assets to releases
-        run: |
-          chmod +x gradlew
-          ./gradlew build publishAllPublicationsToFlashyReeseReleasesRepository
+        run: ./gradlew build publishAllPublicationsToFlashyReeseReleasesRepository
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
