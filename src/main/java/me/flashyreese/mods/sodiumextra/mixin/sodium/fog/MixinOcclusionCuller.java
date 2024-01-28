@@ -18,17 +18,17 @@ public abstract class MixinOcclusionCuller {
         return 0;
     }
 
-    @Inject(method = "isOutsideRenderDistance", at = @At(value = "HEAD"), cancellable = true)
-    private static void isOutsideRenderDistance(CameraTransform camera, RenderSection section, float maxDistance, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "isWithinRenderDistance", at = @At(value = "HEAD"), cancellable = true)
+    private static void isWithinRenderDistance(CameraTransform camera, RenderSection section, float maxDistance, CallbackInfoReturnable<Boolean> cir) {
         int fogDistance = SodiumExtraClientMod.options().renderSettings.multiDimensionFogControl ?
                 SodiumExtraClientMod.options().renderSettings.dimensionFogDistanceMap.getOrDefault(MinecraftClient.getInstance().world.getDimension().effects(), 0) :
                 SodiumExtraClientMod.options().renderSettings.fogDistance;
         if (fogDistance == 33) {
             int ox = section.getOriginX() - camera.intX;
             int oz = section.getOriginZ() - camera.intZ;
-            float dx = (float)nearestToZero(ox, ox + 16) - camera.fracX;
-            float dz = (float)nearestToZero(oz, oz + 16) - camera.fracZ;
-            boolean result =  dx * dx + dz * dz > maxDistance * maxDistance;
+            float dx = nearestToZero(ox, ox + 16) - camera.fracX;
+            float dz = nearestToZero(oz, oz + 16) - camera.fracZ;
+            boolean result = ((dx * dx) + (dz * dz)) < (maxDistance * maxDistance);
             cir.setReturnValue(result);
         }
     }
